@@ -448,15 +448,12 @@ var _jsxFileName = "/home/admin/git/project-www/components/Header.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
-var linkStyle = {
-  marginRight: 15
-};
 
 var Header = function Header() {
   return __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 9
+      lineNumber: 4
     },
     __self: this
   }, __jsx("div", {
@@ -464,7 +461,7 @@ var Header = function Header() {
     "data-reactid": "3",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 10
+      lineNumber: 5
     },
     __self: this
   }, __jsx("button", {
@@ -472,14 +469,14 @@ var Header = function Header() {
     "data-reactid": "4",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 11
+      lineNumber: 6
     },
     __self: this
   }, __jsx("span", {
     "data-reactid": "5",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 11
+      lineNumber: 6
     },
     __self: this
   }, "\uCD5C\uC0C1\uC704\uB85C")), __jsx("i", {
@@ -487,14 +484,14 @@ var Header = function Header() {
     "data-reactid": "6",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 12
+      lineNumber: 7
     },
     __self: this
   })), __jsx("div", {
     "data-reactid": "7",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 14
+      lineNumber: 9
     },
     __self: this
   }, __jsx("div", {
@@ -502,7 +499,7 @@ var Header = function Header() {
     "data-reactid": "8",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 15
+      lineNumber: 10
     },
     __self: this
   }, __jsx("div", {
@@ -510,7 +507,7 @@ var Header = function Header() {
     "data-reactid": "9",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 16
+      lineNumber: 11
     },
     __self: this
   }, __jsx("div", {
@@ -518,7 +515,7 @@ var Header = function Header() {
     "data-reactid": "10",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 17
+      lineNumber: 12
     },
     __self: this
   }, __jsx("div", {
@@ -526,7 +523,7 @@ var Header = function Header() {
     "data-reactid": "11",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18
+      lineNumber: 13
     },
     __self: this
   }, __jsx("div", {
@@ -534,7 +531,7 @@ var Header = function Header() {
     "data-reactid": "12",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19
+      lineNumber: 14
     },
     __self: this
   }, __jsx("button", {
@@ -542,7 +539,7 @@ var Header = function Header() {
     "data-reactid": "13",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20
+      lineNumber: 15
     },
     __self: this
   }, __jsx("i", {
@@ -550,7 +547,7 @@ var Header = function Header() {
     "data-reactid": "14",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21
+      lineNumber: 16
     },
     __self: this
   }), __jsx("span", {
@@ -558,7 +555,7 @@ var Header = function Header() {
     "data-reactid": "15",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 22
+      lineNumber: 17
     },
     __self: this
   }, "\uD504\uB85C\uC81D\uD2B8 \uB458\uB7EC\uBCF4\uAE30")), __jsx("span", {
@@ -566,7 +563,7 @@ var Header = function Header() {
     "data-reactid": "16",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 24
+      lineNumber: 19
     },
     __self: this
   }, __jsx("a", {
@@ -575,7 +572,7 @@ var Header = function Header() {
     "data-reactid": "17",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 25
+      lineNumber: 20
     },
     __self: this
   }, __jsx("span", {
@@ -583,7 +580,7 @@ var Header = function Header() {
     "data-reactid": "18",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 26
+      lineNumber: 21
     },
     __self: this
   }, "\uD504\uB85C\uC81D\uD2B8 \uC62C\uB9AC\uAE30")))), __jsx("div", {
@@ -591,7 +588,7 @@ var Header = function Header() {
     "data-reactid": "19",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 30
+      lineNumber: 25
     },
     __self: this
   }, __jsx("a", {
@@ -600,7 +597,7 @@ var Header = function Header() {
     "data-reactid": "20",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 31
+      lineNumber: 26
     },
     __self: this
   }, __jsx("div", {
@@ -608,7 +605,7 @@ var Header = function Header() {
     "data-reactid": "21",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 32
+      lineNumber: 27
     },
     __self: this
   }, __jsx("svg", {
@@ -617,20 +614,20 @@ var Header = function Header() {
     "data-reactid": "22",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 33
+      lineNumber: 28
     },
     __self: this
   }, __jsx("title", {
     "data-reactid": "23",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 34
+      lineNumber: 29
     },
     __self: this
   }, "Halsaram"), __jsx("p", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35
+      lineNumber: 30
     },
     __self: this
   }, "halsaram"))))), __jsx("div", {
@@ -638,7 +635,7 @@ var Header = function Header() {
     "data-reactid": "33",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 40
+      lineNumber: 35
     },
     __self: this
   }, __jsx("button", {
@@ -646,7 +643,7 @@ var Header = function Header() {
     "data-reactid": "34",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 41
+      lineNumber: 36
     },
     __self: this
   }), __jsx("a", {
@@ -655,7 +652,7 @@ var Header = function Header() {
     "data-reactid": "35",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 42
+      lineNumber: 37
     },
     __self: this
   }, __jsx("span", {
@@ -663,7 +660,7 @@ var Header = function Header() {
     "data-reactid": "36",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 43
+      lineNumber: 38
     },
     __self: this
   }, "\uB85C\uADF8\uC778 / \uD68C\uC6D0\uAC00\uC785"), __jsx("span", {
@@ -671,7 +668,7 @@ var Header = function Header() {
     "data-reactid": "37",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 44
+      lineNumber: 39
     },
     __self: this
   }, __jsx("span", {
@@ -679,7 +676,7 @@ var Header = function Header() {
     "data-reactid": "38",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45
+      lineNumber: 40
     },
     __self: this
   }))))))))));
