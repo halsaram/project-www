@@ -20,7 +20,7 @@ const Login = () => (
 						<form className="SignIn__Form-sc-9xfg6a-2 grrCSr" autocomplete="on" data-reactid="54">
 							<label className="SignIn__HiddenLabel-sc-9xfg6a-0 gqtUOr" for="login" data-reactid="55">이메일</label><input type="email" class="Input-sc-1x48dls-0 iWoXIb" id="login" placeholder="이메일 주소 입력" aria-label="이메일" name="email" autocomplete="email" required="" value="" data-reactid="56"/><label class="SignIn__HiddenLabel-sc-9xfg6a-0 gqtUOr" for="password" data-reactid="57">비밀번호</label><input type="password" class="Input-sc-1x48dls-0 iWoXIb" id="password" aria-label="비밀번호" placeholder="비밀번호 입력" autocomplete="current-password" required="" autocapitalize="off" autocorrect="off" spellcheck="off" name="password" value="" data-reactid="58"/><button class="Button-sc-1x93b2b-0 ijDFDl" type="submit" label="로그인하기"  data-reactid="59">로그인</button><a class="SignIn__StyledLink-sc-9xfg6a-1 bKTrQD" data-reactid="60"><span data-reactid="61">아직 계정이 없으신가요?</span>
 							
-							 텀블벅 가입하기
+							 할사람 가입하기
 							
 							</a>
 						</form>

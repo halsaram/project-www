@@ -6,7 +6,7 @@ const Findpw = () => (
 							<h2 className="UserVerification__H2-sc-1xwu76u-1 lmiHEz" data-reactid="43">비밀번호 찾기</h2>
 							<div className="UserVerification__Div-sc-1xwu76u-4 gfLyCI" data-reactid="44">
 								<p data-reactid="45">
-									텀블벅 가입 시 사용하신 이메일을 입력하시면 새 비밀번호를 생성할 수 있는 링크를 보내드립니다.
+									할사람 가입 시 사용하신 이메일을 입력하시면 새 비밀번호를 생성할 수 있는 링크를 보내드립니다.
 								</p>
 								<p data-reactid="46">
 									페이스북/네이버로 가입하신 경우, 페이스북/네이버 계정에 쓰이는 이메일을 입력해주세요.
