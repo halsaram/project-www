@@ -32,5 +32,3 @@ const Base = () => (
         </div>
     </div>
             );
-  
-export default Login;

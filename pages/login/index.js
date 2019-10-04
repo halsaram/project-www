@@ -1,8 +1,7 @@
-import Layout from '../components/Layout'
+import Layout from '../../components/Layout'
 
-import Login from '../components/Login'
+import Login from './Login'
 
-import './style.css'
 
 const loginPageContent = <div>
     <Login />

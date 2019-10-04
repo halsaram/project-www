@@ -1,3 +1,11 @@
+import Link from 'next/link';
+
+const ProjectLink = (props) => (
+    <Link href={`/${props.id}`}>
+        <button className="sc-1x93b2b-0-Button-kDSBcD jxJcyR" data-reactid="57">{props.title}</button>
+    </Link>
+)
+
 const Start = () => (
     <div>
         <div data-reactid="39">
@@ -14,11 +22,8 @@ const Start = () => (
                         </div>
                         <div className="ProjectStartHero__Contents-ps7c1s-5 kgpMea" data-reactid="48">
                             <h1 className="ProjectStartHero__H1-ps7c1s-4 bsiMkN" data-reactid="49">
-                        
                             마음 속 프로젝트 아이디어,
-                       
                             <br data-reactid="51"/>
-                       
                             텀블벅에서 현실로.
                             </h1>
                             <p className="ProjectStartHero__P-ps7c1s-6 benTAJ" data-reactid="53">
@@ -30,7 +35,7 @@ const Start = () => (
                                 든든한 후원자 네트워크도 확보할 수 있습니다.
                          
                             </p>
-                            <button className="sc-1x93b2b-0-Button-kDSBcD jxJcyR" data-reactid="57">지금 시작하기</button>
+                            <ProjectLink id='agreements' title='지금 시작하기' />
                         </div>
                     </div>
                 </div>

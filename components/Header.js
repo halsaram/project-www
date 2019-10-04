@@ -26,7 +26,7 @@ const HeaderBar = () => (
                                     <span className="SiteHeader__ItemLabel-q8dvod-8 hWygls" data-reactid="15">프로젝트 둘러보기</span>
                                 </button>
                                 <span className="SiteHeader__ForMobile-q8dvod-9 ihCbfB" data-reactid="16">
-                                    <Link href='/project'>
+                                    <Link href='/start'>
                                         <a className="SiteHeader__LinkItem-q8dvod-6 dALTNz" data-reactid="17">
                                             <span className="SiteHeader__ItemLabel-q8dvod-8 hWygls" data-reactid="18">프로젝트 올리기</span>
                                         </a>

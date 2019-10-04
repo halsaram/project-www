@@ -9,6 +9,6 @@ const indexPageContent = <div>
 
 export default function Index() {
   return <Fragment>
-    <Layout children={indexPageContent}></Layout>
+    <Layout children={indexPageContent} title='Start'></Layout>
   </Fragment>;
 };
