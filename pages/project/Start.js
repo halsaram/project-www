@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
 const ProjectLink = (props) => (
-    <Link href={`/${props.id}`}>
+    <Link href={`/p?id=${props.id}`}>
         <button className="sc-1x93b2b-0-Button-kDSBcD jxJcyR" data-reactid="57">{props.title}</button>
     </Link>
 )

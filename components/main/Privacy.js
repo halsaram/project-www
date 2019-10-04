@@ -27,7 +27,7 @@ const Privacy = () => (
 						<p data-reactid="61">
 							텀블벅 서비스를 이용하는 모든 이용자는 회원가입을 통해 더욱 다양한 서비스를 제공받을 수 있습니다. 회사는 이용하는 서비스에 따라 다음과 같은 개인정보를 수집하여 이용·제공·파기합니다.
 						</p>
-						<div style="overflow:scroll;" data-reactid="62">
+						<div  data-reactid="62">
 							<table data-reactid="63">
 							<thead data-reactid="64">
 							<tr data-reactid="65">
@@ -54,46 +54,47 @@ const Privacy = () => (
 									회원 가입 시 직접 입력
 								</td>
 								<td data-reactid="74">
-									<!-- react-text: 75 -->
+									
 									성명 또는 닉네임
-									<!-- /react-text -->
+									
 									<br data-reactid="76"/>
-									<!-- react-text: 77 -->
+									
 									이메일 주소
-									<!-- /react-text -->
+									
 									<br data-reactid="78"/>
-									<!-- react-text: 79 -->
+									
 									비밀번호
-									<!-- /react-text -->
+									
 									<br data-reactid="80"/>
-									<!-- react-text: 81 -->
+									
+							
 									이메일 수신 여부
-									<!-- /react-text -->
+									
 								</td>
 								<td data-reactid="82">
-									<!-- react-text: 83 -->
+									
 									회원제 서비스 이용에 따른 본인확인 및 개인식별
-									<!-- /react-text -->
+									
 									<br data-reactid="84"/>
-									<!-- react-text: 85 -->
+									
 									불량회원의 부정이용 방지와 비인가사용 방지
-									<!-- /react-text -->
+									
 									<br data-reactid="86"/>
-									<!-- react-text: 87 -->
+								
 									가입의사 확인
-									<!-- /react-text -->
+									
 									<br data-reactid="88"/>
-									<!-- react-text: 89 -->
+									
 									분쟁조정을 위한 기록보존
-									<!-- /react-text -->
+									
 									<br data-reactid="90"/>
-									<!-- react-text: 91 -->
+									
 									불만·민원의 처리
-									<!-- /react-text -->
+									
 									<br data-reactid="92"/>
-									<!-- react-text: 93 -->
+									
 									뉴스레터 및 고지사항 전달
-									<!-- /react-text -->
+									
 								</td>
 							</tr>
 							<tr data-reactid="94">
@@ -107,17 +108,17 @@ const Privacy = () => (
 									서비스 이용기록 접속 로그 쿠키 접속 IP 정보
 								</td>
 								<td data-reactid="98">
-									<!-- react-text: 99 -->
+									
 									신규 서비스(콘텐츠) 계발 및 특화
-									<!-- /react-text -->
+									
 									<br data-reactid="100"/>
-									<!-- react-text: 101 -->
+									
 									접속빈도 파악
-									<!-- /react-text -->
+									
 									<br data-reactid="102"/>
-									<!-- react-text: 103 -->
+									
 									회원의 서비스이용에 대한 통계
-									<!-- /react-text -->
+									
 								</td>
 							</tr>
 							<tr data-reactid="104">
@@ -128,49 +129,49 @@ const Privacy = () => (
 									프로젝트 생성시 직접 입력
 								</td>
 								<td data-reactid="107">
-									<!-- react-text: 108 -->
+									
 									성명
-									<!-- /react-text -->
+									
 									<br data-reactid="109"/>
-									<!-- react-text: 110 -->
+									
 									이메일주소
-									<!-- /react-text -->
+									
 									<br data-reactid="111"/>
-									<!-- react-text: 112 -->
+									
 									휴대전화번호
-									<!-- /react-text -->
+									
 								</td>
 								<td data-reactid="113">
-									<!-- react-text: 114 -->
+									
 									프로젝트 공개신청 승인여부 및 권고사항 전달
-									<!-- /react-text -->
+									
 									<br data-reactid="115"/>
-									<!-- react-text: 116 -->
+									
 									프로젝트 진행 시 발생하는 문의·민원의 처리
-									<!-- /react-text -->
+									
 								</td>
 							</tr>
 							<tr data-reactid="117">
 								<td data-reactid="118">
-									<!-- react-text: 119 -->
+									
 									은행명
-									<!-- /react-text -->
+									
 									<br data-reactid="120"/>
-									<!-- react-text: 121 -->
+									
 									계좌번호
-									<!-- /react-text -->
+									
 									<br data-reactid="122"/>
-									<!-- react-text: 123 -->
+									
 									예금주명
-									<!-- /react-text -->
+									
 									<br data-reactid="124"/>
-									<!-- react-text: 125 -->
+									
 									계좌종류(개인/사업자)
-									<!-- /react-text -->
+									
 									<br data-reactid="126"/>
-									<!-- react-text: 127 -->
+									
 									예금주 생년월일 또는 사업자번호
-									<!-- /react-text -->
+									
 								</td>
 								<td data-reactid="128">
 									펀딩금액 결제(프로젝트 성공 시)
@@ -184,30 +185,30 @@ const Privacy = () => (
 									프로젝트 밀어주기 과정에서 직접 입력
 								</td>
 								<td data-reactid="132">
-									<!-- react-text: 133 -->
+									
 									휴대전화번호
-									<!-- /react-text -->
+									
 									<br data-reactid="134"/>
-									<!-- react-text: 135 -->
+									
 									배송정보(실명, 배송지주소) (단 배송이 필요한 선물에 후원했을 경우)
-									<!-- /react-text -->
+									
 									<br data-reactid="136"/>
-									<!-- react-text: 137 -->
+									
 									결제카드 또는 계좌정보
-									<!-- /react-text -->
+									
 								</td>
 								<td data-reactid="138">
-									<!-- react-text: 139 -->
+									
 									후원금액 결제(프로젝트 성공 시)
-									<!-- /react-text -->
+									
 									<br data-reactid="140"/>
-									<!-- react-text: 141 -->
+									
 									선물전달
-									<!-- /react-text -->
+									
 									<br data-reactid="142"/>
-									<!-- react-text: 143 -->
+									
 									선물실행과 관련된 상담 및 민원처리
-									<!-- /react-text -->
+									
 								</td>
 							</tr>
 							</tbody>
@@ -234,7 +235,7 @@ const Privacy = () => (
 						<p data-reactid="157">
 							회사는 원칙적으로 개인정보수집에 대한 동의철회가 있거나 개인정보수집 및 이용목적이 달성된 후에는 해당정보를 지체 없이 파기합니다.
 						</p>
-						<div style="overflow:scroll;" data-reactid="158">
+						<div  data-reactid="158">
 							<table data-reactid="159">
 							<tbody data-reactid="160">
 							<tr data-reactid="161">
@@ -266,7 +267,7 @@ const Privacy = () => (
 						<p data-reactid="172">
 							회사는 &#x27;프로젝트 밀어주기&#x27;를 통한 후원 및 선물전달 서비스를 제공하기 위해, 보관하고 있는 개인정보 중 일부를 이용자의 사전동의 아래 제3자(프로젝트 진행자)에게 제공합니다.
 						</p>
-						<div style="overflow:scroll;" data-reactid="173">
+						<div  data-reactid="173">
 							<table data-reactid="174">
 							<thead data-reactid="175">
 							<tr data-reactid="176">
@@ -311,7 +312,7 @@ const Privacy = () => (
 						<p data-reactid="189">
 							또한 회사는 원활한 서비스 제공을 위해 특정 업무에 대해 다음과 같이 개인정보를 처리 · 위탁하고 있습니다.
 						</p>
-						<div style="overflow:scroll;" data-reactid="190">
+						<div data-reactid="190">
 							<table data-reactid="191">
 							<thead data-reactid="192">
 							<tr data-reactid="193">
@@ -448,13 +449,13 @@ const Privacy = () => (
 							회원 및 법정대리인은 언제든지 등록되어 있는 자신 또는 대리자의 개인정보를 조회하거나 수정할 수 있으며, 회원탈퇴절차를 통해 가입해지를 요청할 수도 있습니다.
 						</p>
 						<p data-reactid="241">
-							<!-- react-text: 242 -->
+							
 							회원 혹은 대리인의 개인정보 조회, 수정을 위해서는 홈페이지의 &#x27;마이페이지&#x27; 내의 &#x27;정보변경&#x27;을 이용할 수 있습니다. 가입해지(동의철회)를 위해서는 성명과 아이디(가입 시 기재한 이메일)를 탈퇴의사와 함께 &#x27;문의하기&#x27;에 게시하거나 동일한 내용을 기재하여 
-							<!-- /react-text -->
+							
 							<a href="mailto:support@tumblbug.com" data-reactid="243">support@tumblbug.com</a>
-							<!-- react-text: 244 -->
+							
 							으로 이메일을 보내주시기 바랍니다. 이외에도 회사의 개인정보관리책임자에게 서면, 전화 또는 이메일로 연락하시면 지체 없이 조치하겠습니다.
-							<!-- /react-text -->
+							
 						</p>
 						<p data-reactid="245">
 							회원이 개인정보의 오류에 대한 정정을 요청하신 경우에는 정정을 완료하기 전까지 당해 개인정보를 이용 · 제공하지 않습니다.
@@ -483,7 +484,7 @@ const Privacy = () => (
 						<p data-reactid="257">
 							회원의 개인정보를 보호하고 개인정보와 관련된 불만을 처리하기 위하여 회사는 개인정보관리책임자를 두고 있습니다. 회원의 개인정보와 관련한 문의사항은 아래의 개인정보관리책임자에게 연락하여 주시기 바랍니다.
 						</p>
-						<div style="overflow:scroll;" data-reactid="258">
+						<div  data-reactid="258">
 							<table data-reactid="259">
 							<thead data-reactid="260">
 							<tr data-reactid="261">
@@ -516,7 +517,7 @@ const Privacy = () => (
 						<p data-reactid="271">
 							기타 개인정보에 관한 신고나 상담이 필요한 경우에는 개인정보침해신고센터, 경찰청사이버안전국, 청 사이버수사과 등으로 문의하실 수 있습니다.
 						</p>
-						<div style="overflow:scroll;" data-reactid="272">
+						<div  data-reactid="272">
 							<table data-reactid="273">
 							<tbody data-reactid="274">
 							<tr data-reactid="275">

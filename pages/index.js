@@ -62,9 +62,7 @@ const indexPageContent =
 
 
 export default function Index() {
-  return <Fragment>
-    <Layout children={indexPageContent} title='Home'></Layout>
-  </Fragment>;
+  return <Layout children={indexPageContent} title='Home' />
 };
 
 

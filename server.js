@@ -15,8 +15,40 @@ app.prepare()
         app.render(req, res, actualPage, queryParams)
     })
 
-    server.get('/agreements', (req, res) => {
-        const actualPage = '/project/Agreements'
+    server.get('/p/:id', (req, res) => {
+        const actualPage = '/project'
+        const queryParams =  { title: req.params.id }
+        app.render(req, res, actualPage, queryParams)
+    })
+
+    server.get('/login', (req, res) => {
+        const actualPage = '/login'
+        const queryParams =  { title: req.params.id }
+        app.render(req, res, actualPage, queryParams)
+    })
+
+    server.get('/find', (req, res) => {
+        const actualPage = '/login/find'
+        const queryParams =  { title: req.params.id }
+        app.render(req, res, actualPage, queryParams)
+    })
+
+
+    server.get('/join', (req, res) => {
+        const actualPage = '/login/join'
+        const queryParams =  { title: req.params.id }
+        app.render(req, res, actualPage, queryParams)
+    })
+
+    
+    server.get('/termsOfUse', (req, res) => {
+        const actualPage = '/components/main/TermsOfUse'
+        const queryParams =  { title: req.params.id }
+        app.render(req, res, actualPage, queryParams)
+    })
+
+    server.get('/notices', (req, res) => {
+        const actualPage = '/components/main/Notices'
         const queryParams =  { title: req.params.id }
         app.render(req, res, actualPage, queryParams)
     })

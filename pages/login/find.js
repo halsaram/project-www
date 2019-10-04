@@ -1,5 +1,7 @@
+import Layout from '../../components/Layout'
+
 const Find = () => (
-    <div>
+    <Layout>
         <div className="Membership__MembershipWrapper-o1o1he-0 irjBzn" data-reactid="40">
           <div className="Wrapper__MembershipBody-sc-140yq7-0 dgBlAy" data-reactid="41">
             <div className="UserVerification__ContentsBody-sc-1xwu76u-0 hXaxNc" data-reactid="42">
@@ -18,7 +20,8 @@ const Find = () => (
             </div>
           </div>
                 </div>
-    </div>
+    
+      </ Layout>
   );
   
   export default Find;
