@@ -1,7 +1,18 @@
+/**************************************************************************************
+ * 제목		      : 메인 풋터
+ * 소스파일 이름	: Footer.js
+ * 파일설명		   : 메인 풋터에서 해당 카테고리 클릭시 링크담당
+ * 작성자		   : 금정민
+ * 버전		      : 1.0.0
+ * 생성일자		   : 2019-10-03
+ * 최종수정일자 	: 2019-10-04
+ * 최종수정자	   : 이동호
+ * 최종수정내용	    : 공지사항, 개인정보처리방침(기존텀블벅->할사람으로 링크되게)
+**************************************************************************************/
 import Link from 'next/link';
 
 const Footer = () => (
-    <div className="_2nkoQovCMNDdKtTjNi5W_x SiteFooter__FooterWrapper-sc-160ijjw-2 kpoBQb" data-reactid="523">
+    <div className="_2nkoQovCMNDdKtTjNi5W_x S+-iteFooter__FooterWrapper-sc-160ijjw-2 kpoBQb" data-reactid="523">
         <div className="footer-grid _13KHfN73YmQgsYHxXvuh_J _1V4AsGFqT8un0KZo8QWVRL kKeFxbI9p0TnKvSk7DzSR _1gTQggGV_yO4HJ6p7pil3E _1UmvYpZQFDG3yh_HWxQaF9 SiteFooter__FooterColumnWrapper-sc-160ijjw-3 gUfPmS" data-reactid="524">
             <div className="footer-column grid-three _152MAijd_UogerBKCVqZR_ _1lLHKI5v9AoCyeggtffvGZ SiteFooter__FooterSubColumn-sc-160ijjw-4 ilwNes" data-reactid="525">
                 <a href="/notices" className="_3TJ2LNmiyFnXVggSgiKX5Q" rel="noopener noreferrer" data-reactid="526">
@@ -12,8 +23,8 @@ const Footer = () => (
                 <a href="https://www.notion.so/tumcorp/What-s-new-External-af33c52645094594b6bf8a101e686cae" className="_3TJ2LNmiyFnXVggSgiKX5Q" target="_blank" rel="noopener noreferrer" data-reactid="534">서비스 개선사항</a>
             </div>
             <div className="footer-column grid-four _152MAijd_UogerBKCVqZR_ _1lLHKI5v9AoCyeggtffvGZ SiteFooter__FooterSubColumn-sc-160ijjw-4 erxKKA" data-reactid="535">
-                <a className="_3TJ2LNmiyFnXVggSgiKX5Q" href="https://tumblbug.com/terms-of-use" data-reactid="536">이용약관</a><br data-reactid="537" />
-                <a className="_3TJ2LNmiyFnXVggSgiKX5Q" href="https://tumblbug.com/privacy" data-reactid="538">개인정보 처리방침</a><br data-reactid="539" />
+                <a className="_3TJ2LNmiyFnXVggSgiKX5Q" href="/termsOfUse" data-reactid="536">이용약관</a><br data-reactid="537" />
+                <a className="_3TJ2LNmiyFnXVggSgiKX5Q" href="/privacy" data-reactid="538">개인정보 처리방침</a><br data-reactid="539" />
                 <a className="_3TJ2LNmiyFnXVggSgiKX5Q" href="https://tumblbug.com/help/fees" data-reactid="540">수수료 정책</a><br data-reactid="541" />
                 <a href="https://help.tumblbug.com/" className="_3TJ2LNmiyFnXVggSgiKX5Q" target="_blank" data-reactid="542">헬프 센터</a>
             </div>

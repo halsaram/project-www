@@ -9,7 +9,7 @@
  * 최종수정자	   : 이동호
  * 최종수정내용	    : 
 **************************************************************************************/
-const TermsOfUuse = () => (
+const TermsOfUse = () => (
 <div className="Policy-sc-1gd59w7-0 fWdFEE" data-reactid="50">
 						<header data-reactid="51">
 						<h1 data-reactid="52">텀블벅 웹사이트 이용약관</h1>
@@ -994,11 +994,7 @@ const TermsOfUuse = () => (
 							본 약관은 프로젝트의 시작일을 기준으로 적용되며 2017년 12월 26일부터 시행됩니다.
 						</p>
 					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
+
 );
 
 export default TermsOfUse;

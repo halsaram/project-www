@@ -9,16 +9,14 @@ app.prepare()
 .then(() => {
     const server = express()
 
-    server.get('/start', (req, res) => {
-        const actualPage = '/project'
-        const queryParams =  { title: req.params.id }
-        app.render(req, res, actualPage, queryParams)
+    server.get('/', (req, res) => {
+        const actualPage = '/'
+        app.render(req, res, actualPage)
     })
 
-    server.get('/p/:id', (req, res) => {
+    server.get('/p', (req, res) => {
         const actualPage = '/project'
-        const queryParams =  { title: req.params.id }
-        app.render(req, res, actualPage, queryParams)
+        app.render(req, res, actualPage)
     })
 
     server.get('/login', (req, res) => {
@@ -40,18 +38,7 @@ app.prepare()
         app.render(req, res, actualPage, queryParams)
     })
 
-    
-    server.get('/termsOfUse', (req, res) => {
-        const actualPage = '/components/main/TermsOfUse'
-        const queryParams =  { title: req.params.id }
-        app.render(req, res, actualPage, queryParams)
-    })
 
-    server.get('/notices', (req, res) => {
-        const actualPage = '/components/main/Notices'
-        const queryParams =  { title: req.params.id }
-        app.render(req, res, actualPage, queryParams)
-    })
 
     server.get('*', (req, res) => {
         return handle(req, res)
@@ -66,3 +53,4 @@ app.prepare()
     console.error(ex.stack)
     process.exit(1)
 })
+``

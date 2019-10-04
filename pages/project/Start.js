@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
 const ProjectLink = (props) => (
-    <Link href={`/p?id=${props.id}`}>
+    <Link as='/p' href={`/project?id=${props.id}&title=정책`}>
         <button className="sc-1x93b2b-0-Button-kDSBcD jxJcyR" data-reactid="57">{props.title}</button>
     </Link>
 )
@@ -10,7 +10,6 @@ const Start = () => (
     <div>
         <div data-reactid="39">
             <div data-reactid="40">
-             
                 <main data-reactid="42">
                 <div className="ProjectStartHero__HeroWrapper-ps7c1s-0 bbgJFn" data-reactid="43">
                     <div className="ProjectStartHero__HeroBackgroundLeft-ps7c1s-1 cpLXQd" data-reactid="44">
