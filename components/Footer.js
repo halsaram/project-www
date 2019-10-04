@@ -1,8 +1,10 @@
+import Link from 'next/link';
+
 const Footer = () => (
     <div className="_2nkoQovCMNDdKtTjNi5W_x SiteFooter__FooterWrapper-sc-160ijjw-2 kpoBQb" data-reactid="523">
         <div className="footer-grid _13KHfN73YmQgsYHxXvuh_J _1V4AsGFqT8un0KZo8QWVRL kKeFxbI9p0TnKvSk7DzSR _1gTQggGV_yO4HJ6p7pil3E _1UmvYpZQFDG3yh_HWxQaF9 SiteFooter__FooterColumnWrapper-sc-160ijjw-3 gUfPmS" data-reactid="524">
             <div className="footer-column grid-three _152MAijd_UogerBKCVqZR_ _1lLHKI5v9AoCyeggtffvGZ SiteFooter__FooterSubColumn-sc-160ijjw-4 ilwNes" data-reactid="525">
-                <a href="https://tumblbug.com/notices" className="_3TJ2LNmiyFnXVggSgiKX5Q" rel="noopener noreferrer" data-reactid="526">
+                <a href="/notices" className="_3TJ2LNmiyFnXVggSgiKX5Q" rel="noopener noreferrer" data-reactid="526">
                     공지사항
             </a><br data-reactid="529" />
                 <a href="https://www.rocketpunch.com/companies/tumblbug/jobs" className="_3TJ2LNmiyFnXVggSgiKX5Q" target="_blank" rel="noopener noreferrer" data-reactid="530">채용</a><br data-reactid="531" />
