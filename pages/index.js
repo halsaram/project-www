@@ -5,18 +5,18 @@
  * 작성자		     : 금정민
  * 버전		      : 1.0.0
  * 생성일자		   : 2019-10 ~
- * 최종수정일자 	: 2019-10-03
- * 최종수정자	   : 금정민
- * 최종수정내용	  : 임시데이터를 생성하여 각각의 컴포넌트에 데이터를 전달하고 값이 제대로 전달되는지 테스트코드 작성 
+ * 최종수정일자 	: 2019-10-07
+ * 최종수정자	   : 정휘선
+ * 최종수정내용	  : import main 루트 수정
 **************************************************************************************/
 
 import Link from 'next/link';
 import { Fragment } from 'react';
 import Layout from '../components/Layout'
-import Main_Banner from '../components/main/Main_Banner'
-import Lower_Banner from '../components/main/Lower_Banner'
-import MainList from '../components/main/MainList'
-import CatoList from '../components/main/CatoList'
+import Main_Banner from './main/Main_Banner'
+import Lower_Banner from './main/Lower_Banner'
+import MainList from './main/MainList'
+import CatoList from './main/CatoList'
 
 // 임시 데이터------------------------------------------------------------------------
 //map반복문을 통해 a,b,c에 적절한 인덱스의 데이터를 담음
