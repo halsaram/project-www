@@ -53,7 +53,7 @@ export default class Layout extends React.Component {
             rel="stylesheet"
             href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/semantic.min.css"
           />
-          <title>{title}</title>
+          <title>{title} :: Halsaram</title>
         </Head>
 
         <Header />

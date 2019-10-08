@@ -9,9 +9,10 @@
  * 최종수정자	   : 금정민
  * 최종수정내용	    : components의 main폴더로 이동 및 코드 정리
 **************************************************************************************/
+import Link from 'next/link';
 
-const Banner = () => (
-    <div>
+const BannerLink = (props) => (
+    <Link as='/p' href={`/project?id=start&title=프로젝트 시작하기`}>
         <a href="https://tumblbug.com/start" data-reactid="513">
             <div className="ProjectStartBanner__ProjectStartBannerWrapper-i0c0cd-0 gOFdsx" data-reactid="514">
                 <div className="ProjectStartBanner-i0c0cd-1 iNfKax" data-reactid="515">
@@ -24,6 +25,12 @@ const Banner = () => (
                 </div>
             </div>
         </a>
+    </Link>
+)
+
+const Banner = () => (
+    <div>
+        <BannerLink />
     </div>
   );
   
