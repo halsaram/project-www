@@ -44,10 +44,10 @@ module.exports = {
     //
     development: {
       host: "",
-      port: 22003,
+      port: 22000,
       gas: 4500000,
       gasPrice: 0,
-      from: "0x3c8641b04a9cb7fb05af7f430261fd83efc6f063",
+      from: "0x24d5edaf138618115e14b5cd3dcbdb7efb71c937",
       network_id: "*", // Match any network id
     }
 

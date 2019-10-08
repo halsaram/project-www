@@ -38,14 +38,9 @@ const Start = () => (
                             텀블벅에서 현실로.
                             </h1>
                             <p className="ProjectStartHero__P-ps7c1s-6 benTAJ" data-reactid="53">
-                             
-                                크라우드펀딩으로 프로젝트를 위한 자금도 모으고,
-                              
-                                <br data-reactid="55"/>
-                     
-                                든든한 후원자 네트워크도 확보할 수 있습니다.
-                         
-                            </p>
+                              크라우드펀딩으로 프로젝트를 위한 자금도 모으고,
+                             <br data-reactid="55"/>
+                                든든한 후원자 네트워크도 확보할 수 있습니다. </p>
                             <ProjectLink id='agreements' title='지금 시작하기' />
                         </div>
                     </div>
@@ -56,35 +51,19 @@ const Start = () => (
                     <div className="ProjectStartIntro__Container-sc-1om8cg9-2 jBoPEt" data-reactid="60">
                         <div className="ProjectStartIntro__Contents-sc-1om8cg9-4 dCmXmu" data-reactid="61">
                             <h1 className="ProjectStartIntro__H1-sc-1om8cg9-3 cJnbKY" data-reactid="62">
-                         
-                            텀블벅에서 펀딩에 성공한
-                       
+                                 텀블벅에서 펀딩에 성공한
                             <br data-reactid="64"/>
-                        
-                            12,000
-                          
-                         
-                            개 프로젝트와 함께 하세요.
-                 
-                            </h1>
+                                 12,000
+                                 개 프로젝트와 함께 하세요.</h1>
                             <p data-reactid="67">
-                    
                                 디자인, 영화, 게임, 출판, 요리, 패션, 이벤트 …
-                             
                                 <br data-reactid="69"/>
-                         
                                 분야를 가릴 것 없이 수많은 창작자와 창업자들의 프로젝트들이 매일같이 올라오는 텀블벅은 한국에서 가장 활성화된 크라우드펀딩 커뮤니티입니다. 지금껏 
-                          
-                         
                                 12,000
-                          
                                 개 넘는 창조적인 시도들이 
-                       
                                 70만 명
-                          
                                 의 후원자를 만나 세상에 나왔습니다.
-                         
-                            </p>
+                             </p>
                         </div>
                     </div>
                 </div>
@@ -147,12 +126,8 @@ const Start = () => (
                                     시작하는 창작자에게 텀블벅은 지원금, 공모전 등의 방식들보다 훨씬 자율적이고 독립적으로 나와 내 작업을 알릴 수 있는 새로운 길입니다. 이미 콘텐츠와 팬층을 확보한 작가라면 신선한 기획을 통해 팬들을 만나는 새로운 창구를 열어보는 건 어떨까요?
                                 </p>
                                 <a className="PersonaCard__CollectionLink-jt00bv-5 ezwhCy" target="_blank" rel="noopener noreffer" href="collections/creative.html" color="#FFE6E6" data-reactid="109">
-                          
-                                창작자
-                       
-                                    성공사례 보기
-                             
-                                </a>
+                                    창작자
+                                    성공사례 보기 </a>
                             </div>
                             <div className="PersonaCard__CardWrapper-jt00bv-0 kaUpoK" data-reactid="112">
                                 <h4 className="PersonaCard__H4-jt00bv-1 jDnPwU" data-reactid="113">브랜드</h4>
@@ -163,12 +138,8 @@ const Start = () => (
                                     브랜드에 이목을 집중시키는 스토리를 통해 마케팅 효과를 극대화할 수 있습니다. 트렌디하면서도 개인의 취향과 가치가 강조되는 새로운 참여형 소비 창구로 각광받는 텀블벅에서 모인 후원자들의 신뢰는 일반 이커머스에서보다 훨씬 깊고 오래 가는 팬 베이스가 되어줄 것입니다.
                                 </p>
                                 <a className="PersonaCard__CollectionLink-jt00bv-5 hNzPyi" target="_blank" rel="noopener noreffer" href="collections/brands.html" color="#E6EDFF" data-reactid="117">
-                          
-                                브랜드
-                             
-                                    성공사례 보기
-                        
-                                </a>
+                                     브랜드
+                                    성공사례 보기</a>
                             </div>
                             <div className="PersonaCard__CardWrapper-jt00bv-0 kaUpoK" data-reactid="120">
                                 <h4 className="PersonaCard__H4-jt00bv-1 jDnPwU" data-reactid="121">캠페인</h4>
@@ -179,12 +150,8 @@ const Start = () => (
                                     언론이나 소셜미디어에서 떠오르는 이슈들을 구체적인 행동으로 전환시키는 데에 텀블벅 프로젝트가 제격입니다. 새롭고 젊은 정치참여·사회운동 방식으로 주목받는 텀블벅 펀딩으로 더 많은 지지자를 얻고, 사회적 목소리를 증폭시켜보세요.
                                 </p>
                                 <a className="PersonaCard__CollectionLink-jt00bv-5 jlgZnv" target="_blank" rel="noopener noreffer" href="collections/campaigns.html" color="#DFF8FC" data-reactid="125">
-                       
-                                캠페인
-                   
-                                    성공사례 보기
-                        
-                                </a>
+                                     캠페인
+                                     성공사례 보기</a>
                             </div>
                         </div>
                     </div>
@@ -206,13 +173,9 @@ const Start = () => (
                                 <h4 className="BenefitCard__H4-uzpv8r-1 fTenPj" data-reactid="137">성공을 돕는 리소스</h4>
                                 <p className="BenefitCard__P-uzpv8r-2 gXONoP" data-reactid="138">
                                     <span data-reactid="139">
-                               
-                                    펀딩 시작 전, 각 분야의 생태를 잘 아는 에디터가 프로젝트를 검토하고 피드백을 드립니다. 
-                                   
+                                         펀딩 시작 전, 각 분야의 생태를 잘 아는 에디터가 프로젝트를 검토하고 피드백을 드립니다. 
                                     <a href="https://help.tumblbug.com/hc/ko/categories/115001047328" target="_blank" rel="noreferrer noopener" data-reactid="141">헬프센터 내 창작자 센터</a>
-                                  
-                                    에는 각 단계별 성공을 위한 꼼꼼한 도움말이 준비되어 있습니다.
-                               
+                                        에는 각 단계별 성공을 위한 꼼꼼한 도움말이 준비되어 있습니다.
                                     </span>
                                 </p>
                             </div>
@@ -229,29 +192,19 @@ const Start = () => (
                     <div className="ProjectStartFooter__Container-sc-18dq96f-1 blslEv" data-reactid="147">
                         <h2 className="ProjectStartFooter__H2-sc-18dq96f-2 cfvqvB" data-reactid="148">프로젝트를 만들어보세요!</h2>
                         <p className="ProjectStartFooter__Contents-sc-18dq96f-3 iZqDUx" data-reactid="149">
-                      
                             직관적인 프로젝트 편집 도구로 곧바로 작성을 시작할 수 있습니다.
-                          
-                            <br data-reactid="151"/>
-                      
+                          <br data-reactid="151"/>
                             프로젝트를 공개할 준비가 되었을 때 에디터의 검토를 거치면 됩니다.
-                         
-                            <br data-reactid="153"/>
-                           
+                         <br data-reactid="153"/>
                             궁금한 점이 있으면 언제든지 
-                         
-                            <a className="ProjectStartFooter__A-sc-18dq96f-5 fXirit" href="https://help.tumblbug.com/hc/ko/requests/new" target="_blank" rel="noopener noreffer" data-reactid="155">문의를 남겨주세요.</a>
+                         <a className="ProjectStartFooter__A-sc-18dq96f-5 fXirit" href="https://help.tumblbug.com/hc/ko/requests/new" target="_blank" rel="noopener noreffer" data-reactid="155">문의를 남겨주세요.</a>
                         </p>
                         <ProjectLink id='agreements' title='지금 시작하기' />
                         <p className="ProjectStartFooter__P-sc-18dq96f-4 ibgRhB" data-reactid="157">
-                         
                             제휴·협력 문의는
-                       
-                            <br data-reactid="159"/>
+                        <br data-reactid="159"/>
                             <a className="ProjectStartFooter__A-sc-18dq96f-5 fXirit" href="mailto:partnership@tumblbug.com" target="_blank" rel="noopener noreffer" data-reactid="160">partnership@tumblbug.com</a>
-                           
-                                으로 부탁드립니다.
-                           
+                            으로 부탁드립니다.
                         </p>
                     </div>
                 </div>

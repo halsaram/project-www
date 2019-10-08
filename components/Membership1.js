@@ -23,7 +23,7 @@ const Base = () => (
                         <button class="Button-sc-1x93b2b-0 ijDFDl" type="submit" label="로그인하기" style="margin: 20px 0px; height: 45px;">로그인</button>
                         <a class="SignIn__StyledLink-sc-9xfg6a-1 bKTrQD" href="/join?redirection=/">
                             <span style="color: rgb(117, 117, 117);">아직 계정이 없으신가요?</span>
-                            <!-- react-text: 2075 -->
+                            
             텀블벅 가입하기<!-- /react-text --></a>
             </form>
                     <div style="text-align: center; margin-top: 40px;">
@@ -31,4 +31,5 @@ const Base = () => (
                     </div>
         </div>
     </div>
-            );
+
+);

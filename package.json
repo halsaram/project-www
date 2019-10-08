@@ -13,11 +13,13 @@
     "react-dom": "^16.9.0",
     "react-slideshow-image": "^1.3.0",
     "semantic-ui-react": "^0.88.1",
-    "truffle": "^5.0.39",
+    "truffle": "4",
+    "truffle-contract": "3",
     "web3": "^1.2.1"
   },
   "scripts": {
     "dev": "node server.js",
+    "test": "node test1.js",
     "build": "next build",
     "start": "NODE_ENV=production node server.js"
   }

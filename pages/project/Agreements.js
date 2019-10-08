@@ -54,7 +54,6 @@ const Agreements = () => (
             </ul>
             <ProjectLink id='summary' title='계속하기' />
         </form>
-        
     </div>
 );
 
