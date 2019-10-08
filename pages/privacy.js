@@ -1,6 +1,6 @@
 import Layout from '../components/Layout'
 
-import Privacy from '../components/main/Privacy'
+import Privacy from './main/Privacy'
 
 import './style.css'
 

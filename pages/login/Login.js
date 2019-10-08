@@ -43,7 +43,7 @@ const Login = () => (
 							</a></Link>
 						</form>
 						<div data-reactid="63">
-							<Link as='log' href='/login?id=find'><a data-reactid="64">혹시 비밀번호를 잊으셨나요?</a></Link>
+							<Link as='log' href='/login?id=find&title=비밀번호찾기'><a data-reactid="64">혹시 비밀번호를 잊으셨나요?</a></Link>
 						</div>
 					</div>
 				</div>

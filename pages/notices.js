@@ -1,6 +1,6 @@
 import Layout from '../components/Layout'
 
-import Notices from '../components/main/Notices'
+import Notices from './main/Notices'
 
 import './style.css'
 

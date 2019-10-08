@@ -50,7 +50,6 @@ async function test2() {
 	        console.log("==================================");
 	        console.log(result);
 	});*/
-
     try {
 		await crudInstance.insertUser(0x1d342d4f1ff9a12c52d6a715f910a47ad111369a, "b@a.com", 10, 1000, { from: myaddr, gas: 4500000 })
     }
