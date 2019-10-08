@@ -72,3 +72,4 @@ async function test2() {
     console.log('user total ==>', total.toNumber());
 }
 test2()
+
