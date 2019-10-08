@@ -9,6 +9,7 @@ export default function About() {
 export default () => (
   <div>
     <p>This is the start page</p>
+    <p>This is the start page</p>
   </div>
 )
 
