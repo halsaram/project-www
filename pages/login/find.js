@@ -1,7 +1,22 @@
+/**************************************************************************************
+ * 제목          : 비밀번호찾기 페이지
+ * 소스파일 이름  : pages/login/find.js
+ * 파일설명		   : 비밀번호 찾기 페이지
+ * 작성자		     : 최다올
+ * 버전		      : 1.0.0
+ * 생성일자		   : 2019-10-02
+ * 최종수정일자 	: 2019-10-07
+ * 최종수정자	   : 최다올
+ * 최종수정내용	  : 인덱스와 연결
+**************************************************************************************/
+
+
+
+
 import Layout from '../../components/Layout'
 
 const Find = () => (
-    <Layout>
+    
         <div className="Membership__MembershipWrapper-o1o1he-0 irjBzn" data-reactid="40">
           <div className="Wrapper__MembershipBody-sc-140yq7-0 dgBlAy" data-reactid="41">
             <div className="UserVerification__ContentsBody-sc-1xwu76u-0 hXaxNc" data-reactid="42">
@@ -21,7 +36,6 @@ const Find = () => (
           </div>
                 </div>
     
-      </ Layout>
   );
   
   export default Find;

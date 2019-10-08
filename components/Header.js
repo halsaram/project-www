@@ -45,7 +45,7 @@ const HeaderBar = () => (
                             </div> */}
                             <div className="SiteHeader__RightMenu-q8dvod-4 cLNJqs" data-reactid="33">
                                 <button className="SiteHeader__SearchButton-q8dvod-13 hmmaSW Button-sc-1x93b2b-0 eFQBDO" data-reactid="34"></button>
-                                <Link href= '/login'>
+                                <Link as='/log' href= '/login?id=login&title=로그인'>
                                     <a className="q8dvod-5-SiteHeader__ButtonLink-ktApHV kGropT"  data-reactid="35">
                                         <span className="SiteHeader__ItemLabel-q8dvod-8 hWygls" data-reactid="36">로그인 / 회원가입</span>
                                         <Image circular src='http://placehold.it/40x40' />

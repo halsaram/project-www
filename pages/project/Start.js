@@ -130,7 +130,7 @@ const Start = () => (
                             </div>
                         </div>
                         <div className="ProjectStartGuide__ButtonWrapper-higy7q-5 gqxKYm" data-reactid="98">
-                            <button className="sc-1x93b2b-0-Button-kDSBcD cbjLOD" data-reactid="99">프로젝트 올리기 시작하기</button>
+                            <ProjectLink id='agreements' title='프로젝트 올리기 시작하기' />
                         </div>
                     </div>
                 </div>
@@ -242,7 +242,7 @@ const Start = () => (
                          
                             <a className="ProjectStartFooter__A-sc-18dq96f-5 fXirit" href="https://help.tumblbug.com/hc/ko/requests/new" target="_blank" rel="noopener noreffer" data-reactid="155">문의를 남겨주세요.</a>
                         </p>
-                        <button className="sc-1x93b2b-0-Button-kDSBcD jxJcyR" data-reactid="156">지금 시작하기</button>
+                        <ProjectLink id='agreements' title='지금 시작하기' />
                         <p className="ProjectStartFooter__P-sc-18dq96f-4 ibgRhB" data-reactid="157">
                          
                             제휴·협력 문의는

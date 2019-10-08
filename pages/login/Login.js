@@ -1,3 +1,16 @@
+/**************************************************************************************
+ * 제목          : 로그인 메인
+ * 소스파일 이름  : pages/login/Login.js
+ * 파일설명		   : 로그인 메인화면페이지
+ * 작성자		     : 최다올
+ * 버전		      : 1.0.0
+ * 생성일자		   : 2019-10-02
+ * 최종수정일자 	: 2019-10-07
+ * 최종수정자	   : 최다올
+ * 최종수정내용	  : 인덱스와 연결
+**************************************************************************************/
+
+
 import Link from 'next/link';
 
 const Login = () => (
@@ -23,14 +36,14 @@ const Login = () => (
 							<label class="SignIn__HiddenLabel-sc-9xfg6a-0 gqtUOr" for="password" data-reactid="57">비밀번호</label>
 							<input type="password" class="Input-sc-1x48dls-0 iWoXIb" id="password" aria-label="비밀번호" placeholder="비밀번호 입력" autocomplete="current-password" required="" autocapitalize="off" autocorrect="off" spellcheck="off" name="password" value="" data-reactid="58"/>
 							<button class="Button-sc-1x93b2b-0 ijDFDl" type="submit" label="로그인하기"  data-reactid="59">로그인</button>
-							<Link href='/join'><a class="SignIn__StyledLink-sc-9xfg6a-1 bKTrQD" data-reactid="60"><span data-reactid="61">아직 계정이 없으신가요?</span>
+							<Link as='/join' href='/join?id=join'><a class="SignIn__StyledLink-sc-9xfg6a-1 bKTrQD" data-reactid="60"><span data-reactid="61">아직 계정이 없으신가요?</span>
 							
 							 할사람 가입하기
 				   	
 							</a></Link>
 						</form>
 						<div data-reactid="63">
-							<Link href='/find'><a data-reactid="64">혹시 비밀번호를 잊으셨나요?</a></Link>
+							<Link as='log' href='/login?id=find'><a data-reactid="64">혹시 비밀번호를 잊으셨나요?</a></Link>
 						</div>
 					</div>
 				</div>

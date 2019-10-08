@@ -19,26 +19,15 @@ app.prepare()
         app.render(req, res, actualPage)
     })
 
-    server.get('/login', (req, res) => {
+    server.get('/log', (req, res) => {
         const actualPage = '/login'
-        const queryParams =  { title: req.params.id }
-        app.render(req, res, actualPage, queryParams)
+        app.render(req, res, actualPage)
     })
-
-    server.get('/find', (req, res) => {
-        const actualPage = '/login/find'
-        const queryParams =  { title: req.params.id }
-        app.render(req, res, actualPage, queryParams)
-    })
-
 
     server.get('/join', (req, res) => {
-        const actualPage = '/login/join'
-        const queryParams =  { title: req.params.id }
-        app.render(req, res, actualPage, queryParams)
+        const actualPage = '/join'
+        app.render(req, res, actualPage)
     })
-
-
 
     server.get('*', (req, res) => {
         return handle(req, res)

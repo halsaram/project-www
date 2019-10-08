@@ -1,6 +1,6 @@
 import Layout from '../components/Layout'
 
-import TermsOfUse from '../components/main/TermsOfUse'
+import TermsOfUse from './main/TermsOfUse'
 
 import './style.css'
 
