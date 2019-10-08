@@ -10,7 +10,7 @@ sudo apt-get update && sudo apt-get install yarn
 
 ## Start
 1. yarn
-2. yarn dev
+1. yarn dev
 
 ## Quorum-examples
 ### Running with Docker
@@ -19,7 +19,13 @@ sudo apt-get update && sudo apt-get install yarn
     - If your Docker distribution does not contain `docker-compose`, follow [this](https://docs.docker.com/compose/install/) to install Docker Compose
     - Make sure your Docker daemon has at least 4G memory
     - Required Docker Engine 18.02.0+ and Docker Compose 1.21+
+    
 1. Download and run `docker-compose`
+   ```sh
+   curl -L "https://github.com/docker/compose/releases/download/1.22.0/docker-compose-$(uname -s)-$(uname -m)" > ./docker-compose
+   sudo mv ./docker-compose /usr/bin/docker-compose
+   sudo chmod +x /usr/bin/docker-compose
+   ```
    ```sh
    git clone https://github.com/jpmorganchase/quorum-examples
    cd quorum-examples
