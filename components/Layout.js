@@ -33,6 +33,7 @@ export default class Layout extends React.Component {
           <meta data-react-helmet="true" name="twitter:url" content="https://www.tumblbug.com/" />
           <meta data-react-helmet="true" name="twitter:title" content="텀블벅 tumblbug" />
           <meta data-react-helmet="true" name="twitter:description" content="모든 사람의 창조적인 시도를 위한 크라우드펀딩 플랫폼" />
+          
           <link rel="dns-prefetch" href="https://tumblbug-assets.imgix.net/" />
           <link rel="dns-prefetch" href="https://tumblbug-pci2.imgix.net/" />
           <link rel="dns-prefetch" href="https://tumblbug-psi.imgix.net/" />
