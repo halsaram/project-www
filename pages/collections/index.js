@@ -1,11 +1,13 @@
 import Layout from '../../components/Layout'
-import Join from './Join'
-import MailJoin from './mailjoin'
+import Creative from './creative'
+import Brands from './brands'
+import Campaigns from './campaigns'
 
-const JoinPageContent = (props) =>
+const CollectionsPageContent = (props) =>
     <div>
-        {props.url.query.id == 'join' && <Join />}
-        {props.url.query.id == 'mailjoin' && <MailJoin />}
+        {props.url.query.id == 'creative' && <Creative />}
+        {props.url.query.id == 'brands' && <Brands />}
+        {props.url.query.id == 'campaigns' && <Campaigns />}
     </div>;
 
 export default (props) => (

@@ -19,6 +19,11 @@ app.prepare()
         app.render(req, res, actualPage)
     })
 
+    server.get('/collections', (req, res) => {
+        const actualPage = '/collections'
+        app.render(req, res, actualPage)
+    })
+
     server.get('/log', (req, res) => {
         const actualPage = '/login'
         app.render(req, res, actualPage)
