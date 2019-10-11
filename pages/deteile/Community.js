@@ -14,6 +14,7 @@ import Link from 'next/link';
 
 
 const Community = () => (
+    <div>
 		<div className="ProjectIntroduction__ProjectIntroductionBackground-sc-1o2ojgb-0 gsZkXT">
 				<div className="Container-gci8y7-0 MskhC">
 					<div className="ProjectIntroduction__ProjectIntroductionWrapper-sc-1o2ojgb-1 bnFLKn">
@@ -115,15 +116,20 @@ const Community = () => (
 						</div>
 					</div>
 				</div>
+                
 				<div id="contentsNavigation">
-					<span style="font-size: 0px;"></span><nav className="ContentsNavigation__ProjectContentsNavigation-mwsx7i-1 jABjId">
-					<div className="ContentsNavigation__ProjectContentsNavigationInner-mwsx7i-2 OvVKa">
-						<div className="ContentsNavigation__NavLeft-mwsx7i-3 buZwam">
-							<a className="ContentsNavigation__NavItem-mwsx7i-0 cjInbB" href="https://tumblbug.com/dam_baek/story" style="">스토리</a><a className="ContentsNavigation__NavItem-mwsx7i-0 cjInbB" href="https://tumblbug.com/dam_baek/community" style="color: rgb(0, 0, 0); border-bottom: 3px solid rgb(0, 0, 0); padding-bottom: calc(0.5rem - 3px);">
-				
-							커뮤니티
-							
-							<span className="ContentsNavigation__CommunityPostAmount-mwsx7i-6 jXWmuN">1</span></a><a className="ContentsNavigation__NavItem-mwsx7i-0 cjInbB" href="https://tumblbug.com/dam_baek/policy">펀딩 안내</a>
+				    <nav className="ContentsNavigation__ProjectContentsNavigation-mwsx7i-1 jABjId">
+					    <div className="ContentsNavigation__ProjectContentsNavigationInner-mwsx7i-2 OvVKa">
+						    <div className="ContentsNavigation__NavLeft-mwsx7i-3 buZwam">
+                                <Link as='/p' href='/project?id=story&title=스토리'>
+						    	    <a className="ContentsNavigation__NavItem-mwsx7i-0 cjInbB">스토리</a>
+                                </Link>
+                               <Link as='/p' href='/project?id=Community&title=커뮤니티'>
+                                    <a className="ContentsNavigation__NavItem-mwsx7i-0 cjInbB">커뮤니티</a>
+                                </Link>
+                                <Link as='/p' href='/project?id=FundingG</Link>uide&title=펀딩안내'>
+	                                <a className="ContentsNavigation__NavItem-mwsx7i-0 cjInbB">펀딩 안내</a>
+                                </Link>
 						</div>
 					</div>
 					</nav>
@@ -180,7 +186,7 @@ const Community = () => (
 															</div>
 														</div>
 													</div>
-													<div className="CommunityPostSummaryCard__ContentsWrapper-sc-3xh5y6-12 cdzcXK" style="cursor: pointer;">
+													<div className="CommunityPostSummaryCard__ContentsWrapper-sc-3xh5y6-12 cdzcXK">
 														<div>
 															<div className="CommunityPostSummaryCard__Contents-sc-3xh5y6-14 gnqHud">
 																<div className="storyContent">
@@ -189,7 +195,7 @@ const Community = () => (
 															</div>
 														</div>
 													</div>
-													<div className="CommunityPostSummaryCard__Actions-sc-3xh5y6-16 fuuiFa" style="cursor: pointer;">
+													<div className="CommunityPostSummaryCard__Actions-sc-3xh5y6-16 fuuiFa">
 														<i className="_30LNYFhw6qsigZSbwlGCDz _1QY7TzdLHKX3-BKPDNNYKF"></i>
 														
 														
@@ -437,11 +443,7 @@ const Community = () => (
 						</div>
 					</div>
 				</div>
-			</div>
-		</div>
-	</div>
-</div>
-
+            </div>
 );
 
 export default Community;
