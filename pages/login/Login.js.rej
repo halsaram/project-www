@@ -1,0 +1,36 @@
+diff a/pages/login/Login.js b/pages/login/Login.js	(rejected hunks)
+@@ -9,15 +9,28 @@
+  * 최종수정자	   : 최다올
+  * 최종수정내용	  : 인덱스와 연결!
+ **************************************************************************************/
+-
+-import { Logininput } from './logininput'
++import React, { Component } from 'react'
+ import Link from 'next/link';
++import { Form } from 'semantic-ui-react'
++
++// import { Logininput } from './logininput'
++
++class Login extends Component {
++	state = { name: '', email: '', submittedName: '', submittedEmail: '' }
++
++	handleChange = (e, { name, value }) => this.setState({ [name]: value })
++
++	handleSubmit = () => {
++		const { name, email } = this.state
+ 
+-const Login = () => (
+-	
++		this.setState({ submittedName: name, submittedEmail: email })
++	}
+ 
+-    <div>
+-		<div className="Membership__MembershipWrapper-o1o1he-0 irjBzn" data-reactid="40">
++	render() {
++	const { name, email, submittedName, submittedEmail } = this.state
++		return (
++			<div>
++				<div className="Membership__MembershipWrapper-o1o1he-0 irjBzn" data-reactid="40">
+ 					<div className="Wrapper__MembershipBody-sc-140yq7-0 dgBlAy" data-reactid="41">
+ 						<div data-reactid="42">
+ 							<a className="SocialButton__SocialLink-sc-7k5r2h-0 hKfrnB"  data-reactid="43"><i className="_1uz2PaH_Pc163IQLnwFtm8 _1oJMWnMCW_Y6GmNc1mhqaW _1QY7TzdLHKX3-BKPDNNYKF" data-reactid="44"></i>
