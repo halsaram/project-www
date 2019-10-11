@@ -5,6 +5,7 @@ import Find from './find'
 
 const LoginPageContent = (props) => (
    <div>
+    {props.url.query.id == null && <Login />}
     {props.url.query.id == 'login' && <Login />}
     {props.url.query.id == 'find' && <Find />}
   </div>
