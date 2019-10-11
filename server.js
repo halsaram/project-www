@@ -34,6 +34,11 @@ app.prepare()
         app.render(req, res, actualPage)
     })
 
+    server.get('/d', (req, res) => {
+        const actualPage = '/deteile'
+        app.render(req, res, actualPage)
+    })
+
     server.get('*', (req, res) => {
         return handle(req, res)
     })

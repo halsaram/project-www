@@ -10,6 +10,7 @@
  * 최종수정내용	    : class->className으로 변경 및 props값이 전달되는지 임시 코드 테스트
 **************************************************************************************/
 import React from 'react';
+import Link from 'next/link';
 
 const MainList=(props)=> (
         <div>
@@ -33,7 +34,8 @@ const MainList=(props)=> (
                     <div data-reactid="104">
                         <div className="Carousel__CarouselContents-sc-72guw4-4 ibmRNI" data-reactid="105">
                             <div className="Carousel__Column-sc-72guw4-5 fpWFDE" data-reactid="106">
-                                <a className="ProjectItem__ProjectItemCard-j9emyg-0 ksIgbG" href="dfsfs" data-reactid="107">
+                                <Link as='/d' href='/d?id=story'>
+                                <a className="ProjectItem__ProjectItemCard-j9emyg-0 ksIgbG" data-reactid="107">
                                     <img className="ProjectItem__ProjectCoverimage-j9emyg-6 eaBarM" src="" alt="별토끼, 달토끼 일러스트 2020 캘린더 이미지" data-reactid="108"/>
                                     <div className="ProjectItem__ProjectTextWrapper-j9emyg-1 idMFxu" data-reactid="109">
                                         <div className="ProjectItem__FundingTitle-j9emyg-9 bPQPya" data-reactid="110">
@@ -71,6 +73,7 @@ const MainList=(props)=> (
                                     </div>
                                 </div>
                             </a>
+                            </Link>
                         </div>
                             <div className="Carousel__Column-sc-72guw4-5 fpWFDE" data-reactid="106">
                                 <a className="ProjectItem__ProjectItemCard-j9emyg-0 ksIgbG" href="rabbit_calenderf09f.html?utm_source=tumblbug&amp;utm_medium=internal&amp;utm_campaign=%ed%85%80%eb%b8%94%eb%b2%85/%eb%a9%94%ec%9d%b8/%ec%97%90%eb%94%94%ed%84%b0%ec%b6%94%ec%b2%9c" data-reactid="107">
