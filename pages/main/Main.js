@@ -25,11 +25,12 @@ const Main = () => (
                     <div data-reactid="104">
                         <div class="Carousel__CarouselContents-sc-72guw4-4 ibmRNI" data-reactid="105">
                             <div class="Carousel__Column-sc-72guw4-5 fpWFDE" data-reactid="106">
-                                <a class="ProjectItem__ProjectItemCard-j9emyg-0 ksIgbG" href="rabbit_calenderf09f.html?utm_source=tumblbug&amp;utm_medium=internal&amp;utm_campaign=%ed%85%80%eb%b8%94%eb%b2%85/%eb%a9%94%ec%9d%b8/%ec%97%90%eb%94%94%ed%84%b0%ec%b6%94%ec%b2%9c" data-reactid="107"><img class="ProjectItem__ProjectCoverimage-j9emyg-6 eaBarM" src="../tumblbug-pci.imgix.net/6e9a642e6e4d5d647835e62e1f0158aec00ba4ff/007b6da4e73604f590568620636df9f45c1c385b/013ee619070f0e6d633fbff30e37b2c225628ba3/6b95e896-230e-46a9-9798-71934a6178a63e9d.jpg?ixlib=rb-1.1.0&amp;w=620&amp;h=465&amp;auto=format%2Ccompress&amp;lossless=true&amp;fit=crop&amp;s=500f5ccf67b471573672d80f9b615b93" alt="별토끼, 달토끼 일러스트 2020 캘린더 이미지" data-reactid="108"/>
+                                <Link as='/d' href='/d?id=story'>
+                                <a class="ProjectItem__ProjectItemCard-j9emyg-0 ksIgbG"  data-reactid="107"><img class="ProjectItem__ProjectCoverimage-j9emyg-6 eaBarM" src="../tumblbug-pci.imgix.net/6e9a642e6e4d5d647835e62e1f0158aec00ba4ff/007b6da4e73604f590568620636df9f45c1c385b/013ee619070f0e6d633fbff30e37b2c225628ba3/6b95e896-230e-46a9-9798-71934a6178a63e9d.jpg?ixlib=rb-1.1.0&amp;w=620&amp;h=465&amp;auto=format%2Ccompress&amp;lossless=true&amp;fit=crop&amp;s=500f5ccf67b471573672d80f9b615b93" alt="별토끼, 달토끼 일러스트 2020 캘린더 이미지" data-reactid="108"/>
                                     <div class="ProjectItem__ProjectTextWrapper-j9emyg-1 idMFxu" data-reactid="109">
                                         <div class="ProjectItem__FundingTitle-j9emyg-9 bPQPya" data-reactid="110">
                                             <div data-reactid="111">
-                                                <h1 class="ProjectItem__ProjectTitle-j9emyg-2 fYikfb" data-reactid="112">별토끼, 달토끼 일러스트 2020 캘린더</h1>
+                                                <h1 class="ProjectItem__ProjectTitle-j9emyg-2 fYikfb" data-reactid="112">별토끼, 달토끼 일러스트 2020</h1>
                                             </div>
                                             <p class="ProjectItem__CreatorName-j9emyg-3 kwVXIK" data-reactid="113">
                                                 즈세
@@ -53,6 +54,7 @@ const Main = () => (
                                         </div>
                                     </div>
                                 </a>
+                                </Link>
                             </div>
                             <div class="Carousel__Column-sc-72guw4-5 fpWFDE" data-reactid="106">
                                 <a class="ProjectItem__ProjectItemCard-j9emyg-0 ksIgbG" href="rabbit_calenderf09f.html?utm_source=tumblbug&amp;utm_medium=internal&amp;utm_campaign=%ed%85%80%eb%b8%94%eb%b2%85/%eb%a9%94%ec%9d%b8/%ec%97%90%eb%94%94%ed%84%b0%ec%b6%94%ec%b2%9c" data-reactid="107"><img class="ProjectItem__ProjectCoverimage-j9emyg-6 eaBarM" src="../tumblbug-pci.imgix.net/6e9a642e6e4d5d647835e62e1f0158aec00ba4ff/007b6da4e73604f590568620636df9f45c1c385b/013ee619070f0e6d633fbff30e37b2c225628ba3/6b95e896-230e-46a9-9798-71934a6178a63e9d.jpg?ixlib=rb-1.1.0&amp;w=620&amp;h=465&amp;auto=format%2Ccompress&amp;lossless=true&amp;fit=crop&amp;s=500f5ccf67b471573672d80f9b615b93" alt="별토끼, 달토끼 일러스트 2020 캘린더 이미지" data-reactid="108"/>

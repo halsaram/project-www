@@ -13,4 +13,4 @@ export default () => (
   </div>
 )
 
-export default About;
+export default About;ermission to ha
