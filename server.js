@@ -19,7 +19,7 @@ app.prepare()
         app.render(req, res, actualPage)
     })
 
-    server.get('/collections', (req, res) => {
+    server.get('/col', (req, res) => {
         const actualPage = '/collections'
         app.render(req, res, actualPage)
     })

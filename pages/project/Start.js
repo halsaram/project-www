@@ -19,22 +19,22 @@ const ProjectLink = (props) => (
 )
 
 const CreativeLink = (props) => (
-    <Link as='/collections' href='/collections?id=creative'>
-        <a className="PersonaCard__CollectionLink-jt00bv-5 ezwhCy" target="_blank" rel="noopener noreffer" color="#FFE6E6" data-reactid="109">
+    <Link as='/col' href='/collections?id=creative'>
+        <a className="PersonaCard__CollectionLink-jt00bv-5 ezwhCy" rel="noopener noreffer" color="#FFE6E6" data-reactid="109">
             창작자 성공사례 보기 </a>
     </Link>
 )
 
 const BrandsLink = (props) => (
-    <Link as='/collections' href='/join?id=mailjoin'>
-        <a className="PersonaCard__CollectionLink-jt00bv-5 hNzPyi" target="_blank" rel="noopener noreffer" color="#E6EDFF" data-reactid="117">
+    <Link as='/col' href='/collections?id=brand'>
+        <a className="PersonaCard__CollectionLink-jt00bv-5 hNzPyi" rel="noopener noreffer" color="#E6EDFF" data-reactid="117">
             브랜드 성공사례 보기</a>
     </Link>
 )
 
 const CampaignsLink = (props) => (
-    <Link as='/collections' href='/join?id=mailjoin'>
-        <a className="PersonaCard__CollectionLink-jt00bv-5 jlgZnv" target="_blank" rel="noopener noreffer" color="#DFF8FC" data-reactid="125">
+    <Link as='/col' href='/collections?id=campaign'>
+        <a className="PersonaCard__CollectionLink-jt00bv-5 jlgZnv" rel="noopener noreffer" color="#DFF8FC" data-reactid="125">
             캠페인 성공사례 보기</a>
     </Link>
 )

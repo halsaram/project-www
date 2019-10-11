@@ -12,18 +12,19 @@
 
 import Layout from '../../components/Layout'
 import Creative from './creative'
-import Brand from './brands'
-import Campaign from './campaigns'
+import Brands from './brands'
+import Campaigns from './campaigns'
 
-const CollectionPage = (props) =>
+const CollectionPage = (props) => (
     <div>
         {props.url.query.id == 'creative' && <Creative />}
         {props.url.query.id == 'brand' && <Brands />}
         {props.url.query.id == 'campaign' && <Campaigns />}
-    </div>;
+    </div>
+)
 
 export default (props) => (
     <Layout title={props.url.query.title} >
-        <CollectionPageContent url={props.url} />
+        <CollectionPage url={props.url} />
     </Layout>
 )
