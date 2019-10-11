@@ -9,15 +9,28 @@
  * 최종수정자	   : 최다올
  * 최종수정내용	  : 인덱스와 연결!
 **************************************************************************************/
-
-import { Logininput } from './logininput'
+import React, { Component } from 'react'
 import Link from 'next/link';
+import { Form } from 'semantic-ui-react'
 
-const Login = () => (
-	
+// import { Logininput } from './logininput'
 
-    <div>
-		<div className="Membership__MembershipWrapper-o1o1he-0 irjBzn" data-reactid="40">
+class Login extends Component {
+	state = { name: '', email: '', submittedName: '', submittedEmail: '' }
+
+	handleChange = (e, { name, value }) => this.setState({ [name]: value })
+
+	handleSubmit = () => {
+		const { name, email } = this.state
+
+		this.setState({ submittedName: name, submittedEmail: email })
+	}
+
+	render() {
+	const { name, email, submittedName, submittedEmail } = this.state
+		return (
+			<div>
+				<div className="Membership__MembershipWrapper-o1o1he-0 irjBzn" data-reactid="40">
 					<div className="Wrapper__MembershipBody-sc-140yq7-0 dgBlAy" data-reactid="41">
 						<div data-reactid="42">
 							<a className="SocialButton__SocialLink-sc-7k5r2h-0 hKfrnB"  data-reactid="43"><i className="_1uz2PaH_Pc163IQLnwFtm8 _1oJMWnMCW_Y6GmNc1mhqaW _1QY7TzdLHKX3-BKPDNNYKF" data-reactid="44"></i>
@@ -32,21 +45,43 @@ const Login = () => (
 						<div className="Divider-sc-1wyk970-0 uEieK" data-reactid="51">
 							<span data-reactid="52"><span data-reactid="53">또는</span></span>
 						</div>
-						<form className="SignIn__Form-sc-9xfg6a-2 grrCSr" autocomplete="on" data-reactid="54">
-							<Logininput />
-							<button className="Button-sc-1x93b2b-0 ijDFDl" type="submit" label="로그인하기"  data-reactid="59">로그인</button>
-							<Link as='/join' href='/join?id=join'><a className="SignIn__StyledLink-sc-9xfg6a-1 bKTrQD" data-reactid="60"><span data-reactid="61">아직 계정이 없으신가요?</span>
-							
-							 할사람 가입하기
-				   	
-							</a></Link>
-						</form>
+						<Form onSubmit={this.handleSubmit}>
+							<Form.Group>
+								<Form.Input
+									placeholder='아이디'
+									name='name'
+									value={name}
+									type='text'
+									onChange={this.handleChange}
+								/>
+								<Form.Input
+									placeholder='패스워드'
+									name='email'
+									value={email}
+									type='password'
+									onChange={this.handleChange}
+								/>
+								<Form.Button content='로그인' />
+							</Form.Group>
+						</Form>
 						<div data-reactid="63">
+							<Link as='/join' href='/join?id=join'><a className="SignIn__StyledLink-sc-9xfg6a-1 bKTrQD" data-reactid="60"><span data-reactid="61">아직 계정이 없으신가요?</span>
+
+								할사람 가입하기
+
+							</a></Link>
 							<Link as='log' href='/login?id=find&title=비밀번호찾기'><a data-reactid="64">혹시 비밀번호를 잊으셨나요?</a></Link>
 						</div>
+						<strong>──────────────────────────────</strong><br />
+						<strong>onChange:</strong>
+						<pre>{JSON.stringify({ name, email }, null, 2)}</pre>
+						<strong>onSubmit:</strong>
+						<pre>{JSON.stringify({ submittedName, submittedEmail }, null, 2)}</pre>
 					</div>
 				</div>
-    </div>
-);
+			</div>
+		);
+	}
+}
   
 export default Login;
