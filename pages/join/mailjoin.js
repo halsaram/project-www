@@ -11,6 +11,9 @@
 **************************************************************************************/
 import Link from 'next/link';
 
+import {Joininput} from '../login/logininput';
+
+
 const LoginLink = (props) => (
     <Link as='/log' href='/login?id=login'>
         <a href="/login">기존 계정으로 로그인하기</a>
@@ -35,7 +38,7 @@ const Mailjoin = () => (
             </span>
         </div>
         <form autocomplete="on">
-            <div className="SignUp__InputDiv-k5h4n5-0 VpHEi">
+            {/* <div className="SignUp__InputDiv-k5h4n5-0 VpHEi">
                 <label className="SignUp__InputLabel-k5h4n5-1 bpYHsq" for="user_fullname">이름</label>
                 <input type="text" className="Input-sc-1x48dls-0 cbPtEV" id="user_fullname" name="nickname" autocomplete="username" placeholder="사용하실 이름을 입력해주세요" value="" required="" />
             </div>
@@ -50,7 +53,9 @@ const Mailjoin = () => (
                 <input type="password" className="Input-sc-1x48dls-0 cbPtEV" id="user_password" required="" name="password" placeholder="비밀번호를 입력해주세요" autocomplete="new-password" autocapitalize="off" autocorrect="off" spellcheck="off" value="" />
                 <input type="password" className="Input-sc-1x48dls-0 cbPtEV" id="user_password_confirmation" required="" name="passwordConfirm" autocapitalize="off" autocorrect="off" autocomplete="new-password" spellcheck="off" placeholder="비밀번호를 확인합니다" value="" />
                 <span className="SignUp__ErrorMessage-k5h4n5-3 gLiNzH"></span><br /><span className="SignUp__ErrorMessage-k5h4n5-3 gLiNzH"></span>
-            </div>
+            </div> */}
+
+            <Joininput />
             <button className="SignUp__SignUpButton-k5h4n5-2 hvvhkh Button-sc-1x93b2b-0 ijDFDl" label="다음">다음</button>
         </form>
         <div className="SignUp__LoginLinkWrapper-k5h4n5-4 hQGkMf">

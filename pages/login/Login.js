@@ -10,7 +10,7 @@
  * 최종수정내용	  : 인덱스와 연결!
 **************************************************************************************/
 
-import Oninput from './logininput'
+import { Logininput } from './logininput'
 import Link from 'next/link';
 
 const Login = () => (
@@ -33,7 +33,7 @@ const Login = () => (
 							<span data-reactid="52"><span data-reactid="53">또는</span></span>
 						</div>
 						<form className="SignIn__Form-sc-9xfg6a-2 grrCSr" autocomplete="on" data-reactid="54">
-							<Oninput />
+							<Logininput />
 							<button className="Button-sc-1x93b2b-0 ijDFDl" type="submit" label="로그인하기"  data-reactid="59">로그인</button>
 							<Link as='/join' href='/join?id=join'><a className="SignIn__StyledLink-sc-9xfg6a-1 bKTrQD" data-reactid="60"><span data-reactid="61">아직 계정이 없으신가요?</span>
 							
