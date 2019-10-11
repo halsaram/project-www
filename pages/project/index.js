@@ -21,6 +21,7 @@ import Storytelling from './Storytelling'
 
 const Content = (props) => (
   <div>
+    {props.url.query.id == null && <Start />}
     {props.url.query.id == 'start' && <Start />}
     {props.url.query.id == 'agreements' && <Agreements />}
     {props.url.query.id == 'summary' && <Summary />}

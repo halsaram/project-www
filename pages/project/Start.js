@@ -9,8 +9,10 @@
  * 최종수정자	   : 전새희
  * 최종수정내용	  : Collections Link href 부분 수정
 **************************************************************************************/
-
+import React from 'react'
 import Link from 'next/link';
+import { Divider, Header, Icon, Grid, Button } from 'semantic-ui-react'
+
 
 const ProjectLink = (props) => (
     <Link as='/p' href={`/project?id=${props.id}&title=정책`}>
@@ -41,7 +43,31 @@ const CampaignsLink = (props) => (
 
 
 const Start = () => (
-    <div>
+    <React.Fragment>
+        <Divider horizontal>
+            <Header as='h4'>
+                <Icon name='tag' />
+                Description
+            </Header>
+        </Divider>
+        <Grid columns={2} relaxed='very' stackable>
+            <Grid.Column verticalAlign='middle'>
+            </Grid.Column>
+            <Grid.Column verticalAlign='middle'>
+                <Header as='h1'>마음 속 프로젝트 아이디어, <br />텀블벅에서 현실로</Header>
+                <p>크라우드펀딩으로 프로젝트를 위한 자금도 모으고,<br />
+                    든든한 후원자 네트워크도 확보할 수 있습니다.</p>
+                <Link as='/p' href='/project?id=agreements&title=정책'>
+                    <Button content='지금 시작하기' size='massive' primary />
+                </Link>
+            </Grid.Column>
+        </Grid>
+        <Divider horizontal>
+            <Header as='h4'>
+                <Icon name='tag' />
+                Description
+            </Header>
+        </Divider>
         <div data-reactid="39">
             <div data-reactid="40">
                 <main data-reactid="42">
@@ -227,7 +253,7 @@ const Start = () => (
                 </main>
             </div>
         </div>
-    </div>
+    </React.Fragment>
 );
 
 export default Start;
