@@ -9,9 +9,9 @@
  * 최종수정자	   : 전새희
  * 최종수정내용	  : 이메일로 가입하기 화면
 **************************************************************************************/
+import React, { Component } from 'react'
 import Link from 'next/link';
-
-import {Joininput} from '../login/logininput';
+import { Form } from 'semantic-ui-react'
 
 
 const LoginLink = (props) => (
@@ -20,9 +20,23 @@ const LoginLink = (props) => (
     </Link>
 )
 
+class Mailjoin extends Component {
+	state = { name: '', mail: '', passwd:'', submittedName: '', submittedMail: '', submittedPasswd: '' }
 
-const Mailjoin = () => (
-    <div>
+	handleChange = (e, { name, value }) => this.setState({ [name]: value })
+
+	handleSubmit = () => {
+		const { name, mail, passwd } = this.state
+
+		this.setState({ submittedName: name, submittedMail: mail, submittedPasswd: passwd  })
+	}
+
+	render() {
+	const { name, mail, passwd, submittedName, submittedMail, submittedPasswd } = this.state
+		return (
+
+
+<div>
         <div>
             <a className="SocialButton__SocialLink-sc-7k5r2h-0 hKfrnB" href="https://tumblbug.com/auth/facebook?from_pledge=false&amp;origin=%2F">
                 <i className="_1uz2PaH_Pc163IQLnwFtm8 _1oJMWnMCW_Y6GmNc1mhqaW _1QY7TzdLHKX3-BKPDNNYKF"></i>페이스북 아이디로 가입하기</a>
@@ -37,32 +51,48 @@ const Mailjoin = () => (
                 <span>또는</span>
             </span>
         </div>
-        <form autocomplete="on">
-            {/* <div className="SignUp__InputDiv-k5h4n5-0 VpHEi">
-                <label className="SignUp__InputLabel-k5h4n5-1 bpYHsq" for="user_fullname">이름</label>
-                <input type="text" className="Input-sc-1x48dls-0 cbPtEV" id="user_fullname" name="nickname" autocomplete="username" placeholder="사용하실 이름을 입력해주세요" value="" required="" />
-            </div>
-            <div className="SignUp__InputDiv-k5h4n5-0 VpHEi">
-                <label className="SignUp__InputLabel-k5h4n5-1 bpYHsq" for="user_login">이메일 주소</label>
-                <input type="email" className="Input-sc-1x48dls-0 cbPtEV" id="user_login" name="email" placeholder="이메일 주소를 입력해주세요" autocomplete="email" value="" required="" />
-                <input type="email" className="Input-sc-1x48dls-0 cbPtEV" id="user_login_confirmation" name="emailConfirm" autocomplete="email" required="" placeholder="이메일 주소를 확인합니다" value="" />
-                <span className="SignUp__ErrorMessage-k5h4n5-3 gLiNzH"></span>
-            </div>
-            <div className="SignUp__InputDiv-k5h4n5-0 VpHEi">
-                <label className="SignUp__InputLabel-k5h4n5-1 bpYHsq" for="user_password">비밀번호</label>
-                <input type="password" className="Input-sc-1x48dls-0 cbPtEV" id="user_password" required="" name="password" placeholder="비밀번호를 입력해주세요" autocomplete="new-password" autocapitalize="off" autocorrect="off" spellcheck="off" value="" />
-                <input type="password" className="Input-sc-1x48dls-0 cbPtEV" id="user_password_confirmation" required="" name="passwordConfirm" autocapitalize="off" autocorrect="off" autocomplete="new-password" spellcheck="off" placeholder="비밀번호를 확인합니다" value="" />
-                <span className="SignUp__ErrorMessage-k5h4n5-3 gLiNzH"></span><br /><span className="SignUp__ErrorMessage-k5h4n5-3 gLiNzH"></span>
-            </div> */}
-
-            <Joininput />
-            <button className="SignUp__SignUpButton-k5h4n5-2 hvvhkh Button-sc-1x93b2b-0 ijDFDl" label="다음">다음</button>
-        </form>
+        <Form onSubmit={this.handleSubmit}>
+							<Form.Group>
+                            <Form.Input
+                                    placeholder='이름'  
+                                    name='name'
+									value={name}
+									type='text'
+									onChange={this.handleChange}
+								/>
+								<Form.Input
+									placeholder='아이디'
+									name='mail'
+									value={mail}
+									type='text'
+									onChange={this.handleChange}
+								/>
+								<Form.Input
+									placeholder='패스워드'
+									name='passwd'
+									value={passwd}
+									type='password'
+									onChange={this.handleChange}
+								/>
+								<Form.Button content='회원가입' />
+							</Form.Group>
+						</Form>
         <div className="SignUp__LoginLinkWrapper-k5h4n5-4 hQGkMf">
             <p>이미 계정이 있으신가요?</p>
             <LoginLink />
+
+            <strong>──────────────────────────────</strong><br />
+						<strong>onChange:</strong>
+						<pre>{JSON.stringify({ name, mail, passwd }, null, 3)}</pre>
+						<strong>onSubmit:</strong>
+						<pre>{JSON.stringify({ submittedName, submittedMail, submittedPasswd }, null, 3)}</pre>
         </div>
     </div>
-);
+    
+
+
+)}}
+
 
 export default Mailjoin;
+

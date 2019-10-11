@@ -13,21 +13,19 @@ import React, { Component } from 'react'
 import Link from 'next/link';
 import { Form } from 'semantic-ui-react'
 
-// import { Logininput } from './logininput'
-
 class Login extends Component {
-	state = { name: '', email: '', submittedName: '', submittedEmail: '' }
+	state = { passwd: '', mail: '', submittedPasswd: '', submittedMail: '' }
 
 	handleChange = (e, { name, value }) => this.setState({ [name]: value })
 
 	handleSubmit = () => {
-		const { name, email } = this.state
+		const { mail, passwd } = this.state
 
-		this.setState({ submittedName: name, submittedEmail: email })
+		this.setState({ submittedMail: mail, submittedPasswd: passwd })
 	}
 
 	render() {
-	const { name, email, submittedName, submittedEmail } = this.state
+	const { mail, passwd, submittedMail, submittedPasswd } = this.state
 		return (
 			<div>
 				<div className="Membership__MembershipWrapper-o1o1he-0 irjBzn" data-reactid="40">
@@ -48,16 +46,16 @@ class Login extends Component {
 						<Form onSubmit={this.handleSubmit}>
 							<Form.Group>
 								<Form.Input
-									placeholder='아이디'
-									name='name'
-									value={name}
-									type='text'
+									placeholder='이메일'
+									name='mail'
+									value={mail}
+									type='email'
 									onChange={this.handleChange}
 								/>
 								<Form.Input
 									placeholder='패스워드'
-									name='email'
-									value={email}
+									name='passwd'
+									value={passwd}
 									type='password'
 									onChange={this.handleChange}
 								/>
@@ -74,9 +72,9 @@ class Login extends Component {
 						</div>
 						<strong>──────────────────────────────</strong><br />
 						<strong>onChange:</strong>
-						<pre>{JSON.stringify({ name, email }, null, 2)}</pre>
+						<pre>{JSON.stringify({ mail,  passwd }, null, 2)}</pre>
 						<strong>onSubmit:</strong>
-						<pre>{JSON.stringify({ submittedName, submittedEmail }, null, 2)}</pre>
+						<pre>{JSON.stringify({ submittedMail, submittedPasswd }, null, 2)}</pre>
 					</div>
 				</div>
 			</div>
