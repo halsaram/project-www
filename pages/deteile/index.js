@@ -12,14 +12,14 @@
 
 import Layout from '../../components/Layout'
 
-// import Community from '.Community/'
-// import FundingGuide from './FundingGuide'
+import FundingGuide from './FundingGuide'
+import Community from './Community'
 import Story from './Story'
 
 const Content = (props) => (
     <div>
-        {/* {props.url.query.id == 'Community' && <Community />}
-        {props.url.query.id == 'FundingGuide' && <FundingGuide />} */}
+        <FundingGuide />
+        <Community />
         <Story />
     </div>
 );
