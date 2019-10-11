@@ -21,18 +21,18 @@ const LoginLink = (props) => (
 )
 
 class Mailjoin extends Component {
-	state = { name: '', mail: '', passwd:'', submittedName: '', submittedMail: '', submittedPasswd: '' }
+	state = { name: '', mail: '', passwd: '', checkmail: '', checkpasswd: '',submittedName: '', submittedMail: '', submittedPasswd: '' }
 
 	handleChange = (e, { name, value }) => this.setState({ [name]: value })
 
 	handleSubmit = () => {
-		const { name, mail, passwd } = this.state
+		const { name, mail, passwd, checkmail, checkpasswd } = this.state
 
 		this.setState({ submittedName: name, submittedMail: mail, submittedPasswd: passwd  })
 	}
 
 	render() {
-	const { name, mail, passwd, submittedName, submittedMail, submittedPasswd } = this.state
+		const { name, mail, passwd, checkmail, checkpasswd, submittedName, submittedMail, submittedPasswd } = this.state
 		return (
 
 
@@ -54,27 +54,41 @@ class Mailjoin extends Component {
         <Form onSubmit={this.handleSubmit}>
 							<Form.Group>
                             <Form.Input
-                                    placeholder='이름'  
+                                    placeholder='사용할실 이름을 입력해주세요'  
                                     name='name'
 									value={name}
 									type='text'
 									onChange={this.handleChange}
 								/>
 								<Form.Input
-									placeholder='아이디'
+									placeholder='이메일 주소를 입력해주세요'
 									name='mail'
 									value={mail}
-									type='text'
+									type='email'
 									onChange={this.handleChange}
 								/>
 								<Form.Input
-									placeholder='패스워드'
+									placeholder='이메일 주소를 확인합니다'
+									name='checkmail'
+									value={checkmail}
+									type='email'
+									onChange={this.handleChange}
+								/>
+								<Form.Input
+									placeholder='비밀번호를 입력해주세요'
 									name='passwd'
 									value={passwd}
 									type='password'
 									onChange={this.handleChange}
 								/>
-								<Form.Button content='회원가입' />
+								<Form.Input
+									placeholder='비밀번호를 확인합니다'
+									name='checkpasswd'
+									value={checkpasswd}
+									type='password'
+									onChange={this.handleChange}
+								/>
+								<Form.Button content='확인' />
 							</Form.Group>
 						</Form>
         <div className="SignUp__LoginLinkWrapper-k5h4n5-4 hQGkMf">
