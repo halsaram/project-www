@@ -1,3 +1,15 @@
+/**************************************************************************************
+ * 제목          : 캠페인 페이지
+ * 소스파일 이름  : pages/collections/brands.js
+ * 파일설명		   : 캠페인 페이지
+ * 작성자		     : 전새희
+ * 버전		      : 1.0.0
+ * 생성일자		   : 2019-10-11
+ * 최종수정일자 	: 2019-10-11
+ * 최종수정자	   : 전새희
+ * 최종수정내용	  : 캠페인 생성
+**************************************************************************************/
+
 import Link from 'next/link';
 
 
@@ -9,7 +21,7 @@ const Campaigns = () => (
                     <div className="_13KHfN73YmQgsYHxXvuh_J _1WARcEqqT_Pem8leg2dkMj" data-reactid="42">
                         <div className="MvtN7_7jaV0WNdbEK_g0G" data-reactid="43">
                             <div className="_2_ymimSM5k2F8C7ZxB24h7" data-reactid="44">
-                                <div className="_2jg-JfYeG7d2mgVjgXZnnA" data-reactid="45"><img alt="Made in Tumblbug: 캠페인" className="_13KHfN73YmQgsYHxXvuh_J _2H5AJMZT-xLtuIvR5jP8rd _2aquK6B3D0GYX7zQT4_IR7 _2QjYQbPt_zoS09zHt8yvQL" src="./Made in Tumblbug_ 캠페인 __ 텀블벅_files/1b5f5dbe-2b29-49c7-a7b9-55570b3b0531.png" data-reactid="46"></div>
+                                <div className="_2jg-JfYeG7d2mgVjgXZnnA" data-reactid="45"><img alt="Made in Tumblbug: 캠페인" className="_13KHfN73YmQgsYHxXvuh_J _2H5AJMZT-xLtuIvR5jP8rd _2aquK6B3D0GYX7zQT4_IR7 _2QjYQbPt_zoS09zHt8yvQL" src="./Made in Tumblbug_ 캠페인 __ 텀블벅_files/1b5f5dbe-2b29-49c7-a7b9-55570b3b0531.png" data-reactid="46"/></div>
                                 <div className="Ko6BIG9u5XsiGSetwDnre" data-reactid="47">
                                     <div className="_24XsVGkZ3Voejkld61Cx3C" data-reactid="48">Made in Tumblbug: 캠페인</div>
                                     <div className="_2O6kHqJimHMeeY-kTmyqUX" data-reactid="49">텀블벅에서 큰 성공을 거둔 캠페인 프로젝트들을 모았습니다.</div>
@@ -60,7 +72,7 @@ const Campaigns = () => (
                                 <span data-reactid="77"></span>
                                 <a href="https://tumblbug.com/wewillremember?utm_source=tumblbug&amp;utm_medium=internal&amp;utm_campaign=%ED%85%80%EB%B8%94%EB%B2%85/%EA%B8%B0%ED%9A%8D%EC%A0%84/MadeinTumblbug:%EC%BA%A0%ED%8E%98%EC%9D%B8">
                                     <div className="_13KHfN73YmQgsYHxXvuh_J _2nZxogWCtwxgZvigECqiKs yx45-aQ3xTwP4lNZQ2qQs _18TDror949wcy2NyVIqpHo UxeYqEszWK5hhpRXaGHBr">
-                                        <div className="-Qv21-og1HcmTC9fTAwhk"><img src="./Made in Tumblbug_ 캠페인 __ 텀블벅_files/cdbbbddc0bf96794ca001b0414e6fe0790887c4a.jpg" alt="지겹지 않습니다. 기억하겠습니다." className="_145Uy81NIiw-12IK7rJ920"></div>
+                                        <div className="-Qv21-og1HcmTC9fTAwhk"><img src="./Made in Tumblbug_ 캠페인 __ 텀블벅_files/cdbbbddc0bf96794ca001b0414e6fe0790887c4a.jpg" alt="지겹지 않습니다. 기억하겠습니다." className="_145Uy81NIiw-12IK7rJ920"/></div>
                                         <div className="_3ZgG-OSv0XE3y-h3oPaDsl">
                                             <div className="_1lINMEHeN3VZwG1iZwl3AQ">
                                                 <div className="_1_7sU-OOgKb7PXybIFI8rT">
@@ -96,7 +108,7 @@ const Campaigns = () => (
                                 <span data-reactid="90"></span>
                                 <a href="https://tumblbug.com/givedolphinsfreedom?utm_source=tumblbug&amp;utm_medium=internal&amp;utm_campaign=%ED%85%80%EB%B8%94%EB%B2%85/%EA%B8%B0%ED%9A%8D%EC%A0%84/MadeinTumblbug:%EC%BA%A0%ED%8E%98%EC%9D%B8">
                                     <div className="_13KHfN73YmQgsYHxXvuh_J _2nZxogWCtwxgZvigECqiKs yx45-aQ3xTwP4lNZQ2qQs _18TDror949wcy2NyVIqpHo UxeYqEszWK5hhpRXaGHBr">
-                                        <div className="-Qv21-og1HcmTC9fTAwhk"><img src="./Made in Tumblbug_ 캠페인 __ 텀블벅_files/f32df815fd24ded93c9bdef68ca175be0f878c37.jpg" alt="돌고래에게 자유를" className="_145Uy81NIiw-12IK7rJ920"></div>
+                                        <div className="-Qv21-og1HcmTC9fTAwhk"><img src="./Made in Tumblbug_ 캠페인 __ 텀블벅_files/f32df815fd24ded93c9bdef68ca175be0f878c37.jpg" alt="돌고래에게 자유를" className="_145Uy81NIiw-12IK7rJ920"/></div>
                                         <div className="_3ZgG-OSv0XE3y-h3oPaDsl">
                                             <div className="_1lINMEHeN3VZwG1iZwl3AQ">
                                                 <div className="_1_7sU-OOgKb7PXybIFI8rT">
@@ -132,7 +144,7 @@ const Campaigns = () => (
                                 <span data-reactid="103"></span>
                                 <a href="https://tumblbug.com/nique?utm_source=tumblbug&amp;utm_medium=internal&amp;utm_campaign=%ED%85%80%EB%B8%94%EB%B2%85/%EA%B8%B0%ED%9A%8D%EC%A0%84/MadeinTumblbug:%EC%BA%A0%ED%8E%98%EC%9D%B8">
                                     <div className="_13KHfN73YmQgsYHxXvuh_J _2nZxogWCtwxgZvigECqiKs yx45-aQ3xTwP4lNZQ2qQs _18TDror949wcy2NyVIqpHo UxeYqEszWK5hhpRXaGHBr">
-                                        <div className="-Qv21-og1HcmTC9fTAwhk"><img src="./Made in Tumblbug_ 캠페인 __ 텀블벅_files/1d3b44f3-e8ed-44b4-9be6-79367d0fbf8e.jpg" alt="세상에 나쁜 길고양이는 없다, &#39;귀업냥&#39; 티셔츠 &amp; 뱃지" className="_145Uy81NIiw-12IK7rJ920"></div>
+                                        <div className="-Qv21-og1HcmTC9fTAwhk"><img src="./Made in Tumblbug_ 캠페인 __ 텀블벅_files/1d3b44f3-e8ed-44b4-9be6-79367d0fbf8e.jpg" alt="세상에 나쁜 길고양이는 없다, &#39;귀업냥&#39; 티셔츠 &amp; 뱃지" className="_145Uy81NIiw-12IK7rJ920"/></div>
                                         <div className="_3ZgG-OSv0XE3y-h3oPaDsl">
                                             <div className="_1lINMEHeN3VZwG1iZwl3AQ">
                                                 <div className="_1_7sU-OOgKb7PXybIFI8rT">
@@ -168,7 +180,7 @@ const Campaigns = () => (
                                 <span data-reactid="116"></span>
                                 <a href="https://tumblbug.com/yellowbutterfly?utm_source=tumblbug&amp;utm_medium=internal&amp;utm_campaign=%ED%85%80%EB%B8%94%EB%B2%85/%EA%B8%B0%ED%9A%8D%EC%A0%84/MadeinTumblbug:%EC%BA%A0%ED%8E%98%EC%9D%B8">
                                     <div className="_13KHfN73YmQgsYHxXvuh_J _2nZxogWCtwxgZvigECqiKs yx45-aQ3xTwP4lNZQ2qQs _18TDror949wcy2NyVIqpHo UxeYqEszWK5hhpRXaGHBr">
-                                        <div className="-Qv21-og1HcmTC9fTAwhk"><img src="./Made in Tumblbug_ 캠페인 __ 텀블벅_files/aa092e290361a6270e13a3f75f60063eaff6e24d.jpg" alt="위안부 기억나비 카드지갑/팔찌" className="_145Uy81NIiw-12IK7rJ920"></div>
+                                        <div className="-Qv21-og1HcmTC9fTAwhk"><img src="./Made in Tumblbug_ 캠페인 __ 텀블벅_files/aa092e290361a6270e13a3f75f60063eaff6e24d.jpg" alt="위안부 기억나비 카드지갑/팔찌" className="_145Uy81NIiw-12IK7rJ920"/></div>
                                         <div className="_3ZgG-OSv0XE3y-h3oPaDsl">
                                             <div className="_1lINMEHeN3VZwG1iZwl3AQ">
                                                 <div className="_1_7sU-OOgKb7PXybIFI8rT">
