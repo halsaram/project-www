@@ -13,7 +13,7 @@
 import Link from 'next/link';
 
 
-const Brands = () => (
+const Brand = () => (
     <div>            
         <div data-reactid="40">
         <div data-reactid="41">
@@ -1271,7 +1271,7 @@ const Brands = () => (
     </div>
 );
 
-export default Brands;
+export default Brand;
 
 
 

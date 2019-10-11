@@ -13,7 +13,7 @@
 import Link from 'next/link';
 
 
-const Campaigns = () => (
+const Campaign = () => (
     <div>
         <div data-reactid="39">
             <div data-reactid="40">
@@ -863,4 +863,4 @@ const Campaigns = () => (
     </div>
 );
 
-export default Campaigns;
+export default Campaign;

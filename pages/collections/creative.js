@@ -26,7 +26,7 @@ const Creative = () => (
                                     <div className="_24XsVGkZ3Voejkld61Cx3C" data-reactid="48">Made in Tumblbug: 창작자</div>
                                     <div className="_2O6kHqJimHMeeY-kTmyqUX" data-reactid="49">텀블벅에서 큰 성공을 거둔 창작자들의 프로젝트들을 모았습니다.</div>
                                     <div className="ZsKEjUvK5OcndcUoF9kN8" data-reactid="50">
-                                        <div className="SocialMediaButtons__ShareButtonWrapper-sc-1pmfx1k-0 gtxELZ" data-reactid="51"><!-- react-empty: 52 --><div role="button" tabindex="0" className="SocialMediaShareButton SocialMediaShareButton--facebook" data-reactid="53">
+                                        <div className="SocialMediaButtons__ShareButtonWrapper-sc-1pmfx1k-0 gtxELZ" data-reactid="51"><div role="button" tabindex="0" className="SocialMediaShareButton SocialMediaShareButton--facebook" data-reactid="53">
                                                 <div className="SocialMediaButtons__ShareButton-sc-1pmfx1k-1 imRvdP" data-reactid="54">
                                                     <div data-reactid="55">
                                                         <svg viewbox="0 0 64 64" width="32" height="32" className="social-icon social-icon--facebook " data-reactid="56">
@@ -66,7 +66,7 @@ const Creative = () => (
                         </div>
                     </div>
                 </div>
-                <div className="_13KHfN73YmQgsYHxXvuh_J _1WARcEqqT_Pem8leg2dkMj" data-reactid="72"><!-- react-empty: 73 --><div className="Collections__ListWrapper-cbzrji-0 dUmlOk" data-reactid="74">
+                <div className="_13KHfN73YmQgsYHxXvuh_J _1WARcEqqT_Pem8leg2dkMj" data-reactid="72"><div className="Collections__ListWrapper-cbzrji-0 dUmlOk" data-reactid="74">
                         <div className="Collections__ProjectCardWrapper-cbzrji-1 jZPSAT" data-reactid="75">
                             <div data-reactid="76">
                                 <span data-reactid="77"></span>
@@ -2985,7 +2985,7 @@ const Creative = () => (
                                 </a><span data-reactid="1127"> </span>
                             </div>
                         </div>
-                    </div><!-- react-empty: 1128 --></div>
+                    </div></div>
             </div>
         </div>
     </div>
