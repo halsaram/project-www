@@ -5,9 +5,9 @@
  * 작성자		     : 정휘선
  * 버전		      : 1.0.0
  * 생성일자		   : 2019-10-02
- * 최종수정일자 	: 2019-10-05
- * 최종수정자	   : 정휘선
- * 최종수정내용	  : Link href 부분 수정
+ * 최종수정일자 	: 2019-10-11
+ * 최종수정자	   : 전새희
+ * 최종수정내용	  : Collections Link href 부분 수정
 **************************************************************************************/
 
 import Link from 'next/link';
@@ -17,6 +17,28 @@ const ProjectLink = (props) => (
         <button className="sc-1x93b2b-0-Button-kDSBcD jxJcyR" data-reactid="57">{props.title}</button>
     </Link>
 )
+
+const CreativeLink = (props) => (
+    <Link as='/collections' href='/collections?id=creative'>
+        <a className="PersonaCard__CollectionLink-jt00bv-5 ezwhCy" target="_blank" rel="noopener noreffer" color="#FFE6E6" data-reactid="109">
+            창작자 성공사례 보기 </a>
+    </Link>
+)
+
+const BrandsLink = (props) => (
+    <Link as='/collections' href='/join?id=mailjoin'>
+        <a className="PersonaCard__CollectionLink-jt00bv-5 hNzPyi" target="_blank" rel="noopener noreffer" color="#E6EDFF" data-reactid="117">
+            브랜드 성공사례 보기</a>
+    </Link>
+)
+
+const CampaignsLink = (props) => (
+    <Link as='/collections' href='/join?id=mailjoin'>
+        <a className="PersonaCard__CollectionLink-jt00bv-5 jlgZnv" target="_blank" rel="noopener noreffer" color="#DFF8FC" data-reactid="125">
+            캠페인 성공사례 보기</a>
+    </Link>
+)
+
 
 const Start = () => (
     <div>
@@ -125,9 +147,7 @@ const Start = () => (
                                 <p className="PersonaCard__P-jt00bv-4 tgAhc" data-reactid="108">
                                     시작하는 창작자에게 텀블벅은 지원금, 공모전 등의 방식들보다 훨씬 자율적이고 독립적으로 나와 내 작업을 알릴 수 있는 새로운 길입니다. 이미 콘텐츠와 팬층을 확보한 작가라면 신선한 기획을 통해 팬들을 만나는 새로운 창구를 열어보는 건 어떨까요?
                                 </p>
-                                <a className="PersonaCard__CollectionLink-jt00bv-5 ezwhCy" target="_blank" rel="noopener noreffer" href="collections/creative.html" color="#FFE6E6" data-reactid="109">
-                                    창작자
-                                    성공사례 보기 </a>
+                                <CreativeLink />
                             </div>
                             <div className="PersonaCard__CardWrapper-jt00bv-0 kaUpoK" data-reactid="112">
                                 <h4 className="PersonaCard__H4-jt00bv-1 jDnPwU" data-reactid="113">브랜드</h4>
@@ -137,9 +157,7 @@ const Start = () => (
                                 <p className="PersonaCard__P-jt00bv-4 tgAhc" data-reactid="116">
                                     브랜드에 이목을 집중시키는 스토리를 통해 마케팅 효과를 극대화할 수 있습니다. 트렌디하면서도 개인의 취향과 가치가 강조되는 새로운 참여형 소비 창구로 각광받는 텀블벅에서 모인 후원자들의 신뢰는 일반 이커머스에서보다 훨씬 깊고 오래 가는 팬 베이스가 되어줄 것입니다.
                                 </p>
-                                <a className="PersonaCard__CollectionLink-jt00bv-5 hNzPyi" target="_blank" rel="noopener noreffer" href="collections/brands.html" color="#E6EDFF" data-reactid="117">
-                                     브랜드
-                                    성공사례 보기</a>
+                                <BrandsLink />
                             </div>
                             <div className="PersonaCard__CardWrapper-jt00bv-0 kaUpoK" data-reactid="120">
                                 <h4 className="PersonaCard__H4-jt00bv-1 jDnPwU" data-reactid="121">캠페인</h4>
@@ -149,9 +167,7 @@ const Start = () => (
                                 <p className="PersonaCard__P-jt00bv-4 tgAhc" data-reactid="124">
                                     언론이나 소셜미디어에서 떠오르는 이슈들을 구체적인 행동으로 전환시키는 데에 텀블벅 프로젝트가 제격입니다. 새롭고 젊은 정치참여·사회운동 방식으로 주목받는 텀블벅 펀딩으로 더 많은 지지자를 얻고, 사회적 목소리를 증폭시켜보세요.
                                 </p>
-                                <a className="PersonaCard__CollectionLink-jt00bv-5 jlgZnv" target="_blank" rel="noopener noreffer" href="collections/campaigns.html" color="#DFF8FC" data-reactid="125">
-                                     캠페인
-                                     성공사례 보기</a>
+                                <CampaignsLink />
                             </div>
                         </div>
                     </div>
