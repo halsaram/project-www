@@ -6,7 +6,8 @@ const Logininput = () => {
       mail: '',
       passwd:''
   });
-    const {mail, passwd} = state;
+  
+  const {mail, passwd} = state;
 
   return (
     <div>
@@ -37,7 +38,7 @@ const Joininput = () => {
         <p>비밀번호</p><input name='passwd' value={passwd} onChange={onChange}  placeholder="비밀번호 입력" type="password" />
         <input name='passwd1' value={passwd1} onChange={onChange}  placeholder="비밀번호 확인" type="password"/>
       </div>
-    </div>
+    </div>  
   );
 };
 
