@@ -1,3 +1,15 @@
+/**************************************************************************************
+ * 제목          : 브랜드 페이지
+ * 소스파일 이름  : pages/collections/brands.js
+ * 파일설명		   : 브랜드 페이지
+ * 작성자		     : 전새희
+ * 버전		      : 1.0.0
+ * 생성일자		   : 2019-10-11
+ * 최종수정일자 	: 2019-10-11
+ * 최종수정자	   : 전새희
+ * 최종수정내용	  : 브랜드 생성
+**************************************************************************************/
+
 import Link from 'next/link';
 
 
@@ -8,7 +20,7 @@ const Brands = () => (
             <div className="_13KHfN73YmQgsYHxXvuh_J _1WARcEqqT_Pem8leg2dkMj" data-reactid="42">
             <div className="MvtN7_7jaV0WNdbEK_g0G" data-reactid="43">
                 <div className="_2_ymimSM5k2F8C7ZxB24h7" data-reactid="44">
-                <div className="_2jg-JfYeG7d2mgVjgXZnnA" data-reactid="45"><img alt="Made in Tumblbug: 브랜드" className="_13KHfN73YmQgsYHxXvuh_J _2H5AJMZT-xLtuIvR5jP8rd _2aquK6B3D0GYX7zQT4_IR7 _2QjYQbPt_zoS09zHt8yvQL" src="./Made in Tumblbug_ 브랜드 __ 텀블벅_files/e90a4815-56e9-4831-b4f3-6015d5b5f6e7.png" data-reactid="46"></div>
+                <div className="_2jg-JfYeG7d2mgVjgXZnnA" data-reactid="45"><img alt="Made in Tumblbug: 브랜드" className="_13KHfN73YmQgsYHxXvuh_J _2H5AJMZT-xLtuIvR5jP8rd _2aquK6B3D0GYX7zQT4_IR7 _2QjYQbPt_zoS09zHt8yvQL" src="./Made in Tumblbug_ 브랜드 __ 텀블벅_files/e90a4815-56e9-4831-b4f3-6015d5b5f6e7.png" data-reactid="46"/></div>
                 <div className="Ko6BIG9u5XsiGSetwDnre" data-reactid="47">
                     <div className="_24XsVGkZ3Voejkld61Cx3C" data-reactid="48">Made in Tumblbug: 브랜드</div>
                     <div className="_2O6kHqJimHMeeY-kTmyqUX" data-reactid="49">텀블벅에서 큰 성공을 거둔 기업 및 브랜드 창작자들의 프로젝트를 모았습니다.</div>
@@ -59,7 +71,7 @@ const Brands = () => (
                 <span  data-reactid="77"></span>
                 <a href="https://tumblbug.com/metodo_2th?utm_source=tumblbug&amp;utm_medium=internal&amp;utm_campaign=%ED%85%80%EB%B8%94%EB%B2%85/%EA%B8%B0%ED%9A%8D%EC%A0%84/MadeinTumblbug:%EB%B8%8C%EB%9E%9C%EB%93%9C">
                     <div className="_13KHfN73YmQgsYHxXvuh_J _2nZxogWCtwxgZvigECqiKs yx45-aQ3xTwP4lNZQ2qQs _18TDror949wcy2NyVIqpHo UxeYqEszWK5hhpRXaGHBr">
-                    <div className="-Qv21-og1HcmTC9fTAwhk"><img src="./Made in Tumblbug_ 브랜드 __ 텀블벅_files/d472b67f-859e-4afd-98d6-1b01e39e6ef1.jpg" alt="[앵콜] 소매치기가 싫어하는 미토도 도난방지 방검가방" className="_145Uy81NIiw-12IK7rJ920"></div>
+                    <div className="-Qv21-og1HcmTC9fTAwhk"><img src="./Made in Tumblbug_ 브랜드 __ 텀블벅_files/d472b67f-859e-4afd-98d6-1b01e39e6ef1.jpg" alt="[앵콜] 소매치기가 싫어하는 미토도 도난방지 방검가방" className="_145Uy81NIiw-12IK7rJ920"/></div>
                     <div className="_3ZgG-OSv0XE3y-h3oPaDsl">
                         <div className="_1lINMEHeN3VZwG1iZwl3AQ">
                         <div className="_1_7sU-OOgKb7PXybIFI8rT">
@@ -95,7 +107,7 @@ const Brands = () => (
                 <span  data-reactid="90"></span>
                 <a href="https://tumblbug.com/lookatlamp?utm_source=tumblbug&amp;utm_medium=internal&amp;utm_campaign=%ED%85%80%EB%B8%94%EB%B2%85/%EA%B8%B0%ED%9A%8D%EC%A0%84/MadeinTumblbug:%EB%B8%8C%EB%9E%9C%EB%93%9C">
                     <div className="_13KHfN73YmQgsYHxXvuh_J _2nZxogWCtwxgZvigECqiKs yx45-aQ3xTwP4lNZQ2qQs _18TDror949wcy2NyVIqpHo UxeYqEszWK5hhpRXaGHBr">
-                    <div className="-Qv21-og1HcmTC9fTAwhk"><img src="./Made in Tumblbug_ 브랜드 __ 텀블벅_files/2e9a3d89712a637948710e7fba99d5cea92f6b9c.jpg" alt="LOOK AT LAMP, 룩앳램프" className="_145Uy81NIiw-12IK7rJ920"></div>
+                    <div className="-Qv21-og1HcmTC9fTAwhk"><img src="./Made in Tumblbug_ 브랜드 __ 텀블벅_files/2e9a3d89712a637948710e7fba99d5cea92f6b9c.jpg" alt="LOOK AT LAMP, 룩앳램프" className="_145Uy81NIiw-12IK7rJ920"/></div>
                     <div className="_3ZgG-OSv0XE3y-h3oPaDsl">
                         <div className="_1lINMEHeN3VZwG1iZwl3AQ">
                         <div className="_1_7sU-OOgKb7PXybIFI8rT">
@@ -131,7 +143,7 @@ const Brands = () => (
                 <span  data-reactid="103"></span>
                 <a href="https://tumblbug.com/yourbam_bomjan?utm_source=tumblbug&amp;utm_medium=internal&amp;utm_campaign=%ED%85%80%EB%B8%94%EB%B2%85/%EA%B8%B0%ED%9A%8D%EC%A0%84/MadeinTumblbug:%EB%B8%8C%EB%9E%9C%EB%93%9C">
                     <div className="_13KHfN73YmQgsYHxXvuh_J _2nZxogWCtwxgZvigECqiKs yx45-aQ3xTwP4lNZQ2qQs _18TDror949wcy2NyVIqpHo UxeYqEszWK5hhpRXaGHBr">
-                    <div className="-Qv21-og1HcmTC9fTAwhk"><img src="./Made in Tumblbug_ 브랜드 __ 텀블벅_files/87ddbdf9afb452c592ace9f622b3303654d1a624.jpg" alt="꽃이 차오르는 봄날의 찻잔, 봄잔" className="_145Uy81NIiw-12IK7rJ920"></div>
+                    <div className="-Qv21-og1HcmTC9fTAwhk"><img src="./Made in Tumblbug_ 브랜드 __ 텀블벅_files/87ddbdf9afb452c592ace9f622b3303654d1a624.jpg" alt="꽃이 차오르는 봄날의 찻잔, 봄잔" className="_145Uy81NIiw-12IK7rJ920"/></div>
                     <div className="_3ZgG-OSv0XE3y-h3oPaDsl">
                         <div className="_1lINMEHeN3VZwG1iZwl3AQ">
                         <div className="_1_7sU-OOgKb7PXybIFI8rT">
@@ -167,7 +179,7 @@ const Brands = () => (
                 <span  data-reactid="116"></span>
                 <a href="https://tumblbug.com/doubledown?utm_source=tumblbug&amp;utm_medium=internal&amp;utm_campaign=%ED%85%80%EB%B8%94%EB%B2%85/%EA%B8%B0%ED%9A%8D%EC%A0%84/MadeinTumblbug:%EB%B8%8C%EB%9E%9C%EB%93%9C">
                     <div className="_13KHfN73YmQgsYHxXvuh_J _2nZxogWCtwxgZvigECqiKs yx45-aQ3xTwP4lNZQ2qQs _18TDror949wcy2NyVIqpHo UxeYqEszWK5hhpRXaGHBr">
-                    <div className="-Qv21-og1HcmTC9fTAwhk"><img src="./Made in Tumblbug_ 브랜드 __ 텀블벅_files/4eae4f67-3e25-42f2-8b34-63571aaf6407.jpg" alt="하루 한 포로 스트레스 없는 다이어트: 투유투디 더블다운" className="_145Uy81NIiw-12IK7rJ920"></div>
+                    <div className="-Qv21-og1HcmTC9fTAwhk"><img src="./Made in Tumblbug_ 브랜드 __ 텀블벅_files/4eae4f67-3e25-42f2-8b34-63571aaf6407.jpg" alt="하루 한 포로 스트레스 없는 다이어트: 투유투디 더블다운" className="_145Uy81NIiw-12IK7rJ920"/></div>
                     <div className="_3ZgG-OSv0XE3y-h3oPaDsl">
                         <div className="_1lINMEHeN3VZwG1iZwl3AQ">
                         <div className="_1_7sU-OOgKb7PXybIFI8rT">
@@ -203,7 +215,7 @@ const Brands = () => (
                 <span  data-reactid="129"></span>
                 <a href="https://tumblbug.com/merry_cushion?utm_source=tumblbug&amp;utm_medium=internal&amp;utm_campaign=%ED%85%80%EB%B8%94%EB%B2%85/%EA%B8%B0%ED%9A%8D%EC%A0%84/MadeinTumblbug:%EB%B8%8C%EB%9E%9C%EB%93%9C">
                     <div className="_13KHfN73YmQgsYHxXvuh_J _2nZxogWCtwxgZvigECqiKs yx45-aQ3xTwP4lNZQ2qQs _18TDror949wcy2NyVIqpHo UxeYqEszWK5hhpRXaGHBr">
-                    <div className="-Qv21-og1HcmTC9fTAwhk"><img src="./Made in Tumblbug_ 브랜드 __ 텀블벅_files/62b251b13836194a4008984d83737a1c29b38e7b.jpg" alt="&#39;비트윈&#39;의 두번째 캐릭터 쿠션, &lt;메리&gt;" className="_145Uy81NIiw-12IK7rJ920"></div>
+                    <div className="-Qv21-og1HcmTC9fTAwhk"><img src="./Made in Tumblbug_ 브랜드 __ 텀블벅_files/62b251b13836194a4008984d83737a1c29b38e7b.jpg" alt="&#39;비트윈&#39;의 두번째 캐릭터 쿠션, &lt;메리&gt;" className="_145Uy81NIiw-12IK7rJ920"/></div>
                     <div className="_3ZgG-OSv0XE3y-h3oPaDsl">
                         <div className="_1lINMEHeN3VZwG1iZwl3AQ">
                         <div className="_1_7sU-OOgKb7PXybIFI8rT">
@@ -239,7 +251,7 @@ const Brands = () => (
                 <span  data-reactid="142"></span>
                 <a href="https://tumblbug.com/alex?utm_source=tumblbug&amp;utm_medium=internal&amp;utm_campaign=%ED%85%80%EB%B8%94%EB%B2%85/%EA%B8%B0%ED%9A%8D%EC%A0%84/MadeinTumblbug:%EB%B8%8C%EB%9E%9C%EB%93%9C">
                     <div className="_13KHfN73YmQgsYHxXvuh_J _2nZxogWCtwxgZvigECqiKs yx45-aQ3xTwP4lNZQ2qQs _18TDror949wcy2NyVIqpHo UxeYqEszWK5hhpRXaGHBr">
-                    <div className="-Qv21-og1HcmTC9fTAwhk"><img src="./Made in Tumblbug_ 브랜드 __ 텀블벅_files/12c22e18-ad3f-45c3-867d-f23b26628f60.jpg" alt="알렉스텀블러, 텀블러 장인의 걸작" className="_145Uy81NIiw-12IK7rJ920"></div>
+                    <div className="-Qv21-og1HcmTC9fTAwhk"><img src="./Made in Tumblbug_ 브랜드 __ 텀블벅_files/12c22e18-ad3f-45c3-867d-f23b26628f60.jpg" alt="알렉스텀블러, 텀블러 장인의 걸작" className="_145Uy81NIiw-12IK7rJ920"/></div>
                     <div className="_3ZgG-OSv0XE3y-h3oPaDsl">
                         <div className="_1lINMEHeN3VZwG1iZwl3AQ">
                         <div className="_1_7sU-OOgKb7PXybIFI8rT">
@@ -275,7 +287,7 @@ const Brands = () => (
                 <span  data-reactid="155"></span>
                 <a href="https://tumblbug.com/chuseok2018?utm_source=tumblbug&amp;utm_medium=internal&amp;utm_campaign=%ED%85%80%EB%B8%94%EB%B2%85/%EA%B8%B0%ED%9A%8D%EC%A0%84/MadeinTumblbug:%EB%B8%8C%EB%9E%9C%EB%93%9C">
                     <div className="_13KHfN73YmQgsYHxXvuh_J _2nZxogWCtwxgZvigECqiKs yx45-aQ3xTwP4lNZQ2qQs _18TDror949wcy2NyVIqpHo UxeYqEszWK5hhpRXaGHBr">
-                    <div className="-Qv21-og1HcmTC9fTAwhk"><img src="./Made in Tumblbug_ 브랜드 __ 텀블벅_files/3dcc9def-dcce-403f-ade7-85b9e267e8a8.jpg" alt="한가위를 위한 델리미트, 소금집이 준비한 가장 풍성한 추석" className="_145Uy81NIiw-12IK7rJ920"></div>
+                    <div className="-Qv21-og1HcmTC9fTAwhk"><img src="./Made in Tumblbug_ 브랜드 __ 텀블벅_files/3dcc9def-dcce-403f-ade7-85b9e267e8a8.jpg" alt="한가위를 위한 델리미트, 소금집이 준비한 가장 풍성한 추석" className="_145Uy81NIiw-12IK7rJ920"/></div>
                     <div className="_3ZgG-OSv0XE3y-h3oPaDsl">
                         <div className="_1lINMEHeN3VZwG1iZwl3AQ">
                         <div className="_1_7sU-OOgKb7PXybIFI8rT">
@@ -311,7 +323,7 @@ const Brands = () => (
                 <span  data-reactid="168"></span>
                 <a href="https://tumblbug.com/hellobot_tarot?utm_source=tumblbug&amp;utm_medium=internal&amp;utm_campaign=%ED%85%80%EB%B8%94%EB%B2%85/%EA%B8%B0%ED%9A%8D%EC%A0%84/MadeinTumblbug:%EB%B8%8C%EB%9E%9C%EB%93%9C">
                     <div className="_13KHfN73YmQgsYHxXvuh_J _2nZxogWCtwxgZvigECqiKs yx45-aQ3xTwP4lNZQ2qQs _18TDror949wcy2NyVIqpHo UxeYqEszWK5hhpRXaGHBr">
-                    <div className="-Qv21-og1HcmTC9fTAwhk"><img src="./Made in Tumblbug_ 브랜드 __ 텀블벅_files/58318851-519d-4ff9-97a9-fca5e8c7ad24.png" alt="280만명 연애운 본 라마마, 타로책 &amp; 타로카드(78장)" className="_145Uy81NIiw-12IK7rJ920"></div>
+                    <div className="-Qv21-og1HcmTC9fTAwhk"><img src="./Made in Tumblbug_ 브랜드 __ 텀블벅_files/58318851-519d-4ff9-97a9-fca5e8c7ad24.png" alt="280만명 연애운 본 라마마, 타로책 &amp; 타로카드(78장)" className="_145Uy81NIiw-12IK7rJ920"/></div>
                     <div className="_3ZgG-OSv0XE3y-h3oPaDsl">
                         <div className="_1lINMEHeN3VZwG1iZwl3AQ">
                         <div className="_1_7sU-OOgKb7PXybIFI8rT">
