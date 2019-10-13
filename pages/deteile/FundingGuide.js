@@ -36,16 +36,11 @@ const FundingGuide = () => (
 										모인금액
 									</div>
 									<div className="ProjectIntroduction__StatusValue-sc-1o2ojgb-16 lgJcVA">
-									
-										4,494,000
-										
-										<span className="ProjectIntroduction__Small-sc-1o2ojgb-18 lnSbIU">원</span><span className="ProjectIntroduction__FundingRate-sc-1o2ojgb-17 cNDicH">
-										
-										224
-									
-										%
-										
-										</span>
+								    	4,494,000
+								    <span className="ProjectIntroduction__Small-sc-1o2ojgb-18 lnSbIU">원</span><span className="ProjectIntroduction__FundingRate-sc-1o2ojgb-17 cNDicH">
+								        224
+									    %
+								    </span>
 									</div>
 								</div>
 								<div className="ProjectIntroduction__Metric-sc-1o2ojgb-14 cZUBTY">
@@ -53,10 +48,8 @@ const FundingGuide = () => (
 										남은시간
 									</div>
 									<div className="ProjectIntroduction__StatusValue-sc-1o2ojgb-16 lgJcVA">
-									
-										58
-								
-										<span className="ProjectIntroduction__Small-sc-1o2ojgb-18 lnSbIU">일</span>
+								        58
+								    <span className="ProjectIntroduction__Small-sc-1o2ojgb-18 lnSbIU">일</span>
 									</div>
 								</div>
 								<div className="ProjectIntroduction__Metric-sc-1o2ojgb-14 cZUBTY">
@@ -64,10 +57,8 @@ const FundingGuide = () => (
 										후원자
 									</div>
 									<div className="ProjectIntroduction__StatusValue-sc-1o2ojgb-16 lgJcVA">
-								
-										179
-										
-										<span className="ProjectIntroduction__Small-sc-1o2ojgb-18 lnSbIU">명</span>
+								        179
+									<span className="ProjectIntroduction__Small-sc-1o2ojgb-18 lnSbIU">명</span>
 									</div>
 								</div>
 							</div>
@@ -78,22 +69,14 @@ const FundingGuide = () => (
 										펀딩 진행중
 									</div>
 									<span>
-								
-									목표 금액인 
-								
-									2,000,000
-							
-									원이 모여야만 결제됩니다.
-									
-									<br />
-								
-									결제는 
-								
-									2019년 12월 9일
-						
-									에 다함께 진행됩니다.
-									
-									</span>
+								        목표 금액인 
+								        2,000,000
+							            원이 모여야만 결제됩니다.
+								    <br />
+								        결제는 
+								        2019년 12월 9일
+						                에 다함께 진행됩니다.
+							        </span>
 								</div>
 							</div>
 							<div className="ProjectIntroduction__ProjectButtons-sc-1o2ojgb-19 fHOYOE">
@@ -232,15 +215,11 @@ const FundingGuide = () => (
 											</div>
 											<div className="CreatorCard__CreatorStats-sc-1ifohey-5 dhVdtT">
 												<div>
-										
-													마지막 로그인&nbsp;&nbsp;
-													
-													<b>9시간 전</b>
+										            마지막 로그인&nbsp;&nbsp;
+												    <b>9시간 전</b>
 												</div>
-									
-												진행한 프로젝트&nbsp;&nbsp;
-												
-												<b>8</b>
+									                진행한 프로젝트&nbsp;&nbsp;
+												    <b>8</b>
 									
 												&nbsp;&nbsp;&nbsp;&nbsp; 밀어준 프로젝트&nbsp;&nbsp;
 												
@@ -248,69 +227,50 @@ const FundingGuide = () => (
 											</div>
 											<div className="CreatorCard__CreatorContactButton-sc-1ifohey-6 jpHksr">
 												<button className="Button-sc-1x93b2b-0 jQspcv"><i className="_3YmAkQhwzI7o-uUWz_8Mp4 _1QY7TzdLHKX3-BKPDNNYKF"></i>
-								
-												창작자에게 문의하기
-												
-												</button>
+								                	창작자에게 문의하기
+											    </button>
 											</div>
 										</div>
 									</div>
 									<div className="Rewards-c484ad-0 flLtKW">
 										<div className="Rewards__RewardsLabel-c484ad-1 eUKlkT">
-								
-											선택할 수 있는 
-											
-											<b>4</b>
-						
-											개의 선물이 있습니다
-											
+								        	선택할 수 있는 
+										<b>4</b>
+						                    개의 선물이 있습니다
 										</div>
 										<div className="RewardCard__RewardCardWrapper-sc-1u66tc0-0 dHxsUr">
 											<div className="Card-sc-1sgtmvk-0 gBrdMC">
 												<div className="RewardCard__RewardCardInner-sc-1u66tc0-1 cUrXrg">
 													<div className="RewardCard__RewardHeader-sc-1u66tc0-2 iynKOC">
 														<span className="RewardCard__PledgeAmount-sc-1u66tc0-3 MLabx"><i className="-o8oGI_QAOKsVIJOUOUmV _1QY7TzdLHKX3-BKPDNNYKF"></i>
-							
-														50
-						
-														명이 선택
-														
-														</span><span className="RewardCard__RewardQuantityLimit-sc-1u66tc0-4 mYUqu"><span className="RewardCard__SoldoutLabel-sc-1u66tc0-6 bOOXjF">선착순 마감</span></span>
+							                                50
+						                                    명이 선택
+													</span><span className="RewardCard__RewardQuantityLimit-sc-1u66tc0-4 mYUqu"><span className="RewardCard__SoldoutLabel-sc-1u66tc0-6 bOOXjF">선착순 마감</span></span>
 													</div>
 													<div className="RewardCard__RewardContents-sc-1u66tc0-7 jSudED">
 														<div className="RewardCard__RewardMinimumPledgeAmount-sc-1u66tc0-8 kwNvmv">
-											
-															21,000
-											
-															원 +
-															
-														</div>
+											                21,000
+											                원 +
+												        </div>
 														<div className="RewardCard__RewardDescription-sc-1u66tc0-9 iwlqIk">
 															얼리버드, 배송비 포함
 														</div>
 													</div>
 													<div className="RewardCard__Items-sc-1u66tc0-10 hOUlxo">
 														<li className="RewardCard__ItemList-sc-1u66tc0-11 jkPMDd">
-												
-														말로 오리지널
-											
-														&nbsp;
-														
-														<span>( x 1 )</span></li>
+												            말로 오리지널
+											            &nbsp;
+												    	<span>( x 1 )</span></li>
 														<li className="RewardCard__ItemList-sc-1u66tc0-11 jkPMDd">
-											
-														파우치
-											
-														&nbsp;
+											                파우치
+											            &nbsp;
 														
 														<span>( x 1 )</span></li>
 													</div>
 													<div className="RewardCard__DeliveryDate-sc-1u66tc0-12 eshybT">
 														<span>
-											
-														예상 전달일 &nbsp;
-														
-														<b>2020년 1월 14일</b></span>
+											                예상 전달일 &nbsp;
+													    <b>2020년 1월 14일</b></span>
 													</div>
 													<div className="Divider-sc-17hnup0-0 cRAxcq">
 													</div>
@@ -323,43 +283,31 @@ const FundingGuide = () => (
 												<div className="RewardCard__RewardCardInner-sc-1u66tc0-1 cUrXrg">
 													<div className="RewardCard__RewardHeader-sc-1u66tc0-2 iynKOC">
 														<span className="RewardCard__PledgeAmount-sc-1u66tc0-3 MLabx"><i className="-o8oGI_QAOKsVIJOUOUmV _1QY7TzdLHKX3-BKPDNNYKF"></i>
-										
-														50
-											
-														명이 선택
-														
-														</span><span className="RewardCard__RewardQuantityLimit-sc-1u66tc0-4 mYUqu"><span className="RewardCard__SoldoutLabel-sc-1u66tc0-6 bOOXjF">선착순 마감</span></span>
+										                    50
+											                명이 선택
+													</span><span className="RewardCard__RewardQuantityLimit-sc-1u66tc0-4 mYUqu"><span className="RewardCard__SoldoutLabel-sc-1u66tc0-6 bOOXjF">선착순 마감</span></span>
 													</div>
 													<div className="RewardCard__RewardContents-sc-1u66tc0-7 jSudED">
 														<div className="RewardCard__RewardMinimumPledgeAmount-sc-1u66tc0-8 kwNvmv">
-											
-															26,000
-												
-															원 +
-															
-														</div>
+											                26,000
+												            원 +
+													        </div>
 														<div className="RewardCard__RewardDescription-sc-1u66tc0-9 iwlqIk">
 															얼리버드, 배송비 포함
 														</div>
 													</div>
 													<div className="RewardCard__Items-sc-1u66tc0-10 hOUlxo">
 														<li className="RewardCard__ItemList-sc-1u66tc0-11 jkPMDd">
-										
-														말로 오리지널
+										                    말로 오리지널
+											                &nbsp;
+													    <span>( x 1 )</span></li>
+														<li className="RewardCard__ItemList-sc-1u66tc0-11 jkPMDd">
+												            파우치
 											
 														&nbsp;
-														
-														<span>( x 1 )</span></li>
+													    <span>( x 1 )</span></li>
 														<li className="RewardCard__ItemList-sc-1u66tc0-11 jkPMDd">
-												
-														파우치
-											
-														&nbsp;
-														
-														<span>( x 1 )</span></li>
-														<li className="RewardCard__ItemList-sc-1u66tc0-11 jkPMDd">
-											
-														말로 배지
+											                말로 배지
 											
 														&nbsp;
 														
