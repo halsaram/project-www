@@ -11,7 +11,7 @@
 **************************************************************************************/
 import React from 'react'
 import Link from 'next/link';
-import { Divider, Header, Icon, Grid, Button } from 'semantic-ui-react'
+import { Divider, Header, Icon, Grid, Button, Image } from 'semantic-ui-react'
 
 
 const ProjectLink = (props) => (
@@ -57,9 +57,11 @@ const Start = () => (
                 <Header as='h1'>마음 속 프로젝트 아이디어, <br />텀블벅에서 현실로</Header>
                 <p>크라우드펀딩으로 프로젝트를 위한 자금도 모으고,<br />
                     든든한 후원자 네트워크도 확보할 수 있습니다.</p>
-                <Link as='/p' href='/project?id=agreements&title=정책'>
-                    <Button content='지금 시작하기' size='massive' primary />
-                </Link>
+                <Button size='massive' primary color='grey'>
+                    <Link as='/p' href='/project?id=agreements&title=정책'>
+                        지금 시작하기
+                    </Link>
+                </Button>
             </Grid.Column>
         </Grid>
         <Divider horizontal>
@@ -68,53 +70,97 @@ const Start = () => (
                 Description
             </Header>
         </Divider>
+        <Grid columns={2} relaxed='very' stackable>
+            <Grid.Column verticalAlign='middle' textAlign='right'>
+                <Header as='h1'>텀블벅에서 펀딩에 성공한 <br />12,000개 프로젝트와 함께 하세요.</Header>
+                <p>디자인, 영화, 게임, 출판, 요리, 패션, 이벤트 …<br />
+                    분야를 가릴 것 없이 수많은 창작자와 창업자들의<br />
+                    프로젝트들이 매일같이 올라오는 텀블벅은<br />
+                    한국에서 가장 활성화된 크라우드펀딩 커뮤니티입니다.<br />
+                    지금껏 12,000개 넘는 창조적인 시도들이 <br />
+                    70만 명의 후원자를 만나 세상에 나왔습니다.</p>
+                <Button size='massive' primary>
+                    <Link as='/p' href='/project?id=agreements&title=정책'>
+                        지금 시작하기
+                    </Link>
+                </Button>    
+            </Grid.Column>
+            <Grid.Column verticalAlign='middle'>
+            </Grid.Column>
+        </Grid>
+        <Divider horizontal>
+            <Header as='h4'>
+                <Icon name='tag' />
+                Description
+            </Header>
+        </Divider>
+        <Header as='h1'>쉽게 시작할 수 있습니다.</Header>
+        <p>‘크라우드펀딩’은 어려울지 몰라도 텀블벅은 어렵지 않습니다. 수익을 내서 현금을 돌려주거나 소유권을 나누는 등의 복잡한 과정도 필요하지 않습니다. 펀딩으로 모은 금액을 통해 만들어낸 제품 또는 특별한 경험 그 자체를 후원자들과 약속하고 공유하면 됩니다.</p>
+        <Grid columns={3} relaxed='very' stackable>
+            <Grid.Column verticalAlign='top' textAlign='center'>
+                <Image src='http://placehold.it/200x200' size='small' circular centered />
+                <Header as='h2'>프로젝트 올리기</Header>
+                <p>창작 아이디어를 소개하는 프로젝트 페이지를 작성합니다. 후원자들에게 금액대별 특별한 선물들을 약속합니다.</p>
+                <Button size='huge' primary>
+                    <Link as='/p' href='/project?id=agreements&title=정책'>
+                        프로젝트 올리기 시작하기
+                    </Link>
+                </Button>
+            </Grid.Column>
+            <Grid.Column verticalAlign='top' textAlign='center'>
+                <Image src='http://placehold.it/200x200' size='small' circular centered />
+                <Header as='h2'>펀딩 진행하기</Header>
+                <p>정해진 기간 동안 후원자를 모으기 위해 열심히 홍보합니다. 목표 금액을 달성해야만 후원금이 전달됩니다.</p>
+            </Grid.Column>
+            <Grid.Column verticalAlign='top' textAlign='center'>
+                <Image src='http://placehold.it/200x200' size='small' circular centered />
+                <Header as='h2'>만들고 보답하기</Header>
+                <p>전달받은 후원금으로 창작에 돌입합니다. 틈틈히 진척사항을 알리고, 약속한 선물을 전달하면 프로젝트가 끝납니다.</p>
+            </Grid.Column>
+        </Grid>
+        <Divider horizontal>
+            <Header as='h4'>
+                <Icon name='tag' />
+                Description
+            </Header>
+        </Divider>
+        <Header as='h1'>누구에게나 열려 있습니다.</Header>
+        <Grid columns={3} relaxed='very' stackable>
+            <Grid.Column verticalAlign='middle' textAlign='center'>
+                <Header as='h2'>창작자</Header>
+                <p>평소 몰두했던 작업이나 구상만 하던 창작 아이디어를 본격적인 단계로 발전시킬 기회로 삼아보세요.</p>
+                <p>시작하는 창작자에게 텀블벅은 지원금, 공모전 등의 방식들보다 훨씬 자율적이고 독립적으로 나와 내 작업을 알릴 수 있는 새로운 길입니다. 이미 콘텐츠와 팬층을 확보한 작가라면 신선한 기획을 통해 팬들을 만나는 새로운 창구를 열어보는 건 어떨까요?</p>
+                <Button size='small' primary>
+                    <Link as='/col' href='/collections?id=creative'>
+                            창작자 성공사례 보기
+                    </Link>
+                </Button>
+            </Grid.Column>
+            <Grid.Column verticalAlign='middle' textAlign='center'>
+                <Header as='h2'>브랜드</Header>
+                <p>초기 비용이나 재고 부담 없이 새로운 제품이나 서비스를 론칭하고 코어 팬 베이스를 확보하세요.</p>
+                <p>브랜드에 이목을 집중시키는 스토리를 통해 마케팅 효과를 극대화할 수 있습니다. 트렌디하면서도 개인의 취향과 가치가 강조되는 새로운 참여형 소비 창구로 각광받는 텀블벅에서 모인 후원자들의 신뢰는 일반 이커머스에서보다 훨씬 깊고 오래 가는 팬 베이스가 되어줄 것입니다.</p>
+                <Button size='small' primary>
+                    <Link as='/col' href='/collections?id=brand'>
+                            브랜드 성공사례 보기
+                    </Link>
+                </Button>
+            </Grid.Column>
+            <Grid.Column verticalAlign='middle' textAlign='center'>
+                <Header as='h2'>캠페인</Header>
+                <p>임팩트 있는 캠페인을 통해 사회적 이슈를 지속가능한 참여와 후원으로 전환시켜보세요.</p>
+                <p>언론이나 소셜미디어에서 떠오르는 이슈들을 구체적인 행동으로 전환시키는 데에 텀블벅 프로젝트가 제격입니다. 새롭고 젊은 정치참여·사회운동 방식으로 주목받는 텀블벅 펀딩으로 더 많은 지지자를 얻고, 사회적 목소리를 증폭시켜보세요.</p>
+                <Button size='small' primary>
+                    <Link as='/col' href='/collections?id=campaign'>
+                        캠페인 성공사례 보기
+                    </Link>
+                </Button>
+            </Grid.Column>
+        </Grid>
         <div data-reactid="39">
             <div data-reactid="40">
                 <main data-reactid="42">
-                <div className="ProjectStartHero__HeroWrapper-ps7c1s-0 bbgJFn" data-reactid="43">
-                    <div className="ProjectStartHero__HeroBackgroundLeft-ps7c1s-1 cpLXQd" data-reactid="44">
-                    </div>
-                    <div className="ProjectStartHero__HeroBackgroundRight-ps7c1s-2 cBrUck" data-reactid="45">
-                    </div>
-                    <div className="ProjectStartHero__Container-ps7c1s-3 efAaFL" data-reactid="46">
-                        <div className="ProjectStartHero__Image-ps7c1s-7 cizYUk" data-reactid="47">
-                        </div>
-                        <div className="ProjectStartHero__Contents-ps7c1s-5 kgpMea" data-reactid="48">
-                            <h1 className="ProjectStartHero__H1-ps7c1s-4 bsiMkN" data-reactid="49">
-                            마음 속 프로젝트 아이디어,
-                            <br data-reactid="51"/>
-                            텀블벅에서 현실로.
-                            </h1>
-                            <p className="ProjectStartHero__P-ps7c1s-6 benTAJ" data-reactid="53">
-                              크라우드펀딩으로 프로젝트를 위한 자금도 모으고,
-                             <br data-reactid="55"/>
-                                든든한 후원자 네트워크도 확보할 수 있습니다. </p>
-                            <ProjectLink id='agreements' title='지금 시작하기' />
-                        </div>
-                    </div>
-                </div>
-                <div className="ProjectStartIntro__IntroWrapper-sc-1om8cg9-0 PxZOF" data-reactid="58">
-                    <div className="ProjectStartIntro__Image-sc-1om8cg9-1 ijapZQ" data-reactid="59">
-                    </div>
-                    <div className="ProjectStartIntro__Container-sc-1om8cg9-2 jBoPEt" data-reactid="60">
-                        <div className="ProjectStartIntro__Contents-sc-1om8cg9-4 dCmXmu" data-reactid="61">
-                            <h1 className="ProjectStartIntro__H1-sc-1om8cg9-3 cJnbKY" data-reactid="62">
-                                 텀블벅에서 펀딩에 성공한
-                            <br data-reactid="64"/>
-                                 12,000
-                                 개 프로젝트와 함께 하세요.</h1>
-                            <p data-reactid="67">
-                                디자인, 영화, 게임, 출판, 요리, 패션, 이벤트 …
-                                <br data-reactid="69"/>
-                                분야를 가릴 것 없이 수많은 창작자와 창업자들의 프로젝트들이 매일같이 올라오는 텀블벅은 한국에서 가장 활성화된 크라우드펀딩 커뮤니티입니다. 지금껏 
-                                12,000
-                                개 넘는 창조적인 시도들이 
-                                70만 명
-                                의 후원자를 만나 세상에 나왔습니다.
-                             </p>
-                        </div>
-                    </div>
-                </div>
+                
                 <div className="ProjectStartGuide__GuideWrapper-higy7q-1 ixiCWR" data-reactid="75">
                     <div className="ProjectStartGuide__Container-higy7q-0 etyeYf" data-reactid="76">
                         <h2 className="ProjectStartGuide__H2-higy7q-2 fYtPxv" data-reactid="77">쉽게 시작할 수 있습니다.</h2>
