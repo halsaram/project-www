@@ -27,6 +27,7 @@ class Login extends Component {
 	render() {
 	const { mail, passwd, submittedMail, submittedPasswd } = this.state
 		return (
+			<div>
 			<Segment placeholder>
 				<Grid columns={2} relaxed='very' stackable>
 					<Grid.Column verticalAlign='middle'>
@@ -69,14 +70,20 @@ class Login extends Component {
 						</Form>
 					</Grid.Column>
 					<Grid.Column verticalAlign='middle'>
-						<strong>onChange:</strong>
-						<pre>{JSON.stringify({ mail, passwd }, null, 2)}</pre>
-						<strong>onSubmit:</strong>
-						<pre>{JSON.stringify({ submittedMail, submittedPasswd }, null, 2)}</pre>
+						
 					</Grid.Column>
 				</Grid>
 				<Divider vertical>on</Divider>
+
+				
 			</Segment>
+			<div>
+				<strong>onChange:</strong>
+				<pre>{JSON.stringify({ mail, passwd }, null, 2)}</pre>
+				<strong>onSubmit:</strong>
+				<pre>{JSON.stringify({ submittedMail, submittedPasswd }, null, 2)}</pre>
+			</div>
+			</div>
 		);
 	}
 }

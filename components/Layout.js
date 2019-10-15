@@ -1,16 +1,111 @@
 import Head from 'next/head'
-import { Container } from 'semantic-ui-react'
+
+import PropTypes from 'prop-types'
+import React, { Component } from 'react'
 import Link from 'next/link';
-import Header from './Header'
+import {
+  Button,
+  Checkbox,
+  Container,
+  Grid,
+  Header,
+  Icon,
+  Image,
+  Menu,
+  Segment,
+  Sidebar,
+} from 'semantic-ui-react'
+
+import HeaderBar from './Header'
 import Footer from './Footer'
 
 import '../pages/style.css'
 
-export default class Layout extends React.Component {
+const HorizontalSidebar = ({ animation, direction, visible }) => (
+  <Sidebar
+    as={Segment}
+    animation={animation}
+    direction={direction}
+    visible={visible}
+  >
+    <Grid textAlign='center'>
+      <Grid.Row columns={1}>
+        <Grid.Column>
+          <Header as='h3'>New Content Awaits</Header>
+        </Grid.Column>
+      </Grid.Row>
+      <Grid columns={3} divided>
+        <Grid.Column>
+          <Image src='/images/wireframe/media-paragraph.png' />
+        </Grid.Column>
+        <Grid.Column>
+          <Image src='/images/wireframe/media-paragraph.png' />
+        </Grid.Column>
+        <Grid.Column>
+          <Image src='/images/wireframe/media-paragraph.png' />
+        </Grid.Column>
+      </Grid>
+    </Grid>
+  </Sidebar>
+)
 
+HorizontalSidebar.propTypes = {
+  animation: PropTypes.string,
+  direction: PropTypes.string,
+  visible: PropTypes.bool,
+}
+
+const VerticalSidebar = ({ animation, direction, visible }) => (
+  <Sidebar
+    as={Menu}
+    animation={animation}
+    direction={direction}
+    icon='labeled'
+    inverted
+    vertical
+    visible={visible}
+    width='thin'
+  >
+    <Menu.Item as='a'>
+      <Icon name='home' />
+      Home
+    </Menu.Item>
+    <Menu.Item as='a'>
+      <Icon name='gamepad' />
+      Games
+    </Menu.Item>
+    <Menu.Item as='a'>
+      <Icon name='camera' />
+      Channels
+    </Menu.Item>
+  </Sidebar>
+)
+
+VerticalSidebar.propTypes = {
+  animation: PropTypes.string,
+  direction: PropTypes.string,
+  visible: PropTypes.bool,
+}
+
+export default class Layout extends React.Component {
+  state = {
+    animation: 'overlay',
+    direction: 'left',
+    dimmed: false,
+    visible: false,
+  }
+
+  handleAnimationChange = (animation) => () =>
+    this.setState((prevState) => ({ animation, visible: !prevState.visible }))
+
+  handleDimmedChange = (e, { checked }) => this.setState({ dimmed: checked })
+
+  handleDirectionChange = (direction) => () =>
+    this.setState({ direction, visible: false })
   render() {
     const { children, title = '' } = this.props
-
+    const { animation, dimmed, direction, visible } = this.state
+    const vertical = direction === 'bottom' || direction === 'top'
     return (
       <React.Fragment>
         <Head>
@@ -55,12 +150,97 @@ export default class Layout extends React.Component {
           />
           <title>{title} :: Halsaram</title>
         </Head>
+        <Checkbox
+          checked={dimmed}
+          label='Dim Page'
+          onChange={this.handleDimmedChange}
+          toggle
+        />
 
-        <Header />
+        <Header as='h5'>Direction</Header>
+        <Button.Group>
+          <Button
+            active={direction === 'left'}
+            onClick={this.handleDirectionChange('left')}
+          >
+            Left
+          </Button>
+          <Button
+            active={direction === 'right'}
+            onClick={this.handleDirectionChange('right')}
+          >
+            Right
+          </Button>
+          <Button
+            active={direction === 'top'}
+            onClick={this.handleDirectionChange('top')}
+          >
+            Top
+          </Button>
+          <Button
+            active={direction === 'bottom'}
+            onClick={this.handleDirectionChange('bottom')}
+          >
+            Bottom
+          </Button>
+        </Button.Group>
 
-        <Container fluid>
-          {children}
-        </Container>
+        <Header as='h5'>All Direction Animations</Header>
+        <Button onClick={this.handleAnimationChange('overlay')}>Overlay</Button>
+        <Button onClick={this.handleAnimationChange('push')}>Push</Button>
+        <Button onClick={this.handleAnimationChange('scale down')}>
+          Scale Down
+        </Button>
+
+        <Header as='h5'>Vertical-Only Animations</Header>
+        <Button
+          disabled={vertical}
+          onClick={this.handleAnimationChange('uncover')}
+        >
+          Uncover
+        </Button>
+        <Button
+          disabled={vertical}
+          onClick={this.handleAnimationChange('slide along')}
+        >
+          Slide Along
+        </Button>
+        <Button
+          disabled={vertical}
+          onClick={this.handleAnimationChange('slide out')}
+        >
+          Slide Out
+        </Button>
+
+        <Sidebar.Pushable as={Segment}>
+          {vertical ? (
+            <HorizontalSidebar
+              animation={animation}
+              direction={direction}
+              visible={visible}
+            />
+          ) : null}
+          {vertical ? null : (
+            <VerticalSidebar
+              animation={animation}
+              direction={direction}
+              visible={visible}
+            />
+          )}
+
+          <HeaderBar />
+
+          <Sidebar.Pusher dimmed={dimmed && visible}>
+            <Segment basic>
+              <Container fluid>
+                {children}
+              </Container>
+            </Segment>
+          </Sidebar.Pusher>
+        </Sidebar.Pushable>
+        
+
+        
         
         <Footer />
       </React.Fragment>
