@@ -20,7 +20,8 @@ const fontstyle={
 
 
 class Join extends Component {
-    state = { mail: '', username: '', passwd: '', checkpasswd: '', submittedMail: '', submittedUsername: '', submittedPasswd: '', submittedCheckPasswd: '' }
+    state = { mail: '', username: '', passwd: '', checkpasswd: '',
+    submittedMail: '', submittedUsername: '', submittedPasswd: '', submittedCheckPasswd: '' }
 
     handleChange = (e, { name, value }) => this.setState({ [name]: value })
 

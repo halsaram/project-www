@@ -5,11 +5,14 @@
  * 작성자		   : 이은미
  * 버전		      : 1.0.0
  * 생성일자		   : 2019-10-02
- * 최종수정일자 	: 2019-10-07
- * 최종수정자	   : 이은미
- * 최종수정내용	  : 상단 주석 처리
+ * 최종수정일자 	: 2019-10-15
+ * 최종수정자	   : 전새희
+ * 최종수정내용	  : state 적용
 **************************************************************************************/
+
 import Link from 'next/link';
+import React, { Component } from 'react'
+
 
 const ProjectLink = (props) => (
     <div className="_13KHfN73YmQgsYHxXvuh_J _3qrj1CcqiU767c8teG6imW _2Xkf-oIN3dW3T7P_qmRJv3">
@@ -33,7 +36,23 @@ const ProjectLink = (props) => (
 	</div>
 )
 
-const Storytelling = () => (
+class Storytelling extends Component {
+	state = { image: '', video: '', descriptionImage: '', summary: '',
+		submittedImage: '', submittedVideo: '', submittedDescriptionImage: '', submittedSummary: '' }
+
+	handleChange = (e, { name, value }) => this.setState({ [name]: value })
+
+	handleSubmit = () => {
+		const { image, video, descriptionImage, summary } = this.state
+
+		this.setState({ submittedImage: image, submittedVideo: video, submittedDescriptionImage: descriptionImage, submittedSummary: summary })
+	}
+
+	render() {
+		const { image, video, descriptionImage, summary,
+			submittedImage, submittedVideo, submittedDescriptionImage, submittedSummary } = this.state
+		return (
+
 	<div>
 		<div>
 			<header className="_13KHfN73YmQgsYHxXvuh_J _1roJokHGjgDRbKmh0exptw">
@@ -160,8 +179,16 @@ const Storytelling = () => (
 				<br />
 				<br />
 			</div>
-			<br />
-		</div>
-);
+
+
+			<strong>onChange:</strong>
+				<pre>{JSON.stringify({ image, video, descriptionImage, summary }, null, 4)}</pre>
+			<strong>onSubmit:</strong>
+				<pre>{JSON.stringify({ submittedImage, submittedVideo, submittedDescriptionImage, submittedSummary }, null, 4)}</pre>
+
+			</div >
+        );
+	}
+}
 
 export default Storytelling;

@@ -41,6 +41,7 @@ class Summary extends Component {
 	state = { projectTitle: '', keyword: '', fundingGoal: '', category: '', deadline: '', creator: '', websites1: '', websites2: '',
 		submittedProjectTitle: '', submittedKeyword: '', submittedFundingGoal: '', submittedCategory: '',
 		submittedDeadline: '', submittedCreator: '', submittedWebsites1: '', submittedWebsites2: '' }
+		
 	handleChange = (e, { name, value }) => this.setState({ [name]: value })
 
 	handleSubmit = () => {
