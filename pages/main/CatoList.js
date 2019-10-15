@@ -12,6 +12,7 @@
 
 import React, {useState} from 'react';
 import MainList from './MainList';
+import { Card, Icon, Grid, Segment, Button, Progress } from 'semantic-ui-react'
 
 //예시 데이터________________________________________________________________________
 const EditReco = { 
@@ -28,32 +29,28 @@ const CatoList =()=> {
   const [btnId, setBtnId] = useState("생활");  
 
   return(
-// 원을 만든다 -> onclicked -> 
     <div>
-      <div className="container">
-        <div className="BtnAlign">
-          <button className="ButtonStyle" onClick={()=> setBtnId("생활")}>생활</button>
-          <button className="ButtonStyle" onClick={()=> setBtnId("가전")}>가전</button>
-          <button className="ButtonStyle" onClick={()=> setBtnId("애완")}>애완</button>
-          <button className="ButtonStyle" onClick={()=> setBtnId("레저")}>레저</button>
-          <button className="ButtonStyle" onClick={()=> setBtnId("의약")}>의약</button>
-          <button className="ButtonStyle" onClick={()=> setBtnId("화장")}>화장</button>
-          <button className="ButtonStyle" onClick={()=> setBtnId("기타")}>기타</button>
-        </div>
+      <Grid>
+        <Grid.Row columns={1} centered>
+          <Grid.Column width="12">
+            <button className="ButtonStyle" onClick={()=> setBtnId("생활")}>생활</button>      
+            <button className="ButtonStyle" onClick={()=> setBtnId("가전")}>가전</button>      
+            <button className="ButtonStyle" onClick={()=> setBtnId("패션")}>패션</button>
+            <button className="ButtonStyle" onClick={()=> setBtnId("여행")}>여행</button>
+            <button className="ButtonStyle" onClick={()=> setBtnId("레저")}>레저</button>
+            <button className="ButtonStyle" onClick={()=> setBtnId("애완")}>애완</button>
+            <button className="ButtonStyle" onClick={()=> setBtnId("유아")}>유아</button>
+            <button className="ButtonStyle" onClick={()=> setBtnId("기타")}>기타</button>
+          </Grid.Column>
+        </Grid.Row>
+      </Grid>
       <MainList value={EditReco} MainTitle={btnId}/>
-
     </div>
-  </div>
 
   )
 }
 
 export default CatoList;
-
-
-
-
-
 
 
 
