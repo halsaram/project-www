@@ -19,11 +19,6 @@ app.prepare()
         app.render(req, res, actualPage)
     })
 
-    server.get('/col', (req, res) => {
-        const actualPage = '/collections'
-        app.render(req, res, actualPage)
-    })
-
     server.get('/log', (req, res) => {
         const actualPage = '/login'
         app.render(req, res, actualPage)
@@ -34,14 +29,24 @@ app.prepare()
         app.render(req, res, actualPage)
     })
 
-    server.get('/d', (req, res) => {
-        const actualPage = '/deteile'
-        app.render(req, res, actualPage)
-    })
-
     server.get('*', (req, res) => {
         return handle(req, res)
     })
+    // 공지사항
+    server.get('/Notices', (req, res) => {
+        const actualPage = '/Notices'
+        app.render(req, res, actualPage)
+    })
+    //개인정보처리방침
+    server.get('/Privacy', (req, res) => {
+        const actualPage = '/Privacy'
+        app.render(req, res, actualPage)
+    })
+    server.get('/TermOfUse', (req, res) => {
+        const actualPage = '/TermOfUse'
+        app.render(req, res, actualPage)
+    })
+
     
     server.listen(3333, (err) => {
         if (err) throw err

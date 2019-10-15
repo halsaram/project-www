@@ -36,16 +36,11 @@ const Story = () => (
 								모인금액
 							</div>
 							<div className="ProjectIntroduction__StatusValue-sc-1o2ojgb-16 lgJcVA">
-						
 								4,494,000
-							
-								<span className="ProjectIntroduction__Small-sc-1o2ojgb-18 lnSbIU">원</span><span className="ProjectIntroduction__FundingRate-sc-1o2ojgb-17 cNDicH">
-								
+							<span className="ProjectIntroduction__Small-sc-1o2ojgb-18 lnSbIU">원</span><span className="ProjectIntroduction__FundingRate-sc-1o2ojgb-17 cNDicH">
 								224
-							
 								%
-							
-								</span>
+							</span>
 							</div>
 						</div>
 						<div className="ProjectIntroduction__Metric-sc-1o2ojgb-14 cZUBTY">
@@ -53,10 +48,8 @@ const Story = () => (
 								남은시간
 							</div>
 							<div className="ProjectIntroduction__StatusValue-sc-1o2ojgb-16 lgJcVA">
-							
 								58
-							
-								<span className="ProjectIntroduction__Small-sc-1o2ojgb-18 lnSbIU">일</span>
+							<span className="ProjectIntroduction__Small-sc-1o2ojgb-18 lnSbIU">일</span>
 							</div>
 						</div>
 						<div className="ProjectIntroduction__Metric-sc-1o2ojgb-14 cZUBTY">
@@ -64,10 +57,8 @@ const Story = () => (
 								후원자
 							</div>
 							<div className="ProjectIntroduction__StatusValue-sc-1o2ojgb-16 lgJcVA">
-							
 								179
-								
-								<span className="ProjectIntroduction__Small-sc-1o2ojgb-18 lnSbIU">명</span>
+							<span className="ProjectIntroduction__Small-sc-1o2ojgb-18 lnSbIU">명</span>
 							</div>
 						</div>
 					</div>
@@ -115,13 +106,13 @@ const Story = () => (
 			<nav className="ContentsNavigation__ProjectContentsNavigation-mwsx7i-1 jABjId">
 				<div className="ContentsNavigation__ProjectContentsNavigationInner-mwsx7i-2 OvVKa">
 					<div className="ContentsNavigation__NavLeft-mwsx7i-3 buZwam">
-						<Link as='/p' href='/project?id=story&title=스토리'>
+						<Link as='/d' href='/deteile?id=story&title=스토리'>
 							<a className="ContentsNavigation__NavItem-mwsx7i-0 cjInbB">스토리</a>
 						</Link>
-						<Link as='/p' href='/project?id=Community&title=커뮤니티'>
+						<Link as='/d' href='/deteile?id=Community&title=커뮤니티'>
 							<a className="ContentsNavigation__NavItem-mwsx7i-0 cjInbB">커뮤니티</a>
 						</Link>
-						<Link as='/p' href='/project?id=FundingGuide&title=펀딩안내'>
+						<Link as='/d' href='/deteile?id=FundingGuide&title=펀딩안내'>
 							<a className="ContentsNavigation__NavItem-mwsx7i-0 cjInbB">펀딩 안내</a>
 						</Link>
 					</div>
