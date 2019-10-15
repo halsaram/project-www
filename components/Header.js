@@ -17,13 +17,19 @@ const HeaderBar =()=> (
           <Menu.Item>
             <Input icon='search' placeholder='Search...' />
           </Menu.Item>
-            <Link as='/log' href= '/login?id=login&title=로그인'>
-              <Menu.Item name='login'/>
-            </Link>
 
-            <Link as='/p' href='/project?id=start&title=프로젝트올리기'>
-           <Menu.Item name='프로젝트올리기'/>
-           </Link>
+          <Menu.Item>
+            <Link as='/log' href= '/login?id=login&title=로그인'>
+              <a>login</a>
+            </Link>
+          </Menu.Item>
+            
+          <Menu.Item>
+            <Link as='/p' href= '/project?id=start&title=프로젝트올리기'>
+              <a>프로젝트 올리기</a>
+            </Link>
+          </Menu.Item>
+         
         </Menu.Menu>
       </Menu>
 
@@ -31,7 +37,12 @@ const HeaderBar =()=> (
 
 
         <Menu fluid widths={4}>
-        <Link href='/'><Menu.Item name='홈' /></Link>
+          <Menu.Item>
+            <Link href='/'>
+              <a>홈</a>
+            </Link>
+          </Menu.Item>
+        
         <Menu.Item
           name='카테고리'
         />
