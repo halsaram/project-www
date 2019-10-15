@@ -1,39 +1,10 @@
 import Link from 'next/link';
-import { Header, Icon, Image, Input, Menu, Segment } from 'semantic-ui-react'
+import { Header, Icon, Image, Input, Menu, Segment, Sidebar } from 'semantic-ui-react'
 
 
 const HeaderBar =()=> (
   
 <div>
-<Menu secondary>
-        <Menu.Item
-          name='사이드바예정'
-        />
-        <Menu.Item
-          name='Halsaram'
-        />
-        
-        <Menu.Menu position='right'>
-          <Menu.Item>
-            <Input icon='search' placeholder='Search...' />
-          </Menu.Item>
-
-          <Menu.Item>
-            <Link as='/log' href= '/login?id=login&title=로그인'>
-              <a>login</a>
-            </Link>
-          </Menu.Item>
-            
-          <Menu.Item>
-            <Link as='/p' href= '/project?id=start&title=프로젝트올리기'>
-              <a>프로젝트 올리기</a>
-            </Link>
-          </Menu.Item>
-         
-        </Menu.Menu>
-      </Menu>
-
-
 
 
         <Menu fluid widths={4}>

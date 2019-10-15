@@ -1,16 +1,100 @@
 import Head from 'next/head'
-import { Container } from 'semantic-ui-react'
+import { Header, Icon, Image, Input, Menu, Segment, Sidebar, Button, Container } from 'semantic-ui-react'
+
+import PropTypes from 'prop-types'
+import React, { Component } from 'react'
 import Link from 'next/link';
-import Header from './Header'
+
+import HeaderBar from './Header'
 import Footer from './Footer'
 
 import '../pages/style.css'
 
-export default class Layout extends React.Component {
+const HorizontalSidebar = ({ animation, direction, visible }) => (
+  <Sidebar
+    as={Segment}
+    animation={animation}
+    direction={direction}
+    visible={visible}
+  >
+    <Grid textAlign='center'>
+      <Grid.Row columns={1}>
+        <Grid.Column>
+          <Header as='h3'>New Content Awaits</Header>
+        </Grid.Column>
+      </Grid.Row>
+      <Grid columns={3} divided>
+        <Grid.Column>
+          <Image src='/images/wireframe/media-paragraph.png' />
+        </Grid.Column>
+        <Grid.Column>
+          <Image src='/images/wireframe/media-paragraph.png' />
+        </Grid.Column>
+        <Grid.Column>
+          <Image src='/images/wireframe/media-paragraph.png' />
+        </Grid.Column>
+      </Grid>
+    </Grid>
+  </Sidebar>
+)
 
+HorizontalSidebar.propTypes = {
+  animation: PropTypes.string,
+  direction: PropTypes.string,
+  visible: PropTypes.bool,
+}
+
+const VerticalSidebar = ({ animation, direction, visible }) => (
+  <Sidebar
+    as={Menu}
+    animation={animation}
+    direction={direction}
+    icon='labeled'
+    inverted
+    vertical
+    visible={visible}
+    width='thin'
+  >
+    <Menu.Item as='a'>
+      <Icon name='home' />
+      Home
+    </Menu.Item>
+    <Menu.Item as='a'>
+      <Icon name='gamepad' />
+      Games
+    </Menu.Item>
+    <Menu.Item as='a'>
+      <Icon name='camera' />
+      Channels
+    </Menu.Item>
+  </Sidebar>
+)
+
+VerticalSidebar.propTypes = {
+  animation: PropTypes.string,
+  direction: PropTypes.string,
+  visible: PropTypes.bool,
+}
+
+export default class Layout extends React.Component {
+  state = {
+    animation: 'overlay',
+    direction: 'left',
+    dimmed: true,
+    visible: false,
+  }
+
+  handleAnimationChange = (animation) => () =>
+    this.setState((prevState) => ({ animation, visible: !prevState.visible }))
+
+  handleDimmedChange = (e, { checked }) => this.setState({ dimmed: checked })
+
+  handleDirectionChange = (direction) => () =>
+    this.setState({ direction, visible: false })
   render() {
     const { children, title = '' } = this.props
-
+    const { animation, dimmed, direction, visible } = this.state
+    const vertical = direction === 'bottom' || direction === 'top'
     return (
       <React.Fragment>
         <Head>
@@ -55,13 +139,62 @@ export default class Layout extends React.Component {
           />
           <title>{title} :: Halsaram</title>
         </Head>
-
-        <Header />
-
-        <Container fluid>
-          {children}
-        </Container>
+        <Menu secondary>
+        <Menu.Item>
+        <Button onClick={this.handleAnimationChange('overlay')}>|||</Button>
+        </Menu.Item>
+        <Menu.Item
+          name='Halsaram'
+        />
         
+        <Menu.Menu position='right'>
+          <Menu.Item>
+            <Input icon='search' placeholder='Search...' />
+          </Menu.Item>
+
+          <Menu.Item>
+            <Link as='/log' href= '/login?id=login&title=로그인'>
+              <a>login</a>
+            </Link>
+          </Menu.Item>
+            
+          <Menu.Item>
+            <Link as='/p' href= '/project?id=start&title=프로젝트올리기'>
+              <a>프로젝트 올리기</a>
+            </Link>
+          </Menu.Item>
+         
+        </Menu.Menu>
+      </Menu>
+
+
+
+        <Sidebar.Pushable as={Segment}>
+          {vertical ? (
+            <HorizontalSidebar
+              animation={animation}
+              direction={direction}
+              visible={visible}
+            />
+          ) : null}
+          {vertical ? null : (
+            <VerticalSidebar
+              animation={animation}
+              direction={direction}
+              visible={visible}
+            />
+          )}
+
+          <HeaderBar />
+
+          <Sidebar.Pusher dimmed={dimmed && visible}>
+            <Segment basic>
+              <Container fluid>
+                {children}
+              </Container>
+            </Segment>
+          </Sidebar.Pusher>
+        </Sidebar.Pushable>
         <Footer />
       </React.Fragment>
     )
