@@ -11,7 +11,7 @@
 **************************************************************************************/
 import React, { Component } from 'react'
 import Link from 'next/link';
-import { Form } from 'semantic-ui-react'
+import { Divider, Form, Grid, Segment, List } from 'semantic-ui-react'
 
 
 const LoginLink = (props) => (
@@ -32,36 +32,32 @@ class Mailjoin extends Component {
 	}
 
 	render() {
-		const { name, mail, passwd, checkmail, checkpasswd, submittedName, submittedMail, submittedPasswd } = this.state
+	const { name, mail, passwd, checkmail, checkpasswd, submittedName, submittedMail, submittedPasswd } = this.state
 		return (
-
-
-<div>
-        <div>
-            <a className="SocialButton__SocialLink-sc-7k5r2h-0 hKfrnB" href="https://tumblbug.com/auth/facebook?from_pledge=false&amp;origin=%2F">
-                <i className="_1uz2PaH_Pc163IQLnwFtm8 _1oJMWnMCW_Y6GmNc1mhqaW _1QY7TzdLHKX3-BKPDNNYKF"></i>페이스북 아이디로 가입하기</a>
-            <a className="SocialButton__SocialLink-sc-7k5r2h-0 eOCUid" href="https://tumblbug.com/auth/naver?from_pledge=false&amp;origin=%2F">
-                <svg className="naverIcon" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 20 18.31">
-                    <title>naverIcon</title>
-                    <path d="M20,19.15H13.33A0.34,0.34,0,0,1,13,19L7,10.22,6.84,10v9.15H0V0.85H6.68A0.32, 0.32,0,0,1,7,1l6,8.75a0.82,0.82,0,0,0,.19.22V0.86H20v18.3Z" transform="translate(0 -0.84)" fill="#fff"></path>
-                </svg>네이버 아이디로 가입하기</a>
-        </div>
-        <div className="Divider-sc-1wyk970-0 uEieK">
-            <span>
-                <span>또는</span>
-            </span>
-        </div>
-        <Form onSubmit={this.handleSubmit}>
+			<Segment placeholder>
+				<Grid columns={2} relaxed='very' stackable>
+					<Grid.Column verticalAlign='middle'>
+						<Form onSubmit={this.handleSubmit}>
 							<Form.Group>
-                            <Form.Input
-                                    placeholder='사용할실 이름을 입력해주세요'  
-                                    name='name'
+								<List celled horizontal>
+									<List.Item><Link as='/' href='/'>페이스북 아이디로 로그인</Link></List.Item>
+									<List.Item><Link as='/' href='/'>네이버 아이디로 로그인</Link></List.Item>
+								</List>
+							</Form.Group>
+							<Form.Group>
+								<Form.Input
+									placeholder='사용할실 이름을 입력해주세요'  
+									label='이름'
+									name='name'
 									value={name}
 									type='text'
 									onChange={this.handleChange}
 								/>
+							</Form.Group>
+							<Form.Group>
 								<Form.Input
 									placeholder='이메일 주소를 입력해주세요'
+									label='이메일 주소'
 									name='mail'
 									value={mail}
 									type='email'
@@ -74,8 +70,11 @@ class Mailjoin extends Component {
 									type='email'
 									onChange={this.handleChange}
 								/>
+							</Form.Group>
+							<Form.Group>
 								<Form.Input
 									placeholder='비밀번호를 입력해주세요'
+									label='비밀번호'
 									name='passwd'
 									value={passwd}
 									type='password'
@@ -88,24 +87,26 @@ class Mailjoin extends Component {
 									type='password'
 									onChange={this.handleChange}
 								/>
+							</Form.Group>
+							<Form.Group>
 								<Form.Button content='확인' />
 							</Form.Group>
 						</Form>
-        <div className="SignUp__LoginLinkWrapper-k5h4n5-4 hQGkMf">
-            <p>이미 계정이 있으신가요?</p>
-            <LoginLink />
-
-            <strong>──────────────────────────────</strong><br />
+						<p>이미 계정이 있으신가요?</p>
+						<LoginLink />
+					</Grid.Column>
+					<Grid.Column verticalAlign='middle'>
 						<strong>onChange:</strong>
-						<pre>{JSON.stringify({ name, mail, passwd }, null, 3)}</pre>
+						<pre>{JSON.stringify({ name, mail, checkmail, passwd, checkpasswd }, null, 3)}</pre>
 						<strong>onSubmit:</strong>
 						<pre>{JSON.stringify({ submittedName, submittedMail, submittedPasswd }, null, 3)}</pre>
-        </div>
-    </div>
-    
-
-
-)}}
+					</Grid.Column>
+				</Grid>
+				<Divider vertical>on</Divider>
+			</Segment>
+		);
+	}
+}
 
 
 export default Mailjoin;
