@@ -5,11 +5,14 @@
  * 작성자		   : 정휘선
  * 버전		      : 1.0.0
  * 생성일자		   : 2019-10-02
- * 최종수정일자 	: 2019-10-05
- * 최종수정자	   : 정휘선
- * 최종수정내용	  : 상단 주석 처리
+ * 최종수정일자 	: 2019-10-15
+ * 최종수정자	   : 전새희
+ * 최종수정내용	  : state 적용
 **************************************************************************************/
+
 import Link from 'next/link';
+import React, { Component } from 'react'
+
 
 const ProjectLink = (props) => (
     <div className="_13KHfN73YmQgsYHxXvuh_J _3qrj1CcqiU767c8teG6imW _2Xkf-oIN3dW3T7P_qmRJv3">
@@ -33,7 +36,27 @@ const ProjectLink = (props) => (
 	</div>
 )
 
-const Summary = () => (
+
+class Summary extends Component {
+	state = { projectTitle: '', keyword: '', fundingGoal: '', category: '', deadline: '', creator: '', websites1: '', websites2: '',
+		submittedProjectTitle: '', submittedKeyword: '', submittedFundingGoal: '', submittedCategory: '',
+		submittedDeadline: '', submittedCreator: '', submittedWebsites1: '', submittedWebsites2: '' }
+	handleChange = (e, { name, value }) => this.setState({ [name]: value })
+
+	handleSubmit = () => {
+		const { projectTitle, keyword, fundingGoal, category, deadline, creator, websites1, websites2 } = this.state
+
+		this.setState({
+			submittedProjectTitle: projectTitle, submittedKeyword: keyword, submittedFundingGoal: fundingGoal, submittedCategory: category,
+			submittedDeadline: deadline, submittedCreator: creator, submittedWebsites1: websites1, submittedWebsites2: websites2 })
+	}
+
+	render() {
+		const { projectTitle, keyword, fundingGoal, category, deadline, creator, websites1, websites2,
+			submittedProjectTitle, submittedKeyword, submittedFundingGoal, submittedCategory,
+			submittedDeadline, submittedCreator, submittedWebsites1, submittedWebsites2 } = this.state
+		return (
+
 	<div>
 		<header className="_13KHfN73YmQgsYHxXvuh_J _1roJokHGjgDRbKmh0exptw">
 			{/* <div className="_23XXQ4Vzo-Xj_S_h3Wh5D">
@@ -280,7 +303,18 @@ const Summary = () => (
 			</div>
 		</div>
 		<script type="application/javascript" async="" src="../static/js/application.js"></script>
-	</div>
-);
+
+
+			<strong>onChange:</strong>
+				<pre>{JSON.stringify({ projectTitle, keyword, fundingGoal, category, deadline, creator, websites1, websites2 }, null, 8)}</pre>
+			<strong>onSubmit:</strong>
+				<pre>{JSON.stringify({
+					submittedProjectTitle, submittedKeyword, submittedFundingGoal, submittedCategory,
+					submittedDeadline, submittedCreator, submittedWebsites1, submittedWebsites2 }, null, 8)}</pre>
+
+			</div>
+        );
+	}
+}
 
 export default Summary;
