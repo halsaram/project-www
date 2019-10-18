@@ -11,7 +11,6 @@
 **************************************************************************************/
 import Link from 'next/link';
 
-
 const Story = () => (
 	<div>	
 		<div className="ProjectIntroduction__ProjectIntroductionBackground-sc-1o2ojgb-0 gsZkXT">

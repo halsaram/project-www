@@ -70,29 +70,9 @@ const Start = () => (
                 Description
             </Header>
         </Divider>
-        <Grid columns={2} relaxed='very' stackable>
-            <Grid.Column verticalAlign='middle' textAlign='right'>
-                <Header as='h1'>텀블벅에서 펀딩에 성공한 <br />12,000개 프로젝트와 함께 하세요.</Header>
-                <p>디자인, 영화, 게임, 출판, 요리, 패션, 이벤트 …<br />
-                    분야를 가릴 것 없이 수많은 창작자와 창업자들의<br />
-                    프로젝트들이 매일같이 올라오는 텀블벅은<br />
-                    한국에서 가장 활성화된 크라우드펀딩 커뮤니티입니다.<br />
-                    지금껏 12,000개 넘는 창조적인 시도들이 <br />
-                    70만 명의 후원자를 만나 세상에 나왔습니다.</p>
-                <Button size='massive' primary>
-                    <Link as='/p' href='/project?id=agreements&title=정책'>
-                        지금 시작하기
-                    </Link>
-                </Button>    
-            </Grid.Column>
             <Grid.Column verticalAlign='middle'>
             </Grid.Column>
-        </Grid>
         <Divider horizontal>
-            <Header as='h4'>
-                <Icon name='tag' />
-                Description
-            </Header>
         </Divider>
         <Header as='h1'>쉽게 시작할 수 있습니다.</Header>
         <p>‘크라우드펀딩’은 어려울지 몰라도 텀블벅은 어렵지 않습니다. 수익을 내서 현금을 돌려주거나 소유권을 나누는 등의 복잡한 과정도 필요하지 않습니다. 펀딩으로 모은 금액을 통해 만들어낸 제품 또는 특별한 경험 그 자체를 후원자들과 약속하고 공유하면 됩니다.</p>
