@@ -98,7 +98,7 @@ const Account = () => (
 							<div className="_13KHfN73YmQgsYHxXvuh_J _12TAeoYDPLF0sfa3UIt6uZ _3ZTEzsKL-qDLECUGq4QcLv">
 								<div className="_2dKJQZGqcB1T0xe0DzKY0H _152MAijd_UogerBKCVqZR_ _1lLHKI5v9AoCyeggtffvGZ">
 									<h3 className="_13KHfN73YmQgsYHxXvuh_J _2rCeEoFeBzvCYn76udqnww -UobvSeyUG6cEWYnht50S">
-									dmal3153@naver.com
+									
 									<span className="_13KHfN73YmQgsYHxXvuh_J _2-N-uV2y5apkjtxqdVnsop _1Qdv504-1XMeYXZyb0xQZT _2rCeEoFeBzvCYn76udqnww _3D9sfZXrWd8it3eUCuCTc8"><i className="_1ovua-NxkpRNHtABup4UqF _1QY7TzdLHKX3-BKPDNNYKF"></i>
 										인증 필요
 									</span></h3>
