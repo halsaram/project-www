@@ -13,12 +13,25 @@ import Link from 'next/link';
 import { Grid, Segment, Button, Form, Input, Divider, Checkbox } from 'semantic-ui-react'
 import ProjectLink from './ProjectLink'
 import ProjectHeader from './projectHeader' 
+import {useState} from 'react';
 
 
 // 리워드 추가하기 버튼을 클릭했을 때 InsertConfig 컴포넌트가 밑에 추가적으로 생김
 //(페이지 높이가 계속 늘어남)
-const InsertConfig=()=>(
-	<Grid columns='equal'>
+const InsertConfig=()=>{
+
+    // 옵션 체크 여부를 정하는 변수
+    const [size, setSize] = useState(false);
+    const [color, setColor] = useState(false);
+    const [message, setMessage] = useState(false);
+	const [etc, setEtc] = useState(false);
+	//배송여부 체크시 입력이 가능한 변수
+    const [delivery, setDelivery] = useState(false);
+	//제한수량 체크시 입려이 가능한 변수
+	const [limit, setLimit] = useState(false);
+
+	return(
+		<Grid columns='equal'>
     	<Grid.Column />
     	<Grid.Column width={10}>
       		<Segment>
@@ -50,17 +63,25 @@ const InsertConfig=()=>(
 						{/* 체크박스 체크시 -> 칸에 입력이 가능하게 */}
 						<Grid divided='vertically'>
 							<Grid.Row columns={2}>
-								<Grid.Column width={4}><Checkbox label='사이즈' /></Grid.Column>
-								<Grid.Column width={11}><Input name="size" fluid/></Grid.Column>
+								<Grid.Column width={4}><Checkbox label='사이즈' onChange={() => {setSize(!size);}}/></Grid.Column>
+								<Grid.Column width={11}>
+									{size&&true ? <Input name="size" fluid/> : <Input name="size" fluid disabled/>}
+								</Grid.Column>
 
-								<Grid.Column width={4}><Checkbox label='색상' /></Grid.Column>
-								<Grid.Column width={11}><Input name="color" fluid/></Grid.Column>
+								<Grid.Column width={4}><Checkbox label='색상' onChange={() => {setColor(!color);}}/></Grid.Column>
+								<Grid.Column width={11}>
+									{color&&true ? <Input name="color" fluid/> : <Input name="color" fluid disabled/>}
+								</Grid.Column>
 
-								<Grid.Column width={4}><Checkbox label='작성메시지' /></Grid.Column>
-								<Grid.Column width={11}><Input name="message" fluid/></Grid.Column>
+								<Grid.Column width={4}><Checkbox label='작성메시지' onChange={() => {setMessage(!message);}}/></Grid.Column>
+								<Grid.Column width={11}>
+									{message&&true ? <Input name="message" fluid/> : <Input name="message" fluid disabled/>}
+								</Grid.Column>
 
-								<Grid.Column width={4}><Checkbox label='기타' /></Grid.Column>
-								<Grid.Column width={11}><Input name="etc" fluid/></Grid.Column>
+								<Grid.Column width={4}><Checkbox label='기타' onChange={() => {setEtc(!etc);}}/></Grid.Column>
+								<Grid.Column width={11}>
+									{etc&&true ? <Input name="etc" fluid/> : <Input name="etc" fluid disabled/>}
+								</Grid.Column>
 							</Grid.Row>
 						</Grid>
 					</Grid.Column>
@@ -71,13 +92,14 @@ const InsertConfig=()=>(
 						<Divider />	
 						<Grid>
 							<Grid.Column floated='left' width={7}>
-								<Checkbox label='배송을 위한 주소지가 필요합니다.'/>
+								<Checkbox label='배송을 위한 주소지가 필요합니다.' onChange={()=>{setDelivery(!delivery);}}/>
 							</Grid.Column>
 								
 							<Grid.Column floated='right' width={7}>
 								<Form.Field inline>
 									<label>배송료 </label>
-									<Input placeholder='0' />
+									{/* 배송을 위한 주소지가 필요합니다 체크시 열리는 입력폼 */}
+									{delivery&&true ? <Input placeholder='0' /> : <Input placeholder='0' disabled/>}
 									<label> 원</label>
 								</Form.Field>
 							</Grid.Column>
@@ -90,13 +112,14 @@ const InsertConfig=()=>(
 						<Divider />	
 						<Grid>
 							<Grid.Column floated='left' width={7}>
-								<Checkbox label='리워드 수량을 제한합니다.'/>
+								<Checkbox label='리워드 수량을 제한합니다.' onChange={()=>{setLimit(!limit)}}/>
 							</Grid.Column>
 								
 							<Grid.Column floated='right' width={7}>
 								<Form.Field inline>
 									<label>제한수량 </label>
-									<Input placeholder='0' />
+									{/* 제한수량 여부 체크시 열리는 입력폼 */}
+									{limit&&true ? <Input placeholder='0' /> : <Input placeholder='0' disabled/>}
 									<label> 개</label>
 								</Form.Field>
 							</Grid.Column>
@@ -116,7 +139,9 @@ const InsertConfig=()=>(
     	</Grid.Column>
     	<Grid.Column />
   	</Grid>
-)
+	)
+	
+}
 
 
 // 버튼 클릭시 펀딩작성 부분이 추가된다.onClick=>

@@ -69,7 +69,7 @@ class ProjectLink extends Component {
               </Menu.Item>
  
               <Menu.Menu position='right'>
-              
+                <Button inverted color="blue"> 미리보기 </Button>             
               </Menu.Menu>
             </Menu>
           </Grid.Row>
