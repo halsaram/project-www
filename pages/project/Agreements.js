@@ -11,48 +11,64 @@
 **************************************************************************************/
 
 import Link from 'next/link';
-import { Checkbox, Grid, Segment  } from 'semantic-ui-react'
+import { Checkbox, Grid, Segment, Button  } from 'semantic-ui-react'
+import { inherits } from 'util';
 
 const ProjectLink = (props) => (
     <Link as='/p' href={`/project?id=${props.id}&title=프로젝트개요`}>
-        <button className="sc-1x93b2b-0-Button-kDSBcD eBHMAv" type="submit" data-reactid="70">{props.title}</button>
+        {/* <button className="sc-1x93b2b-0-Button-kDSBcD eBHMAv" type="submit" data-reactid="70">{props.title}</button> */}
+        <Button type='submit' fluid size="large">{props.title}</Button>
     </Link>
 )
+
 
 const Agreements = () => (
     <div>
         <Grid columns='equal'>
             <Grid.Column /> 
-            <Grid.Column width={8}>
-                <Checkbox label='펀딩 진행 중에는 제공할 리워드를 다른 온라인, 오프라인에서 펀딩하거나 판매하지 않습니다.' /><br/>
-                <Checkbox label='제공할 리워드는 현금, 지분 등의 수익이 아닌 제품 또는 서비스입니다.' /><br/>
-                <Checkbox label='진행할 프로젝트가 지적 재산권을 침해하지 않습니다.' /><br/>
-                <Checkbox label='서포터에게 프로젝트 진행 과정을 안내하고, 배송 약속을 지킬 수 있습니다.' /><br/>
-                <Checkbox label='서포터와의 신뢰를 위한 펀딩 진행, 제품 제작, 배송 등 모든 과정에서 겪는 어려움들을 서포터에게 진솔하게 전달하고 문제를 해결합니다.' /><br/>
-                <Checkbox label='해당 프로젝트 종료 후 서포터들의 신고 누적시 정산에 패널티를 부여합니다.' /><br/>
+            <Grid.Column width={8}>   
+            <Grid divided='vertically'>
+                <Grid.Row columns={1}>
+                    <Grid.Column>
+                        <Grid reversed='tablet vertically' textAlign="center" divided='vertically'>
+                            <Grid.Row >
+                                <Grid.Column>
+                                <br /><br />
+                                    <h2>프로젝트 업로드 전 확인해 주세요</h2>
+                                    <p>프로젝트 시작전 아래 사항을 확인해주세요</p>
+                                </Grid.Column>
+                            </Grid.Row>
+                        </Grid>
+                    </Grid.Column>
+                </Grid.Row>
+                <Grid.Row columns={1}>
+                    <Grid.Column>
+                        <Checkbox label='펀딩 진행 중에는 제공할 리워드를 다른 온라인, 오프라인에서 펀딩하거나 판매하지 않습니다.' /><br /><br />
+                        <Checkbox label='제공할 리워드는 현금, 지분 등의 수익이 아닌 제품 또는 서비스입니다.' /><br /><br />
+                        <Checkbox label='진행할 프로젝트가 지적 재산권을 침해하지 않습니다.' /><br /><br />
+                        <Checkbox label='서포터에게 프로젝트 진행 과정을 안내하고, 배송 약속을 지킬 수 있습니다.' /><br /><br />
+                        <Checkbox label='서포터와의 신뢰를 위한 펀딩 진행, 제품 제작, 배송 등 모든 과정에서 겪는 어려움들을 서포터에게 진솔하게 전달하고 문제를 해결합니다.' /><br /><br />
+                        <Checkbox label='해당 프로젝트 종료 후 서포터들의 신고 누적시 정산에 패널티를 부여합니다.' /><br /><br /><br />
+                    </Grid.Column>
+                    <ProjectLink id='summary' title='프로젝트 진행하기' /><br/><br/>
+                    
+                </Grid.Row>
+             </Grid>
             </Grid.Column>
             <Grid.Column/>
         </Grid>
-
-
-
-        
     </div>
 
-
-
-
-
-
-
-
-
-  
 );
 
 export default Agreements;
 
 
+
+
+
+
+//--------리액트 UI 적용전 코드--------------------------------------------------------
 
   // <div className="ProjectStartAgreements__ContentsBody-sc-1vrd6a2-1 hMCHfF" data-reactid="41">
     //     <h2 className="ProjectStartAgreements__Header-sc-1vrd6a2-2 gAoVXO" data-reactid="42"># 프로젝트를 올리기 전에 확인해 주세요.</h2>
