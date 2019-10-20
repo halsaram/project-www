@@ -57,15 +57,15 @@ const VerticalSidebar = ({ animation, direction, visible }) => (
   >
     <Menu.Item as='a'>
       <Icon name='home' />
-      Home
+      카테고리
     </Menu.Item>
     <Menu.Item as='a'>
       <Icon name='gamepad' />
-      Games
+      공지사항
     </Menu.Item>
     <Menu.Item as='a'>
       <Icon name='camera' />
-      Channels
+      내정보
     </Menu.Item>
   </Sidebar>
 )

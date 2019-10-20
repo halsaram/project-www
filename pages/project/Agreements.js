@@ -65,8 +65,8 @@ const Agreements = () => {
                     </Grid.Column>
 
                     {/* 체크가 true여야 버튼이 보임 */}
-                    {checked1 && checked2 && checked3 &&checked4 &&checked5 &&checked6 &&
-                    <ProjectLink id='summary' title='프로젝트 진행하기' />}
+                    {checked1 && checked2 && checked3 &&checked4 &&checked5 &&checked6 && true?
+                    <ProjectLink id='summary' title='프로젝트 진행하기' />:<Button type='submit' fluid size="large" disabled>프로젝트 진행하기</Button>}
                     
                     
                 </Grid.Row>

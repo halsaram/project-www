@@ -1,6 +1,6 @@
 /**************************************************************************************
  * 제목          : 프로젝트 올리기 개요 페이지
- * 소스파일 이름  : pages/project/Start.js
+ * 소스파일 이름  : pages/project/Summary.js
  * 파일설명		   : 프로젝트 개요 페이지 / 프로젝트 개요, 프로젝트 창작자 입력하는 페이지
  * 작성자		   : 정휘선
  * 버전		      : 1.0.0
@@ -21,14 +21,14 @@ import {useState} from 'react';
 
 
 class Summary extends Component {
-	state = {   projectTitle: '', keyword: '', fundingGoal: '',  //제목|짥은제목|목표금액
-				category: '', deadline: '', creator: '',         //카테고리|종료일|창작자명
-				websites1: '', websites2: '',  				     //창작자소셜주소1|2|프로젝트
+	state = {   projectTitle: '', keyword: '',     fundingGoal: '',     //제목|짥은제목|목표금액
+				category: '',     deadline: '',    creator: '',         //카테고리|종료일|창작자명
+				websites1: '',    websites2: '',  				        //창작자소셜주소1|2|프로젝트
 		
 				//상단변수제출변수
-				submittedProjectTitle: '', submittedKeyword: '', submittedFundingGoal: '', 
-				submittedCategory: '', submittedDeadline: '', submittedCreator: '',
-				submittedWebsites1: '', submittedWebsites2: '' }
+				submittedProjectTitle: '', submittedKeyword: '',  submittedFundingGoal: '', 
+				submittedCategory: '',     submittedDeadline: '', submittedCreator: '',
+				submittedWebsites1: '',    submittedWebsites2: '' }
 		
 
 	//입력창에 들어간 정보를 실시간 확인
@@ -42,9 +42,9 @@ class Summary extends Component {
 				websites1,     websites2 } = this.state   //창작자소셜주소1|2|프로젝트
 
 		this.setState({
-			submittedProjectTitle: projectTitle,  submittedKeyword: keyword,     submittedFundingGoal: fundingGoal, 
-			submittedCategory:     category    ,  submittedDeadline: deadline,   submittedCreator:     creator, 
-			submittedWebsites1: websites1      ,  submittedWebsites2: websites2 })
+			submittedProjectTitle: projectTitle,  submittedKeyword:   keyword,    submittedFundingGoal: fundingGoal, 
+			submittedCategory:     category    ,  submittedDeadline:  deadline,   submittedCreator:     creator, 
+			submittedWebsites1:    websites1   ,  submittedWebsites2: websites2 })
 	}
 
 
@@ -232,17 +232,15 @@ class Summary extends Component {
 										<Button color='blue' inverted type="submit">저장</Button>
 									</Grid.Column>
 								</Grid.Row>
-							</Grid>
-							<Link as='/p' href='/project?id=config&title=구성'>
-									<Button color='blue' floated='right'><a>다음</a></Button>
-							</Link>
+							</Grid>							
 						</Grid.Column>
 						<Grid.Column />
 					</Grid>
-
-
-			<br/><br/><br/><br/>
-			</Form>
+					<Link as='/p' href='/project?id=config&title=구성'>
+						<Button color='blue' floated='right'><a>다음</a></Button>
+					</Link>
+					<br/><br/><br/><br/>
+				</Form>
 
 
 

@@ -37,6 +37,7 @@ const Account = () => (
     		<Grid.Column width={10}>
       			<Segment>
 					<Grid divided='vertically'>
+						{/* 사용자인증 */}
     					<Grid.Row>
       						<Grid.Column width={12}>
         						사용자 본인인증
@@ -47,6 +48,7 @@ const Account = () => (
 							</Grid.Column>
 						</Grid.Row>
 
+						{/* 이메일인증 */}
 						<Grid.Row columns={2}>
       						<Grid.Column width={12}>
 							  이메일 인증
@@ -57,6 +59,7 @@ const Account = () => (
 							</Grid.Column>
 						</Grid.Row>
 
+						{/* 입금계좌인증 */}
 						<Grid.Row columns={2}>
       						<Grid.Column width={12}>
 							  입금 계좌
@@ -67,6 +70,7 @@ const Account = () => (
 							</Grid.Column>
 						</Grid.Row>
 
+						{/* 세금계산서인증 */}
 						<Grid.Row columns={2}>
       						<Grid.Column width={12}>
 								세금계산서 발행
@@ -85,6 +89,7 @@ const Account = () => (
 		  <br/><br/><br/><br/>  
 		  {/* 정확한 수치전에 예비로 br태그 삽입 */}
 
+		{/*이전이동버튼*/}
 		  <Link as='/p' href='/project?id=storytelling&title=스토리텔링'>
 		  	<Button type='submit' size="large"><a>이전</a></Button>
 		</Link>

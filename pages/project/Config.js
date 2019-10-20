@@ -2,7 +2,7 @@
  * 제목          : 프로젝트 올리기 펀딩 및 선물 페이지
  * 소스파일 이름  : pages/project/Config.js
  * 파일설명		   : 프로젝트 시작하기 전 펀딩 및 선물 구성하는 페이지(프로젝트 메뉴바)
- * 작성자		   : 금정민
+ * 작성자		   : 이은미
  * 버전		      : 1.0.0
  * 생성일자		   : 2019-10-02
  * 최종수정일자 	: 2019-10-20
@@ -37,13 +37,16 @@ const InsertConfig=()=>{
       		<Segment>
 				<Grid>
 					<Grid.Column floated='left' width={7}>
+						{/* 올리는 금액 입력폼 */}
 						<Form.Field inline>
       						<label>금 액 </label>
       						<Input placeholder='0' />
 							<label> 원</label>
     					</Form.Field>
 					</Grid.Column>
+
 					<Grid.Column floated='right' width={7}>
+						{/* 정렬순서 입력폼 */}
 						<Form.Field inline>
       						<label>정렬 순서 </label>
       						<Input name="order" type="number"/>	
@@ -51,12 +54,14 @@ const InsertConfig=()=>{
 					</Grid.Column>
 
 					<Grid.Column floated='left' width={14}>
+						{/* 리워드명 입력폼 */}
 						<p>리워드명</p>	
 						<p>해당 리워드의 이름을 입력하세요</p>		
 						<Input placeholder="예) 병뚜껑스피커, 욜로북" fluid/>		
 					</Grid.Column>
 
 					<Grid.Column floated='left' width={14}>
+						{/* 옵션선택체크 및 입력폼 */}
 						<p>옵션</p>	
 						<p>옵션이 필요한 상품의 경우 옵션체크 해주세요.</p>		
 						<Divider />	
@@ -87,6 +92,7 @@ const InsertConfig=()=>{
 					</Grid.Column>
 
 					<Grid.Column floated='left' width={14}>
+						{/* 배송조건 체크폼 */}
 						<p>배송조건</p>	
 						<p>배송을 위한 주소지가 필요하다면 체크와 배송료를 입력하세요</p>		
 						<Divider />	
@@ -95,6 +101,7 @@ const InsertConfig=()=>{
 								<Checkbox label='배송을 위한 주소지가 필요합니다.' onChange={()=>{setDelivery(!delivery);}}/>
 							</Grid.Column>
 								
+							{/* 배송료 입력폼 */}	
 							<Grid.Column floated='right' width={7}>
 								<Form.Field inline>
 									<label>배송료 </label>
@@ -107,6 +114,7 @@ const InsertConfig=()=>{
 					</Grid.Column>
 
 					<Grid.Column floated='left' width={14}>
+						{/* 제한수량 체크폼 */}
 						<p>제한수량</p>	
 						<p>리워드 수량을 제한하려면 체크와 수량을 입력하세요.</p>		
 						<Divider />	
@@ -116,6 +124,7 @@ const InsertConfig=()=>{
 							</Grid.Column>
 								
 							<Grid.Column floated='right' width={7}>
+								{/* 제한수량 입력폼 */}
 								<Form.Field inline>
 									<label>제한수량 </label>
 									{/* 제한수량 여부 체크시 열리는 입력폼 */}
@@ -127,11 +136,14 @@ const InsertConfig=()=>{
 					</Grid.Column>
 							
 					<Grid.Column floated='left' width={14}>
+						{/* 발송시작일폼 */}
 						<p>발송 시작일</p>	
 						<p>리워드 제품 발송 시작일을 입력하세요</p>		
 						<Input type="date" fluid/>		
 					</Grid.Column>
+					
 					<Grid.Column floated='center' width={14}>
+						{/* 저장버튼 */}
 						<Button inverted color='blue'>저장</Button>
 					</Grid.Column>
 				</Grid>
