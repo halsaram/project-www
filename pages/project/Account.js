@@ -5,9 +5,9 @@
  * 작성자		   : 이은미
  * 버전		      : 1.0.0
  * 생성일자		   : 2019-10-02
- * 최종수정일자 	: 2019-10-07
- * 최종수정자	   : 이은미
- * 최종수정내용	  : Link href 부분 수정
+ * 최종수정일자 	: 2019-10-20
+ * 최종수정자	   : 금정민
+ * 최종수정내용	  : 프로젝트의 계좌설정 페이지의 ui 적용
 **************************************************************************************/
 import Link from 'next/link';
 import ProjectLink from './ProjectLink';
@@ -63,20 +63,18 @@ const Account = () => (
 							</Grid.Column>
 						</Grid.Row>
 					</Grid>
-
-
-
-
 				  </Segment>
     		</Grid.Column>
     		<Grid.Column />
   		</Grid>
+		  <br/><br/><br/><br/>
 	</div>
 		
 	);
 	
 	export default Account;
 
+	//이전 코드---------------------------------------------------------------------------------ㄴ
 
 	{/* <section>
 			<div className="_13KHfN73YmQgsYHxXvuh_J _1abzWO2yE0ZJ7OiXOf85f5 _4S0ikJ5kL9iaC8TQbNr2J">

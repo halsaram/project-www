@@ -7,12 +7,13 @@
  * 생성일자		   : 2019-10-02
  * 최종수정일자 	: 2019-10-20
  * 최종수정자	   : 금정민
- * 최종수정내용	  : 프로젝트 동의하기 부분 UI 적용
+ * 최종수정내용	  : 프로젝트 동의하기 부분과 모두 체크해야 제출 버튼이 생기게 변경
 **************************************************************************************/
 
 import Link from 'next/link';
 import { Checkbox, Grid, Segment, Button  } from 'semantic-ui-react'
 import { inherits } from 'util';
+import {useState} from 'react';
 
 const ProjectLink = (props) => (
     <Link as='/p' href={`/project?id=${props.id}&title=프로젝트개요`}>
@@ -22,8 +23,19 @@ const ProjectLink = (props) => (
 )
 
 
-const Agreements = () => (
-    <div>
+
+const Agreements = () => {
+    // 체크 여부를 정하는 변수
+    const [checked1, setChecked1] = useState(false);
+    const [checked2, setChecked2] = useState(false);
+    const [checked3, setChecked3] = useState(false);
+    const [checked4, setChecked4] = useState(false);
+    const [checked5, setChecked5] = useState(false);
+    const [checked6, setChecked6] = useState(false);
+    
+   
+    return(
+<div>
         <Grid columns='equal'>
             <Grid.Column /> 
             <Grid.Column width={8}>   
@@ -43,23 +55,32 @@ const Agreements = () => (
                 </Grid.Row>
                 <Grid.Row columns={1}>
                     <Grid.Column>
-                        <Checkbox label='펀딩 진행 중에는 제공할 리워드를 다른 온라인, 오프라인에서 펀딩하거나 판매하지 않습니다.' /><br /><br />
-                        <Checkbox label='제공할 리워드는 현금, 지분 등의 수익이 아닌 제품 또는 서비스입니다.' /><br /><br />
-                        <Checkbox label='진행할 프로젝트가 지적 재산권을 침해하지 않습니다.' /><br /><br />
-                        <Checkbox label='서포터에게 프로젝트 진행 과정을 안내하고, 배송 약속을 지킬 수 있습니다.' /><br /><br />
-                        <Checkbox label='서포터와의 신뢰를 위한 펀딩 진행, 제품 제작, 배송 등 모든 과정에서 겪는 어려움들을 서포터에게 진솔하게 전달하고 문제를 해결합니다.' /><br /><br />
-                        <Checkbox label='해당 프로젝트 종료 후 서포터들의 신고 누적시 정산에 패널티를 부여합니다.' /><br /><br /><br />
+                        <Checkbox  onChange={() => {setChecked1(!checked1);}} label='펀딩 진행 중에는 제공할 리워드를 다른 온라인, 오프라인에서 펀딩하거나 판매하지 않습니다.'/><br /><br />
+                        <Checkbox  onChange={() => {setChecked2(!checked2);}} label='제공할 리워드는 현금, 지분 등의 수익이 아닌 제품 또는 서비스입니다.' /><br /><br />
+                        <Checkbox  onChange={() => {setChecked3(!checked3);}} label='진행할 프로젝트가 지적 재산권을 침해하지 않습니다.' /><br /><br />
+                        <Checkbox  onChange={() => {setChecked4(!checked4);}} label='서포터에게 프로젝트 진행 과정을 안내하고, 배송 약속을 지킬 수 있습니다.' /><br /><br />
+                        <Checkbox  onChange={() => {setChecked5(!checked5);}} label='서포터와의 신뢰를 위한 펀딩 진행, 제품 제작, 배송 등 모든 과정에서 겪는 어려움들을 서포터에게 진솔하게 전달하고 문제를 해결합니다.' /><br /><br />
+                        <Checkbox  onChange={() => {setChecked6(!checked6);}} label='해당 프로젝트 종료 후 서포터들의 신고 누적시 정산에 패널티를 부여합니다.' /><br /><br /><br /> 
+
                     </Grid.Column>
-                    <ProjectLink id='summary' title='프로젝트 진행하기' /><br/><br/>
+
+                    {/* 체크가 true여야 버튼이 보임 */}
+                    {checked1 && checked2 && checked3 &&checked4 &&checked5 &&checked6 &&
+                    <ProjectLink id='summary' title='프로젝트 진행하기' />}
+                    
                     
                 </Grid.Row>
              </Grid>
             </Grid.Column>
             <Grid.Column/>
         </Grid>
+        <br/><br/><br/><br/>
     </div>
 
-);
+    )
+    
+
+};
 
 export default Agreements;
 

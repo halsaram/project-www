@@ -1,13 +1,27 @@
+/**************************************************************************************
+ * 제목          : 프로젝트 작성 중 프로젝트 제목 부분
+ * 소스파일 이름  : pages/project/projectHeader.js
+ * 파일설명		   : 프로젝트 메뉴에서 프로젝트 제목 부분에 해당한다.
+ * 작성자		   : 금정민
+ * 버전		      : 1.0.0
+ * 생성일자		   : 2019-10-20
+ * 최종수정일자 	: 2019-10-20
+ * 최종수정자	   : 금정민
+ * 최종수정내용	  : 프로젝트 메뉴 UI 적용
+**************************************************************************************/
+
+
 import Link from 'next/link';
 import ProjectLink from './ProjectLink';
 import { Grid, Segment, GridColumn, Input } from 'semantic-ui-react'
+
+
 
 const projectHeader = () => (
     <div>
     	<Grid columns='equal'>
             <Grid.Column/>		
             <Grid.Column textAlign="center" width={16}>
-                
                 <Input transparent placeholder='프로젝트제목을 입력하시오' size="huge"/>
 
                 {/* Input 길이를 늘리는 법 찾기 */}
