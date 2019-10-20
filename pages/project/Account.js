@@ -10,28 +10,29 @@
  * 최종수정내용	  : Link href 부분 수정
 **************************************************************************************/
 import Link from 'next/link';
+import ProjectLink from './ProjectLink';
 
-const ProjectLink = (props) => (
-    <div className="_13KHfN73YmQgsYHxXvuh_J _3qrj1CcqiU767c8teG6imW _2Xkf-oIN3dW3T7P_qmRJv3">
-		<div className="_13KHfN73YmQgsYHxXvuh_J _1WARcEqqT_Pem8leg2dkMj">
-			<Link as='/p' href='/project?id=summary&title=프로젝트'><a className="rLqvd1axk9i-3cU72yTkF" href="https://tumblbug.com/edit-project/4d379f8d-dc10-4af9-82a0-4b839f9f1794/sections/project-outline">
-				<h5><i className="_13KHfN73YmQgsYHxXvuh_J _1oJMWnMCW_Y6GmNc1mhqaW _3RAU_1dXrlkkPhtkKyXSVj _3fJsfvAPykJzj2xoMnxzWW _254YPhBOB9qv7-J8bIg7co _1QY7TzdLHKX3-BKPDNNYKF"></i><label><span><span>프로젝트</span>
-					<span>개요</span></span></label></h5>
-			</a></Link>
-			<Link as='/p' href='/project?id=config&title=구성'><a className="rLqvd1axk9i-3cU72yTkF" href="https://tumblbug.com/edit-project/4d379f8d-dc10-4af9-82a0-4b839f9f1794/sections/funding-reward">
-				<h5><i className="_13KHfN73YmQgsYHxXvuh_J _1oJMWnMCW_Y6GmNc1mhqaW _3RAU_1dXrlkkPhtkKyXSVj _3fJsfvAPykJzj2xoMnxzWW _254YPhBOB9qv7-J8bIg7co _1QY7TzdLHKX3-BKPDNNYKF"></i><label><span><span>펀딩 및</span>
-					<span>선물 구성</span></span></label></h5>
-			</a></Link>
-			<Link as='/p' href='/project?id=storytelling&title=스토리텔링'><a className="rLqvd1axk9i-3cU72yTkF" href="https://tumblbug.com/edit-project/4d379f8d-dc10-4af9-82a0-4b839f9f1794/sections/storytelling">
-				<h5><i className="_13KHfN73YmQgsYHxXvuh_J _1oJMWnMCW_Y6GmNc1mhqaW _3RAU_1dXrlkkPhtkKyXSVj _3fJsfvAPykJzj2xoMnxzWW _254YPhBOB9qv7-J8bIg7co _1QY7TzdLHKX3-BKPDNNYKF"></i><label><span><span>스토리</span><span>텔링</span></span></label></h5>
-			</a></Link>
-			<Link as='/p' href='/project?id=account&title=계좌'><a className="rLqvd1axk9i-3cU72yTkF _3Syz9fGXYtzMNqK_55A2BW" href="https://tumblbug.com/edit-project/4d379f8d-dc10-4af9-82a0-4b839f9f1794/sections/account-setup">
-				<h5><i className="_13KHfN73YmQgsYHxXvuh_J _1oJMWnMCW_Y6GmNc1mhqaW _3RAU_1dXrlkkPhtkKyXSVj _3fJsfvAPykJzj2xoMnxzWW _254YPhBOB9qv7-J8bIg7co _1QY7TzdLHKX3-BKPDNNYKF"></i><label><span><span>계좌</span>
-					<span>설정</span></span></label></h5>
-			</a></Link>
-		</div>
-	</div>
-)
+// const ProjectLink = (props) => (
+//     <div className="_13KHfN73YmQgsYHxXvuh_J _3qrj1CcqiU767c8teG6imW _2Xkf-oIN3dW3T7P_qmRJv3">
+// 		<div className="_13KHfN73YmQgsYHxXvuh_J _1WARcEqqT_Pem8leg2dkMj">
+// 			<Link as='/p' href='/project?id=summary&title=프로젝트'><a className="rLqvd1axk9i-3cU72yTkF" href="https://tumblbug.com/edit-project/4d379f8d-dc10-4af9-82a0-4b839f9f1794/sections/project-outline">
+// 				<h5><i className="_13KHfN73YmQgsYHxXvuh_J _1oJMWnMCW_Y6GmNc1mhqaW _3RAU_1dXrlkkPhtkKyXSVj _3fJsfvAPykJzj2xoMnxzWW _254YPhBOB9qv7-J8bIg7co _1QY7TzdLHKX3-BKPDNNYKF"></i><label><span><span>프로젝트</span>
+// 					<span>개요</span></span></label></h5>
+// 			</a></Link>
+// 			<Link as='/p' href='/project?id=config&title=구성'><a className="rLqvd1axk9i-3cU72yTkF" href="https://tumblbug.com/edit-project/4d379f8d-dc10-4af9-82a0-4b839f9f1794/sections/funding-reward">
+// 				<h5><i className="_13KHfN73YmQgsYHxXvuh_J _1oJMWnMCW_Y6GmNc1mhqaW _3RAU_1dXrlkkPhtkKyXSVj _3fJsfvAPykJzj2xoMnxzWW _254YPhBOB9qv7-J8bIg7co _1QY7TzdLHKX3-BKPDNNYKF"></i><label><span><span>펀딩 및</span>
+// 					<span>선물 구성</span></span></label></h5>
+// 			</a></Link>
+// 			<Link as='/p' href='/project?id=storytelling&title=스토리텔링'><a className="rLqvd1axk9i-3cU72yTkF" href="https://tumblbug.com/edit-project/4d379f8d-dc10-4af9-82a0-4b839f9f1794/sections/storytelling">
+// 				<h5><i className="_13KHfN73YmQgsYHxXvuh_J _1oJMWnMCW_Y6GmNc1mhqaW _3RAU_1dXrlkkPhtkKyXSVj _3fJsfvAPykJzj2xoMnxzWW _254YPhBOB9qv7-J8bIg7co _1QY7TzdLHKX3-BKPDNNYKF"></i><label><span><span>스토리</span><span>텔링</span></span></label></h5>
+// 			</a></Link>
+// 			<Link as='/p' href='/project?id=account&title=계좌'><a className="rLqvd1axk9i-3cU72yTkF _3Syz9fGXYtzMNqK_55A2BW" href="https://tumblbug.com/edit-project/4d379f8d-dc10-4af9-82a0-4b839f9f1794/sections/account-setup">
+// 				<h5><i className="_13KHfN73YmQgsYHxXvuh_J _1oJMWnMCW_Y6GmNc1mhqaW _3RAU_1dXrlkkPhtkKyXSVj _3fJsfvAPykJzj2xoMnxzWW _254YPhBOB9qv7-J8bIg7co _1QY7TzdLHKX3-BKPDNNYKF"></i><label><span><span>계좌</span>
+// 					<span>설정</span></span></label></h5>
+// 			</a></Link>
+// 		</div>
+// 	</div>
+// )
 
 const Account = () => (
 	<div>

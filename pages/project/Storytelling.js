@@ -12,29 +12,10 @@
 
 import Link from 'next/link';
 import React, { Component } from 'react'
+import ProjectLink from './ProjectLink';
 
 
-const ProjectLink = (props) => (
-    <div className="_13KHfN73YmQgsYHxXvuh_J _3qrj1CcqiU767c8teG6imW _2Xkf-oIN3dW3T7P_qmRJv3">
-		<div className="_13KHfN73YmQgsYHxXvuh_J _1WARcEqqT_Pem8leg2dkMj">
-			<Link as='/p' href='/project?id=summary&title=프로젝트'><a className="rLqvd1axk9i-3cU72yTkF" href="https://tumblbug.com/edit-project/4d379f8d-dc10-4af9-82a0-4b839f9f1794/sections/project-outline">
-				<h5><i className="_13KHfN73YmQgsYHxXvuh_J _1oJMWnMCW_Y6GmNc1mhqaW _3RAU_1dXrlkkPhtkKyXSVj _3fJsfvAPykJzj2xoMnxzWW _254YPhBOB9qv7-J8bIg7co _1QY7TzdLHKX3-BKPDNNYKF"></i><label><span><span>프로젝트</span>
-					<span>개요</span></span></label></h5>
-			</a></Link>
-			<Link as='/p' href='/project?id=config&title=구성'><a className="rLqvd1axk9i-3cU72yTkF" href="https://tumblbug.com/edit-project/4d379f8d-dc10-4af9-82a0-4b839f9f1794/sections/funding-reward">
-				<h5><i className="_13KHfN73YmQgsYHxXvuh_J _1oJMWnMCW_Y6GmNc1mhqaW _3RAU_1dXrlkkPhtkKyXSVj _3fJsfvAPykJzj2xoMnxzWW _254YPhBOB9qv7-J8bIg7co _1QY7TzdLHKX3-BKPDNNYKF"></i><label><span><span>펀딩 및</span>
-					<span>선물 구성</span></span></label></h5>
-			</a></Link>
-			<Link as='/p' href='/project?id=storytelling&title=스토리텔링'><a className="rLqvd1axk9i-3cU72yTkF _3Syz9fGXYtzMNqK_55A2BW" href="https://tumblbug.com/edit-project/4d379f8d-dc10-4af9-82a0-4b839f9f1794/sections/storytelling">
-				<h5><i className="_13KHfN73YmQgsYHxXvuh_J _1oJMWnMCW_Y6GmNc1mhqaW _3RAU_1dXrlkkPhtkKyXSVj _3fJsfvAPykJzj2xoMnxzWW _254YPhBOB9qv7-J8bIg7co _1QY7TzdLHKX3-BKPDNNYKF"></i><label><span><span>스토리</span><span>텔링</span></span></label></h5>
-			</a></Link>
-			<Link as='/p' href='/project?id=account&title=계좌'><a className="rLqvd1axk9i-3cU72yTkF" href="https://tumblbug.com/edit-project/4d379f8d-dc10-4af9-82a0-4b839f9f1794/sections/account-setup">
-				<h5><i className="_13KHfN73YmQgsYHxXvuh_J _1oJMWnMCW_Y6GmNc1mhqaW _3RAU_1dXrlkkPhtkKyXSVj _3fJsfvAPykJzj2xoMnxzWW _254YPhBOB9qv7-J8bIg7co _1QY7TzdLHKX3-BKPDNNYKF"></i><label><span><span>계좌</span>
-					<span>설정</span></span></label></h5>
-			</a></Link>
-		</div>
-	</div>
-)
+
 
 class Storytelling extends Component {
 	state = { image: '', video: '', descriptionImage: '', summary: '',
@@ -69,29 +50,6 @@ class Storytelling extends Component {
 						</div>
 					</div> */}
 					<div>
-						<div className="_13KHfN73YmQgsYHxXvuh_J _1WARcEqqT_Pem8leg2dkMj">
-							<div className="_13KHfN73YmQgsYHxXvuh_J _2mDWoxwh1QMJyLM49w7kMZ _3G8CRXtomRhisiZsw7Spx- _3sFSjAZS4gQdCAyN3OfyFG _2-N-uV2y5apkjtxqdVnsop jvBXmsw6c8TD5NU0Gn0P6">
-								<i className="_3mTSvU3h91WI2gAoO_w9i4 _254YPhBOB9qv7-J8bIg7co _1QY7TzdLHKX3-BKPDNNYKF"></i><span>
-									펀딩 준비에 앞서&nbsp; <a target="_blank" rel="noopener noreferrer" href="https://help.tumblbug.com/hc/ko/articles/115006302047">공개 검토 가이드라인</a>
-									,&nbsp; <a target="_blank" rel="noopener noreferrer" href="https://help.tumblbug.com/hc/ko/categories/115001047328">창작자 센터</a>
-									,&nbsp; <a target="_blank" rel="noopener noreferrer" href="https://tumblbug.com/guidelines">텀블벅 커뮤니티 운영원칙</a>
-									을 확인해주세요.</span>
-							</div>
-						</div>
-						<div className="_13KHfN73YmQgsYHxXvuh_J _1WARcEqqT_Pem8leg2dkMj _3an1XS2KtYqHkt90bx9SHY">
-							<div className="_13KHfN73YmQgsYHxXvuh_J _2mDWoxwh1QMJyLM49w7kMZ _3G8CRXtomRhisiZsw7Spx- _2-N-uV2y5apkjtxqdVnsop jvBXmsw6c8TD5NU0Gn0P6">
-								<i className="_21nJujXiuOiseLBwPOmGO4 _1QY7TzdLHKX3-BKPDNNYKF"></i><span>
-									프로젝트를 개설하려면 네 개의 섹션을 완성해야 합니다. 완성된 섹션은
-								<i className="_1oJMWnMCW_Y6GmNc1mhqaW _3RAU_1dXrlkkPhtkKyXSVj _3fJsfvAPykJzj2xoMnxzWW _254YPhBOB9qv7-J8bIg7co _1QY7TzdLHKX3-BKPDNNYKF"></i>
-									탭 아이콘에
-								<i className="_1oJMWnMCW_Y6GmNc1mhqaW _3sFSjAZS4gQdCAyN3OfyFG -o8oGI_QAOKsVIJOUOUmV _254YPhBOB9qv7-J8bIg7co _1QY7TzdLHKX3-BKPDNNYKF"></i>
-									파랗게 불이 들어옵니다.
-								</span>
-							</div>
-							<div className="_13KHfN73YmQgsYHxXvuh_J _2-N-uV2y5apkjtxqdVnsop T5IOxRC0hd8rBc-PLPMlF">
-								<a className="_13KHfN73YmQgsYHxXvuh_J _3fJsfvAPykJzj2xoMnxzWW _1Qdv504-1XMeYXZyb0xQZT _3SbGdzxKM6M_AeOQWLNqks" href="http://www.tumblbug.com/4d379f8d-dc10-4af9-82a0-4b839f9f1794"><i className="_12_kkIo9po-wf5m9SVSerq _1QY7TzdLHKX3-BKPDNNYKF"></i><label>미리보기</label></a><a className="_13KHfN73YmQgsYHxXvuh_J _2rCeEoFeBzvCYn76udqnww _1Qdv504-1XMeYXZyb0xQZT _3SbGdzxKM6M_AeOQWLNqks"><i className="_1QY7TzdLHKX3-BKPDNNYKF _3NmqRmOUOqMEJDy6qtw95t"></i><label>검토 요청하기</label></a>
-							</div>
-						</div>
 						<ProjectLink />
 					</div>
 				</header>

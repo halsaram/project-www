@@ -5,9 +5,9 @@
  * 작성자		   : 정휘선
  * 버전		      : 1.0.0
  * 생성일자		   : 2019-10-02
- * 최종수정일자 	: 2019-10-05
- * 최종수정자	   : 정휘선
- * 최종수정내용	  : Link href 부분 수정
+ * 최종수정일자 	: 2019-10-20
+ * 최종수정자	   : 금정민
+ * 최종수정내용	  : 프로젝트 동의하기 부분 UI 적용
 **************************************************************************************/
 
 import Link from 'next/link';
@@ -16,8 +16,8 @@ import { inherits } from 'util';
 
 const ProjectLink = (props) => (
     <Link as='/p' href={`/project?id=${props.id}&title=프로젝트개요`}>
-        {/* <button className="sc-1x93b2b-0-Button-kDSBcD eBHMAv" type="submit" data-reactid="70">{props.title}</button> */}
-        <Button type='submit' fluid size="large">{props.title}</Button>
+        <Button type='submit' fluid size="large">
+            <a>{props.title}</a></Button>
     </Link>
 )
 
