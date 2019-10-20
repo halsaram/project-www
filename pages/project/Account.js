@@ -16,11 +16,25 @@ import { Grid, Segment, Button } from 'semantic-ui-react'
 
 const Account = () => (
 	<div>
+		{/* 프로젝트의 헤더 부분(제목작성+메뉴) */}
 		<ProjectHeader/>
 		<ProjectLink />
+		<br/><br/>
+		
+		{/* 프로젝트 내용 작성 부분 */}
+		{/* 프로젝트의 소제목을 배치한 부분 */}
 		<Grid columns='equal'>
     		<Grid.Column />
-    		<Grid.Column width={12}>
+			<Grid.Column width={10}>
+			<p>계좌 설정하기</p>
+			</Grid.Column>
+			<Grid.Column />
+		</Grid>
+
+		{/* 프로젝트의 인증부분 */}
+		<Grid columns='equal'>
+    		<Grid.Column />
+    		<Grid.Column width={10}>
       			<Segment>
 					<Grid divided='vertically'>
     					<Grid.Row>
@@ -55,19 +69,26 @@ const Account = () => (
 
 						<Grid.Row columns={2}>
       						<Grid.Column width={12}>
-							  세금계산서 발행
+								세금계산서 발행
 								<p>본인 인증 후 세금 계산서 등록을 해주세요</p>
       						</Grid.Column>
       						<Grid.Column width={3}>
 							  <Button inverted color='blue' fluid>인증하기</Button>
 							</Grid.Column>
 						</Grid.Row>
+
 					</Grid>
 				  </Segment>
     		</Grid.Column>
     		<Grid.Column />
   		</Grid>
-		  <br/><br/><br/><br/>
+		  <br/><br/><br/><br/>  
+		  {/* 정확한 수치전에 예비로 br태그 삽입 */}
+
+		  <Link as='/p' href='/project?id=storytelling&title=스토리텔링'>
+		  	<Button type='submit' size="large"><a>이전</a></Button>
+		</Link>
+
 	</div>
 		
 	);
