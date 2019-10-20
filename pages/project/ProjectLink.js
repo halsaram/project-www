@@ -35,47 +35,46 @@ class ProjectLink extends Component {
                   <Link as='/p' href='/project?id=summary&title=프로젝트'>
                     <a>프로젝트 개요</a>
                   </Link>
-                  </Menu.Item>
+                </Menu.Item>
 
 
-            <Menu.Item
+              <Menu.Item
               name='Summary'
               active={activeItem === 'Summary'}
-               onClick={this.handleItemClick}
-              >
+              onClick={this.handleItemClick}>
                 <Checkbox label=" "/>
                 <Link as='x/p' href='/project?id=config&title=구성'>
                   <a>펀딩 및 선물 구성</a>
                 </Link>
-            </Menu.Item>
+              </Menu.Item>
 
-            <Menu.Item
+              <Menu.Item
               name='Storytelling'
               active={activeItem === '스토리텔링'}
               onClick={this.handleItemClick}>
                 <Checkbox label=" "/>
                 <Link as='/p' href='/project?id=storytelling&title=스토리텔링'>
-                <a>스토리텔링</a>
+                  <a>스토리텔링</a>
                 </Link>
-            </Menu.Item>
+              </Menu.Item>
 
-            <Menu.Item
+              <Menu.Item
               name='계좌 설정'
               active={activeItem === '계좌 설정'}
               onClick={this.handleItemClick}>
                 <Checkbox label=" "/>
                 <Link as='/p' href='/project?id=account&title=계좌'>
-                <a>계좌 설정</a>
+                  <a>계좌 설정</a>
                 </Link>
-            </Menu.Item>
-            
-            <Menu.Menu position='right'>
+              </Menu.Item>
+ 
+              <Menu.Menu position='right'>
               
-            </Menu.Menu>
-          </Menu>
+              </Menu.Menu>
+            </Menu>
           </Grid.Row>
-    </Grid>
-        </div>
+        </Grid>
+      </div>
         
       )
     }
