@@ -9,7 +9,8 @@
  * 최종수정자	   : 정휘선
  * 최종수정내용	  : Link href 부분 수정
 **************************************************************************************/
-
+import React, { Component } from 'react'
+import { Button, Checkbox } from 'semantic-ui-react'
 import Link from 'next/link';
 
 const ProjectLink = (props) => (
