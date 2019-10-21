@@ -56,6 +56,13 @@ const InsertConfig=()=>{
 	//저장버튼 클릭시 로컬에 저장하도록
 	const submit = () => {
 		localStorage.setItem("sum", sum);
+		localStorage.setItem("rewardName", rewardName );
+		localStorage.setItem("deliveryfee", deliveryfee);
+		localStorage.setItem("limitnum", limitnum);
+		localStorage.setItem("size", insize);
+		localStorage.setItem("color", incolor);
+		localStorage.setItem("etc", inetc);
+		localStorage.setItem("message", inmessage);
 	}
 
 	return(
@@ -99,7 +106,7 @@ const InsertConfig=()=>{
 							<Grid.Row columns={2}>
 								<Grid.Column width={4}><Checkbox label='사이즈' onChange={() => {setSize(!size);}}/></Grid.Column>
 								<Grid.Column width={11}>
-									{size&&true ? <Input value={insize} name="insize" onChange={onChange} fluid/> : <Input name="size" fluid disabled/>}
+									{size&&true ? <Input value={insize} onChange={onChange} name="insize" fluid/> : <Input name="size" fluid disabled/>}
 								</Grid.Column>
 
 								<Grid.Column width={4}><Checkbox label='색상' onChange={() => {setColor(!color);}}/></Grid.Column>
@@ -179,7 +186,7 @@ const InsertConfig=()=>{
 				{/* {값들어간거 확인용(나중에 삭제 예정))}} */}
 				<div> 
 				<strong>onSubmit:</strong>
-				<pre>{JSON.stringify({ sum , rewardName, deliveryfee, limitnum, insize, incolor, inetc, inmessage}, null, 8)}</pre>
+				<pre>{JSON.stringify({ sum , rewardName, deliveryfee, limitnum,insize,  incolor, inetc, inmessage}, null, 8)}</pre>
 			</div>
 				</Grid>
 			</Segment>
