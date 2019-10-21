@@ -38,7 +38,7 @@ const InsertConfig=()=>{
 	//제한수량 체크시 입려이 가능한 변수
 	const [limit, setLimit] = useState(false);
 	
-//순서대로 금액, 리워드명, 배송료, 수량제한, 사이즈, 색상, 메세지, 기타 입력칸
+//순서대로 금액, 리워드명, 배송료, 수량제한, 사이즈, 색상, 메세지, 기타 입력칸 데이터명
 	const [state, dispatch] = useReducer(reducer, {
 		sum: '',
 		rewardName: '',

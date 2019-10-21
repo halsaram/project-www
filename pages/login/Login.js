@@ -15,9 +15,9 @@ import { Button, Divider, Form, Grid, Segment, List } from 'semantic-ui-react'
 
 class Login extends Component {
 	state = { passwd: '', mail: '', submittedPasswd: '', submittedMail: '' } //비밀버호, 이메일, 입력된 비밀번호, 입력된 이메일
-
+	//정보 실시간 입력
 	handleChange = (e, { name, value }) => this.setState({ [name]: value })
-
+	//제출시 저장되는 값
 	handleSubmit = () => {
 		const { mail, passwd } = this.state
 
