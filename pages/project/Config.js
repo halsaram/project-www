@@ -7,7 +7,7 @@
  * 생성일자		   : 2019-10-02
  * 최종수정일자 	: 2019-10-21
  * 최종수정자	   :  최다올	
- * 최종수정내용	  : 입력칸 데이터 확인할 수 있도록 적용
+ * 최종수정내용	  : 입력칸 데이터 확인할 수 있도록 적용, 로컬스토리지 저장
 **************************************************************************************/
 import Link from 'next/link';
 import { Grid, Segment, Button, Form, Input, Divider, Checkbox } from 'semantic-ui-react'
@@ -53,7 +53,10 @@ const InsertConfig=()=>{
 	  const onChange = e => {
 		dispatch(e.target);
 	  };
-	
+	//저장버튼 클릭시 로컬에 저장하도록
+	const submit = () => {
+		localStorage.setItem("sum", sum);
+	}
 
 	return(
 		<Grid columns='equal'>
@@ -171,7 +174,7 @@ const InsertConfig=()=>{
 					
 					<Grid.Column floated='center' width={14}>
 						{/* 저장버튼 */}
-						<Button inverted color='blue' inverted type="submit">저장</Button>
+						<Button inverted color='blue' onClick={submit}>저장</Button>
 					</Grid.Column> 
 				{/* {값들어간거 확인용(나중에 삭제 예정))}} */}
 				<div> 
