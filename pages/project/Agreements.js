@@ -10,7 +10,6 @@
  * 최종수정내용	  : 프로젝트 동의하기 부분과 모두 체크해야 제출 버튼이 생기게 변경
 **************************************************************************************/
 import React, { Component } from 'react'
-import { Button, Checkbox } from 'semantic-ui-react'
 import Link from 'next/link';
 import { Checkbox, Grid, Segment, Button  } from 'semantic-ui-react'
 import { inherits } from 'util';

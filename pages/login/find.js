@@ -18,7 +18,7 @@ import { Button, Divider, Form } from 'semantic-ui-react'
 import Layout from '../../components/Layout'
 
 class Find extends Component {
-	state = {  mail: '' ,submittedMail: '' } //가입한 메일계정
+	state = {  mail: '' ,submittedMail: '' } //가입한 메일계정, 입력된 메일계정
 
 	handleChange = (e, { name, value }) => this.setState({ [name]: value })
 
@@ -48,8 +48,8 @@ class Find extends Component {
 									type='email'
 									onChange={this.handleChange}
 								/><Button content='확인' primary />
-                </Form>
-                <div>
+                </Form> 
+                <div>  
                 <strong>onChange:</strong>
 						<pre>{JSON.stringify({ mail }, null, 1)}</pre>
 						<strong>onSubmit:</strong>
@@ -60,7 +60,7 @@ class Find extends Component {
                       </div>
                             </div>
 
-    )
+    ) // <strong>부터 입력된 값을 보여주는 부분 (나중에 삭제 예정)
     };
     
 

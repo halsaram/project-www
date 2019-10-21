@@ -14,7 +14,7 @@ import Link from 'next/link';
 import { Button, Divider, Form, Grid, Segment, List } from 'semantic-ui-react'
 
 class Login extends Component {
-	state = { passwd: '', mail: '', submittedPasswd: '', submittedMail: '' }
+	state = { passwd: '', mail: '', submittedPasswd: '', submittedMail: '' } //비밀버호, 이메일, 입력된 비밀번호, 입력된 이메일
 
 	handleChange = (e, { name, value }) => this.setState({ [name]: value })
 
@@ -76,15 +76,16 @@ class Login extends Component {
 				<Divider vertical>on</Divider>
 
 				
-			</Segment>
-			<div>
+			</Segment> 
+			{/* 입력된 값을 보여주는 부분 (나중에 삭제예정)) */}
+			<div> 
 				<strong>onChange:</strong>
 				<pre>{JSON.stringify({ mail, passwd }, null, 2)}</pre>
 				<strong>onSubmit:</strong>
 				<pre>{JSON.stringify({ submittedMail, submittedPasswd }, null, 2)}</pre>
 			</div>
 			</div>
-		);
+		); 
 	}
 }
   
