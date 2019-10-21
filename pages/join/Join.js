@@ -53,7 +53,7 @@ class Join extends Component {
                                     />
                                     </Grid.Column>
                                     <Grid.Column>
-                                        <Button >인증하기</Button>
+                                        <Button >인증</Button>
                                     </Grid.Column>
                                 </Grid>
                                 <p style={fontstyle}>위 이메일로 인증번호가 발송됩니다.</p> <br />
