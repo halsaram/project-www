@@ -82,6 +82,8 @@ export default class Layout extends React.Component {
     direction: 'left',
     dimmed: true,
     visible: false,
+    search: '', // search
+    submittedSearch: '' // search 제출 변수
   }
 
   handleAnimationChange = (animation) => () =>
@@ -91,9 +93,22 @@ export default class Layout extends React.Component {
 
   handleDirectionChange = (direction) => () =>
     this.setState({ direction, visible: false })
+
+
+  //입력창에 들어간 정보를 실시간 확인			
+  handleChange = (e, { name, value }) => this.setState({ [name]: value })
+
+
+  //입력변수를 -> 제출 후 변수(submitted ~)에 저장
+  handleSubmit = () => {
+    const { search } = this.state
+    this.setState({ submittedSearch: search })
+  }
+
+
   render() {
     const { children, title = '' } = this.props
-    const { animation, dimmed, direction, visible } = this.state
+    const { animation, dimmed, direction, visible, search, submittedSearch } = this.state
     const vertical = direction === 'bottom' || direction === 'top'
     return (
       <React.Fragment>
@@ -165,6 +180,14 @@ export default class Layout extends React.Component {
               <a>프로젝트 올리기</a>
             </Link>
           </Menu.Item>
+
+            {/* 데이터 현황 */}
+            <div>
+              <strong>onChange:</strong>
+              <pre>{JSON.stringify({ search }, null, 1)}</pre>
+              <strong>onSubmit:</strong>
+              <pre>{JSON.stringify({ submittedSearch }, null, 1)}</pre>
+            </div>
          
         </Menu.Menu>
       </Menu>
