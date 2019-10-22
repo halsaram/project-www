@@ -15,22 +15,38 @@ import Link from 'next/link';
 const Footer = () => (
     
 
-
+    
     <div className="_2nkoQovCMNDdKtTjNi5W_x S+-iteFooter__FooterWrapper-sc-160ijjw-2 kpoBQb" data-reactid="523">
         <div className="footer-grid _13KHfN73YmQgsYHxXvuh_J _1V4AsGFqT8un0KZo8QWVRL kKeFxbI9p0TnKvSk7DzSR _1gTQggGV_yO4HJ6p7pil3E _1UmvYpZQFDG3yh_HWxQaF9 SiteFooter__FooterColumnWrapper-sc-160ijjw-3 gUfPmS" data-reactid="524">
             <div className="footer-column grid-three _152MAijd_UogerBKCVqZR_ _1lLHKI5v9AoCyeggtffvGZ SiteFooter__FooterSubColumn-sc-160ijjw-4 ilwNes" data-reactid="525">
-                <Link href="/Notices" className="_3TJ2LNmiyFnXVggSgiKX5Q" rel="noopener noreferrer" data-reactid="526">
+  
+
+                <Link href="/Notices">
                    <a>
                     공지사항
                     </a>
-            </Link><br data-reactid="529" />
+                </Link>
+            
+            <br data-reactid="529" />
                 <a href="https://www.rocketpunch.com/companies/tumblbug/jobs" className="_3TJ2LNmiyFnXVggSgiKX5Q" target="_blank" rel="noopener noreferrer" data-reactid="530">채용</a><br data-reactid="531" />
-                <a href="https://creator.tumblbug.com/" className="_3TJ2LNmiyFnXVggSgiKX5Q" target="_blank" rel="noopener noreferrer" data-reactid="532">창작자 가이드</a><br data-reactid="533" />
+                <Link href="/TermsOfUse">
+                   <a>
+                    창작자 가이드
+                    </a>
+                </Link><br />
+                
                 <a href="https://www.notion.so/tumcorp/What-s-new-External-af33c52645094594b6bf8a101e686cae" className="_3TJ2LNmiyFnXVggSgiKX5Q" target="_blank" rel="noopener noreferrer" data-reactid="534">서비스 개선사항</a>
             </div>
             <div className="footer-column grid-four _152MAijd_UogerBKCVqZR_ _1lLHKI5v9AoCyeggtffvGZ SiteFooter__FooterSubColumn-sc-160ijjw-4 erxKKA" data-reactid="535">
-                <a className="_3TJ2LNmiyFnXVggSgiKX5Q" href="/termsOfUse" data-reactid="536">이용약관</a><br data-reactid="537" />
-                <a className="_3TJ2LNmiyFnXVggSgiKX5Q" href="/privacy" data-reactid="538">개인정보 처리방침</a><br data-reactid="539" />
+                <a className="_3TJ2LNmiyFnXVggSgiKX5Q" href="/termsOfUse" data-reactid="536">
+                    이용약관
+                    </a><br data-reactid="537" />
+                <Link href="/Privacy">
+                   <a>
+                   개인정보 처리방침
+                </a>
+                </Link>
+                <br data-reactid="539" />
                 <a className="_3TJ2LNmiyFnXVggSgiKX5Q" href="https://tumblbug.com/help/fees" data-reactid="540">수수료 정책</a><br data-reactid="541" />
                 <a href="https://help.tumblbug.com/" className="_3TJ2LNmiyFnXVggSgiKX5Q" target="_blank" data-reactid="542">헬프 센터</a>
             </div>

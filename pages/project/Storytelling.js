@@ -76,42 +76,51 @@ class Storytelling extends Component {
 						{/* 이미지를 등록하는 요소 */}
 							<Segment>
 								<p>소개영상<p style={fontSize}>
-								프로젝트 최상단에 올라갈 영상 또는 사진을 올려주세요
-								</p></p>
-								
+								프로젝트 최상단에 올라갈 영상 또는 사진을 올려주세요</p></p>
 								<Grid>
 									<Grid.Column width={4}>
 										<Image
-											alt='An example alt'
-											size='small'
-											src = 'https://react.semantic-ui.com/images/wireframe/image.png'	
+										alt='An example alt'
+										size='small'
+										src = 'https://react.semantic-ui.com/images/wireframe/image.png'	
 										/>
 									</Grid.Column>
+									
 									<Grid.Column width={12}>
 										<Grid.Column floated='left' width={14}>
-						
-							
-											{/* <Divider />	 */}
-										<Grid>
-											<Grid.Column floated='left' width={7}>
-												{/* <Checkbox label='사진' onChange={()=>{setPicture(!picture)}}/> */}
-											</Grid.Column>
-											<Grid.Column floated='right' width={7}>
-												<Form.Field inline>
-											{/* {picture&&true ? <Input type="file"/> : <Input type="file" disabled/>} */}
-									<label> 원</label>
-								</Form.Field>
-							</Grid.Column>
-						</Grid>
-					</Grid.Column>	
+											<Grid divided='vertically'>
+												<Grid.Row columns={2}>
+													<Grid.Column width={4}>
+														<Checkbox label='사진'/>
+													</Grid.Column>
+													<Grid.Column width={11}>
+														<Input type="file" name="picture"></Input>
+													</Grid.Column>
 
-
+													<Grid.Column width={4}>
+														<Checkbox label='동영상'/>
+													</Grid.Column>
+													<Grid.Column width={11}>
+														<Input type="file" name="video"></Input>
+													</Grid.Column>
+												</Grid.Row>
+											</Grid>
+										</Grid.Column>	
 									</Grid.Column>
+								</Grid>
+								<Divider />
 
+								<Grid divided='vertically'>
+									<Grid.Row columns={2}>
+										<Grid.Column width={4}>
+											<Checkbox label='프로젝트 설명 사진'/>
+										</Grid.Column>
+										<Grid.Column width={11}>
+											<Input type="file" name="picture"></Input>
+										</Grid.Column>
+									</Grid.Row>
+								</Grid>
 
-
-									
-								</Grid>	
 							</Segment>
 						</Grid.Column>
 						<Grid.Column />

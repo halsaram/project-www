@@ -137,15 +137,17 @@ export default class Layout extends React.Component {
             rel="stylesheet"
             href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/semantic.min.css"
           />
-          <title>{title} :: Halsaram</title>
+          <title>{title} ::Halsaram</title>
         </Head>
         <Menu secondary>
         <Menu.Item>
         <Button onClick={this.handleAnimationChange('overlay')}>|||</Button>
         </Menu.Item>
+        <Menu.Item/><Menu.Item /><Menu.Item /><Menu.Item /><Menu.Item /><Menu.Item /><Menu.Item />
+        <Menu.Item /><Menu.Item /><Menu.Item /><Menu.Item /><Menu.Item /><Menu.Item /><Menu.Item />
         <Menu.Item
-          name='Halsaram'
-        />
+        >
+          Halsaram</Menu.Item>
         
         <Menu.Menu position='right'>
           <Menu.Item>
@@ -200,3 +202,4 @@ export default class Layout extends React.Component {
     )
   }
 }
+

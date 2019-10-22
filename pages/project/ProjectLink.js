@@ -26,7 +26,7 @@ class ProjectLink extends Component {
         <div>
           <Grid columns='equal'>
             <Grid.Row>
-              <Menu pointing secondary>
+              <Menu tabular widths={5}>
                 <Menu.Item
                 name='Config'
                 active={activeItem === 'Config'}

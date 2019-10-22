@@ -1,7 +1,7 @@
-import Privacy from '../pages/main/Privacy'
-import Notices from '../pages/main/Notices'
-import TermsOfUse from '../pages/main/TermsOfUse'
-import Layout from './Layout'
+import Privacy from './Privacy'
+import Notices from './Notices'
+import TermsOfUse from './TermsOfUse'
+import Layout from '../../components/Layout'
 
 
 const MainPageContent = (props) => (

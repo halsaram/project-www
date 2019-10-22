@@ -14,6 +14,8 @@ import Link from 'next/link';
 import { Divider, Header, Icon, Grid, Button, Image } from 'semantic-ui-react'
 
 
+
+
 const ProjectLink = (props) => (
     <Link as='/p' href={`/project?id=${props.id}&title=정책`}>
         <button className="sc-1x93b2b-0-Button-kDSBcD jxJcyR" data-reactid="57">{props.title}</button>

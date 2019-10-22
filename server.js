@@ -47,8 +47,8 @@ app.prepare()
         const actualPage = '/Privacy'
         app.render(req, res, actualPage)
     })
-    server.get('/TermOfUse', (req, res) => {
-        const actualPage = '/TermOfUse'
+    server.get('/TermsOfUse', (req, res) => {
+        const actualPage = '/TermsOfUse'
         app.render(req, res, actualPage)
     })
 
