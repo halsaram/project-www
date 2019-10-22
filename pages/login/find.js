@@ -5,9 +5,9 @@
  * 작성자		     : 최다올
  * 버전		      : 1.0.0
  * 생성일자		   : 2019-10-02
- * 최종수정일자 	: 2019-10-15
+ * 최종수정일자 	: 2019-10-22
  * 최종수정자	   : 최다올
- * 최종수정내용	  : 메일 인풋 내용
+ * 최종수정내용	  : 주석 추가
 **************************************************************************************/
 
 
@@ -18,10 +18,10 @@ import { Button, Divider, Form } from 'semantic-ui-react'
 import Layout from '../../components/Layout'
 
 class Find extends Component {
-	state = {  mail: '' ,submittedMail: '' } //가입한 메일계정, 입력된 메일계정
-
+	state = {  mail: '' ,submittedMail: '' } //가입한 메일계정, 입력된 가입한 메일계정
+  //정보 실시간 입력
 	handleChange = (e, { name, value }) => this.setState({ [name]: value })
-
+  //제출시 저장되는 값
 	handleSubmit = () => {
 		const { mail } = this.state
 
@@ -40,6 +40,7 @@ class Find extends Component {
                             </p>
                           </div>
                           <Form onSubmit={this.handleSubmit}>                                                   
+                          {/* {가입된 이메일 입력창}}} */}
                           <Form.Input
 									placeholder='이메일 계정'
 									label='이메일'
@@ -49,6 +50,7 @@ class Find extends Component {
 									onChange={this.handleChange}
 								/><Button content='확인' primary />
                 </Form> 
+                {/* {입력된 값 확인용(나중에 삭제 예정))}} */}
                 <div>  
                 <strong>onChange:</strong>
 						<pre>{JSON.stringify({ mail }, null, 1)}</pre>
@@ -60,7 +62,7 @@ class Find extends Component {
                       </div>
                             </div>
 
-    ) // <strong>부터 입력된 값을 보여주는 부분 (나중에 삭제 예정)
+    )
     };
     
 

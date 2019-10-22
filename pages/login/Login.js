@@ -33,12 +33,14 @@ class Login extends Component {
 					<Grid.Column verticalAlign='middle'>
 						<Form onSubmit={this.handleSubmit}>
 							<Form.Group>
+								{/* {페이스북, 네이버 아이디로그인은 막아놈} */}
 								<List celled horizontal>
 									<List.Item><Link as='/' href='/'>페이스북 아이디로 로그인</Link></List.Item>
 									<List.Item><Link as='/' href='/'>네이버 아이디로 로그인</Link></List.Item>
 								</List>
 							</Form.Group>
 							<Form.Group>
+								{/* {이메일 입력폼} */}
 								<Form.Input
 									placeholder='이메일'
 									icon='user'
@@ -49,9 +51,10 @@ class Login extends Component {
 									type='email'
 									onChange={this.handleChange}
 								/>
+								{/* {비밀번호 입력폼}} */}
 								<Form.Input
 									placeholder='패스워드'
-									name='passwd'
+									name='passwd'폼
 									icon='lock'
 									iconPosition='left'
 									label='패스워드'

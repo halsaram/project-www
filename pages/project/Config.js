@@ -63,7 +63,13 @@ const InsertConfig=()=>{
 		localStorage.setItem("color", incolor);
 		localStorage.setItem("etc", inetc);
 		localStorage.setItem("message", inmessage);
+	
+
+
+
 	}
+
+
 
 	return(
 		<Grid columns='equal'>
@@ -176,7 +182,7 @@ const InsertConfig=()=>{
 						{/* 발송시작일폼 */}
 						<p>발송 시작일</p>	
 						<p>리워드 제품 발송 시작일을 입력하세요</p>		
-						<Input type="date" fluid/>		
+						<Input type="date"  fluid/>		
 					</Grid.Column>
 					
 					<Grid.Column floated='center' width={14}>
