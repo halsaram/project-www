@@ -3,6 +3,10 @@
  *
  * Benefits: Less code, and easily handles complex url structures
  **/
-const routes = (module.exports = require('next-routes')())
-
-routes.add('project/', '/project/:id')
+const routes = (
+    module.exports = require('next-routes')()
+        .add('/cate', '/')
+        .add('/new', '/')
+        .add('/last', '/')
+        .add('project', '/project/:id')
+)

@@ -10,8 +10,6 @@
  * 최종수정내용	  : import main 루트 수정
 **************************************************************************************/
 
-import Link from 'next/link';
-import { Fragment } from 'react';
 import Layout from '../components/Layout'
 import Main_Banner from './main/Main_Banner'
 import Lower_Banner from './main/Lower_Banner'

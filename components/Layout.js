@@ -165,7 +165,7 @@ export default class Layout extends React.Component {
               visible={visible}
             />
           )}
-
+          
           <HeaderBar />
 
           <Sidebar.Pusher dimmed={dimmed && visible}>

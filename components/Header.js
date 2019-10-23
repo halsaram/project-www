@@ -1,27 +1,33 @@
 import Link from 'next/link';
+import React from 'react'
+import { withRouter } from 'next/router'
 import { Menu } from 'semantic-ui-react'
 
-
-const HeaderBar = () => (
+const HeaderBar = ({ router: { pathname } }) => (
   <div>
-    <Menu fluid widths={4}>
-      <Menu.Item>
+    <Menu>
+      <Menu.Item active={pathname === '/'}>
         <Link href='/'>
-          <a>홈</a>
+          <a>HOME</a>
         </Link>
       </Menu.Item>
-
-      <Menu.Item
-        name='카테고리'
-      />
-      <Menu.Item
-        name='새로운 프로젝트'
-      />
-      <Menu.Item
-        name='성공임박 프로젝트'
-      />
+      <Menu.Item active={pathname === '/cate'}>
+        <Link as='/cate' href='/'>
+          <a>카테고리</a>
+        </Link>
+      </Menu.Item>
+      <Menu.Item active={pathname === '/new'}>
+        <Link as='/new' href='/'>
+          <a>새로운프로젝트</a>
+        </Link>
+      </Menu.Item>
+      <Menu.Item active={pathname === '/cate'}>
+        <Link as='/last' href='/'>
+          <a>성공임박프로젝트</a>
+        </Link>
+      </Menu.Item>
     </Menu>
   </div>
 )
 
-export default HeaderBar;
+export default withRouter(HeaderBar);
