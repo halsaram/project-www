@@ -5,9 +5,9 @@
  * 작성자		   : 이은미
  * 버전		      : 1.0.0
  * 생성일자		   : 2019-10-02
- * 최종수정일자 	: 2019-10-21
+ * 최종수정일자 	: 2019-10-23
  * 최종수정자	   :  최다올	
- * 최종수정내용	  : 입력칸 데이터 확인할 수 있도록 적용, 로컬스토리지 저장
+ * 최종수정내용	  : 로컬스토리지에 바로 저장
 **************************************************************************************/
 import Link from 'next/link';
 import { Grid, Segment, Button, Form, Input, Divider, Checkbox } from 'semantic-ui-react'
@@ -74,6 +74,8 @@ const InsertConfig=()=>{
 	const [deliveryfee, setDeliveryfee] = useLocalstorage('배송료', '')
 	//수량 제한 입력칸 데이터
 	const [limitnum, setLimitnum ] = useLocalstorage('제한수량', '')
+	
+	
 
 	return(
 		<Grid columns='equal'>
@@ -184,7 +186,7 @@ const InsertConfig=()=>{
 						{/* 발송시작일폼 */}
 						<p>발송 시작일</p>	
 						<p>리워드 제품 발송 시작일을 입력하세요</p>		
-						<Input type="date" fluid/>		
+						<Input type="date" fluid/>
 					</Grid.Column>
 					
 					<Grid.Column floated='center' width={14}>
