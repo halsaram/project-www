@@ -17,7 +17,7 @@ const abi = JSON.parse(tt_contract_json);
 
 Web3.providers.HttpProvider.prototype.sendAsync = Web3.providers.HttpProvider.prototype.send;
 
-const myaddr = '0x24d5edaf138618115e14b5cd3dcbdb7efb71c937'
+// const myaddr = '0x24d5edaf138618115e14b5cd3dcbdb7efb71c937'
 
 //console.log('abi', abi)
 var tt_contract = contract(abi);
@@ -25,7 +25,9 @@ tt_contract.setProvider(web3Provider);
 
 
 async function test2() {
-    const crudInstance = await tt_contract.deployed();
+	const crudInstance = await tt_contract.deployed();
+	const accounts = await web3.eth.getAccounts()
+	console.log(accounts)
 
 	/*var event = crudInstance.LogNewUser({_from:web3.eth.coinbase},{fromBlock: 0, toBlock: 'latest'});
 
@@ -50,24 +52,24 @@ async function test2() {
 	        console.log("==================================");
 	        console.log(result);
 	});*/
-    try {
-		await crudInstance.insertUser(0x1d342d4f1ff9a12c52d6a715f910a47ad111369a, "b@a.com", 10, 1000, { from: myaddr, gas: 4500000 })
-    }
-    catch (exception) {
-        console.log(exception);
-    }
+    // try {
+	// 	await crudInstance.insertUser(0x1d342d4f1ff9a12c52d6a715f910a47ad111369a, "b@a.com", 10, 1000, { from: myaddr, gas: 4500000 })
+    // }
+    // catch (exception) {
+    //     console.log(exception);
+    // }
 
-	var user = await crudInstance.getUser(0x1d342d4f1ff9a12c52d6a715f910a47ad111369a, { from: myaddr });
-    console.log('user', user);
-    var total = await crudInstance.getUserCount();
-    console.log('user total', total.toNumber());
+	// var user = await crudInstance.getUser(0x1d342d4f1ff9a12c52d6a715f910a47ad111369a, { from: myaddr });
+    // console.log('user', user);
+    // var total = await crudInstance.getUserCount();
+    // console.log('user total', total.toNumber());
 
 
-	await crudInstance.updateUserPoint(0x1d342d4f1ff9a12c52d6a715f910a47ad111369a, -1000, { from: myaddr })
+	// await crudInstance.updateUserPoint(0x1d342d4f1ff9a12c52d6a715f910a47ad111369a, -1000, { from: myaddr })
 
-	var user = await crudInstance.getUser(0x1d342d4f1ff9a12c52d6a715f910a47ad111369a);
-    console.log('user ==> ', user);
-    var total = await crudInstance.getUserCount();
-    console.log('user total ==>', total.toNumber());
+	// var user = await crudInstance.getUser(0x1d342d4f1ff9a12c52d6a715f910a47ad111369a);
+    // console.log('user ==> ', user);
+    // var total = await crudInstance.getUserCount();
+    // console.log('user total ==>', total.toNumber());
 }
 test2()
