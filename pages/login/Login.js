@@ -14,6 +14,7 @@ import Link from 'next/link';
 import { Button, Divider, Form, Grid, Segment, List } from 'semantic-ui-react'
 
 
+
 //입력된값이 바로 로컬스토리지에 저장되도록 한다.
 function useLocalstorage(key, initialValue) {
 	const[storedValue, setStoredValue] = useState(() => {
@@ -98,7 +99,7 @@ const Login =()=> {
 									type='password'
 									onChange={e=> setPasswd(e.target.value)}
 								/>
-								<Button content='로그인' primary />
+								<Button content='로그인' primary onClick=''/>
 							</Form.Group>
 							<Form.Group>
 								<List celled horizontal>
