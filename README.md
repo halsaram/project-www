@@ -42,7 +42,7 @@ The following libraries / Framework are pre-installed.
 ## 1. Getting Started
 ```bash
 # Clone the repository
-$ git clone https://github.com/halsaram/project-www
+$ git clone https://github.com/halsaram/project-www.git
 $ cd project-www
 
 # Flush git project
