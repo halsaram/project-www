@@ -93,6 +93,10 @@ const InsertConfig=()=>{
 					</Grid.Column>
 
 					<Grid.Column floated='right' width={7}>
+
+
+
+						
 						{/* 정렬순서 입력폼 */}
 						<Form.Field inline>
       						<label>정렬 순서 </label>

@@ -55,14 +55,13 @@ const indexPageContent =
     <MainList value={ReReco} MainTitle='앵콜 프로젝트'/>
   </div>
   <Lower_Banner />
-
 </div>
 
-
 export default function Index() {
-  return <Layout children={indexPageContent} title='Home'>
+  return <div>
     
-  </Layout>
+    <Layout children={indexPageContent} title='Home' />
+  </div>
 };
 
 

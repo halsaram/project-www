@@ -5,8 +5,5 @@
  **/
 const routes = (
     module.exports = require('next-routes')()
-        .add('/cate', '/')
-        .add('/new', '/')
-        .add('/last', '/')
         .add('project', '/project/:id')
 )

@@ -8,7 +8,7 @@ import Link from 'next/link';
 import HeaderBar from './Header'
 import Footer from './Footer'
 
-import '../pages/style.css'
+// import '../pages/style.css'
 
 const HorizontalSidebar = ({ animation, direction, visible }) => (
   <Sidebar
@@ -107,7 +107,7 @@ export default class Layout extends React.Component {
 
 
   render() {
-    const { children, title = '' } = this.props
+    const { children, header, title = '' } = this.props
     const { animation, dimmed, direction, visible, search, submittedSearch } = this.state
     const vertical = direction === 'bottom' || direction === 'top'
     return (
@@ -123,12 +123,13 @@ export default class Layout extends React.Component {
         <Menu.Item>
         <Button onClick={this.handleAnimationChange('overlay')}>|||</Button>
         </Menu.Item>
-        <Menu.Item/><Menu.Item /><Menu.Item /><Menu.Item /><Menu.Item /><Menu.Item /><Menu.Item />
-        <Menu.Item /><Menu.Item /><Menu.Item /><Menu.Item /><Menu.Item /><Menu.Item /><Menu.Item />
-        <Menu.Item
-        >
-          Halsaram</Menu.Item>
-        
+          <Menu.Item>
+            <Link href='/dapp'><a>My Dapp</a></Link>
+          </Menu.Item>
+          <Menu.Item>
+            <Link href='/accounts'><a>My Accounts</a></Link>
+          </Menu.Item>
+        <Menu.Item>Halsaram</Menu.Item>
         <Menu.Menu position='right'>
           <Menu.Item>
             <Input icon='search' placeholder='Search...' />
