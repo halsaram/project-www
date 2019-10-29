@@ -6,7 +6,9 @@ class Dapp extends React.Component {
   state = {
     balance: undefined,
     ethBalance: undefined,
-    myaddr: undefined
+    myaddr: undefined,
+    userPoint: undefined,
+    userEmail: undefined
   };
 
   // storeValue = async () => {
@@ -41,11 +43,11 @@ class Dapp extends React.Component {
     const { myaddr } = this.state
     
     try {
-      //var inst = contract;
       // await web3.eth.personal.unlockAccount(myaddr,'!@superpassword')
       //   .then(console.log('unlockAccount ==> Ture'))
-      const user = await contract.methods.insertUser(myaddr, "b@a.com", 10, 1000).send({ from: coinbase, gas: 4500000})
+      const user = await contract.methods.insertUser(myaddr, "b@a.com", 10, 0).send({ from: coinbase, gas: 4500000})
       console.log(user);
+      this.getUser()
       // await web3.eth.personal.lockAccount(myaddr, '!@superpassword')
       //   .then(console.log('lockAccount ==> Ture'))
     }
@@ -54,24 +56,34 @@ class Dapp extends React.Component {
     }
   }
 
+  updateUserPoint = async (point) => {
+    const { contract, coinbase } = this.props
+    const { myaddr } = this.state
+    const response = await contract.methods.updateUserPoint(myaddr, point).send({ from: coinbase })
+    console.log(response);
+    this.getUser()
+  }
+
   getUser = async () => {
     const { contract, coinbase } = this.props
     const { myaddr } = this.state
-    const user = await contract.methods.getUser(myaddr).call({ from: coinbase })
-    console.log(user);
+    const response = await contract.methods.getUser(myaddr).call({ from: coinbase })
+    this.setState({ userPoint: response.userPoint, userEmail: response.userEmail })
+    console.log(response);
   }
 
   getTotal = async () => {
     const { contract } = this.props
     const { myaddr } = this.state
-    const total = await contract.methods.getUserCount().call()
-    console.log(total);
+    const response = await contract.methods.getUserCount().call()
+    console.log(response);
   }
+
 
   render () {
     const { coinbase } = this.props
     
-    const { balance = 'N/A', ethBalance = 'N/A', myaddr = 'N/A' } = this.state
+    const { balance = 'N/A', ethBalance = 'N/A', myaddr = 'N/A', userPoint = 'N/A', userEmail = 'N/A' } = this.state
     return (
       <div>
         <h1>My Dapp</h1>
@@ -82,8 +94,12 @@ class Dapp extends React.Component {
         <button onClick={this.insertUser}>Insert User</button>
         <button onClick={this.getUser}>Get User</button>
         <button onClick={this.getTotal}>User Count</button>
+        <button onClick={() => {this.updateUserPoint(1000)}}>+1000</button>
+        <button onClick={() => {this.updateUserPoint(-1000)}}>-1000</button>
         <div>Coinbase: {coinbase}</div>
         <div>My Addres: {myaddr}</div>
+        <div>My userPoint: {userPoint}</div>
+        <div>My userEmail: {userEmail}</div>
         {/* <div>Account Balance: {balance}</div>
         <div>Ether Balance: {ethBalance}</div> */}
         <div>
