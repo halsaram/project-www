@@ -30,6 +30,7 @@ function useLocalstorage(key, initialValue) {
 			return initialValue;
 		}
 	})
+
 	const setValue = value => {
 		try {
 		const valueToStore = value instanceof Function ? value(storedValue) : value;
@@ -74,6 +75,14 @@ const InsertConfig=()=>{
 	const [deliveryfee, setDeliveryfee] = useLocalstorage('배송료', '')
 	//수량 제한 입력칸 데이터
 	const [limitnum, setLimitnum ] = useLocalstorage('제한수량', '')
+
+	useEffect(() => {
+		console.log('limitnum => ', limitnum);
+	}, [limitnum])
+
+	useEffect(() => {
+		console.log('limitnum => ', limit);
+	}, [limit])
 	
 	
 
