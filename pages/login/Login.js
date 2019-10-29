@@ -9,10 +9,10 @@
  * 최종수정자	   : 정휘선
  * 최종수정내용	  : REACT UI UPDATE
 **************************************************************************************/
-import React, { useState } from 'react'
+import React, { Component } from 'react'
 import Link from 'next/link';
 import { Button, Divider, Form, Grid, Segment, List } from 'semantic-ui-react'
-
+import {useState, useEffect} from 'react';
 
 
 //입력된값이 바로 로컬스토리지에 저장되도록 한다.
@@ -42,7 +42,6 @@ function useLocalstorage(key, initialValue) {
   return [storedValue, setValue];
 
 }
-
 
 const Login =()=> {
 	// state = { passwd: '', mail: '', submittedPasswd: '', submittedMail: '' } //비밀버호, 이메일, 입력된 비밀번호, 입력된 이메일
@@ -126,6 +125,7 @@ const Login =()=> {
 			</div>
 		); 
 	}
-//}
+	
+// }
   
 export default Login;
