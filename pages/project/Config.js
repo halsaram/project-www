@@ -75,6 +75,8 @@ const InsertConfig=()=>{
 	const [deliveryfee, setDeliveryfee] = useLocalstorage('배송료', '')
 	//수량 제한 입력칸 데이터
 	const [limitnum, setLimitnum ] = useLocalstorage('제한수량', '')
+	//날짜 입력칸 데이터
+	const [date, setDate] = useLocalstorage('날짜', '')
 
 	useEffect(() => {
 		console.log('limitnum => ', limitnum);
@@ -199,7 +201,10 @@ const InsertConfig=()=>{
 						{/* 발송시작일폼 */}
 						<p>발송 시작일</p>	
 						<p>리워드 제품 발송 시작일을 입력하세요</p>		
-						<Input type="date" fluid/>
+						<Input type="date" 
+								value={date}
+								name='date'
+								onChange={e => setDate(e.target.value)} fluid/>
 					</Grid.Column>
 					
 					<Grid.Column floated='center' width={14}>
