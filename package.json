@@ -24,6 +24,7 @@
   },
   "scripts": {
     "dev": "node server.js",
+    "web3": "node lib/web3/Web3Container.js",
     "test": "node test1.js",
     "build": "next build",
     "start": "NODE_ENV=production node server.js"

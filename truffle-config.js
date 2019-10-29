@@ -47,7 +47,7 @@ module.exports = {
       port: 22000,
       gas: 4500000,
       gasPrice: 0,
-      from: "0xbf34e51cc6c2e4dbefd9507fece2052beddf3944",
+      from: "0xed9d02e382b34818e88b88a309c7fe71e65f419d",
       network_id: "*", // Match any network id
     }
 

@@ -63,7 +63,7 @@ async function test2() {
     // console.log('user', user);
     // var total = await crudInstance.getUserCount();
     // console.log('user total', total.toNumber());
-
+x`
 
 	// await crudInstance.updateUserPoint(0x1d342d4f1ff9a12c52d6a715f910a47ad111369a, -1000, { from: myaddr })
 
