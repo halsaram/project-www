@@ -8,10 +8,7 @@
  * 최종수정일자 	: 
  * 최종수정자	   : 
  * 최종수정내용	  : 
-**************************************************************************************/
-import Link from 'next/link';
-
-const Story = () => (
+**********************************************************************************
 	<div>	
 		<div className="ProjectIntroduction__ProjectIntroductionBackground-sc-1o2ojgb-0 gsZkXT">
 			<div className="Container-gci8y7-0 MskhC">

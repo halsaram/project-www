@@ -13,14 +13,13 @@
 import Layout from '../../components/Layout'
 
 import FundingGuide from './FundingGuide'
-import Community from './Community'
-import Story from './Story'
+// import Community from './Community'
+// import Story from './Story'
 
 const Content = (props) => (
     <div>
         <FundingGuide />
-        <Community />
-        <Story />
+        {/* <Community /> */}
     </div>
 );
 

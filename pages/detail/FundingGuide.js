@@ -97,13 +97,13 @@ const FundingGuide = () => (
 					<nav className="ContentsNavigation__ProjectContentsNavigation-mwsx7i-1 jABjId">
 					<div className="ContentsNavigation__ProjectContentsNavigationInner-mwsx7i-2 OvVKa">
 						<div className="ContentsNavigation__NavLeft-mwsx7i-3 buZwam">
-                        <Link as='/d' href='/deteile?id=story&title=스토리'>
+                        <Link as='/d' href='/detail?id=story&title=스토리'>
 							<a className="ContentsNavigation__NavItem-mwsx7i-0 cjInbB">스토리</a>
                             </Link>
-                        <Link as='/d' href='/deteile?id=Community&title=커뮤니티'>
+						<Link as='/d' href='/detail?id=Community&title=커뮤니티'>
                                 <a className="ContentsNavigation__NavItem-mwsx7i-0 cjInbB">커뮤니티</a>
                             </Link>
-                        <Link as='/d' href='/deteile?id=FundingG</Link>uide&title=펀딩안내'>
+						<Link as='/d' href='/detail?id=FundingG</Link>uide&title=펀딩안내'>
 							<a className="ContentsNavigation__NavItem-mwsx7i-0 cjInbB">펀딩 안내</a>
                             </Link>
 						</div>

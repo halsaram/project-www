@@ -12,6 +12,7 @@
 
 
 import React from 'react'
+import Link from 'next/link';
 import { Card, Icon, Grid, Segment, Button, Progress, Pagination } from 'semantic-ui-react'
 
 const extra = (
@@ -40,13 +41,15 @@ const MainList = (props) => (
         <Grid columns='equal'>
             <Grid.Row centered>
                 <Grid.Column width="4"> 
-                    <Card
-                        image='../../static/test/testlist.png'
-                        header={props.MainTitle}
-                        meta='Friend'
-                        description='Elliot is a sound engineer'
-                        extra={extra}
-                        />
+                    <Link as='/d' href='/detail'>
+                        <Card
+                            image='../../static/test/testlist.png'
+                            header={props.MainTitle}
+                            meta='Friend'
+                            description='Elliot is a sound engineer'
+                            extra={extra}
+                            />
+                    </Link>
                         
                    
                 </Grid.Column>

@@ -20,7 +20,7 @@
 //     })
 
 //     server.get('/d', (req, res) => {
-//         const actualPage = '/deteile'
+//         const actualPage = '/detail'
 //         app.render(req, res, actualPage)
 //     })
 
