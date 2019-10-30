@@ -5,17 +5,17 @@
  * 작성자		   : 정휘선
  * 버전		      : 1.0.0
  * 생성일자		   : 2019-10-02
- * 최종수정일자 	: 2019-10-21
- * 최종수정자	   : 금정민
- * 최종수정내용	  :  데이터 코드 주석 추가 및 UI 적용
+ * 최종수정일자 	: 2019-10-30
+ * 최종수정자	   : 전새희
+ * 최종수정내용	  :  console.log
 **************************************************************************************/
 
 import Link from 'next/link';
 import React, { Component } from 'react'
-import { Grid, Segment, Button, Form, Input, Select, Header, Icon, Image, Label } from 'semantic-ui-react'
+import { Grid, Dropdown, Segment, Button, Form, Input, Select, Header, Icon, Image, Label } from 'semantic-ui-react'
 import ProjectLink from './ProjectLink'
 import ProjectHeader from './projectHeader'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 
 function useLocalstorage(key, initialValue) {
@@ -30,15 +30,11 @@ function useLocalstorage(key, initialValue) {
 	const setValue = value => {
 		try {
 			const valueToStore = value instanceof Function ? value(storedValue) : value;
-
 			setStoredValue(valueToStore);
-
 			window.localStorage.setItem(key, JSON.stringify(valueToStore));
-
+			console.log(key, '==>', valueToStore);
 		} catch (error) {
-
 			console.log(error);
-
 		}
 	};
 	return [storedValue, setValue];
@@ -47,37 +43,9 @@ function useLocalstorage(key, initialValue) {
 
 
 const Summary = () => {
-	// state = {   projectTitle: '', keyword: '',     fundingGoal: '',     //제목|짥은제목|목표금액
-	// 			category: '',     deadline: '',    creator: '',         //카테고리|종료일|창작자명
-	// 			websites1: '',    websites2: '',  				        //창작자소셜주소1|2|프로젝트
-
-	// 			//상단변수제출변수
-	// 			submittedProjectTitle: '', submittedKeyword: '',  submittedFundingGoal: '', 
-	// 			submittedCategory: '',     submittedDeadline: '', submittedCreator: '',
-	// 			submittedWebsites1: '',    submittedWebsites2: '' }
-
-
-	// //입력창에 들어간 정보를 실시간 확인
-	// handleChange = (e, { name, value }) => this.setState({ [name]: value })
-
-
-	// //입력변수를 -> 제출 후 변수(submitted ~)에 저장
-	// handleSubmit = () => {
-	// 	const { projectTitle,  keyword,    fundingGoal,   //제목|짥은제목|목표금액
-	// 			category,      deadline,   creator,       //카테고리|종료일|창작자명
-	// 			websites1,     websites2 } = this.state   //창작자소셜주소1|2|프로젝트
-
-	// 	this.setState({
-	// 		submittedProjectTitle: projectTitle,  submittedKeyword:   keyword,    submittedFundingGoal: fundingGoal, 
-	// 		submittedCategory:     category    ,  submittedDeadline:  deadline,   submittedCreator:     creator, 
-	// 		submittedWebsites1:    websites1   ,  submittedWebsites2: websites2 })
-	// }
-
-
-	// render() {
 
 	// 카테고리항목변수
-	const countryOptions = [
+	const options = [
 		{ key: '건강', value: '건강', text: '건강' },
 		{ key: '생활', value: '생활', text: '생활' }
 	]
@@ -88,7 +56,7 @@ const Summary = () => {
 		color: "gray"
 	}
 
-	const [projectTitle, setProjectTitle] = useLocalstorage('제목', '')
+	const [projectTitle, setProjectTitle] = useLocalstorage('프로젝트명', '')
 	const [keyword, setKeyword] = useLocalstorage('짥은제목', '')
 	const [fundingGoal, setFundingGoal] = useLocalstorage('목표금액', '')
 	const [category, setCategory] = useLocalstorage('카테고리', '')
@@ -96,17 +64,6 @@ const Summary = () => {
 	const [creator, setCreator] = useLocalstorage('창작자명', '')
 	const [websites1, setWebsites1] = useLocalstorage('창작자소셜주소1', '')
 	const [websites2, setWebsites2] = useLocalstorage('창작자소셜주소2', '')
-
-	// const { projectTitle, keyword,    fundingGoal,    //제목|짥은제목|목표금액
-	// 		category,     deadline,   creator,        //카테고리|종료일|창작자명
-	// 		websites1,    websites2,                  //창작자소셜주소1|2|프로젝트
-
-	// 		//상단변수제출변수
-	// 		submittedProjectTitle, submittedKeyword,  submittedFundingGoal, 
-	// 		submittedCategory,     submittedDeadline, submittedCreator, 
-	// 		submittedWebsites1,    submittedWebsites2 } = this.state
-
-
 
 	return (
 		<div>
@@ -182,11 +139,7 @@ const Summary = () => {
 										오픈 후, 노출될 카테고리를 선택해 주세요.
 											</span></p>
 									<Form.Field inline>
-										<Select
-											placeholder='카테고리 선택'
-											options={countryOptions}
-											name="category"
-											onChange={e => setCategory(e.target.options)} fluid />
+										<Dropdown clearable options={options} onChange={e => console.log(options)} selection fluid />
 									</Form.Field>
 
 									<br />
@@ -276,7 +229,6 @@ const Summary = () => {
 				</Link>
 				<br /><br /><br /><br />
 			</Form>
-
 
 		</div>
 	);
