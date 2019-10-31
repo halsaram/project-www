@@ -43,7 +43,7 @@ module.exports = {
     // options below to some value.
     //
     development: {
-      host: "3",
+      host: "192.168.1.112",
       port: 22000,
       gas: 4500000,
       gasPrice: 0,
