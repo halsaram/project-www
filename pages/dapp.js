@@ -31,12 +31,11 @@ class Dapp extends React.Component {
 
   isNewAccount = async () => {
     const { web3 } = this.props
-    // await web3.eth.personal.newAccount('!@superpassword')
-    //   .then((result) => {
-    //     console.log(result)
-    //     this.setState({ myaddr: result })
-    //   });
-    return await web3.eth.personal.newAccount('!@superpassword')
+    await web3.eth.personal.newAccount('!@superpassword')
+      .then((result) => {
+        console.log(result)
+        this.setState({ myaddr: result })
+      });
   };
 
   insertUser = async () => {

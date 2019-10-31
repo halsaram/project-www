@@ -8,15 +8,17 @@ import Link from 'next/link';
 import HeaderBar from './Header'
 import Footer from './Footer'
 
-import authStore from '../lib/mobx/stores/authStore';
-import commonStore from '../lib/mobx/stores/commonStore';
-import userStore from '../lib/mobx/stores/userStore';
+import Dapp from '../pages/dapp'
 
-const stores = {
-  authStore,
-  commonStore,
-  userStore,
-};
+// import authStore from '../lib/mobx/stores/authStore';
+// import commonStore from '../lib/mobx/stores/commonStore';
+// import userStore from '../lib/mobx/stores/userStore';
+
+// const stores = {
+//   authStore,
+//   commonStore,
+//   userStore,
+// };
 
 // import '../pages/style.css'
 
@@ -117,6 +119,8 @@ export default class Layout extends React.Component {
 
 
   render() {
+    
+    
     const { children, header, title = '' } = this.props
     const { animation, dimmed, direction, visible, search, submittedSearch } = this.state
     const vertical = direction === 'bottom' || direction === 'top'
