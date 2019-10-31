@@ -10,16 +10,20 @@
  * 최종수정내용	   : 
 **************************************************************************************/
 
+import React from 'react'
 import Layout from '../../components/Layout'
 
 import FundingGuide from './FundingGuide'
-// import Community from './Community'
-// import Story from './Story'
+import Community from './Community'
+// import Header from './Header'
+import Story from './Story'
 
 const Content = (props) => (
     <div>
         <FundingGuide />
-        {/* <Community /> */}
+        <Community />
+        {/* <Header /> */}
+        <Story />
     </div>
 );
 

@@ -1,3 +1,4 @@
+import React from 'react'
 import Privacy from './Privacy'
 import Notices from './Notices'
 import TermsOfUse from './TermsOfUse'

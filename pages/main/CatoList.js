@@ -25,6 +25,8 @@ const EditReco = {
 //3. MainList에서는 이 이름값에 해당하는 데이터를 가져온다.(3개가 넘으면 overflow를 이용한다.)
 //___________________________________________________________________________________
 
+import React from 'react'
+
 const CatoList =()=> {
   const [btnId, setBtnId] = useState("생활");  
 
