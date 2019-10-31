@@ -8,6 +8,16 @@ import Link from 'next/link';
 import HeaderBar from './Header'
 import Footer from './Footer'
 
+import authStore from '../lib/mobx/stores/authStore';
+import commonStore from '../lib/mobx/stores/commonStore';
+import userStore from '../lib/mobx/stores/userStore';
+
+const stores = {
+  authStore,
+  commonStore,
+  userStore,
+};
+
 // import '../pages/style.css'
 
 const HorizontalSidebar = ({ animation, direction, visible }) => (
