@@ -122,8 +122,9 @@ const InsertConfig = () => {
 							<Grid divided='vertically'>
 								<Grid.Row columns={2}>
 									<Grid.Column width={4}>
-										<Checkbox label='사이즈'
-											onChange={() => { setSize(!size); }} />
+										<Checkbox label='사이즈' checked
+											onChange={(e) => { console.log(e);
+											  setSize(!size); }} />
 									</Grid.Column>
 									<Grid.Column width={11}>
 										{size && true ?
