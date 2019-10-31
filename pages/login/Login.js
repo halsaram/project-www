@@ -6,7 +6,6 @@
  * 버전		      : 1.0.0
  * 생성일자		   : 2019-10-02
  * 최종수정일자 	: 2019-10-31
- * 최종수정자	   : 전새희
  * 최종수정내용	  : console.log
 **************************************************************************************/
 import React, { Component } from 'react'
@@ -32,8 +31,7 @@ function useLocalstorage(key, initialValue) {
 		setStoredValue(valueToStore);
 
 		window.localStorage.setItem(key, JSON.stringify(valueToStore));
-			console.log(key, '==>', valueToStore);
-
+		console.log(key, '==>', valueToStore);
 		} catch (error) {
 
 		console.log(error);
