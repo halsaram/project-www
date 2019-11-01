@@ -10,15 +10,12 @@ import Footer from './Footer'
 
 import Dapp from '../pages/dapp'
 
-// import authStore from '../lib/mobx/stores/authStore';
-// import commonStore from '../lib/mobx/stores/commonStore';
-// import userStore from '../lib/mobx/stores/userStore';
+import authStore from '../lib/mobx/stores/authStore';
+import commonStore from '../lib/mobx/stores/commonStore';
+import userStore from '../lib/mobx/stores/userStore';
 
-// const stores = {
-//   authStore,
-//   commonStore,
-//   userStore,
-// };
+
+
 
 // import '../pages/style.css'
 
@@ -119,11 +116,11 @@ export default class Layout extends React.Component {
 
 
   render() {
-    
-    
     const { children, header, title = '' } = this.props
     const { animation, dimmed, direction, visible, search, submittedSearch } = this.state
     const vertical = direction === 'bottom' || direction === 'top'
+    console.log(userStore);
+    
     return (
       <React.Fragment>
         <Head>
