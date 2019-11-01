@@ -10,13 +10,15 @@
  * 최종수정내용	  :
 **************************************************************************************/
 
-import React from 'react'
+import React, { Component } from 'react'
 import Link from 'next/link';
-import Layout from '../../components/Layout';
 
 const FundingGuide = () => (
 	<>
-		<Layout>
+		<Link as='/d' href='/detail?id=fundingguide&title=펀딩안내'>
+			<Button type='submit' size="large"><a>펀딩안내</a></Button>
+		</Link>
+		{/* <Layout>
 		<div>상세페이지 메인 펀딩가이드</div>
 		<div id="contentsNavigation">
 			<nav className="ContentsNavigation__ProjectContentsNavigation-mwsx7i-1 jABjId">
@@ -38,7 +40,7 @@ const FundingGuide = () => (
 		<div></div>
 		<div></div>
 		<div></div>
-			</Layout>
+			</Layout> */}
 	</>
 );
 
