@@ -1,3 +1,4 @@
+import React from 'react'
 import Layout from '../components/Layout';
 
 const aboutPageContent = <p>This is the about page</p>;

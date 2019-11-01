@@ -10,6 +10,7 @@
  * 최종수정내용	  : collections 페이지 연결
 **************************************************************************************/
 
+import React from 'react'
 import Layout from '../../components/Layout'
 import Creative from './creative'
 import Brands from './brands'

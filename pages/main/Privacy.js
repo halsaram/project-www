@@ -10,6 +10,8 @@
  * 최종수정내용	    : 페이지 구성에 장애 요소인 'text-react'와 'style' 요소 모두 제거.
 **************************************************************************************/
 
+import React from 'react'
+
 const Privacy = () => (
 <div className="Policy-sc-1gd59w7-0 fWdFEE" data-reactid="50">
 						<header data-reactid="51">

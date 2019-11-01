@@ -9,6 +9,7 @@
  * 최종수정자	   : 정휘선
  * 최종수정내용	  : UI 수정
 **************************************************************************************/
+
 import React from 'react'
 import Link from 'next/link';
 import { Divider, Header, Icon, Grid, Button, Image } from 'semantic-ui-react'

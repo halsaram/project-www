@@ -7,7 +7,10 @@ import Link from 'next/link';
 
 import Footer from './Footer'
 
-import '../pages/style.css'
+import Web3Container from '../lib/web3/Web3Container'
+
+
+// import '../pages/style.css'
 
 const HorizontalSidebar = ({ animation, direction, visible }) => (
   <Sidebar
@@ -75,7 +78,7 @@ VerticalSidebar.propTypes = {
   visible: PropTypes.bool,
 }
 
-export default class Layout extends React.Component {
+class Layout extends React.Component {
   state = {
     animation: 'overlay',
     direction: 'left',
@@ -106,47 +109,13 @@ export default class Layout extends React.Component {
 
 
   render() {
-    const { children, title = '' } = this.props
+    const { children, header, title = '' } = this.props.res
     const { animation, dimmed, direction, visible, search, submittedSearch } = this.state
     const vertical = direction === 'bottom' || direction === 'top'
+    
     return (
       <React.Fragment>
         <Head>
-          <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-          <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
-          <meta name="description" content="모든 사람의 창조적인 시도를 위한 크라우드펀딩 플랫폼" />
-          <meta data-react-helmet="true" property="fb:app_id" content="200842993269405" />
-          <meta data-react-helmet="true" property="og:site_name" content="tumblbug" />
-          <meta data-react-helmet="true" property="og:type" content="website" />
-          <meta data-react-helmet="true" property="og:image" content="https://tumblbug-assets.imgix.net/brand/tumblbug_introduction.png" />
-          <meta data-react-helmet="true" property="og:image:width" content="620" />
-          <meta data-react-helmet="true" property="og:image:height" content="465" />
-          <meta data-react-helmet="true" property="og:url" content="https://www.tumblbug.com/" />
-          <meta data-react-helmet="true" property="og:title" content="텀블벅 tumblbug" />
-          <meta data-react-helmet="true" property="og:description" content="모든 사람의 창조적인 시도를 위한 크라우드펀딩 플랫폼" />
-          <meta data-react-helmet="true" name="twitter:site" content="tumblbug" />
-          <meta data-react-helmet="true" name="twitter:creator" content="tumblbug" />
-          <meta data-react-helmet="true" name="twitter:card" content="summary_large_image" />
-          <meta data-react-helmet="true" name="twitter:image" content="https://tumblbug-assets.imgix.net/brand/tumblbug_introduction.png" />
-          <meta data-react-helmet="true" name="twitter:url" content="https://www.tumblbug.com/" />
-          <meta data-react-helmet="true" name="twitter:title" content="텀블벅 tumblbug" />
-          <meta data-react-helmet="true" name="twitter:description" content="모든 사람의 창조적인 시도를 위한 크라우드펀딩 플랫폼" />
-          
-          <link rel="dns-prefetch" href="https://tumblbug-assets.imgix.net/" />
-          <link rel="dns-prefetch" href="https://tumblbug-pci2.imgix.net/" />
-          <link rel="dns-prefetch" href="https://tumblbug-psi.imgix.net/" />
-          <link rel="dns-prefetch" href="https://tumblbug-upi.imgix.net/" />
-          <link rel="dns-prefetch" href="https://www.google-analytics.com/" />
-          <link rel="dns-prefetch" href="https://developers.kakao.com/" />
-          <link rel="dns-prefetch" href="https://d2om2e6rfn032x.cloudfront.net/" />
-          <link rel="dns-prefetch" href="https://qysoaxc73e-dsn.algolia.net/" />
-          <link rel="dns-prefetch" href="https://stats.g.doubleclick.net/" />
-          <script type="text/javascript" async="" src="../static/js/linkid.js" />
-          <script type="text/javascript" async="" src="../static/js/analytics.js" />
-          <script type="text/javascript" async="" src="../static/js/analytics.min.js" />
-          <script type="text/javascript" async="" src="../static/js/kakao.min.js" />
-          {/* <script type="text/javascript" async="" src="../static/js/application.js" /> */}
-          
           <link
             rel="stylesheet"
             href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/semantic.min.css"
@@ -157,12 +126,13 @@ export default class Layout extends React.Component {
         <Menu.Item>
         <Button onClick={this.handleAnimationChange('overlay')}>|||</Button>
         </Menu.Item>
-        <Menu.Item/><Menu.Item /><Menu.Item /><Menu.Item /><Menu.Item /><Menu.Item /><Menu.Item />
-        <Menu.Item /><Menu.Item /><Menu.Item /><Menu.Item /><Menu.Item /><Menu.Item /><Menu.Item />
-        <Menu.Item
-        >
-          Halsaram</Menu.Item>
-        
+          <Menu.Item>
+            <Link href='/dapp'><a>My Dapp</a></Link>
+          </Menu.Item>
+          <Menu.Item>
+            <Link href='/accounts'><a>My Accounts</a></Link>
+          </Menu.Item>
+        <Menu.Item>Halsaram</Menu.Item>
         <Menu.Menu position='right'>
           <Menu.Item>
             <Input icon='search' placeholder='Search...' />
@@ -178,16 +148,7 @@ export default class Layout extends React.Component {
             <Link as='/p' href= '/project?id=start&title=프로젝트올리기'>
               <a>프로젝트 올리기</a>
             </Link>
-          </Menu.Item>
-
-            {/* 데이터 현황 */}
-            <div>
-              <strong>onChange:</strong>
-              <pre>{JSON.stringify({ search }, null, 1)}</pre>
-              <strong>onSubmit:</strong>
-              <pre>{JSON.stringify({ submittedSearch }, null, 1)}</pre>
-            </div>
-         
+          </Menu.Item>        
         </Menu.Menu>
       </Menu>
 
@@ -208,8 +169,13 @@ export default class Layout extends React.Component {
               visible={visible}
             />
           )}
+<<<<<<< HEAD
 
           {/* <HeaderBar /> */}
+=======
+          
+          <HeaderBar />
+>>>>>>> 81fe8da41cd06c899b310905b67c15afc7d2fdba
 
           <Sidebar.Pusher dimmed={dimmed && visible}>
             <Segment basic>
@@ -225,3 +191,11 @@ export default class Layout extends React.Component {
   }
 }
 
+export default (res) => (
+  <Web3Container
+    renderLoading={() => <div>Loading Page...</div>}
+    render={({ web3, accounts, contract, coinbase }) => (
+      <Layout accounts={accounts} contract={contract} web3={web3} coinbase={coinbase} res={res} />
+    )}
+  />
+)

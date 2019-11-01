@@ -5,13 +5,12 @@
  * 작성자		     : 금정민
  * 버전		      : 1.0.0
  * 생성일자		   : 2019-10 ~
- * 최종수정일자 	: 2019-10-07
+ * 최종수정일자 	: 2019-10-31
  * 최종수정자	   : 정휘선
- * 최종수정내용	  : import main 루트 수정
+ * 최종수정내용	  : import react 추가
 **************************************************************************************/
+import React from 'react'
 
-import Link from 'next/link';
-import { Fragment } from 'react';
 import Layout from '../components/Layout'
 import Main_Banner from './main/Main_Banner'
 import Lower_Banner from './main/Lower_Banner'
@@ -42,7 +41,7 @@ const ReReco = { //반복문을 써서 9개의 데이터를 가져옴 -현재는
 }
 //--------------------------------------------------------------------------
 
-const indexPageContent = 
+const indexPageContent =
 <div>
   <HeaderBar/>
   <Main_Banner />
@@ -59,15 +58,13 @@ const indexPageContent =
     <MainList value={ReReco} MainTitle='앵콜 프로젝트'/>
   </div>
   <Lower_Banner />
-
 </div>
 
-
 export default function Index() {
-  return <Layout children={indexPageContent} title='Home'>
-    
-  </Layout>
-};
+  return <div>
+    <Layout children={indexPageContent} title='Home' />
+  </div>
+}
 
 
 

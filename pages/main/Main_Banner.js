@@ -11,8 +11,6 @@
  * https://www.npmjs.com/package/react-slideshow-image
 **************************************************************************************/
 
-
-
 import React from "react";
 import { Carousel } from "react-responsive-carousel";
 import style from './onlySilder.css'

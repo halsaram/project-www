@@ -5,260 +5,233 @@
  * 작성자		   : 정휘선
  * 버전		      : 1.0.0
  * 생성일자		   : 2019-10-02
- * 최종수정일자 	: 2019-10-21
- * 최종수정자	   : 금정민
- * 최종수정내용	  :  데이터 코드 주석 추가 및 UI 적용
+ * 최종수정일자 	: 2019-10-30
+ * 최종수정자	   : 전새희
+ * 최종수정내용	  :  console.log
 **************************************************************************************/
 
 import Link from 'next/link';
 import React, { Component } from 'react'
-import { Grid, Segment, Button, Form, Input, Select, Header, Icon, Image, Label } from 'semantic-ui-react'
+import { Grid, Dropdown, Segment, Button, Form, Input, Select, Header, Icon, Image, Label } from 'semantic-ui-react'
 import ProjectLink from './ProjectLink'
-import ProjectHeader from './projectHeader' 
-import {useState} from 'react';
-
- 
+import ProjectHeader from './projectHeader'
+import { useState, useEffect } from 'react';
 
 
-class Summary extends Component {
-	state = {   projectTitle: '', keyword: '',     fundingGoal: '',     //제목|짥은제목|목표금액
-				category: '',     deadline: '',    creator: '',         //카테고리|종료일|창작자명
-				websites1: '',    websites2: '',  				        //창작자소셜주소1|2|프로젝트
-		
-				//상단변수제출변수
-				submittedProjectTitle: '', submittedKeyword: '',  submittedFundingGoal: '', 
-				submittedCategory: '',     submittedDeadline: '', submittedCreator: '',
-				submittedWebsites1: '',    submittedWebsites2: '' }
-		
-
-	//입력창에 들어간 정보를 실시간 확인
-	handleChange = (e, { name, value }) => this.setState({ [name]: value })
-
-
-	//입력변수를 -> 제출 후 변수(submitted ~)에 저장
-	handleSubmit = () => {
-		const { projectTitle,  keyword,    fundingGoal,   //제목|짥은제목|목표금액
-				category,      deadline,   creator,       //카테고리|종료일|창작자명
-				websites1,     websites2 } = this.state   //창작자소셜주소1|2|프로젝트
-
-		this.setState({
-			submittedProjectTitle: projectTitle,  submittedKeyword:   keyword,    submittedFundingGoal: fundingGoal, 
-			submittedCategory:     category    ,  submittedDeadline:  deadline,   submittedCreator:     creator, 
-			submittedWebsites1:    websites1   ,  submittedWebsites2: websites2 })
-	}
-
-
-	render() {
-
-		// 카테고리항목변수
-		const countryOptions = [
-			{ key: '건강', value: '건강', text: '건강' },
-			{ key: '생활', value: '생활', text: '생활' }
-		  ]
-		  
-		// 작은 안내문 글자
-		const fontSize={
-			fontSize : 12,
-			color : "gray"
+function useLocalstorage(key, initialValue) {
+	const [storedValue, setStoredValue] = useState(() => {
+		try {
+			const item = window.localStorage.getItem(key);
+			return item ? JSON.parse(item) : initialValue;
+		} catch (error) {
+			return initialValue;
 		}
+	})
+	const setValue = value => {
+		try {
+			const valueToStore = value instanceof Function ? value(storedValue) : value;
+			setStoredValue(valueToStore);
+			window.localStorage.setItem(key, JSON.stringify(valueToStore));
+			console.log(key, '==>', valueToStore);
+		} catch (error) {
+			console.log(error);
+		}
+	};
+	return [storedValue, setValue];
 
-		const { projectTitle, keyword,    fundingGoal,    //제목|짥은제목|목표금액
-				category,     deadline,   creator,        //카테고리|종료일|창작자명
-				websites1,    websites2,                  //창작자소셜주소1|2|프로젝트
-				
-				//상단변수제출변수
-				submittedProjectTitle, submittedKeyword,  submittedFundingGoal, 
-				submittedCategory,     submittedDeadline, submittedCreator, 
-				submittedWebsites1,    submittedWebsites2 } = this.state
-		
-
-				
-			return (
-				<div>
-					<Form onSubmit={this.handleSubmit}>
-						{/* 프로젝트의 헤더 부분(제목작성+메뉴) */}
-						<ProjectHeader />
-						<ProjectLink />
-						<br/><br/>
-
-						{/* 프로젝트의 소제목을 배치한 부분 */}
-						<Grid columns='equal'>
-							<Grid.Column />
-							<Grid.Column width={10}>
-								<p>프로젝트 개요 작성하기</p>
-							</Grid.Column>
-							<Grid.Column />
-						</Grid>
-						
-
-						{/* 프로젝트 입력폼 */}
-						<Grid columns='equal'>
-							<Grid.Column />
-							<Grid.Column width={10}>
-								{/* 이미지를 등록하는 요소 */}
-								<Segment>
-									<Grid>
-										<Grid.Column width={4}>
-											<Segment placeholder textAlign="center">
-												<Header icon>
-													<Icon name='camera retro' size="middle"/>								
-												</Header>
-												<Button primary>업로드</Button>
-											</Segment>
-										</Grid.Column>
-									
-									{/* 프로젝트 정보폼 */}
-										<Grid.Column width={12}>
-											<p>프로젝트명<span style={fontSize}>
-												프로젝트 성격과 리워드를 짐작할 수 있게 간결하고 직관적으로 작성해주세요
-											</span></p>
-											<Form.Field inline>
-												<Input placeholder='예) 더 가벼워진 미래식사, 밀스 라이트' 
-												value={projectTitle}
-												name="projectTitle"
-												onChange={this.handleChange} maxlength="40" fluid/>
-											</Form.Field>
-
-											<br />
-											<p>짧은제목<span style={fontSize}>
-											검색, 알림 등에 사용되는 짧은 제목을 작성해주세요
-											</span></p>
-											<Form.Field inline>
-												<Input placeholder='예) 병뚜껑스피커, 욜로북' 
-												value={keyword}
-												name="keyword"
-												onChange={this.handleChange} maxlength="8" fluid/>
-											</Form.Field>
-
-											<br />
-											<p>목표금액<span style={fontSize}>
-											마감일 자정 기준 목표 금액 미달시 펀딩은 취소됩니다.(리워드 평균 목표 금액 : 100만원)
-											</span></p>
-											<Form.Field inline>
-												<Input placeholder='0' 
-												value={fundingGoal}
-												type="number"
-												name="fundingGoal"
-												onChange={this.handleChange} maxlength="8" fluid/>
-											</Form.Field>
-
-											<br />
-											<p>카테고리<span style={fontSize}>
-											오픈 후, 노출될 카테고리를 선택해 주세요.
-											</span></p>
-											<Form.Field inline>
-												<Select 
-												placeholder='카테고리 선택' 
-												options={countryOptions} 
-												name="category"
-												/>
-											</Form.Field>
-
-											<br />
-											<p>종료일<span style={fontSize}>
-											프로젝트 진행 기간은 평균 30일입니다.
-											</span></p>
-											<Form.Field inline>
-												<Input
-												type="date"
-												value={deadline}
-												name="deadline"
-												onChange={this.handleChange} fluid/>
-											</Form.Field>
-									</Grid.Column>
-								</Grid>	
-							</Segment>
-						</Grid.Column>
-						<Grid.Column />
-						</Grid>
+}
 
 
-						{/* 창작자 제목을 배치한 부분 */}
-						<Grid columns='equal'>
-							<Grid.Column />
-							<Grid.Column width={10}>
-								<p>창작자 정보 작성하기</p>
-							</Grid.Column>
-							<Grid.Column />
-						</Grid>
-						
+const Summary = () => {
 
-						{/* 창작자 입력폼 */}
-						<Grid columns='equal'>
-							<Grid.Column />
-							<Grid.Column width={10}>
-								{/* 창작자이미지 */}
-								<Segment>
-									<Grid>
-										<Grid.Column width={4} textAlign="center">
-										<Image src='/static/test/testlist.png' size='medium' circular />
-										<br/>
-										<Label>창작자명</Label>
-										</Grid.Column>
-									
-									{/* 창작자 정보폼 */}
-										<Grid.Column width={12}>
-											<p>창작자 소개<span style={fontSize}>
-											프로젝트를 창작하는 창작자 본인에 대한 소개를 입력하세요.
-											</span></p>
-											<Form.Field inline>
-												<Input placeholder='간단히 40자 이내로 소개하시오' 
-												value={creator}
-												name="creator"
-												onChange={this.handleChange} maxlength="40" fluid/>
-											</Form.Field>
+	// 카테고리항목변수
+	const options = [
+		{ key: '건강', value: '건강', text: '건강' },
+		{ key: '생활', value: '생활', text: '생활' }
+	]
 
-											<br /><br />
-											<p>소셜 네트워크<span style={fontSize}>
-											서포터가 확인할 수있는 창작자님의 페이스북, 인스타그램 등을 입력하세요.
-											</span></p>
-											<Form.Field inline>
-												<Input placeholder='http://' 
-												value={websites1}
-												name="websites1"
-												onChange={this.handleChange} maxlength="8" fluid/>
-												<br/>
-												<Input placeholder='http://' 
-												value={websites2}
-												name="websites2"
-												onChange={this.handleChange} maxlength="8" fluid/>
-											</Form.Field>
-									</Grid.Column>
-								</Grid>	
-							</Segment>
-							<Grid columns={1} centered>
-								<Grid.Row verticalAlign='top'>
-									<Grid.Column>
-										<Button color='blue' inverted type="submit">저장</Button>
-									</Grid.Column>
-								</Grid.Row>
-							</Grid>							
-						</Grid.Column>
-						<Grid.Column />
-					</Grid>
-					<Link as='/p' href='/project?id=config&title=구성'>
-						<Button color='blue' floated='right'><a>다음</a></Button>
-					</Link>
-					<br/><br/><br/><br/>
-				</Form>
-
-
-
-
-
-			
-			<div>
-				{/* 데이터 현황 */}
-				<strong>onChange:</strong>
-					<pre>{JSON.stringify({ projectTitle, keyword, fundingGoal, category, deadline, creator, websites1, websites2 }, null, 8)}</pre>
-				<strong>onSubmit:</strong>
-					<pre>{JSON.stringify({
-						submittedProjectTitle, submittedKeyword, submittedFundingGoal, submittedCategory,
-						submittedDeadline, submittedCreator, submittedWebsites1, submittedWebsites2 }, null, 8)}</pre>
-			</div>
-	</div>
-        );
+	// 작은 안내문 글자
+	const fontSize = {
+		fontSize: 12,
+		color: "gray"
 	}
+
+	const [projectTitle, setProjectTitle] = useLocalstorage('프로젝트명', '')
+	const [keyword, setKeyword] = useLocalstorage('짥은제목', '')
+	const [fundingGoal, setFundingGoal] = useLocalstorage('목표금액', '')
+	const [category, setCategory] = useLocalstorage('카테고리', '')
+	const [deadline, setDeadline] = useLocalstorage('종료일', '')
+	const [creator, setCreator] = useLocalstorage('창작자명', '')
+	const [websites1, setWebsites1] = useLocalstorage('창작자소셜주소1', '')
+	const [websites2, setWebsites2] = useLocalstorage('창작자소셜주소2', '')
+
+	return (
+		<div>
+			<Form >
+				{/* 프로젝트의 헤더 부분(제목작성+메뉴) */}
+				<ProjectHeader />
+				<ProjectLink />
+				<br /><br />
+
+				{/* 프로젝트의 소제목을 배치한 부분 */}
+				<Grid columns='equal'>
+					<Grid.Column />
+					<Grid.Column width={10}>
+						<p>프로젝트 개요 작성하기</p>
+					</Grid.Column>
+					<Grid.Column />
+				</Grid>
+
+
+				{/* 프로젝트 입력폼 */}
+				<Grid columns='equal'>
+					<Grid.Column />
+					<Grid.Column width={10}>
+						{/* 이미지를 등록하는 요소 */}
+						<Segment>
+							<Grid>
+								<Grid.Column width={4}>
+									<Segment placeholder textAlign="center">
+										<Header icon>
+											<Icon name='camera retro' size="middle" />
+										</Header>
+										<Button primary>업로드</Button>
+									</Segment>
+								</Grid.Column>
+
+								{/* 프로젝트 정보폼 */}
+								<Grid.Column width={12}>
+									<p>프로젝트명<span style={fontSize}>
+										프로젝트 성격과 리워드를 짐작할 수 있게 간결하고 직관적으로 작성해주세요
+											</span></p>
+									<Form.Field inline>
+										<Input placeholder='예) 더 가벼워진 미래식사, 밀스 라이트'
+											value={projectTitle}
+											name="projectTitle"
+											onChange={e => setProjectTitle(e.target.value)} maxlength="40" fluid />
+									</Form.Field>
+
+									<br />
+									<p>짧은제목<span style={fontSize}>
+										검색, 알림 등에 사용되는 짧은 제목을 작성해주세요
+											</span></p>
+									<Form.Field inline>
+										<Input placeholder='예) 병뚜껑스피커, 욜로북'
+											value={keyword}
+											name="keyword"
+											onChange={e => setKeyword(e.target.value)} maxlength="8" fluid />
+									</Form.Field>
+
+									<br />
+									<p>목표금액<span style={fontSize}>
+										마감일 자정 기준 목표 금액 미달시 펀딩은 취소됩니다.(리워드 평균 목표 금액 : 100만원)
+											</span></p>
+									<Form.Field inline>
+										<Input placeholder='0'
+											value={fundingGoal}
+											type="number"
+											name="fundingGoal"
+											onChange={e => setFundingGoal(e.target.value)} maxlength="8" fluid />
+									</Form.Field>
+
+									<br />
+									<p>카테고리<span style={fontSize}>
+										오픈 후, 노출될 카테고리를 선택해 주세요.
+											</span></p>
+									<Form.Field inline>
+										<Dropdown clearable options={options} onChange={e => console.log(options)} selection fluid />
+									</Form.Field>
+
+									<br />
+									<p>종료일<span style={fontSize}>
+										프로젝트 진행 기간은 평균 30일입니다.
+											</span></p>
+									<Form.Field inline>
+										<Input
+											type="date"
+											value={deadline}
+											name="deadline"
+											onChange={e => setDeadline(e.target.value)} fluid />
+									</Form.Field>
+								</Grid.Column>
+							</Grid>
+						</Segment>
+					</Grid.Column>
+					<Grid.Column />
+				</Grid>
+
+
+				{/* 창작자 제목을 배치한 부분 */}
+				<Grid columns='equal'>
+					<Grid.Column />
+					<Grid.Column width={10}>
+						<p>창작자 정보 작성하기</p>
+					</Grid.Column>
+					<Grid.Column />
+				</Grid>
+
+
+				{/* 창작자 입력폼 */}
+				<Grid columns='equal'>
+					<Grid.Column />
+					<Grid.Column width={10}>
+						{/* 창작자이미지 */}
+						<Segment>
+							<Grid>
+								<Grid.Column width={4} textAlign="center">
+									<Image src='/static/test/testlist.png' size='medium' circular />
+									<br />
+									<Label>창작자명</Label>
+								</Grid.Column>
+
+								{/* 창작자 정보폼 */}
+								<Grid.Column width={12}>
+									<p>창작자 소개<span style={fontSize}>
+										프로젝트를 창작하는 창작자 본인에 대한 소개를 입력하세요.
+											</span></p>
+									<Form.Field inline>
+										<Input placeholder='간단히 40자 이내로 소개하시오'
+											value={creator}
+											name="creator"
+											onChange={e => setCreator(e.target.value)} maxlength="40" fluid />
+									</Form.Field>
+
+									<br /><br />
+									<p>소셜 네트워크<span style={fontSize}>
+										서포터가 확인할 수있는 창작자님의 페이스북, 인스타그램 등을 입력하세요.
+											</span></p>
+									<Form.Field inline>
+										<Input placeholder='http://'
+											value={websites1}
+											name="websites1"
+											onChange={e => setWebsites1(e.target.value)} maxlength="8" fluid />
+										<br />
+										<Input placeholder='http://'
+											value={websites2}
+											name="websites2"
+											onChange={e => setWebsites2(e.target.value)} maxlength="8" fluid />
+									</Form.Field>
+								</Grid.Column>
+							</Grid>
+						</Segment>
+						<Grid columns={1} centered>
+							<Grid.Row verticalAlign='top'>
+								<Grid.Column>
+									<Button color='blue' inverted type="submit">저장</Button>
+								</Grid.Column>
+							</Grid.Row>
+						</Grid>
+					</Grid.Column>
+					<Grid.Column />
+				</Grid>
+				<Link as='/p' href='/project?id=config&title=구성'>
+					<Button color='blue' floated='right'><a>다음</a></Button>
+				</Link>
+				<br /><br /><br /><br />
+			</Form>
+
+		</div>
+	);
 }
 
 export default Summary;
@@ -274,7 +247,7 @@ export default Summary;
 
 
 //----UI적용전 코드-------------------------------------------------------------
-		
+
 // <header className="_13KHfN73YmQgsYHxXvuh_J _1roJokHGjgDRbKmh0exptw">
 // {/* <div className="_23XXQ4Vzo-Xj_S_h3Wh5D">
 // 	<nav className="_15wNinHQvpbIp0_Wz43mfO">
@@ -310,7 +283,7 @@ export default Summary;
 // 			<a className="_13KHfN73YmQgsYHxXvuh_J _3fJsfvAPykJzj2xoMnxzWW _1Qdv504-1XMeYXZyb0xQZT _3SbGdzxKM6M_AeOQWLNqks" href="http://www.tumblbug.com/4d379f8d-dc10-4af9-82a0-4b839f9f1794"><i className="_12_kkIo9po-wf5m9SVSerq _1QY7TzdLHKX3-BKPDNNYKF"></i><label>미리보기</label></a><a className="_13KHfN73YmQgsYHxXvuh_J _2rCeEoFeBzvCYn76udqnww _1Qdv504-1XMeYXZyb0xQZT _3SbGdzxKM6M_AeOQWLNqks"><i className="_1QY7TzdLHKX3-BKPDNNYKF _3NmqRmOUOqMEJDy6qtw95t"></i><label>검토 요청하기</label></a>
 // 		</div>
 // 	</div>
-	
+
 // </div>
 // </header>
 // <section>

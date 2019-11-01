@@ -10,6 +10,9 @@
  * 최종수정내용	    : 
 **************************************************************************************/
 // import './style.css'
+import React from 'react'
+
+
 const Notices = () => (
     <div>
         <div className="sc-3gwy5s-4 jKHaRe zkdbga-0 cjFijt">

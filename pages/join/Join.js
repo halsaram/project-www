@@ -10,6 +10,7 @@
  * 최종수정내용	  : 주석 추가
 **************************************************************************************/
 
+import React from 'react'
 import { Grid, Segment, Input, Form, Button } from 'semantic-ui-react'
 import React, { Component } from 'react'
 

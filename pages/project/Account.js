@@ -9,6 +9,8 @@
  * 최종수정자	   : 금정민
  * 최종수정내용	  : 프로젝트의 계좌설정 페이지의 ui 적용
 **************************************************************************************/
+
+import React from 'react'
 import Link from 'next/link';
 import ProjectLink from './ProjectLink';
 import ProjectHeader from './projectHeader'

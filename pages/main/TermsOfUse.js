@@ -9,6 +9,9 @@
  * 최종수정자	   : 이동호
  * 최종수정내용	    : 
 **************************************************************************************/
+
+import React from 'react'
+
 const TermsOfUse = () => (
 <div className="Policy-sc-1gd59w7-0 fWdFEE" data-reactid="50">
 						<header data-reactid="51">
