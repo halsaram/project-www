@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { Header, Icon, Image, Input, Menu, Segment, Sidebar } from 'semantic-ui-react'
-
+import React from 'react'
 
 const HeaderBar =()=> (
   
