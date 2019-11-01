@@ -179,17 +179,21 @@ const InsertConfig=()=>{
 						<Input type="date" fluid/>		
 					</Grid.Column>
 					
+					{/* 저장버튼 */}
+					
+
 					<Grid.Column floated='center' width={14}>
-						{/* 저장버튼 */}
+						
 						<Button inverted color='blue' onClick={submit}>저장</Button>
 					</Grid.Column> 
-				{/* {값들어간거 확인용(나중에 삭제 예정))}} */}
-				<div> 
+				
+				</Grid>
+			</Segment>
+			{/* {값들어간거 확인용(나중에 삭제 예정))}} */}
+			<div> 
 				<strong>onSubmit:</strong>
 				<pre>{JSON.stringify({ sum , rewardName, deliveryfee, limitnum,insize,  incolor, inetc, inmessage}, null, 8)}</pre>
 			</div>
-				</Grid>
-			</Segment>
     	</Grid.Column>
     	<Grid.Column />
   	</Grid>
