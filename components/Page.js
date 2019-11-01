@@ -2,7 +2,7 @@ import React from 'react'
 import { inject, observer } from 'mobx-react'
 import Layout from './Layout'
 
-@inject('store')
+@inject('store', 'web3', 'accounts', 'contract', 'coinbase')
 @observer
 class Page extends React.Component {
     componentDidMount() {
@@ -14,6 +14,8 @@ class Page extends React.Component {
     }
 
     render() {
+        console.log(this.props);
+        
         return (
             <div>
                 <Layout
