@@ -12,7 +12,6 @@
     "mobx": "^5.14.2",
     "mobx-react": "^6.1.4",
     "mobx-state-tree": "^3.15.0",
-    "n": "^6.0.1",
     "next": "^9.0.6",
     "next-routes": "^1.4.2",
     "react": "^16.9.0",
@@ -27,6 +26,7 @@
   },
   "scripts": {
     "dev": "node server.js",
+    "next": "next",
     "web3": "node lib/web3/Web3Container.js",
     "test": "node test1.js",
     "build": "next build",
