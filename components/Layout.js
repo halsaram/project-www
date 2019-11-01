@@ -169,13 +169,8 @@ class Layout extends React.Component {
               visible={visible}
             />
           )}
-<<<<<<< HEAD
 
           {/* <HeaderBar /> */}
-=======
-          
-          <HeaderBar />
->>>>>>> 81fe8da41cd06c899b310905b67c15afc7d2fdba
 
           <Sidebar.Pusher dimmed={dimmed && visible}>
             <Segment basic>
