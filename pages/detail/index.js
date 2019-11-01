@@ -10,47 +10,25 @@
  * 최종수정내용	   : 
 **************************************************************************************/
 
+import React from 'react'
 import Layout from '../../components/Layout'
-import Link from 'next/link';
-import FundingGuide from './FundingGuide'
-import Community from './Community'
-import Story from './Story'
 
+import Story from './Story'
+import Community from './Community'
+import FundingGuide from './FundingGuide'
 
 const Content = (props) => (
-    <>
     <div>
-            <div>메인 스토리</div>
-            <div id="contentsNavigation">
-                <nav className="ContentsNavigation__ProjectContentsNavigation-mwsx7i-1 jABjId">
-                    <div className="ContentsNavigation__ProjectContentsNavigationInner-mwsx7i-2 OvVKa">
-                        <div className="ContentsNavigation__NavLeft-mwsx7i-3 buZwam">
-                            <Link as='/d' href='/detail/Story'>
-                                <a className="ContentsNavigation__NavItem-mwsx7i-0 cjInbB">스토리</a>
-                            </Link>
-                            <Link as='/d' href='/detail/Community'>
-                                <a className="ContentsNavigation__NavItem-mwsx7i-0 cjInbB">커뮤니티</a>
-                            </Link>
-                            <Link as='/d' href='/detail/FundingGuide'>
-                                <a className="ContentsNavigation__NavItem-mwsx7i-0 cjInbB">펀딩 안내</a>
-                            </Link>
-                        </div>
-                    </div>
-                </nav>
-            </div>
-            <div></div>
-            <div></div>
-            <div></div>
-            
-            
-        
+        {props.url.query.id == null && <Story />}
+        {props.url.query.id == 'story' && <Story />}
+        {props.url.query.id == 'community' && <Community />}
+        {props.url.query.id == 'fundingGuide' && <FundingGuide />}
     </div>
-    </>
 );
 
 export default (props) => (
     <Layout title={props.url.query.title} >
-        <Content />
+        <Content url={props.url}/>
         <script type="application/javascript" async="" src="../static/js/application.js"></script>
     </Layout>
 )

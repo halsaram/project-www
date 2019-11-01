@@ -10,9 +10,11 @@
  * 최종수정내용	  :
 **************************************************************************************/
 
-import React from 'react'
+import React, { Component } from 'react'
 import Link from 'next/link';
-import Layout from '../../components/Layout';
+import { Grid, Dropdown, Segment, Button, Form, Input, Select, Header, Icon, Image, Label } from 'semantic-ui-react'
+import DetailLink from './DetailLink'
+import { useState, useEffect } from 'react';
 
 const Community = () => (
 	<>
