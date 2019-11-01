@@ -5,16 +5,13 @@ import Layout from './Layout'
 @inject('store', 'web3', 'accounts', 'contract', 'coinbase')
 @observer
 class Page extends React.Component {
+    
     componentDidMount() {
-        this.props.store.start()
-    }
-
-    componentWillUnmount() {
-        this.props.store.stop()
+        console.log(this.props);
     }
 
     render() {
-        console.log(this.props);
+        
         
         return (
             <div>

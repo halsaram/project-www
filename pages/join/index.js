@@ -17,7 +17,6 @@ import MailJoin from './mailjoin'
 
 const JoinPageContent = (props) =>
     <div>
-        
         {props.url.query.id == 'join' && <Join />}
         {props.url.query.id == 'mailjoin' && <MailJoin />}
     </div>;

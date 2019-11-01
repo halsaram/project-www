@@ -99,7 +99,7 @@ const Login =()=> {
 					<Form.Group>
 						<List celled horizontal>
 							<List.Item><Link as='/join' href='/join?id=join'>아직 계정이 없으신가요?</Link></List.Item>
-							<List.Item><Link as='/login' href='/login?id=find&title=비밀번호찾기'>혹시 비밀번호를 잊으셨나요?</Link></List.Item>
+							<List.Item><Link as='/find' href='/login/find'>혹시 비밀번호를 잊으셨나요?</Link></List.Item>
 						</List>
 					</Form.Group>
 				</Form>

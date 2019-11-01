@@ -10,23 +10,39 @@
  * 최종수정내용	    : import react 추가
 **************************************************************************************/
 
-import React from 'react'
+import React, {Component} from 'react'
 
-import Layout from '../../components/Layout'
+import Page from '../../components/Page'
 import Login from './Login'
 import Find from './find'
 
 
-const LoginPageContent = (props) => (
+const Contents = (props) => (
    <div>
-    {props.url.query.id == null && <Login />}
-    {props.url.query.id == 'login' && <Login />}
-    {props.url.query.id == 'find' && <Find />}
+      {props.id == null && <Login />}
+      {props.id == 'login' && <Login />}
+      {props.id == 'find' && <Find />}
   </div>
 );
 
-export default (props) => (
-  <Layout title={props.url.query.title} >
-    <LoginPageContent url={props.url}/>
-  </Layout>
-);
+// export default (props) => (
+//   <Page title='' >
+//     <LoginPageContent {...{this.props.page}}/>
+//   </Page>
+// );
+
+export default class extends Component {
+  static getInitialProps ({ query: { id } }) {
+    return { id }
+  }
+
+  render () {
+    console.log(this.props);
+    
+    return (
+      <Page title='로그인페이지' >
+        <Contents {...this.props}/>s
+      </Page>
+    )
+  }
+}

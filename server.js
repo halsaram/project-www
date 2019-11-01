@@ -1,15 +1,32 @@
-const { createServer } = require('http')
+const express = require('express')
 const next = require('next')
 
-const port = parseInt(process.env.PORT, 10) || 3333
+const port = parseInt(process.env.PORT, 10) || 3000
 const dev = process.env.NODE_ENV !== 'production'
 const app = next({ dev })
-const routes = require('./routes')
+const handle = app.getRequestHandler()
 
-const handler = routes.getRequestHandler(app)
 app.prepare().then(() => {
-    createServer(handler).listen(port, err => {
-        if (err) throw err
-        console.log(`> Ready on http://localhost:${port}`)
-    })
+  const server = express()
+
+  server.get('/login/:id', (req, res) => {
+    return app.render(req, res, '/login', { id: req.params.id })
+  })
+
+  server.get('/b', (req, res) => {
+    return app.render(req, res, '/b', req.query)
+  })
+
+  server.get('/posts/:id', (req, res) => {
+    return app.render(req, res, '/posts', { id: req.params.id })
+  })
+
+  server.all('*', (req, res) => {
+    return handle(req, res)
+  })
+
+  server.listen(port, err => {
+    if (err) throw err
+    console.log(`> Ready on http://localhost:${port}`)
+  })
 })

@@ -6,9 +6,7 @@ import React, { Component } from 'react'
 import Link from 'next/link';
 
 import Footer from './Footer'
-import RootStore from '../lib/mobx/stores';
 
-const root = new RootStore(); // *** 루트 스토어 생성
 const textcolor = {color:"gray"};
 
 import Web3Container from '../lib/web3/Web3Container'
@@ -131,7 +129,7 @@ class Layout extends React.Component {
     const vertical = direction === 'bottom' || direction === 'top'
     
     return (
-      <React.Fragment {...root}>
+      <React.Fragment>
         <Head>
           <link
             rel="stylesheet"
@@ -152,8 +150,8 @@ class Layout extends React.Component {
 
           <Grid.Column>
             <Input icon='search' placeholder='Search...' />
-            <Link as='/log' href= '/login?id=login&title=로그인'>
-              <Button inverted>
+            <Link href={{ pathname: '/login', query: { id: 'login' } }} as='/login'>
+              <Button inverted basic  color="blue">
                 <a><p style={textcolor}>로그인</p></a>
                
               </Button>
