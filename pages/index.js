@@ -17,7 +17,7 @@ import Main_Banner from './main/Main_Banner'
 import Lower_Banner from './main/Lower_Banner'
 import MainList from './main/MainList'
 import CatoList from './main/CatoList'
-
+import HeaderBar from '../components/Header'
 // 임시 데이터------------------------------------------------------------------------
 //map반복문을 통해 a,b,c에 적절한 인덱스의 데이터를 담음
 const EditReco = { //반복문을 써서 9개의 데이터를 가져옴 -현재는 3개만 가져오기로
@@ -44,7 +44,9 @@ const ReReco = { //반복문을 써서 9개의 데이터를 가져옴 -현재는
 
 const indexPageContent = 
 <div>
+  <HeaderBar/>
   <Main_Banner />
+  
   <div>
     <MainList value={EditReco} MainTitle='에디터 추천 프로젝트'/><br /> <br /><br /><br />
     <MainList value={NewReco} MainTitle='신규 프로젝트'/><br /> <br /><br /><br />

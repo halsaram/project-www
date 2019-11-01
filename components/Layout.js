@@ -5,7 +5,6 @@ import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 import Link from 'next/link';
 
-import HeaderBar from './Header'
 import Footer from './Footer'
 
 import '../pages/style.css'
@@ -210,7 +209,7 @@ export default class Layout extends React.Component {
             />
           )}
 
-          <HeaderBar />
+          {/* <HeaderBar /> */}
 
           <Sidebar.Pusher dimmed={dimmed && visible}>
             <Segment basic>
