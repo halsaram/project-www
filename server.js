@@ -19,10 +19,10 @@
 //         app.render(req, res, actualPage)
 //     })
 
-    server.get('/d', (req, res) => {
-        const actualPage = '/detail'
-        app.render(req, res, actualPage)
-    })
+    // server.get('/d', (req, res) => {
+    //     const actualPage = '/detail'
+    //     app.render(req, res, actualPage)
+    // })
 
 //     server.get('/log', (req, res) => {
 //         const actualPage = '/login'

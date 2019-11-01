@@ -55,7 +55,7 @@ const MainList = (props) => (
                 </Grid.Column>
       
                 <Grid.Column width="4">
-                
+                    <Link as='/d' href='/FundingGuide'>
                     <Card
                         image='../../static/test/testlist.png'
                         header={props.MainTitle}
@@ -63,6 +63,7 @@ const MainList = (props) => (
                         description='Elliot is a sound engineer'
                         extra={extra}
                         />
+                        </Link>
                     
                 </Grid.Column>
       
