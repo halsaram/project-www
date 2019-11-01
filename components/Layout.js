@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { Header, Icon, Image, Input, Menu, Segment, Sidebar, Button, Container } from 'semantic-ui-react'
+import { Header, Icon, Image, Input, Menu, Segment, Sidebar, Button, Container, Grid } from 'semantic-ui-react'
 
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
@@ -122,36 +122,54 @@ class Layout extends React.Component {
           />
           <title>{title} ::Halsaram</title>
         </Head>
-        <Menu secondary>
-        <Menu.Item>
-        <Button onClick={this.handleAnimationChange('overlay')}>|||</Button>
-        </Menu.Item>
-          <Menu.Item>
+        <Grid columns='equal'>
+          <Grid.Column>
+            <Button onClick={this.handleAnimationChange('overlay')}>|||</Button>
             <Link href='/dapp'><a>My Dapp</a></Link>
-          </Menu.Item>
-          <Menu.Item>
             <Link href='/accounts'><a>My Accounts</a></Link>
-          </Menu.Item>
-        <Menu.Item>Halsaram</Menu.Item>
-        <Menu.Menu position='right'>
-          <Menu.Item>
-            <Input icon='search' placeholder='Search...' />
-          </Menu.Item>
+          </Grid.Column>
+          
+          <Grid.Column width={5}>
+            Halsaram
+          </Grid.Column>
+          
+          <Grid.Column>   
+                <Input icon='search' placeholder='Search...' />
+           
 
-          <Menu.Item>
-            <Link as='/log' href= '/login?id=login&title=로그인'>
-              <a>login</a>
-            </Link>
-          </Menu.Item>
+           
+          </Grid.Column>
+          <Grid.Column>   
+           
+           
+
+           
+                <Link as='/log' href= '/login?id=login&title=로그인'>
+                    <a>login</a>
+                </Link>
             
-          <Menu.Item>
-            <Link as='/p' href= '/project?id=start&title=프로젝트올리기'>
-              <a>프로젝트 올리기</a>
-            </Link>
-          </Menu.Item>        
-        </Menu.Menu>
-      </Menu>
 
+    
+           
+          </Grid.Column>
+          <Grid.Column>   
+   
+                <Link as='/p' href= '/project?id=start&title=프로젝트올리기'>
+                  <a>프로젝트 올리기</a>
+                </Link>
+             
+           
+          </Grid.Column>
+            
+          
+        </Grid>
+
+
+
+
+
+
+      
 
 
         <Sidebar.Pushable as={Segment}>
