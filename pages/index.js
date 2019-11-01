@@ -47,7 +47,6 @@ const indexPageContent =
   <Main_Banner />
   
   <div>
-    <MainList value={EditReco} MainTitle='에디터 추천 프로젝트'/><br /> <br /><br /><br />
     <MainList value={NewReco} MainTitle='신규 프로젝트'/><br /> <br /><br /><br />
     <MainList value={EndReco} MainTitle='성공임박 프로젝트'/><br /> <br /><br /><br />
      <br />
@@ -55,7 +54,6 @@ const indexPageContent =
     <div className = "GrayDiv">
       <CatoList />
     </div><br /> <br /><br /><br />
-    <Lower_Banner /><br /><br /><br />
     <MainList value={ReReco} MainTitle='앵콜 프로젝트'/>
     <br /><br /><br />
   </div>

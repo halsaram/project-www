@@ -1,13 +1,12 @@
 import Link from 'next/link';
 import { Header, Icon, Image, Input, Menu, Segment, Sidebar } from 'semantic-ui-react'
 import React, {useState} from 'react'
-const backgrund = {backgroundColor : "rgb(242, 242, 242)", color : "black"};
 
 const HeaderBar =()=> {
   const [actives, setActives] = useState('');
   return(
-    <div style={backgrund}>
-      <Menu fluid widths={4} compact pointing secondary>
+    <div>
+      <Menu fluid widths={4} inverted compact>
           <Link href='/'>
             <Menu.Item link onClick={()=>setActives('홈')} active={actives === '홈'}>
               <a>홈</a>
