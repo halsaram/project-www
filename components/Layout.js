@@ -8,13 +8,7 @@ import Link from 'next/link';
 import HeaderBar from './Header'
 import Footer from './Footer'
 
-import Dapp from '../pages/dapp'
-
-import authStore from '../lib/mobx/stores/authStore';
-import commonStore from '../lib/mobx/stores/commonStore';
-import userStore from '../lib/mobx/stores/userStore';
-
-
+import Web3Container from '../lib/web3/Web3Container'
 
 
 // import '../pages/style.css'
@@ -85,7 +79,7 @@ VerticalSidebar.propTypes = {
   visible: PropTypes.bool,
 }
 
-export default class Layout extends React.Component {
+class Layout extends React.Component {
   state = {
     animation: 'overlay',
     direction: 'left',
@@ -116,10 +110,9 @@ export default class Layout extends React.Component {
 
 
   render() {
-    const { children, header, title = '' } = this.props
+    const { children, header, title = '' } = this.props.res
     const { animation, dimmed, direction, visible, search, submittedSearch } = this.state
     const vertical = direction === 'bottom' || direction === 'top'
-    console.log(userStore);
     
     return (
       <React.Fragment>
@@ -194,3 +187,11 @@ export default class Layout extends React.Component {
   }
 }
 
+export default (res) => (
+  <Web3Container
+    renderLoading={() => <div>Loading Page...</div>}
+    render={({ web3, accounts, contract, coinbase }) => (
+      <Layout accounts={accounts} contract={contract} web3={web3} coinbase={coinbase} res={res} />
+    )}
+  />
+)
