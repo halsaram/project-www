@@ -6,13 +6,13 @@ const HeaderBar =()=> {
   const [actives, setActives] = useState('');
   return(
     <div>
-      <Menu fluid widths={4} inverted compact>
+      <Menu fluid widths={4} compact inverted>
           <Link href='/'>
             <Menu.Item link onClick={()=>setActives('홈')} active={actives === '홈'}>
               <a>홈</a>
             </Menu.Item>
           </Link>
-       
+        
           <Link href='/'>
             <Menu.Item link onClick={()=>setActives('카테고리')} active={actives === '카테고리'}>
               <a>카테고리</a>

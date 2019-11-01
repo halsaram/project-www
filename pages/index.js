@@ -10,6 +10,7 @@
  * 최종수정내용	  : import react 추가
 **************************************************************************************/
 import React from 'react'
+import Page from '../components/Page'
 
 import Layout from '../components/Layout'
 import Main_Banner from './main/Main_Banner'
@@ -60,11 +61,8 @@ const indexPageContent =
 
 </div>
 
-export default function Index() {
-  return <div>
-    <Layout children={indexPageContent} title='Home' />
-  </div>
+export default class Index extends React.Component {
+  render() {
+    return <Page children={indexPageContent} title='Home' />
+  }
 }
-
-
-

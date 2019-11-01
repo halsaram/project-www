@@ -68,7 +68,6 @@ const Agreements = () => {
                     {checked1 && checked2 && checked3 &&checked4 &&checked5 &&checked6 && true?
                     <ProjectLink id='summary' title='프로젝트 진행하기' />:<Button type='submit' fluid size="large" disabled>프로젝트 진행하기</Button>}
                     
-                    
                 </Grid.Row>
              </Grid>
             </Grid.Column>

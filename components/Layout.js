@@ -6,6 +6,10 @@ import React, { Component } from 'react'
 import Link from 'next/link';
 
 import Footer from './Footer'
+import RootStore from '../lib/mobx/stores';
+
+const root = new RootStore(); // *** 루트 스토어 생성
+const textcolor = {color:"gray"};
 
 import Web3Container from '../lib/web3/Web3Container'
 
@@ -85,7 +89,12 @@ class Layout extends React.Component {
     dimmed: true,
     visible: false,
     search: '', // search
-    submittedSearch: '' // search 제출 변수
+    submittedSearch: '', // search 제출 변수
+    balance: undefined,
+    ethBalance: undefined,
+    myaddr: undefined,
+    userPoint: undefined,
+    userEmail: undefined
   }
 
   handleAnimationChange = (animation) => () =>
@@ -107,6 +116,14 @@ class Layout extends React.Component {
     this.setState({ submittedSearch: search })
   }
 
+  isNewAccount = async () => {
+    const { web3 } = this.props
+    await web3.eth.personal.newAccount('!@superpassword')
+      .then((result) => {
+        console.log(result)
+        this.setState({ myaddr: result })
+      });
+  };
 
   render() {
     const { children, header, title = '' } = this.props
@@ -114,7 +131,7 @@ class Layout extends React.Component {
     const vertical = direction === 'bottom' || direction === 'top'
     
     return (
-      <React.Fragment>
+      <React.Fragment {...root}>
         <Head>
           <link
             rel="stylesheet"
@@ -122,50 +139,32 @@ class Layout extends React.Component {
           />
           <title>{title} ::Halsaram</title>
         </Head>
-        <Grid columns='equal'>
+        <Grid columns='equal'verticalAlign="middle">
           <Grid.Column>
             <Button onClick={this.handleAnimationChange('overlay')}>|||</Button>
             <Link href='/dapp'><a>My Dapp</a></Link>
             <Link href='/accounts'><a>My Accounts</a></Link>
           </Grid.Column>
           
-          <Grid.Column width={5}>
+          <Grid.Column width={5} textAlign="center">
             Halsaram
           </Grid.Column>
-          
-          <Grid.Column>   
-                <Input icon='search' placeholder='Search...' />
-           
 
-           
+          <Grid.Column>
+            <Input icon='search' placeholder='Search...' />
+            <Link as='/log' href= '/login?id=login&title=로그인'>
+              <Button inverted>
+                <a><p style={textcolor}>로그인</p></a>
+               
+              </Button>
+            </Link>
+            <Link as='/p' href= '/project?id=start&title=프로젝트올리기'>
+              <Button inverted basic  color="blue">
+                <a><p >프로젝트올리기</p></a>
+              </Button>
+            </Link>
           </Grid.Column>
-          <Grid.Column>   
-           
-           
-
-           
-                <Link as='/log' href= '/login?id=login&title=로그인'>
-                    <a>login</a>
-                </Link>
-            
-
-    
-           
-          </Grid.Column>
-          <Grid.Column>   
-   
-                <Link as='/p' href= '/project?id=start&title=프로젝트올리기'>
-                  <a>프로젝트 올리기</a>
-                </Link>
-             
-           
-          </Grid.Column>
-            
-          
         </Grid>
-
-
-
 
 
 
@@ -190,7 +189,7 @@ class Layout extends React.Component {
 
           <Sidebar.Pusher dimmed={dimmed && visible}>
             <Segment basic>
-              <Container fluid>
+              <Container fluid {...this.props}>
                 {children}
               </Container>
             </Segment>
@@ -202,11 +201,4 @@ class Layout extends React.Component {
   }
 }
 
-export default (res) => (
-  <Web3Container
-    renderLoading={() => <div>Loading Page...</div>}
-    render={({ web3, accounts, contract, coinbase }) => (
-      <Layout accounts={accounts} contract={contract} web3={web3} coinbase={coinbase} children={res.children} title={res.title} />
-    )}
-  />
-)
+export default Layout
