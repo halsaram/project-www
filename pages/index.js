@@ -49,6 +49,7 @@ const indexPageContent =
   <div>
     <MainList value={EditReco} MainTitle='에디터 추천 프로젝트'/><br /> <br /><br /><br />
     <MainList value={NewReco} MainTitle='신규 프로젝트'/><br /> <br /><br /><br />
+    <Lower_Banner /><br /><br />
     <MainList value={EndReco} MainTitle='성공임박 프로젝트'/><br /> <br /><br /><br />
      <br />
 
@@ -57,7 +58,7 @@ const indexPageContent =
     </div><br /> <br /><br /><br />
     <MainList value={ReReco} MainTitle='앵콜 프로젝트'/>
   </div>
-  <Lower_Banner />
+
 </div>
 
 export default function Index() {
