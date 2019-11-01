@@ -17,7 +17,7 @@ import style from './onlySilder.css'
 
 const Banner=() => (
   <div>
-    <Carousel autoPlay style={style}>
+    <Carousel autoPlay style={style} infiniteLoop={true}>
       <div>
         <img src="../../static/test/1.png" />
         {/* <p className="legend">Legend 1</p> */}
