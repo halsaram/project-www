@@ -12,7 +12,7 @@
 
 import React from 'react'
 import { Grid, Segment, Input, Form, Button } from 'semantic-ui-react'
-import React, { Component } from 'react'
+import { Component } from 'react'
 
 const fontstyle = {
     fontSize: 12,
