@@ -43,7 +43,7 @@ const ReReco = { //반복문을 써서 9개의 데이터를 가져옴 -현재는
 
 const indexPageContent =
 <div>
-  <HeaderBar/>
+    <HeaderBar/>
   <Main_Banner />
   
   <div>
