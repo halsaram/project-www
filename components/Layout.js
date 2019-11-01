@@ -190,7 +190,7 @@ export default (res) => (
   <Web3Container
     renderLoading={() => <div>Loading Page...</div>}
     render={({ web3, accounts, contract, coinbase }) => (
-      <Layout accounts={accounts} contract={contract} web3={web3} coinbase={coinbase} res={res} />
+      <Layout accounts={accounts} contract={contract} web3={web3} coinbase={coinbase} children={res.children} title={res.title} />
     )}
   />
 )

@@ -86,65 +86,6 @@ const InsertConfig = () => {
 								name='sum'
 								onChange={e => setSum(e.target.value)} />
 								<label> 원</label>
-<<<<<<< HEAD
-						</Form.Field>
-					</Grid.Column>
-
-					<Grid.Column floated='right' width={7}>
-					{/* 정렬순서 입력폼 */}
-						<Form.Field inline>
-							<label>정렬 순서 </label>
-							<Input value={order}
-								name="order"
-								type="number"
-								onChange={e => setorder(e.target.value)} />
-						</Form.Field>
-					</Grid.Column>
-
-					<Grid.Column floated='left' width={14}>
-					{/* 리워드명 입력폼 */}
-						<p>리워드명</p>
-						<p>해당 리워드의 이름을 입력하세요</p>
-						<Input placeholder="예) 병뚜껑스피커, 욜로북"
-							value={rewardName}
-							name='rewardName'
-							onChange={e => setRewardname(e.target.value)} fluid />
-					</Grid.Column>
-
-					<Grid.Column floated='left' width={14}>
-					{/* 옵션선택체크 및 입력폼 */}
-						<p>옵션</p>
-						<p>옵션이 필요한 상품의 경우 옵션체크 해주세요.</p>
-						<Divider />
-						{/* 체크박스 체크시 -> 칸에 입력이 가능하게 */}
-						<Grid divided='vertically'>
-							<Grid.Row columns={2}>
-								<Grid.Column width={4}>
-									<Checkbox label='사이즈' checked
-										onChange={(e) => { console.log(e);
-										setSize(!size); }} />
-								</Grid.Column>
-								
-								<Grid.Column width={11}>
-									{size && true ?
-									<Input value={insize}
-									name="size"
-									onChange={e => setInsize(e.target.value)} fluid />
-									: <Input name="size" fluid disabled />}
-								</Grid.Column>
-								
-								<Grid.Column width={4}>
-									<Checkbox label='색상'
-										onChange={() => { setColor(!color); }} />
-								</Grid.Column>
-								
-								<Grid.Column width={11}>
-									{color && true ?
-									<Input value={incolor}
-									name="color"
-									onChange={e => setIncolor(e.target.value)} fluid />
-									: <Input name="color" fluid disabled />}
-=======
 							</Form.Field>
 						</Grid.Column>
 
@@ -245,7 +186,6 @@ const InsertConfig = () => {
 								<Grid.Column floated='left' width={7}>
 									<Checkbox label='배송을 위한 주소지가 필요합니다.'
 										onChange={() => { setDelivery(!delivery); }} />
->>>>>>> 6618076417ba6dbffd4746bdec6a13512c1fbbc8
 								</Grid.Column>
 
 								<Grid.Column width={4}>
@@ -273,142 +213,6 @@ const InsertConfig = () => {
 										onChange={e => setInetc(e.target.value)} fluid />
 										: <Input name="etc" fluid disabled />}
 								</Grid.Column>
-<<<<<<< HEAD
-							</Grid.Row>
-						</Grid>
-					</Grid.Column>
-
-					<Grid.Column floated='left' width={14}>
-					{/* 배송조건 체크폼 */}
-						<p>배송조건</p>
-						<p>배송을 위한 주소지가 필요하다면 체크와 배송료를 입력하세요</p>
-						<Divider />
-						<Grid>
-							<Grid.Column floated='left' width={7}>
-								<Checkbox label='배송을 위한 주소지가 필요합니다.'
-									onChange={() => { setDelivery(!delivery); }} />
-							</Grid.Column>
-
-							{/* 배송료 입력폼 */}
-							<Grid.Column floated='right' width={7}>
-								<Form.Field inline>
-									<label>배송료 </label>
-									{/* 배송을 위한 주소지가 필요합니다 체크시 열리는 입력폼 */}
-									{delivery && true ?
-										<Input value={deliveryfee}
-											type='number'
-											placeholder='0'
-											name='deliveryfee'
-											onChange={e => setDeliveryfee(e.target.value)} />
-											: <Input placeholder='0' disabled />}
-										<label> 원</label>
-								</Form.Field>
-							</Grid.Column>
-						</Grid>
-					</Grid.Column>
-
-
-					<Grid.Column floated='left' width={14}>
-						{/* 제한수량 체크폼 */}
-						<p>제한수량</p>
-						<p>리워드 수량을 제한하려면 체크와 수량을 입력하세요.</p>
-						<Divider />
-						<Grid>
-							<Grid.Column floated='left' width={7}>
-								<Checkbox label='리워드 수량을 제한합니다.'
-									onChange={() => { setLimit(!limit) }} />
-							</Grid.Column>
-
-							<Grid.Column floated='right' width={7}>
-							{/* 제한수량 입력폼 */}
-								<Form.Field inline>
-									<label>제한수량 </label>
-									{/* 제한수량 여부 체크시 열리는 입력폼 */}
-									{limit && true ?
-										<Input value={limitnum}
-											type='number'
-											placeholder='0'
-											name='limitnum'
-											onChange={e => setLimitnum(e.target.value)} />
-											: <Input placeholder='0' disabled />}
-										<label> 개</label>
-								</Form.Field>
-							</Grid.Column>
-
-						</Grid>	
-					</Grid.Column>
-						
-					<Grid.Column floated='left' width={14}>
-						{/* 배송조건 체크폼 */}
-						<p>배송조건</p>	
-						<p>배송을 위한 주소지가 필요하다면 체크와 배송료를 입력하세요</p>		
-						<Divider />	
-						<Grid>
-							<Grid.Column floated='left' width={7}>
-								<Checkbox label='배송을 위한 주소지가 필요합니다.' onChange={()=>{setDelivery(!delivery);}}/>
-							</Grid.Column>
-								
-							{/* 배송료 입력폼 */}	
-							<Grid.Column floated='right' width={7}>
-								<Form.Field inline>
-									<label>배송료 </label>
-									{/* 배송을 위한 주소지가 필요합니다 체크시 열리는 입력폼 */}
-									{delivery&&true ? <Input placeholder='0' value={deliveryfee} onChange={onChange} name='deliveryfee'/> : <Input placeholder='0' disabled/>}
-									<label> 원</label>
-								</Form.Field>
-							</Grid.Column>
-						</Grid>
-					</Grid.Column>
-
-					<Grid.Column floated='left' width={14}>
-						{/* 제한수량 체크폼 */}
-						<p>제한수량</p>	
-						<p>리워드 수량을 제한하려면 체크와 수량을 입력하세요.</p>		
-						<Divider />	
-						<Grid>
-							<Grid.Column floated='left' width={7}>
-								<Checkbox label='리워드 수량을 제한합니다.' onChange={()=>{setLimit(!limit)}}/>
-							</Grid.Column>
-								
-							<Grid.Column floated='right' width={7}>
-								{/* 제한수량 입력폼 */}
-								<Form.Field inline>
-									<label>제한수량 </label>
-									{/* 제한수량 여부 체크시 열리는 입력폼 */}
-									{limit&&true ? <Input placeholder='0' value={limitnum} onChange={onChange} name='limitnum'/> : <Input placeholder='0' disabled/>}
-									<label> 개</label>
-								</Form.Field>
-							</Grid.Column>
-						</Grid>
-					</Grid.Column>
-							
-					<Grid.Column floated='left' width={14}>
-						{/* 발송시작일폼 */}
-						<p>발송 시작일</p>	
-						<p>리워드 제품 발송 시작일을 입력하세요</p>		
-						<Input type="date" fluid/>		
-					</Grid.Column>
-					
-					{/* 저장버튼 */}
-					
-
-					<Grid.Column floated='center' width={14}>
-						<Button inverted color='blue' onClick={submit}>저장</Button>
-					</Grid.Column> 
-				
-				</Grid></Segment>
-			{/* {값들어간거 확인용(나중에 삭제 예정))}} */}
-			
-			<div> 
-				<strong>onSubmit:</strong>
-				<pre>{JSON.stringify({ sum , rewardName, deliveryfee, limitnum,insize,  incolor, inetc, inmessage}, null, 8)}</pre>
-			</div>
-    	</Grid.Column>
-    	<Grid.Column />
-	  </Grid>)
-	  
-	};
-=======
 							</Grid>
 						</Grid.Column>
 
@@ -438,7 +242,6 @@ const InsertConfig = () => {
 	)
 
 }
->>>>>>> 6618076417ba6dbffd4746bdec6a13512c1fbbc8
 
 
 // 버튼 클릭시 펀딩작성 부분이 추가된다.onClick=>
