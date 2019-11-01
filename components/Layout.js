@@ -150,13 +150,13 @@ class Layout extends React.Component {
 
           <Grid.Column>
             <Input icon='search' placeholder='Search...' />
-            <Link href={{ pathname: '/login', query: { id: 'login' } }} as='/login'>
+            <Link as='/로그인' href={{ pathname: '/login', query: { id: 'login', title: '로그인' } }}>
               <Button inverted basic  color="blue">
                 <a><p style={textcolor}>로그인</p></a>
                
               </Button>
             </Link>
-            <Link as='/p' href= '/project?id=start&title=프로젝트올리기'>
+            <Link as='/프로젝트시작' href={{ pathname: '/project', query: { id: 'start', title: '프로젝트올리기' } }}>
               <Button inverted basic  color="blue">
                 <a><p >프로젝트올리기</p></a>
               </Button>

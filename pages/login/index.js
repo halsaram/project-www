@@ -5,15 +5,15 @@
  * 작성자		   : 최다올
  * 버전		      : 1.0.0
  * 생성일자		   : 2019-10~
- * 최종수정일자 	: 2019-10-31
+ * 최종수정일자 	: 2019-11-02
  * 최종수정자	   : 정휘선
- * 최종수정내용	    : import react 추가
+ * 최종수정내용	    : 파라메타 값 받아오는 로직 변경
 **************************************************************************************/
 
 import React, {Component} from 'react'
 
 import Page from '../../components/Page'
-import Login from './Login'
+import Login from './login'
 import Find from './find'
 
 
@@ -25,23 +25,16 @@ const Contents = (props) => (
   </div>
 );
 
-// export default (props) => (
-//   <Page title='' >
-//     <LoginPageContent {...{this.props.page}}/>
-//   </Page>
-// );
 
 export default class extends Component {
-  static getInitialProps ({ query: { id } }) {
-    return { id }
+  static getInitialProps ({ query: { id, title } }) {
+    return { id, title }
   }
 
-  render () {
-    console.log(this.props);
-    
+  render () {  
     return (
-      <Page title='로그인페이지' >
-        <Contents {...this.props}/>s
+      <Page title={this.props.title} >
+        <Contents {...this.props}/>
       </Page>
     )
   }
