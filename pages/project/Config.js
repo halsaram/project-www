@@ -52,7 +52,7 @@ function useLocalstorage(key, initialValue) {
 const InsertConfig = () => {
 
 	// 옵션 체크 여부를 정하는 변수
-	const [size, setSize] = useState(false);
+	const [size, setSize] = useLocalstorage('size','')
 	const [color, setColor] = useState(false);
 	const [message, setMessage] = useState(false);
 	const [etc, setEtc] = useState(false);
@@ -124,9 +124,12 @@ const InsertConfig = () => {
 							<Grid divided='vertically'>
 								<Grid.Row columns={2}>
 									<Grid.Column width={4}>
-										<Checkbox label='사이즈' checked
+										{size && true ? <Checkbox label='사이즈' checked={size}
 											onChange={(e) => { console.log(e);
-											  setSize(!size); }} />
+											  setSize(!size); }} />:<Checkbox label='사이즈'
+											  onChange={(e) => { console.log(e);
+												setSize(!size); }} />}
+										
 									</Grid.Column>
 									<Grid.Column width={11}>
 										{size && true ?
@@ -242,7 +245,6 @@ const InsertConfig = () => {
 								name='date'
 								onChange={e => setDate(e.target.value)} fluid />
 						</Grid.Column>
-
 						<Grid.Column floated='center' width={14}>
 							{/* 저장버튼 */}
 							<Button inverted color='blue' >저장</Button>

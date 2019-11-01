@@ -5,20 +5,10 @@ import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 import Link from 'next/link';
 
-import HeaderBar from './Header'
 import Footer from './Footer'
 
-import Dapp from '../pages/dapp'
+import Web3Container from '../lib/web3/Web3Container'
 
-// import authStore from '../lib/mobx/stores/authStore';
-// import commonStore from '../lib/mobx/stores/commonStore';
-// import userStore from '../lib/mobx/stores/userStore';
-
-// const stores = {
-//   authStore,
-//   commonStore,
-//   userStore,
-// };
 
 // import '../pages/style.css'
 
@@ -88,7 +78,7 @@ VerticalSidebar.propTypes = {
   visible: PropTypes.bool,
 }
 
-export default class Layout extends React.Component {
+class Layout extends React.Component {
   state = {
     animation: 'overlay',
     direction: 'left',
@@ -119,11 +109,10 @@ export default class Layout extends React.Component {
 
 
   render() {
-    
-    
-    const { children, header, title = '' } = this.props
+    const { children, header, title = '' } = this.props.res
     const { animation, dimmed, direction, visible, search, submittedSearch } = this.state
     const vertical = direction === 'bottom' || direction === 'top'
+    
     return (
       <React.Fragment>
         <Head>
@@ -180,8 +169,8 @@ export default class Layout extends React.Component {
               visible={visible}
             />
           )}
-          
-          <HeaderBar />
+
+          {/* <HeaderBar /> */}
 
           <Sidebar.Pusher dimmed={dimmed && visible}>
             <Segment basic>
@@ -197,3 +186,11 @@ export default class Layout extends React.Component {
   }
 }
 
+export default (res) => (
+  <Web3Container
+    renderLoading={() => <div>Loading Page...</div>}
+    render={({ web3, accounts, contract, coinbase }) => (
+      <Layout accounts={accounts} contract={contract} web3={web3} coinbase={coinbase} res={res} />
+    )}
+  />
+)

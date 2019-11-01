@@ -16,24 +16,26 @@ import { Carousel } from "react-responsive-carousel";
 import style from './onlySilder.css'
 
 const Banner=() => (
-  <Carousel autoPlay style={style}>
-    <div>
-      <img src="../../static/test/testbanner.png" />
-      {/* <p className="legend">Legend 1</p> */}
-    </div>
-    <div>
-      <img src="../../static/test/testbanner.png" />
-      {/* <p className="legend">Legend 2</p> */}
-    </div>
-    <div>
-      <img src="../../static/test/testbanner.png" />
-      {/* <p className="legend">Legend 3</p> */}
-    </div>
-    <div>
-      <img src="../../static/test/testbanner.png" />
-      {/* <p className="legend">Legend 4</p> */}
-    </div>
-  </Carousel>
+  <div>
+    <Carousel autoPlay style={style}>
+      <div>
+        <img src="../../static/test/1.png" />
+        {/* <p className="legend">Legend 1</p> */}
+      </div>
+      <div>
+        <img src="../../static/test/2.png" />
+        {/* <p className="legend">Legend 2</p> */}
+      </div>
+      <div>
+        <img src="../../static/test/3.png" />
+        {/* <p className="legend">Legend 3</p> */}
+      </div>
+      <div>
+        <img src="../../static/test/4.png" />
+        {/* <p className="legend">Legend 4</p> */}
+      </div>
+    </Carousel>
+  </div>
 );
 
  export default Banner;

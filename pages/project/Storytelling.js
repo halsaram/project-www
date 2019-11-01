@@ -12,7 +12,7 @@
 
 import Link from 'next/link';
 import React, { Component, useState } from 'react'
-import { Grid, Segment, Button, Form, Input, Checkbox, Image, Divider } from 'semantic-ui-react'
+import { Grid, Segment, Button, Form, Input, Checkbox, Image, Divider, TextArea } from 'semantic-ui-react'
 import ProjectLink from './ProjectLink'
 import ProjectHeader from './projectHeader' 
 
@@ -69,7 +69,6 @@ class Storytelling extends Component {
 						<Grid.Column />
 					</Grid>
 
-
 					<Grid columns='equal'>
 						<Grid.Column />
 						<Grid.Column width={10}>
@@ -94,14 +93,14 @@ class Storytelling extends Component {
 														<Checkbox label='사진'/>
 													</Grid.Column>
 													<Grid.Column width={11}>
-														<Input type="file" name="picture"></Input>
+														<Input type="file" name="image" value={image}></Input>
 													</Grid.Column>
 
 													<Grid.Column width={4}>
 														<Checkbox label='동영상'/>
 													</Grid.Column>
 													<Grid.Column width={11}>
-														<Input type="file" name="video"></Input>
+														<Input type="file" name="video" value={video} ></Input>
 													</Grid.Column>
 												</Grid.Row>
 											</Grid>
@@ -112,22 +111,29 @@ class Storytelling extends Component {
 
 								<Grid divided='vertically'>
 									<Grid.Row columns={2}>
-										<Grid.Column width={4}>
-											<Checkbox label='프로젝트 설명 사진'/>
-										</Grid.Column>
-										<Grid.Column width={11}>
-											<Input type="file" name="picture"></Input>
-										</Grid.Column>
+										<Grid.Column width={7}>
+											<p>프로젝트 설명 사진<span style={fontSize}>
+												<br/>프로젝트를 설명할 사진보드를 올려주세요</span></p></Grid.Column>
+										<Grid.Column width={8}>
+											<Input type="file" name="descriptionImage" value={descriptionImage}></Input></Grid.Column>
 									</Grid.Row>
+									<p>프로젝트 요약<span style={fontSize}>
+										<br/>서포터가 제품의 장점이나 특징을 잘 이해하도록 간략하게 소개하세요</span></p>
+										<TextArea placeholder='100자 이내로 작성하시오' style={{ minHeight: 150 }} name="summary" id="summary" onChange={this.handleChange}/>
+			
 								</Grid>
-
+								  <br/><br/>
 							</Segment>
+							<Grid columns={1} centered>
+								<Grid.Row verticalAlign='top'>
+									<Grid.Column>
+										<Button color='blue' inverted type="submit">저장</Button>
+									</Grid.Column>
+								</Grid.Row>
+							</Grid>	
 						</Grid.Column>
 						<Grid.Column />
 						</Grid>
-
-
-						
 				</Form>
 
 
