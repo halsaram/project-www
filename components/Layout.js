@@ -189,8 +189,6 @@ class Layout extends React.Component {
             />
           )}
 
-          {/* <HeaderBar /> */}
-
           <Sidebar.Pusher dimmed={dimmed && visible}>
             <Segment basic>
               <Container fluid {...this.props}>
