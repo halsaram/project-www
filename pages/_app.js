@@ -2,6 +2,8 @@ import App from 'next/app'
 import { fetchInitialStoreState, Store } from '../store'
 import { Provider } from 'mobx-react'
 
+import Web3Container from '../lib/web3/Web3Container'
+
 class MyMobxApp extends App {
     state = {
         store: new Store(),
@@ -27,9 +29,14 @@ class MyMobxApp extends App {
     render() {
         const { Component, pageProps } = this.props
         return (
-            <Provider store={this.state.store}>
-                <Component {...pageProps} />
-            </Provider>
+            <Web3Container
+                renderLoading={() => <div>Loading Dapp Page...</div>}
+                render={({ web3, accounts, contract, coinbase }) => (
+                    <Provider store={this.state.store} accounts={accounts} contract={contract} web3={web3} coinbase={coinbase}>
+                        <Component {...pageProps} />
+                    </Provider>
+                )}
+            />
         )
     }
 }
