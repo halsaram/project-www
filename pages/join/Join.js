@@ -108,12 +108,6 @@ class Join extends Component {
                     </Grid.Column>
                     <Grid.Column />
                 </Grid>
-
-                <strong>onChange:</strong>
-                <pre>{JSON.stringify({ mail, username, passwd, checkpasswd }, null, 4)}</pre>
-                <strong>onSubmit:</strong>
-                <pre>{JSON.stringify({ submittedMail, submittedUsername, submittedPasswd, submittedCheckPasswd }, null, 4)}</pre>
-
             </Segment>
         );
     }

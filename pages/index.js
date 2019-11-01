@@ -10,6 +10,7 @@
  * 최종수정내용	  : import react 추가
 **************************************************************************************/
 import React from 'react'
+import Page from '../components/Page'
 
 import Layout from '../components/Layout'
 import Main_Banner from './main/Main_Banner'
@@ -43,11 +44,10 @@ const ReReco = { //반복문을 써서 9개의 데이터를 가져옴 -현재는
 
 const indexPageContent =
 <div>
-  <HeaderBar/>
+    <HeaderBar/>
   <Main_Banner />
   
   <div>
-    <MainList value={EditReco} MainTitle='에디터 추천 프로젝트'/><br /> <br /><br /><br />
     <MainList value={NewReco} MainTitle='신규 프로젝트'/><br /> <br /><br /><br />
     <MainList value={EndReco} MainTitle='성공임박 프로젝트'/><br /> <br /><br /><br />
      <br />
@@ -55,18 +55,14 @@ const indexPageContent =
     <div className = "GrayDiv">
       <CatoList />
     </div><br /> <br /><br /><br />
-    <Lower_Banner /><br /><br /><br />
     <MainList value={ReReco} MainTitle='앵콜 프로젝트'/>
     <br /><br /><br />
   </div>
 
 </div>
 
-export default function Index() {
-  return <div>
-    <Layout children={indexPageContent} title='Home' />
-  </div>
+export default class Index extends React.Component {
+  render() {
+    return <Page children={indexPageContent} title='Home' />
+  }
 }
-
-
-
