@@ -10,26 +10,6 @@
  * 최종수정내용	  : import react 추가
 **********************************************************************************/
 
-// import React, { Component } from 'react'
-// import Link from 'next/link';
-
-// import { Grid, Dropdown, Segment, Button, Form, Input, Select, Header, Icon, Image, Label } from 'semantic-ui-react'
-// import DetailLink from './DetailLink'
-// import DetailHeader from './DetailHeader'
-// import { useState, useEffect } from 'react';
-
-// const Story = () => {
-
-// return (
-// 	<div>
-// 		<Form >
-// 			{/* 상세페이지의 헤더 부분(제목작성+메뉴) */}
-// 			<DetailHeader />
-// 			<DetailLink />
-// 			<br /><br />
-//             </div>
-
-
 import React, { Component } from 'react'
 import Link from 'next/link';
 import { Grid, Dropdown, Segment, Button, Form, Input, Select, Header, Icon, Image, Label } from 'semantic-ui-react'
