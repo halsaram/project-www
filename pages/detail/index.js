@@ -10,8 +10,6 @@
  * 최종수정내용	   : 
 **************************************************************************************/
 import React from 'react'
-
-import React from 'react'
 import Layout from '../../components/Layout'
 
 import Story from './Story'
@@ -20,16 +18,14 @@ import FundingGuide from './FundingGuide'
 
 const Content = (props) => (
     <div>
-        {props.url.query.id == null && <Story />}
-        {props.url.query.id == 'story' && <Story />}
-        {props.url.query.id == 'community' && <Community />}
-        {props.url.query.id == 'fundingGuide' && <FundingGuide />}
+       <a></a>
     </div>
 );
 
 export default (props) => (
-    <Layout title={props.url.query.title} >
-        <Content url={props.url}/>
+    <Layout >
+        <Content />
         <script type="application/javascript" async="" src="../static/js/application.js"></script>
     </Layout>
 )
+

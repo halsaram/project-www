@@ -10,18 +10,21 @@
  * 최종수정내용	  : 
 **********************************************************************************/
 
-import React, { Component } from 'react'
-import Link from 'next/link';
-import { useState, useEffect } from 'react';
+// import React, { Component } from 'react'
+// import Link from 'next/link';
+// import { useState, useEffect } from 'react';
 
-const Story = () => {
+// const Story = () => {
 
-return (
-	<div>
-		<Form >
-			{/* 프로젝트의 헤더 부분(제목작성+메뉴) */}
-			<ProjectHeader />
-			<ProjectLink />
-			<br /><br />
+// return (
+// 	<div>
+// 		<Form >
+// 			{/* 프로젝트의 헤더 부분(제목작성+메뉴) */}
+// 			<ProjectHeader />
+// 			<ProjectLink />
+// 			<br /><br />
+// </div>
 
-export default Story;
+// }
+
+// export default Story;

@@ -33,6 +33,7 @@ const Content = (props) => (
 
 export default (props) => (
   <Layout title={props.url.query.title} >
+    
     <Content url={props.url}/>
     <script type="application/javascript" async="" src="../static/js/application.js"></script>
   </Layout>
