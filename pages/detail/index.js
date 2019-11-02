@@ -21,8 +21,6 @@ import DetailCato from './DetailCato'
 
 const Contents = (props) => (
     <div>
-        {props.id == null && <DetailHeader />}
-        {props.id == 'detailheader' && <DetailHeader />}
         {props.id == 'story' && <Story />}
         {props.id == 'community' && <Community />}
         {props.id == 'fundingguide' && <FundingGuide />}

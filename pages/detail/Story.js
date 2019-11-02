@@ -39,9 +39,8 @@ import { useState, useEffect } from 'react';
 
 const Story = () => (
     <div>
-        {/* 프로젝트의 헤더 부분(제목작성+메뉴) */}
-        <DetailLink />
         <DetailHeader />
+        <DetailLink />
         <br /><br />
 
         </div>

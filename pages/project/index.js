@@ -9,7 +9,7 @@
  * 최종수정자	   : 정휘선
  * 최종수정내용	  : import react 추가
 **************************************************************************************/
-import React, {Component} from 'react'
+import React, { Component, useState } from 'react'
 import Page from '../../components/Page'
 
 import Start from './Start'
@@ -36,7 +36,7 @@ export default class extends Component {
     return { id, title }
   }
 
-  render () {  
+  render () { 
    return (
      <Page title={this.props.title} >
        <Contents {...this.props}/>
