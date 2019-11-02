@@ -9,7 +9,7 @@
  * 최종수정자	   : 정휘선
  * 최종수정내용	  : import react 추가
 **************************************************************************************/
-import React from 'react'
+import React, {Component} from 'react'
 import Page from '../components/Page'
 
 import Layout from '../components/Layout'
@@ -42,27 +42,35 @@ const ReReco = { //반복문을 써서 9개의 데이터를 가져옴 -현재는
 }
 //--------------------------------------------------------------------------
 
-const indexPageContent =
-<div>
-    <HeaderBar/>
-  <Main_Banner />
-  
-  <div>
-    <MainList value={NewReco} MainTitle='신규 프로젝트'/><br /> <br /><br /><br />
-    <MainList value={EndReco} MainTitle='성공임박 프로젝트'/><br /> <br /><br /><br />
-     <br />
 
+const Contents = (props) => (
+  <div>
+    <HeaderBar/>
+    <Main_Banner />
+    <div>
+      <MainList value={NewReco} MainTitle='신규 프로젝트'/><br /> <br /><br /><br />
+      <MainList value={EndReco} MainTitle='성공임박 프로젝트'/><br /> <br /><br /><br />
+      <br />
     <div className = "GrayDiv">
       <CatoList />
     </div><br /> <br /><br /><br />
     <MainList value={ReReco} MainTitle='앵콜 프로젝트'/>
     <br /><br /><br />
+    </div>
   </div>
+);
 
-</div>
 
-export default class Index extends React.Component {
-  render() {
-    return <Page children={indexPageContent} title='Home' />
+export default class extends Component {
+  static getInitialProps ({ query: { id, title } }) {
+    return { id, title }
+  }
+
+  render () {  
+    return (
+      <Page title={this.props.title} >
+        <Contents {...this.props}/>
+      </Page>
+    )
   }
 }

@@ -66,8 +66,12 @@ const Agreements = () => {
 
                     {/* 체크가 true여야 버튼이 보임 */}
                     {checked1 && checked2 && checked3 &&checked4 &&checked5 &&checked6 && true?
-                    <ProjectLink id='summary' title='프로젝트 진행하기' />:<Button type='submit' fluid size="large" disabled>프로젝트 진행하기</Button>}
-                    
+                    <Link as='/프로젝트개요' href={{ pathname: '/project', query: { id: 'summary', title: '프로젝트개요' } }}>
+                        <Button type='submit' fluid size="large">
+                            <a>프로젝트개요</a>
+                        </Button>
+                    </Link>
+                    :<Button type='submit' fluid size="large" disabled>프로젝트 진행하기</Button>}
                     
                 </Grid.Row>
              </Grid>

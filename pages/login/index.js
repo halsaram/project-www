@@ -5,28 +5,37 @@
  * 작성자		   : 최다올
  * 버전		      : 1.0.0
  * 생성일자		   : 2019-10~
- * 최종수정일자 	: 2019-10-31
+ * 최종수정일자 	: 2019-11-02
  * 최종수정자	   : 정휘선
- * 최종수정내용	    : import react 추가
+ * 최종수정내용	    : 파라메타 값 받아오는 로직 변경
 **************************************************************************************/
 
-import React from 'react'
+import React, {Component} from 'react'
 
-import Layout from '../../components/Layout'
-import Login from './Login'
+import Page from '../../components/Page'
+import Login from './login'
 import Find from './find'
 
 
-const LoginPageContent = (props) => (
+const Contents = (props) => (
    <div>
-    {props.url.query.id == null && <Login />}
-    {props.url.query.id == 'login' && <Login />}
-    {props.url.query.id == 'find' && <Find />}
+      {props.id == null && <Login />}
+      {props.id == 'login' && <Login />}
+      {props.id == 'find' && <Find />}
   </div>
 );
 
-export default (props) => (
-  <Layout title={props.url.query.title} >
-    <LoginPageContent url={props.url}/>
-  </Layout>
-);
+
+export default class extends Component {
+  static getInitialProps ({ query: { id, title } }) {
+    return { id, title }
+  }
+
+  render () {  
+    return (
+      <Page title={this.props.title} >
+        <Contents {...this.props}/>
+      </Page>
+    )
+  }
+}

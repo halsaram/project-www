@@ -52,10 +52,6 @@ class Find extends Component {
                 </Form> 
                 {/* {입력된 값 확인용(나중에 삭제 예정))}} */}
                 <div>  
-                <strong>onChange:</strong>
-						<pre>{JSON.stringify({ mail }, null, 1)}</pre>
-						<strong>onSubmit:</strong>
-						<pre>{JSON.stringify({ submittedMail}, null, 1)}</pre>
                 
                 </div>
                         </div>

@@ -9,21 +9,32 @@
  * 최종수정자	   : 정휘선
  * 최종수정내용	    : import react 추가
 **************************************************************************************/
-import React from 'react'
+import React, { Component } from 'react'
 
-import Layout from '../../components/Layout'
-import Join from './Join'
+import Page from '../../components/Page'
+import Join from './join'
 import MailJoin from './mailjoin'
 
-const JoinPageContent = (props) =>
-    <div>
-        
-        {props.url.query.id == 'join' && <Join />}
-        {props.url.query.id == 'mailjoin' && <MailJoin />}
-    </div>;
 
-export default (props) => (
-    <Layout title={props.url.query.title} >
-        <JoinPageContent {...props} />
-    </Layout>
-)
+const Contents = (props) => (
+    <div>
+       {props.id == null && <Join />}
+       {props.id == 'join' && <Join />}
+       {props.id == 'mailjoin' && <MailJoin />}
+   </div>
+ );
+ 
+ 
+ export default class extends Component {
+   static getInitialProps ({ query: { id, title } }) {
+     return { id, title }
+   }
+ 
+   render () {  
+    return (
+      <Page title={this.props.title} >
+        <Contents {...this.props}/>
+      </Page>
+    )
+  }
+ }
