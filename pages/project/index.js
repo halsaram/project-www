@@ -31,15 +31,6 @@ const Contents = (props) => (
   </div>
 )
 
-<<<<<<< HEAD
-export default (props) => (
-  <Layout title={props.url.query.title} >
-    
-    <Content url={props.url}/>
-    <script type="application/javascript" async="" src="../static/js/application.js"></script>
-  </Layout>
-)
-=======
 export default class extends Component {
   static getInitialProps ({ query: { id, title } }) {
     return { id, title }
@@ -53,4 +44,3 @@ export default class extends Component {
    )
  }
 }
->>>>>>> f1dd2486308722a5ac657ef4d3468ae25c5cc83b

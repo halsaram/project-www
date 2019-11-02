@@ -10,8 +10,8 @@
  * 최종수정내용	  :  console.log
 **************************************************************************************/
 
-import Link from 'next/link';
 import React, { Component } from 'react'
+import Link from 'next/link';
 import { Grid, Dropdown, Segment, Button, Form, Input, Select, Header, Icon, Image, Label } from 'semantic-ui-react'
 import ProjectLink from './ProjectLink'
 import ProjectHeader from './projectHeader'

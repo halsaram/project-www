@@ -50,7 +50,7 @@ class ProjectLink extends Component {
 
               <Menu.Item
               name='Storytelling'
-              active={activeItem === '스토리텔링'}
+              active={activeItem === 'Storytelling'}
               onClick={this.handleItemClick}>
                 <Checkbox label=" "/>
                 <Link as='/프로젝트스토리텔링' href={{ pathname: '/project', query: { id: 'storytelling', title: '프로젝트스토리텔링' } }}>
