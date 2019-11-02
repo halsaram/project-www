@@ -124,7 +124,7 @@ class Layout extends React.Component {
   };
 
   render() {
-    const { children, header, title = '' } = this.props
+    const { children, header, title = '홈' } = this.props
     const { animation, dimmed, direction, visible, search, submittedSearch } = this.state
     const vertical = direction === 'bottom' || direction === 'top'
     
