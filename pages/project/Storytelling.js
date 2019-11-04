@@ -135,19 +135,7 @@ class Storytelling extends Component {
 						<Grid.Column />
 						</Grid>
 				</Form>
-
-
-
-
-
-			
-				{/* 데이터 현황 */}
-				<div>
-					<strong>onChange:</strong>
-						<pre>{JSON.stringify({ image, video, descriptionImage, summary }, null, 4)}</pre>
-					<strong>onSubmit:</strong>
-						<pre>{JSON.stringify({ submittedImage, submittedVideo, submittedDescriptionImage, submittedSummary }, null, 4)}</pre>
-				</div>
+				
 			</div >
         );
 	}
