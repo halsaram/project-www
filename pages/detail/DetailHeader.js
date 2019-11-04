@@ -16,12 +16,13 @@ import Link from 'next/link';
 import DetailLink from './DetailLink';
 import { Grid, Segment, GridColumn, Input } from 'semantic-ui-react'
 
+//1.프로젝트 해당 카테고리 이동하는 버튼 만들기 
+// ex) 보드게임 이라면 클릭하면 보드게임만 쫘악 나옴 
 
-//프로젝트 Header 부분 복사했습니다~! 나중에 수정 부탁해용
+
+//2. 프로젝트 제목 적기 
 const detailHeader = () => (
     <div>
-        {/* //프로젝트 해당 카테고리로 이동 ex)뷰티/헬스 등 */}
-
         <Grid columns='equal'>
             <Grid.Column />
             <Grid.Column textAlign="center" width={16}>
@@ -29,6 +30,8 @@ const detailHeader = () => (
 
                 {/* Input 길이를 늘리는 법 찾기 */}
                 {/* 글자를중앙정렬 */}
+
+     {/* 3.프로젝트 만든사람 버튼 만들기 */}
                 <p>프로젝트 만든사람 링크걸기</p>
             </Grid.Column>
             <Grid.Column />
