@@ -74,9 +74,12 @@ const Agreements = () => {
                     {/* 체크가 true여야 버튼이 보임 */}
                     {checked1 && checked2 && checked3 &&checked4 &&checked5 &&checked6 && true?
                     <Link as='/프로젝트개요' href={{ pathname: '/project', query: { id: 'summary', title: '프로젝트개요' } }}>
+
                         <Button onClick={(e)=>{console.log("개요로 넘어감",e);}
                     } type='submit' fluid size="large">
                             <a>프로젝트개요</a>
+                        <Button type='submit' fluid size="large">
+                            <a>프로젝트 진행하기</a>
                         </Button>
                     </Link>
                     :<Button type='submit' fluid size="large" disabled>프로젝트 진행하기</Button>}
