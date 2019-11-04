@@ -68,7 +68,7 @@ const Agreements = () => {
                     {checked1 && checked2 && checked3 &&checked4 &&checked5 &&checked6 && true?
                     <Link as='/프로젝트개요' href={{ pathname: '/project', query: { id: 'summary', title: '프로젝트개요' } }}>
                         <Button type='submit' fluid size="large">
-                            <a>프로젝트개요</a>
+                            <a>프로젝트 진행하기</a>
                         </Button>
                     </Link>
                     :<Button type='submit' fluid size="large" disabled>프로젝트 진행하기</Button>}
