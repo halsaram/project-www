@@ -77,6 +77,7 @@ const Agreements = () => {
 
                         <Button onClick={(e)=>{console.log("개요로 넘어감",e)}} type='submit' fluid size="large">
                             <a>프로젝트개요</a>
+                            </Button>
                     </Link>
                     :<Button type='submit' fluid size="large" disabled>프로젝트 진행하기</Button>}
                     
