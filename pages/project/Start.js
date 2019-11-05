@@ -15,8 +15,6 @@ import Link from 'next/link';
 import { Divider, Header, Icon, Grid, Button, Image } from 'semantic-ui-react'
 
 
-
-
 const ProjectLink = (props) => (
     <Link as='/p' href={`/project?id=${props.id}&title=정책`}>
         <button className="sc-1x93b2b-0-Button-kDSBcD jxJcyR" data-reactid="57">{props.title}</button>
@@ -61,7 +59,7 @@ const Start = () => (
                 <p>크라우드펀딩으로 프로젝트를 위한 자금도 모으고,<br />
                     든든한 후원자 네트워크도 확보할 수 있습니다.</p>
                 <Button size='massive' primary color='grey'>
-                    <Link as='/p' href='/project?id=agreements&title=정책'>
+                    <Link as='/프로젝트정책' href={{ pathname: '/project', query: { id: 'agreements', title: '프로젝트정책' } }}>
                         지금 시작하기
                     </Link>
                 </Button>

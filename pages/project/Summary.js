@@ -10,8 +10,8 @@
  * 최종수정내용	  :  console.log
 **************************************************************************************/
 
-import Link from 'next/link';
 import React, { Component } from 'react'
+import Link from 'next/link';
 import { Grid, Dropdown, Segment, Button, Form, Input, Select, Header, Icon, Image, Label } from 'semantic-ui-react'
 import ProjectLink from './ProjectLink'
 import ProjectHeader from './projectHeader'
@@ -50,6 +50,7 @@ const Summary = () => {
 		{ key: '생활', value: '생활', text: '생활' }
 	]
 
+
 	// 작은 안내문 글자
 	const fontSize = {
 		fontSize: 12,
@@ -65,7 +66,12 @@ const Summary = () => {
 	const [websites1, setWebsites1] = useLocalstorage('창작자소셜주소1', '')
 	const [websites2, setWebsites2] = useLocalstorage('창작자소셜주소2', '')
 
+	const value = options.value
+	const handleChange = (e, { value }) => setCategory({ value })
+	
+
 	return (
+		
 		<div>
 			<Form >
 				{/* 프로젝트의 헤더 부분(제목작성+메뉴) */}
@@ -139,7 +145,7 @@ const Summary = () => {
 										오픈 후, 노출될 카테고리를 선택해 주세요.
 											</span></p>
 									<Form.Field inline>
-										<Dropdown clearable options={options} onChange={e => console.log(options)} selection fluid />
+										<Dropdown clearable options={options} onChange={handleChange} selection fluid />
 									</Form.Field>
 
 									<br />

@@ -1,13 +1,13 @@
 /**************************************************************************************
- * 제목          : 프로젝트 올리기 펀딩 및 선물 페이지
+ * 제목          : 프로젝트 올리기  선물 페이지
  * 소스파일 이름  : pages/project/Config.js
  * 파일설명		   : 프로젝트 시작하기 전 펀딩 및 선물 구성하는 페이지(프로젝트 메뉴바)
  * 작성자		   : 이은미
  * 버전		      : 1.0.0
  * 생성일자		   : 2019-10-02
- * 최종수정일자 	: 2019-10-30
- * 최종수정자	   : 전새희
- * 최종수정내용	  :  console.log
+ * 최종수정일자 	: 2019-11-04
+ * 최종수정자	   : 최다올
+ * 최종수정내용	  :  체크박스 체크 유지
 **************************************************************************************/
 import Link from 'next/link';
 import { Grid, Segment, Button, Form, Input, Divider, Checkbox } from 'semantic-ui-react'
@@ -52,12 +52,12 @@ function useLocalstorage(key, initialValue) {
 const InsertConfig = () => {
 
 	// 옵션 체크 여부를 정하는 변수
-	const [size, setSize] = useLocalstorage('size','')
-	const [color, setColor] = useState(false);
-	const [message, setMessage] = useState(false);
-	const [etc, setEtc] = useState(false);
-	const [delivery, setDelivery] = useState(false);	//배송여부 체크시 입력이 가능한 변수
-	const [limit, setLimit] = useState(false);	//제한수량 체크시 입력이 가능한 변수
+	const [size, setSize] = useLocalstorage('sizeChecked','')
+	const [color, setColor] = useLocalstorage('colorChecked','')
+	const [message, setMessage] = useLocalstorage('messageChecked','')
+	const [etc, setEtc] = useLocalstorage('etcChecked','')
+	const [delivery, setDelivery] = useLocalstorage('deliveryChecked','')	//배송여부 체크시 입력이 가능한 변수
+	const [limit, setLimit] = useLocalstorage('limitChecked','')	//제한수량 체크시 입력이 가능한 변수
 
 	const [sum, setSum] = useLocalstorage('금액', '') 	//금액 입력칸 데이터 
 	const [order, setorder] = useLocalstorage('정렬 순서', '')	//정렬 순서 입력칸 데이터
@@ -123,12 +123,9 @@ const InsertConfig = () => {
 							<Grid divided='vertically'>
 								<Grid.Row columns={2}>
 									<Grid.Column width={4}>
-										{size && true ? <Checkbox label='사이즈' checked={size}
-											onChange={(e) => { console.log(e);
-											  setSize(!size); }} />:<Checkbox label='사이즈'
-											  onChange={(e) => { console.log(e);
-												setSize(!size); }} />}
-										
+										<Checkbox label='사이즈' checked={size}
+											onChange={(e) => { console.log(size);
+											  setSize(!size); }} />
 									</Grid.Column>
 									<Grid.Column width={11}>
 										{size && true ?
@@ -139,8 +136,9 @@ const InsertConfig = () => {
 									</Grid.Column>
 
 									<Grid.Column width={4}>
-										<Checkbox label='색상'
-											onChange={() => { setColor(!color); }} />
+										<Checkbox label='색상' checked={color}
+											onChange={(e) => { console.log(color);
+											  setColor(!color); }} />
 									</Grid.Column>
 									<Grid.Column width={11}>
 										{color && true ?
@@ -149,10 +147,10 @@ const InsertConfig = () => {
 												onChange={e => setIncolor(e.target.value)} fluid />
 											: <Input name="color" fluid disabled />}
 									</Grid.Column>
-
 									<Grid.Column width={4}>
-										<Checkbox label='작성메시지'
-											onChange={() => { setMessage(!message); }} />
+										<Checkbox label='작성메시지' checked={message}
+											onChange={(e) => { console.log(message);
+											  setMessage(!message); }} />
 									</Grid.Column>
 									<Grid.Column width={11}>
 										{message && true ?
@@ -163,8 +161,9 @@ const InsertConfig = () => {
 									</Grid.Column>
 
 									<Grid.Column width={4}>
-										<Checkbox label='기타'
-											onChange={() => { setEtc(!etc); }} />
+										<Checkbox label='기타' checked={etc}
+											onChange={(e) => { console.log(etc);
+											  setEtc(!etc); }} />
 									</Grid.Column>
 									<Grid.Column width={11}>
 										{etc && true ?
@@ -184,37 +183,44 @@ const InsertConfig = () => {
 							<Divider />
 							<Grid>
 								<Grid.Column floated='left' width={7}>
-									<Checkbox label='배송을 위한 주소지가 필요합니다.'
-										onChange={() => { setDelivery(!delivery); }} />
+									<Checkbox label='배송을 위한 주소지가 필요합니다.' checked={delivery}
+										onChange={(e) => {console.log(delivery);
+										{ setDelivery(!delivery); }}} />
 								</Grid.Column>
+							{/* 배송료 입력폼 */}	
+							<Grid.Column floated='right' width={7}>
+								<Form.Field inline>
+									<label>배송료 </label>
+									{/* 배송을 위한 주소지가 필요합니다 체크시 열리는 입력폼 */}
+									{delivery&&true ? <Input placeholder='0' value={deliveryfee} onChange={e => setDeliveryfee(e.target.value)} name='deliveryfee'/> : <Input placeholder='0' disabled/>}
+									<label> 원</label>
+								</Form.Field>
+							</Grid.Column>
+						</Grid>
+					</Grid.Column>
 
-								<Grid.Column width={4}>
-									<Checkbox label='작성메시지'
-										onChange={() => { setMessage(!message); }} />
-								</Grid.Column>
-								
-								<Grid.Column width={11}>
-									{message && true ?
-										<Input value={inmessage}
-										name="message"
-										onChange={e => setInmessage(e.target.value)} fluid />
-										: <Input name="message" fluid disabled />}
-								</Grid.Column>
+					<Grid.Column floated='left' width={14}>
+						{/* 제한수량 체크폼 */}
+						<p>제한수량</p>	
+						<p>리워드 수량을 제한하려면 체크와 수량을 입력하세요.</p>		
+						<Divider />	
+						<Grid>
+							<Grid.Column floated='left' width={7}>
+								<Checkbox label='리워드 수량을 제한합니다.' onChange={()=>{setLimit(!limit)}}/>
+							</Grid.Column>
+							<Grid.Column floated='right' width={7}>
 
-								<Grid.Column width={4}>
-									<Checkbox label='기타'
-										onChange={() => { setEtc(!etc); }} />
-								</Grid.Column>
-								
-								<Grid.Column width={11}>
-									{etc && true ?
-										<Input value={inetc}
-										name="etc"
-										onChange={e => setInetc(e.target.value)} fluid />
-										: <Input name="etc" fluid disabled />}
-								</Grid.Column>
-							</Grid>
-						</Grid.Column>
+								{/* 제한수량 입력폼 */}
+								<Form.Field inline>
+									<label>제한수량 </label>
+
+									{/* 제한수량 여부 체크시 열리는 입력폼 */}
+									{limit&&true ? <Input placeholder='0' value={limitnum} onChange={e => setLimitnum(e.target.value)} name='limitnum'/> : <Input placeholder='0' disabled/>}
+									<label> 개</label>
+								</Form.Field>
+							</Grid.Column>
+						</Grid>
+					</Grid.Column>
 
 						<Grid.Column floated='left' width={14}>
 							{/* 발송시작일폼 */}
@@ -229,11 +235,6 @@ const InsertConfig = () => {
 							{/* 저장버튼 */}
 							<Button inverted color='blue' >저장</Button>
 						</Grid.Column>
-						{/* {값들어간거 확인용(나중에 삭제 예정))}} */}
-						{/* <div> 
-				<strong>onSubmit:</strong>
-				<pre>{JSON.stringify({ sum , rewardName, deliveryfee, limitnum,insize,  incolor, inetc, inmessage }, null, 8)}</pre>
-			</div> */}
 					</Grid>
 				</Segment>
 			</Grid.Column>

@@ -9,7 +9,11 @@
  * 최종수정자	   : 정휘선
  * 최종수정내용	  : import react 추가
 **************************************************************************************/
+<<<<<<< HEAD
 import React from 'react'
+=======
+import React, { Component, useState } from 'react'
+>>>>>>> 5f52c804b802a1b8f1a0077dda34f59bc7dbf2a8
 import Page from '../../components/Page'
 
 import Start from './Start'
@@ -19,21 +23,37 @@ import Config from './Config'
 import Account from './Account'
 import Storytelling from './Storytelling'
 
-const Content = (props) => (
+const Contents = (props) => (
   <div>
-    {props.url.query.id == null && <Start />}
-    {props.url.query.id == 'start' && <Start />}
-    {props.url.query.id == 'agreements' && <Agreements />}
-    {props.url.query.id == 'summary' && <Summary />}
-    {props.url.query.id == 'account' && <Account />}
-    {props.url.query.id == 'storytelling' && <Storytelling />}
-    {props.url.query.id == 'config' && <Config />}
+    {props.id == null && <Start />}
+    {props.id == 'start' && <Start />}
+    {props.id == 'agreements' && <Agreements />}
+    {props.id == 'summary' && <Summary />}
+    {props.id == 'account' && <Account />}
+    {props.id == 'storytelling' && <Storytelling />}
+    {props.id == 'config' && <Config />}
   </div>
-);
+)
 
+<<<<<<< HEAD
 export default (props) => (
   <Page title={props.url.query.title} >
     <Content url={props.url}/>
     <script type="application/javascript" async="" src="../static/js/application.js"></script>
   </Page>
 )
+=======
+export default class extends Component {
+  static getInitialProps ({ query: { id, title } }) {
+    return { id, title }
+  }
+
+  render () { 
+   return (
+     <Page title={this.props.title} >
+       <Contents {...this.props}/>
+     </Page>
+   )
+ }
+}
+>>>>>>> 5f52c804b802a1b8f1a0077dda34f59bc7dbf2a8

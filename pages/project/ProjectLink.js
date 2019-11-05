@@ -32,7 +32,7 @@ class ProjectLink extends Component {
                 active={activeItem === 'Config'}
                 onClick={this.handleItemClick}>
                   <Checkbox label=" "/>
-                  <Link as='/p' href='/project?id=summary&title=프로젝트'>
+                  <Link as='/프로젝트개요' href={{ pathname: '/project', query: { id: 'summary', title: '프로젝트개요' } }}>
                     <a>프로젝트 개요</a>
                   </Link>
                 </Menu.Item>
@@ -43,17 +43,17 @@ class ProjectLink extends Component {
               active={activeItem === 'Summary'}
               onClick={this.handleItemClick}>
                 <Checkbox label=" "/>
-                <Link as='x/p' href='/project?id=config&title=구성'>
+                <Link as='/프로젝트구성' href={{ pathname: '/project', query: { id: 'config', title: '프로젝트구성' } }}>
                   <a>펀딩 및 선물 구성</a>
                 </Link>
               </Menu.Item>
 
               <Menu.Item
               name='Storytelling'
-              active={activeItem === '스토리텔링'}
+              active={activeItem === 'Storytelling'}
               onClick={this.handleItemClick}>
                 <Checkbox label=" "/>
-                <Link as='/p' href='/project?id=storytelling&title=스토리텔링'>
+                <Link as='/프로젝트스토리텔링' href={{ pathname: '/project', query: { id: 'storytelling', title: '프로젝트스토리텔링' } }}>
                   <a>스토리텔링</a>
                 </Link>
               </Menu.Item>
@@ -63,7 +63,7 @@ class ProjectLink extends Component {
               active={activeItem === '계좌 설정'}
               onClick={this.handleItemClick}>
                 <Checkbox label=" "/>
-                <Link as='/p' href='/project?id=account&title=계좌'>
+                <Link as='/프로젝트계좌' href={{ pathname: '/project', query: { id: 'account', title: '프로젝트계좌' } }}>
                   <a>계좌 설정</a>
                 </Link>
               </Menu.Item>

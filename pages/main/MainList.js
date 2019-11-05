@@ -41,7 +41,7 @@ const MainList = (props) => (
         <Grid columns='equal'>
             <Grid.Row centered>
                 <Grid.Column width="4"> 
-                    <Link as='/d' href='/detail'>
+                    <Link as='/상세페이지' href={{ pathname: '/detail', query: { id: 'story', title: '스토리' } }}>
                         <Card
                             image='../../static/test/testlist.png'
                             header={props.MainTitle}

@@ -5,9 +5,9 @@
  * 작성자		   : 정휘선
  * 버전		      : 1.0.0
  * 생성일자		   : 2019-10-02
- * 최종수정일자 	: 2019-10-20
- * 최종수정자	   : 금정민
- * 최종수정내용	  : 프로젝트 동의하기 부분과 모두 체크해야 제출 버튼이 생기게 변경
+ * 최종수정일자 	: 2019-11-04
+ * 최종수정자	   : 최다올
+ * 최종수정내용	  : console log
 **************************************************************************************/
 import React, { Component } from 'react'
 import Link from 'next/link';
@@ -20,6 +20,8 @@ const ProjectLink = (props) => (
         <Button type='submit' fluid size="large">
             <a>{props.title}</a></Button>
     </Link>
+
+    
 )
 
 
@@ -32,8 +34,13 @@ const Agreements = () => {
     const [checked4, setChecked4] = useState(false);
     const [checked5, setChecked5] = useState(false);
     const [checked6, setChecked6] = useState(false);
-    
-   
+    console.log("checked1==>", checked1);
+    console.log("checked2==>", checked2);
+    console.log("checked3==>", checked3);
+    console.log("checked4==>", checked4);
+    console.log("checked5==>", checked5);
+    console.log("checked6==>", checked6);
+
     return(
 <div>
         <Grid columns='equal'>
@@ -66,8 +73,16 @@ const Agreements = () => {
 
                     {/* 체크가 true여야 버튼이 보임 */}
                     {checked1 && checked2 && checked3 &&checked4 &&checked5 &&checked6 && true?
-                    <ProjectLink id='summary' title='프로젝트 진행하기' />:<Button type='submit' fluid size="large" disabled>프로젝트 진행하기</Button>}
-                    
+                    <Link as='/프로젝트개요' href={{ pathname: '/project', query: { id: 'summary', title: '프로젝트개요' } }}>
+
+                        <Button onClick={(e)=>{console.log("개요로 넘어감",e);}
+                    } type='submit' fluid size="large">
+                            <a>프로젝트개요</a>
+                        <Button type='submit' fluid size="large">
+                            <a>프로젝트 진행하기</a>
+                        </Button>
+                    </Link>
+                    :<Button type='submit' fluid size="large" disabled>프로젝트 진행하기</Button>}
                     
                 </Grid.Row>
              </Grid>

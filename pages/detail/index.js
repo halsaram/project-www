@@ -9,27 +9,35 @@
  * 최종수정자	   : 
  * 최종수정내용	   : 
 **************************************************************************************/
-import React from 'react'
+import React, { Component } from 'react'
+import Page from '../../components/Page'
 
-import React from 'react'
-import Layout from '../../components/Layout'
-
+import DetailHeader from './DetailHeader'
 import Story from './Story'
 import Community from './Community'
 import FundingGuide from './FundingGuide'
+import DetailCato from './DetailCato'
 
-const Content = (props) => (
+
+const Contents = (props) => (
     <div>
-        {props.url.query.id == null && <Story />}
-        {props.url.query.id == 'story' && <Story />}
-        {props.url.query.id == 'community' && <Community />}
-        {props.url.query.id == 'fundingGuide' && <FundingGuide />}
+        {props.id == 'story' && <Story />}
+        {props.id == 'community' && <Community />}
+        {props.id == 'fundingguide' && <FundingGuide />}
+        {props.id == 'detailcato' && <DetailCato />}
     </div>
-);
-
-export default (props) => (
-    <Layout title={props.url.query.title} >
-        <Content url={props.url}/>
-        <script type="application/javascript" async="" src="../static/js/application.js"></script>
-    </Layout>
 )
+
+export default class extends Component {
+    static getInitialProps({ query: { id, title } }) {
+        return { id, title }
+    }
+
+    render() {
+        return (
+            <Page title={this.props.title} >
+                <Contents {...this.props} />
+            </Page>
+        )
+    }
+}

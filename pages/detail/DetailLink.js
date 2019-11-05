@@ -5,7 +5,7 @@
  * 작성자		   : 이은미
  * 버전		      : 1.0.0
  * 생성일자		   : 2019-11-01
- * 최종수정일자 	: 2019-11-01
+ * 최종수정일자 	: 2019-11-02
  * 최종수정자	   : 이은미
  * 최종수정내용	  : 상세페이지의 메뉴바를 컴포넌트로 분리해서 작성
 **************************************************************************************/
@@ -32,7 +32,7 @@ class DetailLink extends Component {
                                 active={activeItem === 'Story'}
                                 onClick={this.handleItemClick}>
                                 <Checkbox label=" " />
-                                <Link as='/d' href='/detail?id=story&title=스토리'>
+                                <Link as='/스토리' href={{ pathname: '/detail', query: { id: 'story', title: '스토리' } }}>
                                     <a>스토리</a>
                                 </Link>
                             </Menu.Item>
@@ -43,7 +43,7 @@ class DetailLink extends Component {
                                 active={activeItem === 'Community'}
                                 onClick={this.handleItemClick}>
                                 <Checkbox label=" " />
-                                <Link as='x/d' href='/detail?id=community&title=커뮤니티'>
+                                <Link as='커뮤니티' href={{ pathname: '/detail', query: { id: 'community', title: '커뮤니티' } }}>
                                     <a>커뮤니티</a>
                                 </Link>
                             </Menu.Item>
@@ -53,7 +53,7 @@ class DetailLink extends Component {
                                 active={activeItem === 'FundingGuide'}
                                 onClick={this.handleItemClick}>
                                 <Checkbox label=" " />
-                                <Link as='/d' href='/detail?id=fundingGuide&title=펀딩안내'>
+                                <Link as='펀딩안내' href={{ pathname: '/detail', query: { id: 'fundingguide', title: '펀딩안내' } }}>
                                     <a>펀딩안내</a>
                                 </Link>
                             </Menu.Item>
