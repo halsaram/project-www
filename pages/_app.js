@@ -32,10 +32,10 @@ class MyMobxApp extends App {
         return (
             <Web3Container
                 renderLoading={() => (
-                    // <div>Loading, please wait ...</div>
-                    <Provider store={this.state.store} accounts='' contract='' web3='' coinbase=''>
-                        <Component {...pageProps} />
-                    </Provider>
+                    <div>Loading, please wait ...</div>
+                    // <Provider store={this.state.store} accounts='' contract='' web3='' coinbase=''>
+                    //     <Component {...pageProps} />
+                    // </Provider>
                 )}
                 render={({ web3, accounts, contract, coinbase }) => (
                     <Provider store={this.state.store} accounts={accounts} contract={contract} web3={web3} coinbase={coinbase}>
