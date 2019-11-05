@@ -66,7 +66,6 @@ const Summary = () => {
 	const [websites1, setWebsites1] = useLocalstorage('창작자소셜주소1', '')
 	const [websites2, setWebsites2] = useLocalstorage('창작자소셜주소2', '')
 
-	const value = options.value
 	const handleChange = (e, { value }) => setCategory({ value })
 	
 

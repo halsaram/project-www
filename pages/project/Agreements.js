@@ -79,9 +79,6 @@ const Agreements = () => {
                     } type='submit' fluid size="large">
                             <a>프로젝트개요</a>
                                     </Button>
-                        <Button type='submit' fluid size="large">
-                            <a>프로젝트 진행하기</a>
-                        </Button>
                     </Link>
                     :<Button type='submit' fluid size="large" disabled>프로젝트 진행하기</Button>}
                     
