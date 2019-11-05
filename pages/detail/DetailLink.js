@@ -31,7 +31,6 @@ class DetailLink extends Component {
                                 name='Story'
                                 active={activeItem === 'Story'}
                                 onClick={this.handleItemClick}>
-                                <Checkbox label=" " />
                                 <Link as='/스토리' href={{ pathname: '/detail', query: { id: 'story', title: '스토리' } }}>
                                     <a>스토리</a>
                                 </Link>
@@ -42,7 +41,6 @@ class DetailLink extends Component {
                                 name='Community'
                                 active={activeItem === 'Community'}
                                 onClick={this.handleItemClick}>
-                                <Checkbox label=" " />
                                 <Link as='커뮤니티' href={{ pathname: '/detail', query: { id: 'community', title: '커뮤니티' } }}>
                                     <a>커뮤니티</a>
                                 </Link>
@@ -52,7 +50,6 @@ class DetailLink extends Component {
                                 name='FundingGuide'
                                 active={activeItem === 'FundingGuide'}
                                 onClick={this.handleItemClick}>
-                                <Checkbox label=" " />
                                 <Link as='펀딩안내' href={{ pathname: '/detail', query: { id: 'fundingguide', title: '펀딩안내' } }}>
                                     <a>펀딩안내</a>
                                 </Link>
