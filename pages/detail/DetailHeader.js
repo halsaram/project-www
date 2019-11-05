@@ -20,9 +20,11 @@ import { Grid, Segment, GridColumn, Input } from 'semantic-ui-react'
 // ex) 보드게임 이라면 클릭하면 보드게임만 쫘악 나옴 
 
 
+
 //2. 프로젝트 제목 적기 
 const detailHeader = () => (
     <div>
+
         <Grid columns='equal'>
             <Grid.Column />
             <Grid.Column textAlign="center" width={16}>
@@ -33,6 +35,7 @@ const detailHeader = () => (
 
      {/* 3.프로젝트 만든사람 버튼 만들기 */}
                 <p>프로젝트 만든사람 링크걸기</p>
+
             </Grid.Column>
             <Grid.Column />
         </Grid>
