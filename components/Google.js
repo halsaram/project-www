@@ -1,5 +1,8 @@
 import React, { useState } from 'react'
 import { GoogleLogout, GoogleLogin } from 'react-google-login'
+import { inject, observer } from 'mobx-react'
+
+
 // import GoogleLogin, { GoogleLogout } from '../dist/google-login'
 // import FontAwesome from 'react-fontawesome';
 
@@ -20,6 +23,7 @@ const loading = () => {
 const logout = () => {
     console.log('logout') // eslint-disable-line
 }
+
 
 const MountTest = () => {
     const [showButton, toggleShow] = useState(true)
