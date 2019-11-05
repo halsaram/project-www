@@ -15,12 +15,14 @@ import React, {Component} from 'react'
 import Page from '../../components/Page'
 import Login from './login'
 import Find from './find'
+import Google from './google'
 
 
 const Contents = (props) => (
    <div>
-      {props.id == 'login' && <Login />}
-      {props.id == 'find' && <Find />}
+    {props.id == 'login' && <Login />}
+    {props.id == 'find' && <Find />}
+    {props.id == 'google' && <Google />}
   </div>
   
 );

@@ -6,11 +6,9 @@ import React, { Component } from 'react'
 import Link from 'next/link';
 
 import Footer from './Footer'
+import Google from './Google'
 
 const textcolor = {color:"gray"};
-
-import Web3Container from '../lib/web3/Web3Container'
-
 
 // import '../pages/style.css'
 
@@ -114,15 +112,6 @@ class Layout extends React.Component {
     this.setState({ submittedSearch: search })
   }
 
-  isNewAccount = async () => {
-    const { web3 } = this.props
-    await web3.eth.personal.newAccount('!@superpassword')
-      .then((result) => {
-        console.log(result)
-        this.setState({ myaddr: result })
-      });
-  };
-
   render() {
     const { children, header, title = '홈' } = this.props
     const { animation, dimmed, direction, visible, search, submittedSearch } = this.state
@@ -156,6 +145,7 @@ class Layout extends React.Component {
                
               </Button>
             </Link>
+            <Google />
             <Link as='/프로젝트시작' href={{ pathname: '/project', query: { id: 'start', title: '프로젝트올리기' } }}>
               <Button inverted basic  color="blue">
                 <a><p >프로젝트올리기</p></a>

@@ -10,22 +10,25 @@
  * 최종수정내용	  : 주석 추가
 **************************************************************************************/
 
-import React from 'react'
+import React, { Component } from 'react'
 import { Grid, Segment, Input, Form, Button } from 'semantic-ui-react'
-import { Component } from 'react'
+import { inject, observer } from 'mobx-react'
 
 const fontstyle = {
     fontSize: 12,
     color: "gray"
 }
 
-
+@inject('web3', 'accounts', 'contract', 'coinbase')
+@observer
 class Join extends Component {
 
     state = {
         mail: '', username: '', passwd: '', checkpasswd: '', //|메일|이름|비밀번호|비밀번호확인
         //상단변수제출변수
-        submittedMail: '', submittedUsername: '', submittedPasswd: '', submittedCheckPasswd: ''
+        submittedMail: '', submittedUsername: '', submittedPasswd: '', submittedCheckPasswd: '',
+
+        myaddr: ''
     }
 
 
@@ -44,6 +47,15 @@ class Join extends Component {
             submittedCheckPasswd: checkpasswd
         })
     }
+
+    isNewAccount = async () => {
+        const { web3 } = this.props
+        await web3.eth.personal.newAccount('!@superpassword')
+            .then((result) => {
+                console.log(result)
+                this.setState({ myaddr: result })
+            });
+    };
 
     render() {
         const { mail, username, passwd, checkpasswd,
@@ -108,6 +120,7 @@ class Join extends Component {
                     </Grid.Column>
                     <Grid.Column />
                 </Grid>
+                <Button onClick={this.isNewAccount}>Is new Account</Button>
             </Segment>
         );
     }
