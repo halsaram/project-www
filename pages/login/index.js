@@ -12,19 +12,6 @@
 
 import React, {Component} from 'react'
 
-<<<<<<< HEAD
-// import Layout from '../../components/Layout'
-import Login from './Login'
-// import Find from './find'
-
-import Page from '../../components/Page'
-
-
-const LoginPageContent = (props) => (
-  <div>
-    {console.log(props)}
-    <Login />
-=======
 import Page from '../../components/Page'
 import Login from './login'
 import Find from './find'
@@ -32,21 +19,12 @@ import Find from './find'
 
 const Contents = (props) => (
    <div>
-      {props.id == null && <Login />}
       {props.id == 'login' && <Login />}
       {props.id == 'find' && <Find />}
->>>>>>> 5f52c804b802a1b8f1a0077dda34f59bc7dbf2a8
   </div>
   
 );
 
-<<<<<<< HEAD
-export default (props) => (
-  <Page title='로그인'>
-    <LoginPageContent {...props}/>
-  </Page>
-);
-=======
 
 export default class extends Component {
   static getInitialProps ({ query: { id, title } }) {
@@ -61,4 +39,3 @@ export default class extends Component {
     )
   }
 }
->>>>>>> 5f52c804b802a1b8f1a0077dda34f59bc7dbf2a8
