@@ -66,7 +66,9 @@ const Summary = () => {
 	const [websites1, setWebsites1] = useLocalstorage('창작자소셜주소1', '')
 	const [websites2, setWebsites2] = useLocalstorage('창작자소셜주소2', '')
 
-	const handleChange = (e, { value }) => setCategory({ value })
+
+	const handleChange = (e, { value }) => setCategory(value)
+
 	
 
 	return (
@@ -144,7 +146,7 @@ const Summary = () => {
 										오픈 후, 노출될 카테고리를 선택해 주세요.
 											</span></p>
 									<Form.Field inline>
-										<Dropdown clearable options={options} onChange={handleChange} selection fluid />
+										<Dropdown clearable value={category} options={options} onChange={handleChange} selection fluid />
 									</Form.Field>
 
 									<br />

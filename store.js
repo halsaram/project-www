@@ -7,6 +7,7 @@ useStaticRendering(isServer)
 export class Store {
     @observable lastUpdate = 0
     @observable light = false
+    @observable logginted = false
 
     hydrate(serializedStore) {
         this.lastUpdate =

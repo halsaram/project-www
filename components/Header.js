@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { Header, Icon, Image, Input, Menu, Segment, Sidebar } from 'semantic-ui-react'
 import React, {useState} from 'react'
 
+
 const HeaderBar =()=> {
   const [actives, setActives] = useState('');
   return(
