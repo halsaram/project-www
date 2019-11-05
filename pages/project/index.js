@@ -10,7 +10,7 @@
  * 최종수정내용	  : import react 추가
 **************************************************************************************/
 import React from 'react'
-import Layout from '../../components/Layout'
+import Page from '../../components/Page'
 
 import Start from './Start'
 import Agreements from './Agreements'
@@ -32,8 +32,8 @@ const Content = (props) => (
 );
 
 export default (props) => (
-  <Layout title={props.url.query.title} >
+  <Page title={props.url.query.title} >
     <Content url={props.url}/>
     <script type="application/javascript" async="" src="../static/js/application.js"></script>
-  </Layout>
+  </Page>
 )

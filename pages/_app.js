@@ -1,4 +1,6 @@
 import App from 'next/app'
+import Router from 'next/router'
+
 import { fetchInitialStoreState, Store } from '../store'
 import { Provider } from 'mobx-react'
 
@@ -32,7 +34,7 @@ class MyMobxApp extends App {
             <Web3Container
                 renderLoading={() => <div>Loading Dapp Page...</div>}
                 render={({ web3, accounts, contract, coinbase }) => (
-                    <Provider store={this.state.store} accounts={accounts} contract={contract} web3={web3} coinbase={coinbase}>
+                    <Provider store={this.state.store} accounts={accounts} contract={contract} web3={web3} coinbase={coinbase} url={Router.pathname}>
                         <Component {...pageProps} />
                     </Provider>
                 )}

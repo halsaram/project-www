@@ -2,7 +2,7 @@ import React from 'react'
 import { inject, observer } from 'mobx-react'
 import Layout from './Layout'
 
-@inject('store', 'web3', 'accounts', 'contract', 'coinbase')
+@inject('store', 'web3', 'accounts', 'contract', 'coinbase', 'url')
 @observer
 class Page extends React.Component {
     componentDidMount() {

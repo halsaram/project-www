@@ -12,21 +12,23 @@
 
 import React from 'react'
 
-import Layout from '../../components/Layout'
+// import Layout from '../../components/Layout'
 import Login from './Login'
-import Find from './find'
+// import Find from './find'
+
+import Page from '../../components/Page'
 
 
 const LoginPageContent = (props) => (
-   <div>
-    {props.url.query.id == null && <Login />}
-    {props.url.query.id == 'login' && <Login />}
-    {props.url.query.id == 'find' && <Find />}
+  <div>
+    {console.log(props)}
+    <Login />
   </div>
+  
 );
 
 export default (props) => (
-  <Layout title={props.url.query.title} >
-    <LoginPageContent url={props.url}/>
-  </Layout>
+  <Page title='로그인'>
+    <LoginPageContent {...props}/>
+  </Page>
 );
