@@ -58,9 +58,10 @@ const Start = () => (
                 <Header as='h1'>마음 속 프로젝트 아이디어, <br />텀블벅에서 현실로</Header>
                 <p>크라우드펀딩으로 프로젝트를 위한 자금도 모으고,<br />
                     든든한 후원자 네트워크도 확보할 수 있습니다.</p>
-                <Button size='massive' primary color='grey'>
+                <Button size='massive' primary color='white'>
+                    
                     <Link as='/프로젝트정책' href={{ pathname: '/project', query: { id: 'agreements', title: '프로젝트정책' } }}>
-                        지금 시작하기
+                        <button class="ui blue button">지금시작하기</button>
                     </Link>
                 </Button>
             </Grid.Column>
@@ -84,7 +85,7 @@ const Start = () => (
                 <p>창작 아이디어를 소개하는 프로젝트 페이지를 작성합니다. 후원자들에게 금액대별 특별한 선물들을 약속합니다.</p>
                 <Button size='huge' primary>
                     <Link as='/p' href='/project?id=agreements&title=정책'>
-                        프로젝트 올리기 시작하기
+                        <button class="ui blue button">프로젝트 올리기 시작하기</button>
                     </Link>
                 </Button>
             </Grid.Column>
@@ -113,7 +114,7 @@ const Start = () => (
                 <p>시작하는 창작자에게 텀블벅은 지원금, 공모전 등의 방식들보다 훨씬 자율적이고 독립적으로 나와 내 작업을 알릴 수 있는 새로운 길입니다. 이미 콘텐츠와 팬층을 확보한 작가라면 신선한 기획을 통해 팬들을 만나는 새로운 창구를 열어보는 건 어떨까요?</p>
                 <Button size='small' primary>
                     <Link as='/col' href='/collections?id=creative'>
-                            창작자 성공사례 보기
+                        <button class="ui blue button">창작자 성공 사례보기</button>
                     </Link>
                 </Button>
             </Grid.Column>
@@ -123,7 +124,7 @@ const Start = () => (
                 <p>브랜드에 이목을 집중시키는 스토리를 통해 마케팅 효과를 극대화할 수 있습니다. 트렌디하면서도 개인의 취향과 가치가 강조되는 새로운 참여형 소비 창구로 각광받는 텀블벅에서 모인 후원자들의 신뢰는 일반 이커머스에서보다 훨씬 깊고 오래 가는 팬 베이스가 되어줄 것입니다.</p>
                 <Button size='small' primary>
                     <Link as='/col' href='/collections?id=brand'>
-                            브랜드 성공사례 보기
+                        <button class="ui blue button">브랜드 성공 사례보기</button>
                     </Link>
                 </Button>
             </Grid.Column>
@@ -133,7 +134,7 @@ const Start = () => (
                 <p>언론이나 소셜미디어에서 떠오르는 이슈들을 구체적인 행동으로 전환시키는 데에 텀블벅 프로젝트가 제격입니다. 새롭고 젊은 정치참여·사회운동 방식으로 주목받는 텀블벅 펀딩으로 더 많은 지지자를 얻고, 사회적 목소리를 증폭시켜보세요.</p>
                 <Button size='small' primary>
                     <Link as='/col' href='/collections?id=campaign'>
-                        캠페인 성공사례 보기
+                        <button class="ui blue button">캠페인 성공 사례보기</button>
                     </Link>
                 </Button>
             </Grid.Column>
@@ -184,7 +185,8 @@ const Start = () => (
                             </div>
                         </div>
                         <div className="ProjectStartGuide__ButtonWrapper-higy7q-5 gqxKYm" data-reactid="98">
-                            <ProjectLink id='agreements' title='프로젝트 올리기 시작하기' />
+                                <ProjectLink id='agreements' title='프로젝트 올리기 시작하기' />
+
                         </div>
                     </div>
                 </div>
