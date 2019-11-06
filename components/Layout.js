@@ -1,9 +1,8 @@
-import Head from 'next/head'
-import { Header, Icon, Image, Input, Menu, Segment, Sidebar, Button, Container, Grid } from 'semantic-ui-react'
-
-import PropTypes from 'prop-types'
 import React, { Component } from 'react'
-import Link from 'next/link';
+import Head from 'next/head'
+import Link from 'next/link'
+import { Header, Icon, Image, Input, Menu, Segment, Sidebar, Button, Container, Grid } from 'semantic-ui-react'
+import PropTypes from 'prop-types'
 
 import Footer from './Footer'
 import GoogleAPI from './GoogleAPI'
@@ -131,20 +130,20 @@ class Layout extends React.Component {
             <Button onClick={this.handleAnimationChange('overlay')}>|||</Button>
             <Link href='/dapp'><a>My Dapp</a></Link>
             <Link href='/accounts'><a>My Accounts</a></Link>
+            <Link as='/프로젝트시작' href={{ pathname: '/project', query: { id: 'start', title: '프로젝트올리기' } }}>
+              <Button inverted basic color="blue">
+                <a><p >프로젝트올리기</p></a>
+              </Button>
+            </Link>
           </Grid.Column>
+       
           
-          <Grid.Column width={5} textAlign="center">
+          <Grid.Column width={9} textAlign="center">
             Halsaram
           </Grid.Column>
 
-          <Grid.Column>
+         <Grid.Column>
             <Input icon='search' placeholder='Search...' />
-            <Link as='/로그인' href={{ pathname: '/login', query: { id: 'login', title: '로그인' } }}>
-              <Button inverted basic  color="blue">
-                <a><p style={textcolor}>로그인</p></a>
-               
-              </Button>
-            </Link>
             <GoogleAPI />
             <Link as='/프로젝트시작' href={{ pathname: '/project', query: { id: 'start', title: '프로젝트올리기' } }}>
               <Button inverted basic  color="blue">

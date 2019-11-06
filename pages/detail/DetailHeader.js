@@ -21,8 +21,8 @@ import { Grid, Segment, GridColumn, Input } from 'semantic-ui-react'
 const detailHeader = () => (
     <div>
         
- {/* //1.프로젝트 해당 카테고리 이동하는 버튼 만들기 
-// ex) 보드게임 이라면 클릭하면 보드게임만 쫘악 나옴 */}
+ {/* //1.프로젝트 해당 카테고리 이동되게 하기
+// ex) 클릭하면 ->보드게임 이라면 보드게임만 쫘악 나옴 */}
 
         <Grid columns='equal'>
             <Grid.Column />
@@ -33,7 +33,7 @@ const detailHeader = () => (
                 {/* Input 길이를 늘리는 법 찾기 */}
                 {/* 글자를중앙정렬 */}
 
-     {/* 3.프로젝트 만든사람 버튼 만들기 */}
+     {/* 3.클릭하면->프로젝트 만든사람이 만든 프로젝트만 쫘악 나옴 */}
      <br></br>
         <button class="ui orange button">1.카테고리명</button>
                 <br></br>

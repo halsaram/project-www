@@ -1,21 +1,32 @@
-import React from 'react'
+import React, { Component } from 'react'
+import Page from '../../components/Page'
+
 import Privacy from './Privacy'
 import Notices from './Notices'
 import TermsOfUse from './TermsOfUse'
 import Layout from '../../components/Layout'
 
 
-const MainPageContent = (props) => (
+const Contents = (props) => (
    <div>
-    {props.url.query.id == 'Privacy' && <Privacy />}
-    {props.url.query.id == 'Notices' && <Notices />}
-    {props.url.query.id == 'TermsOfUse' && <TermsOfUse />}
+    {props.id == 'Privacy' && <Privacy />}
+    {props.id == 'Notices' && <Notices />}
+    {props.id == 'TermsOfUse' && <TermsOfUse />}
     
   </div>
-);
+)
 
-export default (props) => (
-  <Layout title={props.url.query.title} >
-    <MainPageContent url={props.url}/>
-  </Layout>
-);
+export default class extends Component {
+  static getInitialProps({ query: { id, title } }) {
+    return { id, title }
+  }
+
+
+    render() {
+        return (
+            <Page title={this.props.title} >
+                <Contents {...this.props} />
+            </Page>
+        )
+    }
+}

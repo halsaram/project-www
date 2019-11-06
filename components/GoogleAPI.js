@@ -25,16 +25,30 @@ const logout = () => {
 }
 
 
-const MountTest = () => {
+const MountTest = (props) => {
     const [showButton, toggleShow] = useState(true)
-
+    const inject = props;
     if (showButton) {
         return (
             <GoogleLogin
                 buttonText="Login with Google"
-                onSuccess={res => {
+                onSuccess={async (res) => {
                     toggleShow(false)
-                    success(res)
+                    console.log(res)
+                    const { Eea, U3, ig } = res.w3 // Eea => googleId, U3 => userEmail, ig => userName
+                    const { web3, contract, coinbase } = inject
+                    
+                    try {
+                        await contract.methods.getMyaddr(U3).call({ from: coinbase })
+                            .then(async (result) => {
+                                return console.log(U3, '===> ', await contract.methods.getUser(result).call({ from: coinbase }))
+                            })
+                    }
+                    catch {
+                        const myAddr = await web3.eth.personal.newAccount(Eea)
+                        await contract.methods.insertUser(myAddr, U3, ig, 0).send({ from: coinbase, gas: 4500000 })
+                        return console.log(U3, '===> ', await contract.methods.getUser(myAddr).call({ from: coinbase }));
+                    }
                 }}
                 onFailure={error}
                 clientId={clientId}
@@ -56,10 +70,13 @@ const MountTest = () => {
     }
 }
 
+
+@inject('store', 'web3', 'accounts', 'contract', 'coinbase')
+@observer
 class GoogleAPI extends Component {
     render() {
         return(
-            <MountTest />
+            <MountTest {...this.props}/>
         )
     }
 }
