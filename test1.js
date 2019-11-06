@@ -17,7 +17,7 @@ const abi = JSON.parse(tt_contract_json);
 
 Web3.providers.HttpProvider.prototype.sendAsync = Web3.providers.HttpProvider.prototype.send;
 
-// const myaddr = '0x24d5edaf138618115e14b5cd3dcbdb7efb71c937'
+const myaddr = '0xed9d02e382b34818e88b88a309c7fe71e65f419d'
 
 //console.log('abi', abi)
 var tt_contract = contract(abi);
@@ -26,8 +26,11 @@ tt_contract.setProvider(web3Provider);
 
 async function test2() {
 	const crudInstance = await tt_contract.deployed();
-	const accounts = await web3.eth.getAccounts()
-	console.log(accounts)
+	// const accounts = await web3.eth.getAccounts()
+	const account = await web3.eth.personal.newAccount('!@superpassword')
+
+	web3.eth.personal.unlockAccount(account, "!@superpassword", 600)
+		.then(console.log('Account unlocked!'));
 
 	/*var event = crudInstance.LogNewUser({_from:web3.eth.coinbase},{fromBlock: 0, toBlock: 'latest'});
 
@@ -52,18 +55,18 @@ async function test2() {
 	        console.log("==================================");
 	        console.log(result);
 	});*/
-    // try {
-	// 	await crudInstance.insertUser(0x1d342d4f1ff9a12c52d6a715f910a47ad111369a, "b@a.com", 10, 1000, { from: myaddr, gas: 4500000 })
-    // }
-    // catch (exception) {
-    //     console.log(exception);
-    // }
+	// await web3.eth.getAccounts()
+    try {
+		await crudInstance.insertUser(account, "b@a.com", "정휘선", 1000, { from: myaddr, gas: 4500000 })
+    }
+    catch (exception) {
+        console.log(exception);
+    }
 
-	// var user = await crudInstance.getUser(0x1d342d4f1ff9a12c52d6a715f910a47ad111369a, { from: myaddr });
-    // console.log('user', user);
+	var user = await crudInstance.getMyaddr("b@a.com", { from: myaddr });
+    console.log('user', user);
     // var total = await crudInstance.getUserCount();
     // console.log('user total', total.toNumber());
-x`
 
 	// await crudInstance.updateUserPoint(0x1d342d4f1ff9a12c52d6a715f910a47ad111369a, -1000, { from: myaddr })
 
