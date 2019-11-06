@@ -143,14 +143,14 @@ class Layout extends React.Component {
             Halsaram
           </Grid.Column>
 
-          <Grid.Column>
+         <Grid.Column>
             <Input icon='search' placeholder='Search...' />
-            <Link as='/로그인' href={{ pathname: '/login', query: { id: 'login', title: '로그인' } }}>
+            {/* <Link as='/로그인' href={{ pathname: '/login', query: { id: 'login', title: '로그인' } }}>
               <Button inverted basic  color="blue">
-                <a><p style={textcolor}>로그인</p></a>
+                <a><p style={textcolor}>로그인</p></a> */}
                
-              </Button>
-            </Link>
+              {/* </Button>
+            </Link> */} 
             <Google />
           </Grid.Column>
         </Grid>
