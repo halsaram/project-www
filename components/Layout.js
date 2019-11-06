@@ -139,17 +139,14 @@ class Layout extends React.Component {
        
           
           <Grid.Column width={9} textAlign="center">
-            Halsaram
+            <Link as='/' href={{ pathname: '/', query: { id: 'home', title: '홈' } }}>
+                <a><p >Halsaram</p></a>
+            </Link>
           </Grid.Column>
 
          <Grid.Column>
             <Input icon='search' placeholder='Search...' />
             <GoogleAPI />
-            <Link as='/프로젝트시작' href={{ pathname: '/project', query: { id: 'start', title: '프로젝트올리기' } }}>
-              <Button inverted basic  color="blue">
-                <a><p >프로젝트올리기</p></a>
-              </Button>
-            </Link>
           </Grid.Column>
         </Grid>
 

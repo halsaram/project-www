@@ -10,11 +10,10 @@
  * 최종수정내용	  : import react 추가
 **************************************************************************************/
 import React, {Component} from 'react'
-import Page from '../components/Page'
+import { inject, observer } from 'mobx-react';
 
-import Layout from '../components/Layout'
+import Page from '../components/Page'
 import Main_Banner from './main/Main_Banner'
-import Lower_Banner from './main/Lower_Banner'
 import MainList from './main/MainList'
 import CatoList from './main/CatoList'
 import HeaderBar from '../components/Header'
@@ -61,12 +60,17 @@ const Contents = (props) => (
 );
 
 
+
+@inject('postStore') @observer
 export default class extends Component {
-  static getInitialProps ({ query: { id, title } }) {
-    return { id, title }
+  static async getInitialProps({ mobxStore, query }) {
+    await mobxStore.postStore.fetch(query.id);
+    return { post: mobxStore.postStore.post };
   }
 
-  render () {  
+  render () {
+    const { post } = this.props;
+    console.log(this.props);
     return (
       <Page title={this.props.title} >
         <Contents {...this.props}/>

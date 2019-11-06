@@ -16,41 +16,33 @@ const error = response => {
     console.error(response) // eslint-disable-line
 }
 
-const loading = () => {
-    console.log('loading') // eslint-disable-line
-}
-
-const logout = () => {
-    console.log('logout') // eslint-disable-line
-}
-
-
 const MountTest = (props) => {
-    const [showButton, toggleShow] = useState(true)
-    const inject = props;
+    const { userStore, web3, contract, coinbase } = props
+    const [showButton, toggleShow] = useState(userStore.loggedIn)
     if (showButton) {
         return (
             <GoogleLogin
                 buttonText="Login with Google"
                 onSuccess={async (res) => {
-                    toggleShow(false)
                     console.log(res)
                     const { Eea, U3, ig } = res.w3 // Eea => googleId, U3 => userEmail, ig => userName
-                    const { store, web3, contract, coinbase } = inject
-                    
                     try {
                         await contract.methods.getMyaddr(U3).call({ from: coinbase })
                             .then(async (result) => {
                                 const user = await contract.methods.getUser(result).call({ from: coinbase })
-                                store.user = user
-                                return console.log(U3, '===> ', store.user)
+                                userStore.setUser(user);
+                                console.log(U3, '===> ', user)
                             })
                     }
                     catch {
                         const myAddr = await web3.eth.personal.newAccount(Eea)
                         await contract.methods.insertUser(myAddr, U3, ig, 0).send({ from: coinbase, gas: 4500000 })
-                        return console.log(U3, '===> ', await contract.methods.getUser(myAddr).call({ from: coinbase }));
+                        const user = await contract.methods.getUser(result).call({ from: coinbase })
+                        userStore.setUser(user);
+                        console.log(U3, '===> ', user)
                     }
+                    toggleShow(false)
+                    userStore.setLoggedIn(false)
                 }}
                 onFailure={error}
                 clientId={clientId}
@@ -60,10 +52,12 @@ const MountTest = (props) => {
     } else {
         return (
             <GoogleLogout
-                buttonText="Logout"
+                buttonText={userStore.user.userName}
                 onLogoutSuccess={res => {
+                    userStore.setUser([]);
                     toggleShow(true)
-                    logout
+                    userStore.setLoggedIn(true)
+                    console.log('logout')
                 }}
                 onFailure={error}
                 clientId={clientId}
@@ -73,7 +67,7 @@ const MountTest = (props) => {
 }
 
 
-@inject('store', 'web3', 'accounts', 'contract', 'coinbase')
+@inject('userStore', 'web3', 'accounts', 'contract', 'coinbase')
 @observer
 class GoogleAPI extends Component {
     render() {

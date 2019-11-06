@@ -50,8 +50,6 @@ const MainList = (props) => (
                             extra={extra}
                             />
                     </Link>
-                        
-                   
                 </Grid.Column>
       
                 <Grid.Column width="4">
