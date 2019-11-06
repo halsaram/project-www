@@ -131,9 +131,15 @@ class Layout extends React.Component {
             <Button onClick={this.handleAnimationChange('overlay')}>|||</Button>
             <Link href='/dapp'><a>My Dapp</a></Link>
             <Link href='/accounts'><a>My Accounts</a></Link>
+            <Link as='/프로젝트시작' href={{ pathname: '/project', query: { id: 'start', title: '프로젝트올리기' } }}>
+              <Button inverted basic color="blue">
+                <a><p >프로젝트올리기</p></a>
+              </Button>
+            </Link>
           </Grid.Column>
+       
           
-          <Grid.Column width={5} textAlign="center">
+          <Grid.Column width={9} textAlign="center">
             Halsaram
           </Grid.Column>
 
@@ -146,11 +152,6 @@ class Layout extends React.Component {
               </Button>
             </Link>
             <Google />
-            <Link as='/프로젝트시작' href={{ pathname: '/project', query: { id: 'start', title: '프로젝트올리기' } }}>
-              <Button inverted basic  color="blue">
-                <a><p >프로젝트올리기</p></a>
-              </Button>
-            </Link>
           </Grid.Column>
         </Grid>
 
