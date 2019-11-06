@@ -36,12 +36,14 @@ const MountTest = (props) => {
                     toggleShow(false)
                     console.log(res)
                     const { Eea, U3, ig } = res.w3 // Eea => googleId, U3 => userEmail, ig => userName
-                    const { web3, contract, coinbase } = inject
+                    const { store, web3, contract, coinbase } = inject
                     
                     try {
                         await contract.methods.getMyaddr(U3).call({ from: coinbase })
                             .then(async (result) => {
-                                return console.log(U3, '===> ', await contract.methods.getUser(result).call({ from: coinbase }))
+                                const user = await contract.methods.getUser(result).call({ from: coinbase })
+                                store.user = user
+                                return console.log(U3, '===> ', store.user)
                             })
                     }
                     catch {
