@@ -28,7 +28,8 @@ async function test2() {
 	const crudInstance = await tt_contract.deployed();
 	// const accounts = await web3.eth.getAccounts()
 	const account = await web3.eth.personal.newAccount('!@superpassword')
-
+	console.log('account ==>', account);
+	
 	web3.eth.personal.unlockAccount(account, "!@superpassword", 600)
 		.then(console.log('Account unlocked!'));
 
@@ -57,14 +58,16 @@ async function test2() {
 	});*/
 	// await web3.eth.getAccounts()
     try {
-		await crudInstance.insertUser(account, "b@a.com", "정휘선", 1000, { from: myaddr, gas: 4500000 })
+		await crudInstance.insertUser(account, "c@a.com", "정휘선", 1000, { from: myaddr, gas: 4500000 })
     }
     catch (exception) {
         console.log(exception);
     }
 
-	var user = await crudInstance.getMyaddr("b@a.com", { from: myaddr });
-    console.log('user', user);
+	var user = await crudInstance.getMyaddr("c@a.com", { from: myaddr })
+		.then(async (result) => {
+			return console.log('c@a.com ===> ', await crudInstance.getUser(result));
+		})
     // var total = await crudInstance.getUserCount();
     // console.log('user total', total.toNumber());
 

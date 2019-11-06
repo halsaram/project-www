@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { Component, useState } from 'react'
 import { GoogleLogout, GoogleLogin } from 'react-google-login'
 import { inject, observer } from 'mobx-react'
 
@@ -56,4 +56,12 @@ const MountTest = () => {
     }
 }
 
-export default MountTest
+class GoogleAPI extends Component {
+    render() {
+        return(
+            <MountTest />
+        )
+    }
+}
+
+export default GoogleAPI

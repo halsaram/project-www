@@ -33,7 +33,7 @@ contract UserCrud {
     returns(bool isIndeed) 
   {
     if(userIndex.length == 0) return false;
-    return (userIndex[addrStructs[userEmail].index] == addrStructs[userEmail].myAddr);
+    return (userIndex[userStructs[addrStructs[userEmail].myAddr].index] == addrStructs[userEmail].myAddr);
   }
 
   function insertUser(
@@ -45,7 +45,7 @@ contract UserCrud {
     returns(uint index)
   {
     if(isUser(userAddress)) throw;
-    userStructs[userAddress].myAddr = userAddress;
+    addrStructs[userEmail].myAddr = userAddress;
     userStructs[userAddress].userEmail = userEmail;
     userStructs[userAddress].userName   = userName;
     userStructs[userAddress].userPoint   = userPoint;
@@ -82,11 +82,12 @@ contract UserCrud {
   function getUser(address userAddress)
     public 
     constant
-    returns(string userEmail, string userName, int userPoint, uint index)
+    returns(address myAddr, string userEmail, string userName, int userPoint, uint index)
   {
     if(!isUser(userAddress)) throw; 
     return(
-      userStructs[userAddress].userEmail, 
+      addrStructs[userStructs[userAddress].userEmail].myAddr,
+      userStructs[userAddress].userEmail,
       userStructs[userAddress].userName, 
       userStructs[userAddress].userPoint, 
       userStructs[userAddress].index);
@@ -95,14 +96,10 @@ contract UserCrud {
   function getMyaddr(string userEmail)
     public 
     constant
-    returns(address myAddr, string userName, int userPoint, uint index)
+    returns(address myAddr)
   {
     if(!isMyaddr(userEmail)) throw; 
-    return(
-      addrStructs[userEmail].myAddr, 
-      addrStructs[userEmail].userName, 
-      addrStructs[userEmail].userPoint,
-      addrStructs[userEmail].index);
+    return addrStructs[userEmail].myAddr;
   }
   
   function updateUserEmail(address userAddress, string userEmail) 

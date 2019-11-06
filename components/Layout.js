@@ -6,7 +6,7 @@ import React, { Component } from 'react'
 import Link from 'next/link';
 
 import Footer from './Footer'
-import Google from './Google'
+import GoogleAPI from './GoogleAPI'
 
 const textcolor = {color:"gray"};
 
@@ -145,7 +145,7 @@ class Layout extends React.Component {
                
               </Button>
             </Link>
-            <Google />
+            <GoogleAPI />
             <Link as='/프로젝트시작' href={{ pathname: '/project', query: { id: 'start', title: '프로젝트올리기' } }}>
               <Button inverted basic  color="blue">
                 <a><p >프로젝트올리기</p></a>
