@@ -11,31 +11,40 @@
 **************************************************************************************/
 import React from 'react'
 import Link from 'next/link';
-import { Grid} from 'semantic-ui-react'
+import { Grid, Menu, Image } from 'semantic-ui-react'
 
 const Footer = () => (
     <div>
-        <Grid columns={3} padded='horizontally'>
-                <Grid.Column>
+    <Menu inverted>
+        <Menu.Item>
+            <Link as='/공지사항' href={{ pathname: '/main', query: { id: 'notices', title: '공지사항' } }}>
+                <a>공지사항</a>
+            </Link>
+        </Menu.Item>
+        <Menu.Item>
+            <Link as='/창작자 가이드' href={{ pathname: '/main', query: { id: 'termsOfUse', title: '창작자 가이드' } }}>
+                <a>창작자 가이드</a>
+            </Link>
+        </Menu.Item>
+        <Menu.Item>
+            <Link as='/개인정보 처리방침' href={{ pathname: '/main', query: { id: 'privacy', title: '개인정보 처리방침' } }}>
+                <a>개인정보 처리방침</a>
+            </Link>
+        </Menu.Item>
+      </Menu>
 
-                <Link as='/공지사항' href={{ pathname: '/main', query: { id: 'notices', title: '공지사항' } }}>
-                    <a>공지사항</a>
-                </Link>
-                <br></br>
-
-                <Link as='/창작자 가이드' href={{ pathname: '/main', query: { id: 'termsOfUse', title: '창작자 가이드' } }}>
-                    <a>창작자 가이드</a>
-                </Link>
-                <br></br>
-                <Link as='/개인정보 처리방침' href={{ pathname: '/main', query: { id: 'privacy', title: '개인정보 처리방침' } }}>
-                    <a>개인정보 처리방침</a>
-                </Link>
-
-    
-                 
-                </Grid.Column > 
-                </Grid >
-                </div>
+      <Grid>
+    <Grid.Column width={2}>
+      <Image src='https://react.semantic-ui.com/images/wireframe/image.png' />
+    </Grid.Column>
+    <Grid.Column width={4}>
+      <Image src='https://react.semantic-ui.com/images/wireframe/paragraph.png' />
+    </Grid.Column>
+    <Grid.Column width={10}>
+      
+    </Grid.Column>
+  </Grid>
+    </div>
 
 );
 
