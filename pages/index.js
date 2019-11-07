@@ -10,20 +10,17 @@
  * 최종수정내용	  : import react 추가
 **************************************************************************************/
 import React, {Component} from 'react'
-<<<<<<< HEAD
-import Page from '../components/Page'
-import { Grid, Segment } from 'semantic-ui-react'
-=======
 import { inject, observer } from 'mobx-react';
+import { Grid, Segment } from 'semantic-ui-react'
+import { inherits } from 'util'
+import { height } from 'window-size'
 
 import Page from '../components/Page'
->>>>>>> d6eecc99347f86adb866a3c309165c3f160c298f
 import Main_Banner from './main/Main_Banner'
 import MainList from './main/MainList'
 import CatoList from './main/CatoList'
 import HeaderBar from '../components/Header'
-import { inherits } from 'util'
-import { height } from 'window-size'
+
 // 임시 데이터------------------------------------------------------------------------
 //map반복문을 통해 a,b,c에 적절한 인덱스의 데이터를 담음
 const EditReco = { //반복문을 써서 9개의 데이터를 가져옴 -현재는 3개만 가져오기로
