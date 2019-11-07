@@ -5,9 +5,9 @@
  * 작성자		     : 금정민
  * 버전		      : 1.0.0
  * 생성일자		   : 2019-10 ~
- * 최종수정일자 	: 2019-10-31
- * 최종수정자	   : 정휘선
- * 최종수정내용	  : import react 추가
+ * 최종수정일자 	: 2019-11-08
+ * 최종수정자	   : 금정민
+ * 최종수정내용	  : 카드 페이지네이션 기능 구현(제일 하단에 임시데이터 형식이 있음)
 **************************************************************************************/
 import React, {Component, useState, useReducer} from 'react'
 import { inject, observer } from 'mobx-react';
@@ -17,7 +17,8 @@ import ListCard from '../pages/main/ListCard'
 import Page from '../components/Page'
 import Main_Banner from './main/Main_Banner'
 import HeaderBar from '../components/Header'
-import { Card, Icon, Grid, Segment, Button, Progress, Pagination } from 'semantic-ui-react'
+import { Grid, Pagination } from 'semantic-ui-react'
+import CatoList from '../pages/main/CatoList';
 
 
 
@@ -56,27 +57,28 @@ const Contents = () => {
           pointing secondary totalPages={3}/>   
         </Grid.Column>
       </Grid>
-        
-        <br/>
-        
-        <Grid columns='equal'>
+      
+      <Grid centered>
           {/* 첫번째, 신규프로젝트 카드 */}
           {/* activePage값에 따라 배열 slice범위가 달라짐 */}
           {/* 프로젝트별 제목(title) | 창작자(editor) | 디데이(Dday) | 분류(catogory)
           목표금액(targetCoin) | 모금된 금액(fundCoin) */}
-
+          
+       <Grid.Row centered columns={4}>
           {activePage == 1 &&
             (NewProject.slice(0,3)).map((item, i)=>(
-              < ListCard title={item.title}         
-              editor={item.editor}                  
-              Dday={item.Dday}  
-              catogory={item.catogory} 
-              targetCoin={item.targetCoin} 
-              fundCoin={item.fundCoin} 
-              description = {item.description}
-              link = ''/>))
+              
+                < ListCard title={item.title}         
+                editor={item.editor}                  
+                Dday={item.Dday}  
+                catogory={item.catogory} 
+                targetCoin={item.targetCoin} 
+                fundCoin={item.fundCoin} 
+                description = {item.description}
+                link = ''/>))
+                
           }
-
+          
           {activePage == 2 &&  
             (NewProject.slice(3,6)).map((item, i)=>(
               < ListCard title={item.title} 
@@ -100,131 +102,154 @@ const Contents = () => {
               description = {item.description}
               link = ''/>))
             }
+            </Grid.Row>
+           
+        </Grid>
+
+        <div style={ItemMargin} />      
+
+{/* ------카테고리 프로젝트--------------------------------------------------------------- */}
+{/*버튼onClick -> filter */}
+{/* 1. 버튼 컴포넌트 가져오기 */}
+      <CatoList/>
+      <div style={ItemMargin} /> 
+{/* ------앵콜 프로젝트--------------------------------------------------------------- */}
+      <Grid>
+        <Grid.Column width="2" />  
+        <Grid.Column width="8">       
+          <h3>앵콜 프로젝트</h3>       {/* 프로젝트 제목 */}  
+        </Grid.Column>
+        
+        <Grid.Column>               {/* 페이지네이션 */}
+          <Pagination 
+          activePage={activePage1}  
+          onPageChange={handlePaginationChange1}  
+          defaultActivePage={1}
+          firstItem={null}
+          lastItem={null} 
+          pointing secondary totalPages={3}/>   
+        </Grid.Column>
+      </Grid>
+        
+      
+      
+      <Grid centered>
+          {/* activePage값에 따라 배열 slice범위가 달라짐 */}
+          {/* 프로젝트별 제목(title) | 창작자(editor) | 디데이(Dday) | 분류(catogory)
+          목표금액(targetCoin) | 모금된 금액(fundCoin) */}
+          
+       <Grid.Row centered columns={4}>
+          {activePage1 == 1 &&
+            (EncoreProject.slice(0,3)).map((item, i)=>(
+              
+                < ListCard title={item.title}         
+                editor={item.editor}                  
+                Dday={item.Dday}  
+                catogory={item.catogory} 
+                targetCoin={item.targetCoin} 
+                fundCoin={item.fundCoin} 
+                description = {item.description}
+                link = ''/>))
+          }
+          
+          {activePage1 == 2 &&  
+            (EncoreProject.slice(3,6)).map((item, i)=>(
+              < ListCard title={item.title} 
+              editor={item.editor} 
+              Dday={item.Dday} 
+              catogory={item.catogory} 
+              targetCoin={item.targetCoin} 
+              fundCoin={item.fundCoin} 
+              description = {item.description}
+              link = ''/>))
+          }
+          
+          {activePage1 == 3 &&  
+            (EncoreProject.slice(6,9)).map((item, i)=>(
+              < ListCard title={item.title} 
+              editor={item.editor} 
+              Dday={item.Dday} 
+              catogory={item.catogory} 
+              targetCoin={item.targetCoin} 
+              fundCoin={item.fundCoin} 
+              description = {item.description}
+              link = ''/>))
+            }
+            </Grid.Row>
+           
         </Grid>
         <div style={ItemMargin} />      {/*카드 간 간격*/}
 
-{/* ------앵콜 프로젝트--------------------------------------------------------------- */}
-        <Grid>
-          <Grid.Column width="2" />  
-          <Grid.Column width="8">    
-            <h3>앵콜 프로젝트</h3>          {/* 프로젝트 제목 */}
-            
-          </Grid.Column>
-          <Grid.Column>                 {/* 페이지네이션 */}
-            <Pagination 
-            activePage={activePage1}  
-            onPageChange={handlePaginationChange1}  
-            defaultActivePage={1}
-            firstItem={null}
-            lastItem={null} 
-            pointing secondary totalPages={3} 
-            />     
-          </Grid.Column>
-        </Grid>
-        
-        <Grid columns='equal'>
-          {activePage1 == 1 
-            && (EncoreProject.slice(0,3)).map((item,i)=>(
-            < ListCard title={item.title} 
-              editor={item.editor} 
-              Dday={item.Dday} 
-              catogory={item.catogory} 
-              targetCoin={item.targetCoin} 
-              fundCoin={item.fundCoin} 
-              description = {item.description}
-              link = ''
-            />
-          ))}
-          {activePage1==2
-            && (EncoreProject.slice(3,6)).map((item,i)=>(
-            < ListCard title={item.title} 
-              editor={item.editor} 
-              Dday={item.Dday} 
-              catogory={item.catogory} 
-              targetCoin={item.targetCoin} 
-              fundCoin={item.fundCoin} 
-              description = {item.description}
-              link = ''
-            />
-          ))}
-          {activePage1==3
-            && (EncoreProject.slice(6,9)).map((item,i)=>(
-            < ListCard title={item.title} 
-              editor={item.editor} 
-              Dday={item.Dday} 
-              catogory={item.catogory} 
-              targetCoin={item.targetCoin} 
-              fundCoin={item.fundCoin} 
-              description = {item.description}
-              link = ''
-            />
-          ))}
-        </Grid>
-        <div style={ItemMargin}></div>         {/* 카드 간 간격 */}
-
 {/* ------성공임박 프로젝트--------------------------------------------------------------- */}
-        <Grid>
-          <Grid.Column width="2" />  
-          <Grid.Column width="8">     
-            <h3>성공임박 프로젝트</h3>              {/* 프로젝트 제목 */} 
-          </Grid.Column>
-          <Grid.Column>                         {/* 페이지네이션 */}
-            <Pagination 
-              activePage={activePage2}
-              onPageChange={handlePaginationChange2}
-              defaultActivePage={1}
-              firstItem={null}
-              lastItem={null} 
-              pointing secondary totalPages={3}  
-            />     
-            {activePage2}
-          </Grid.Column>
-        </Grid>
+      <Grid>
+        <Grid.Column width="2" />  
+        <Grid.Column width="8">       
+          <h3>성공임박 프로젝트</h3>       {/* 프로젝트 제목 */}  
+        </Grid.Column>
         
-        <Grid columns='equal'>
-          {activePage2==1 
-          && (EndProject.slice(0,3)).map((item, i)=>(
-            < ListCard title={item.title} 
+        <Grid.Column>               {/* 페이지네이션 */}
+          <Pagination 
+          activePage={activePage2}  
+          onPageChange={handlePaginationChange2}  
+          defaultActivePage={1}
+          firstItem={null}
+          lastItem={null} 
+          pointing secondary totalPages={3}/>   
+        </Grid.Column>
+      </Grid>
+      
+      <Grid centered>
+          {/* activePage값에 따라 배열 slice범위가 달라짐 */}
+          {/* 프로젝트별 제목(title) | 창작자(editor) | 디데이(Dday) | 분류(catogory)
+          목표금액(targetCoin) | 모금된 금액(fundCoin) */}
+          
+       <Grid.Row centered columns={4}>
+          {activePage2 == 1 &&
+            (EndProject.slice(0,3)).map((item, i)=>(
+              
+                < ListCard title={item.title}         
+                editor={item.editor}                  
+                Dday={item.Dday}  
+                catogory={item.catogory} 
+                targetCoin={item.targetCoin} 
+                fundCoin={item.fundCoin} 
+                description = {item.description}
+                link = ''/>))
+          }
+          
+          {activePage2 == 2 &&  
+            (EndProject.slice(3,6)).map((item, i)=>(
+              < ListCard title={item.title} 
               editor={item.editor} 
               Dday={item.Dday} 
               catogory={item.catogory} 
               targetCoin={item.targetCoin} 
               fundCoin={item.fundCoin} 
               description = {item.description}
-              link = ''
-            />))}
-            {activePage2==2
-          && (EndProject.slice(3,6)).map((item, i)=>(
-            < ListCard title={item.title} 
+              link = ''/>))
+          }
+          
+          {activePage2 == 3 &&  
+            (EndProject.slice(6,9)).map((item, i)=>(
+              < ListCard title={item.title} 
               editor={item.editor} 
               Dday={item.Dday} 
               catogory={item.catogory} 
               targetCoin={item.targetCoin} 
               fundCoin={item.fundCoin} 
               description = {item.description}
-              link = ''
-            />))}
-            {activePage2==3 
-          && (EndProject.slice(6,9)).map((item, i)=>(
-            < ListCard title={item.title} 
-              editor={item.editor} 
-              Dday={item.Dday} 
-              catogory={item.catogory} 
-              targetCoin={item.targetCoin} 
-              fundCoin={item.fundCoin} 
-              description = {item.description}
-              link = ''
-            />))}
+              link = ''/>))
+            }
+            </Grid.Row>
+           
         </Grid>
-        <div style={ItemMargin}></div>      {/* 간격을 margin으로 처리한다. */}
+        <div style={ItemMargin} />      {/*카드 간 간격*/}
     </div>
   );
 
 }
-  
 
-
-
+{/* ------------------------------------------------------------------------------ */}
 @inject('postStore') @observer
 export default class extends Component {
   static async getInitialProps({ mobxStore, query }) {
@@ -244,28 +269,21 @@ export default class extends Component {
 }
 
 
-
+//------부수적인 디자인-----------------------------------------------------------------
 const ItemMargin = {    //간격용 디자인
-  margin : 50,
+  margin : 20,
   width : 100,
   height : 100
 }
-
 const CatoColor = {     //카테고리 부분의 뒷 배경
 
 }
-
-
 
 //-------------------임시데이터---------------------------------------------------------
 //프로젝트별 제목(title) | 창작자(editor) | 디데이(Dday) | 분류(catogory)
 //목표금액(targetCoin) | 모금된 금액(fundCoin)
 
-
-
-
-
-//newProject의 프로젝트 개수는 9개 -> 9번 반복하여 컴포넌트1~9개 생성
+//newProject의 프로젝트 개수는 9개
 const NewProject = [
   {title : "첫1번째 프로젝트 제목", 
   editor : "창작자1", 
@@ -273,7 +291,7 @@ const NewProject = [
   catogory : "생활",
   description : "첫번째 프로젝트입니다.아아ㅏ",
   targetCoin :10000, 
-  fundCoin: 5000 },
+  fundCoin: 9000 },
 
   {title : "두2번째 프로젝트 제목", 
   editor : "창작자2", 
@@ -288,7 +306,7 @@ const NewProject = [
   catogory : "소품", 
   description : "세3번째 프로젝트입니다.아아ㅏ",
   targetCoin :100022, 
-  fundCoin: 50034 },
+  fundCoin: 500 },
 
   {title : "첫4번째 프로젝트 제목", 
   editor : "창작자1", 
@@ -348,14 +366,14 @@ const EncoreProject = [
   catogory : "생활",
   description : "첫번째 프로젝트입니다.아아ㅏ",
   targetCoin :10000, 
-  fundCoin: 5000 },
+  fundCoin: 7000 },
 
   {title : "두2번째 프로젝트 제목", 
   editor : "창작자2", 
   Dday : 150, 
   catogory : "건강", 
   description : "두번째 프로젝트입니다.아아ㅏ",
-  targetCoin :1000, 
+  targetCoin :10000, 
   fundCoin: 500 },
   {title : "세번째 프로젝트 제목", 
   editor : "창작자3", 
