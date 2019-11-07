@@ -16,14 +16,26 @@ import { Grid} from 'semantic-ui-react'
 const Footer = () => (
     <div>
         <Grid columns={3} padded='horizontally'>
-            <Grid.Column>
-            <br />
-                <Link href="/Notices"><a>공지사항</a></Link><br /><br />
-                <Link href="/TermsOfUse"><a>창작자 가이드</a></Link><br /><br />
-                <Link href="/Privacy"><a>개인정보 처리방침</a></Link><br /><br />
-            </Grid.Column>
-        </Grid>
-  </div>
+                <Grid.Column>
+
+                <Link as='/공지사항' href={{ pathname: '/main', query: { id: 'notices', title: '공지사항' } }}>
+                    <a>공지사항</a>
+                </Link>
+                <br></br>
+
+                <Link as='/창작자 가이드' href={{ pathname: '/main', query: { id: 'termsOfUse', title: '창작자 가이드' } }}>
+                    <a>창작자 가이드</a>
+                </Link>
+                <br></br>
+                <Link as='/개인정보 처리방침' href={{ pathname: '/main', query: { id: 'privacy', title: '개인정보 처리방침' } }}>
+                    <a>개인정보 처리방침</a>
+                </Link>
+
+    
+                 
+                </Grid.Column > 
+                </Grid >
+                </div>
 
 );
 

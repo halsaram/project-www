@@ -7,7 +7,12 @@ useStaticRendering(isServer)
 export class Store {
     @observable lastUpdate = 0
     @observable light = false
-    @observable logginted = false
+    @observable loginted = true // true = 로그인x, false = 로그인o
+    @observable user = []
+
+    @action setLoginted = (_loginted) => {
+        this.loginted = _loginted 
+    }
 
     hydrate(serializedStore) {
         this.lastUpdate =

@@ -3,17 +3,19 @@ pragma solidity ^0.4.6;
 contract UserCrud {
 
   struct UserStruct {
+    address myAddr;
     string userEmail;
-    uint userAge;
+    string userName;
     int userPoint;
     uint index;
   }
   
   mapping(address => UserStruct) private userStructs;
+  mapping(string => UserStruct) private addrStructs;
   address[] private userIndex;
 
-  event LogNewUser   (address indexed userAddress, uint index, string userEmail, uint userAge);
-  event LogUpdateUser(address indexed userAddress, uint index, string userEmail, uint userAge);
+  event LogNewUser   (address indexed userAddress, uint index, string userEmail, string userName);
+  event LogUpdateUser(address indexed userAddress, uint index, string userEmail, string userName);
   event LogDeleteUser(address indexed userAddress, uint index);
   
   function isUser(address userAddress)
@@ -25,24 +27,34 @@ contract UserCrud {
     return (userIndex[userStructs[userAddress].index] == userAddress);
   }
 
+  function isMyaddr(string userEmail)
+    public 
+    constant
+    returns(bool isIndeed) 
+  {
+    if(userIndex.length == 0) return false;
+    return (userIndex[userStructs[addrStructs[userEmail].myAddr].index] == addrStructs[userEmail].myAddr);
+  }
+
   function insertUser(
     address userAddress, 
     string userEmail, 
-    uint    userAge,
+    string userName,
     int    userPoint) 
     public
     returns(uint index)
   {
-    if(isUser(userAddress)) throw; 
+    if(isUser(userAddress)) throw;
+    addrStructs[userEmail].myAddr = userAddress;
     userStructs[userAddress].userEmail = userEmail;
-    userStructs[userAddress].userAge   = userAge;
+    userStructs[userAddress].userName   = userName;
     userStructs[userAddress].userPoint   = userPoint;
     userStructs[userAddress].index     = userIndex.push(userAddress)-1;
     LogNewUser(
         userAddress, 
         userStructs[userAddress].index, 
         userEmail, 
-        userAge);
+        userName);
     return userIndex.length-1;
   }
 
@@ -63,22 +75,32 @@ contract UserCrud {
         keyToMove, 
         rowToDelete, 
         userStructs[keyToMove].userEmail, 
-        userStructs[keyToMove].userAge);
+        userStructs[keyToMove].userName);
     return rowToDelete;
   }
   
   function getUser(address userAddress)
     public 
     constant
-    returns(string userEmail, uint userAge, int userPoint, uint index)
+    returns(address myAddr, string userEmail, string userName, int userPoint, uint index)
   {
     if(!isUser(userAddress)) throw; 
     return(
-      userStructs[userAddress].userEmail, 
-      userStructs[userAddress].userAge, 
+      addrStructs[userStructs[userAddress].userEmail].myAddr,
+      userStructs[userAddress].userEmail,
+      userStructs[userAddress].userName, 
       userStructs[userAddress].userPoint, 
       userStructs[userAddress].index);
-  } 
+  }
+
+  function getMyaddr(string userEmail)
+    public 
+    constant
+    returns(address myAddr)
+  {
+    if(!isMyaddr(userEmail)) throw; 
+    return addrStructs[userEmail].myAddr;
+  }
   
   function updateUserEmail(address userAddress, string userEmail) 
     public
@@ -90,21 +112,21 @@ contract UserCrud {
       userAddress, 
       userStructs[userAddress].index,
       userEmail, 
-      userStructs[userAddress].userAge);
+      userStructs[userAddress].userName);
     return true;
   }
   
-  function updateUserAge(address userAddress, uint userAge) 
+  function updateUserAge(address userAddress, string userName) 
     public
     returns(bool success) 
   {
     if(!isUser(userAddress)) throw; 
-    userStructs[userAddress].userAge = userAge;
+    userStructs[userAddress].userName = userName;
     LogUpdateUser(
       userAddress, 
       userStructs[userAddress].index,
       userStructs[userAddress].userEmail, 
-      userAge);
+      userName);
     return true;
   }
   

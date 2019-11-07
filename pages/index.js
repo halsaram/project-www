@@ -10,8 +10,14 @@
  * 최종수정내용	  : import react 추가
 **************************************************************************************/
 import React, {Component} from 'react'
+<<<<<<< HEAD
 import Page from '../components/Page'
 import { Grid, Segment } from 'semantic-ui-react'
+=======
+import { inject, observer } from 'mobx-react';
+
+import Page from '../components/Page'
+>>>>>>> d6eecc99347f86adb866a3c309165c3f160c298f
 import Main_Banner from './main/Main_Banner'
 import MainList from './main/MainList'
 import CatoList from './main/CatoList'
@@ -76,12 +82,17 @@ const Contents = (props) => (
 );
 
 
+
+@inject('postStore') @observer
 export default class extends Component {
-  static getInitialProps ({ query: { id, title } }) {
-    return { id, title }
+  static async getInitialProps({ mobxStore, query }) {
+    await mobxStore.postStore.fetch(query.id);
+    return { post: mobxStore.postStore.post };
   }
 
-  render () {  
+  render () {
+    const { post } = this.props;
+    console.log(this.props);
     return (
       <Page title={this.props.title} >
         <Contents {...this.props}/>

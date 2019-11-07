@@ -1,34 +1,29 @@
-import App from 'next/app'
-
-import { fetchInitialStoreState, Store } from '../store'
+import React from 'react';
+import App, { Container } from 'next/app';
 import { Provider } from 'mobx-react'
 
+import initializeStore from '../lib/mobx/stores';
 import Web3Container from '../lib/web3/Web3Container'
 
-class MyMobxApp extends App {
-    state = {
-        store: new Store(),
-    }
-
-    // Fetching serialized(JSON) store state
+class CustomApp extends App {
     static async getInitialProps(appContext) {
-        const appProps = await App.getInitialProps(appContext)
-        const initialStoreState = await fetchInitialStoreState()
-
+        const mobxStore = initializeStore();
+        appContext.ctx.mobxStore = mobxStore;
+        const appProps = await App.getInitialProps(appContext);
         return {
             ...appProps,
-            initialStoreState,
-        }
+            initialMobxState: mobxStore,
+        };
     }
 
-    // Hydrate serialized state to store
-    static getDerivedStateFromProps(props, state) {
-        state.store.hydrate(props.initialStoreState)
-        return state
+    constructor(props) {
+        super(props);
+        const isServer = typeof window === 'undefined';
+        this.mobxStore = isServer ? props.initialMobxState : initializeStore(props.initialMobxState);
     }
 
     render() {
-        const { Component, pageProps } = this.props
+        const { Component, pageProps } = this.props;
         return (
             <Web3Container
                 renderLoading={() => (
@@ -38,12 +33,14 @@ class MyMobxApp extends App {
                     </Provider>
                 )}
                 render={({ web3, accounts, contract, coinbase }) => (
-                    <Provider store={this.state.store} accounts={accounts} contract={contract} web3={web3} coinbase={coinbase}>
-                        <Component {...pageProps} />
+                    <Provider {...this.mobxStore} accounts={accounts} contract={contract} web3={web3} coinbase={coinbase}>
+                        <Container>
+                            <Component {...pageProps} />
+                        </Container>
                     </Provider>
                 )}
             />
         )
     }
 }
-export default MyMobxApp
+export default CustomApp
