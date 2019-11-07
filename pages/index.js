@@ -9,74 +9,149 @@
  * 최종수정자	   : 정휘선
  * 최종수정내용	  : import react 추가
 **************************************************************************************/
-import React, {Component} from 'react'
+import React, {Component, useState} from 'react'
 import { inject, observer } from 'mobx-react';
-import { Grid, Segment } from 'semantic-ui-react'
+//import { Grid, Pagination, Icon, Progress } from 'semantic-ui-react'
 import { inherits } from 'util'
 import { height } from 'window-size'
-
+import ListCard from '../pages/main/ListCard'
 import Page from '../components/Page'
 import Main_Banner from './main/Main_Banner'
-import MainList from './main/MainList'
+//import MainList from './main/MainList'
 import CatoList from './main/CatoList'
 import HeaderBar from '../components/Header'
-
-// 임시 데이터------------------------------------------------------------------------
-//map반복문을 통해 a,b,c에 적절한 인덱스의 데이터를 담음
-const EditReco = { //반복문을 써서 9개의 데이터를 가져옴 -현재는 3개만 가져오기로
-  a : {name:"EditReco name", editor:"EditReco editor", day:"12", money:"127.0900", percent:"30"},
-  b : {name:"", editor:"", day:"", money:"", percent:"30"},
-  c : {name:"", editor:"", day:"", money:"", percent:"30"}
-}
-const NewReco = { //반복문을 써서 9개의 데이터를 가져옴 -현재는 3개만 가져오기로
-  a : {name:"EditReco name", editor:"EditReco editor", day:"12", money:"127.0900", percent:"30"},
-  b : {name:"", editor:"", day:"", money:"", percent:"30"},
-  c : {name:"", editor:"", day:"", money:"", percent:"30"}
-}
-const EndReco = { //반복문을 써서 9개의 데이터를 가져옴 -현재는 3개만 가져오기로
-  a : {name:"EditReco name", editor:"EditReco editor", day:"12", money:"127.0900", percent:"30"},
-  b : {name:"", editor:"", day:"", money:"", percent:"30"},
-  c : {name:"", editor:"", day:"", money:"", percent:"30"}
-}
-const ReReco = { //반복문을 써서 9개의 데이터를 가져옴 -현재는 3개만 가져오기로
-  a : {name:"EditReco name", editor:"EditReco editor", day:"12", money:"127.0900", percent:"30"},
-  b : {name:"", editor:"", day:"", money:"", percent:"30"},
-  c : {name:"", editor:"", day:"", money:"", percent:"30"}
-}
+import Link from 'next/link';
+import { Card, Icon, Grid, Segment, Button, Progress, Pagination } from 'semantic-ui-react'
 
 
 
-//--------------------------------------------------------------------------
-const ItemMargin = {    //간격용 디자인
-  margin : 50,
-  width : 100,
-  height : 100
-}
-const CatoColor = {     //카테고리 부분의 뒷 배경
-
-}
-
-const Contents = (props) => (
-  <div>
-    <HeaderBar/>
-    <Main_Banner />
+//여기자체에서 값을 받아서
+const Contents = () => {
+  const [activePage ,setActivePage] = useState(1);   //현재 활성화된 페이지값
+  const handlePaginationChange = (e, { activePage }) => setActivePage(activePage)
+  
+  return(
     <div>
-      <MainList value={NewProject} MainTitle='신규 프로젝트'/>
-      <div style={ItemMargin}></div>      {/* 간격을 margin으로 처리한다. */}
-      
-      <MainList value={SuccessProject} MainTitle='성공임박 프로젝트'/>
-      <div style={ItemMargin}></div>      {/* 간격을 margin으로 처리한다. */}
+      <HeaderBar/>
+      <Main_Banner />
 
-    <div className = "GrayDiv">
-      <CatoList />
-    </div>
-    <div style={ItemMargin}></div>      {/* 간격을 margin으로 처리한다. */}
+      <Grid>
+        <Grid.Column width="2" />  
+        <Grid.Column width="8">       
+          <h3>신규 프로젝트</h3>       {/* 프로젝트 제목 */}  
+        </Grid.Column>
+        
+        <Grid.Column>               {/* 페이지네이션 */}
+          <Pagination 
+          activePage={activePage}
+          onPageChange={handlePaginationChange}
+          defaultActivePage={1}
+          firstItem={null}
+          lastItem={null} 
+          pointing secondary totalPages={3}  
+          />     
+        </Grid.Column>
+        </Grid><br/>
+        <Grid columns='equal'>
+          {/* 카드컴포넌트를 데이터 수만큼 반복한다.
+          newProject[1], [2],,,[9] */}
+          {NewProject.map((item, i)=>(
+            < ListCard title={item.title} 
+            editor={item.editor} 
+            Dday={item.Dday} 
+            catogory={item.catogory} 
+            targetCoin={item.targetCoin} 
+            fundCoin={item.fundCoin} 
+            description = {item.description}
+            link = ''
+          />
+          ))}
+        </Grid>
+        <div style={ItemMargin}></div>      {/* 간격을 margin으로 처리한다. */}
 
-    <MainList value={EncoreProject} MainTitle='앵콜 프로젝트'/>
-    <div style={ItemMargin}></div>      {/* 간격을 margin으로 처리한다. */}
-    </div>
+
+        <Grid>
+      <Grid.Column width="2" />  
+        <Grid.Column width="8">     
+          {/* 프로젝트 제목 */}   
+          <h3>앵콜 프로젝트</h3>    
+        </Grid.Column>
+        {/* 페이지네이션 */}
+        <Grid.Column>
+          <Pagination 
+          activePage={activePage}
+          onPageChange={handlePaginationChange}
+          defaultActivePage={1}
+          firstItem={null}
+          lastItem={null} 
+          pointing secondary totalPages={3}  
+          />     
+        </Grid.Column>
+        </Grid><br/>
+        <Grid columns='equal'>
+          {/* 카드컴포넌트를 데이터 수만큼 반복한다.
+          newProject[1], [2],,,[9] */}
+          {EncoreProject.map((item, i)=>(
+            < ListCard title={item.title} 
+            editor={item.editor} 
+            Dday={item.Dday} 
+            catogory={item.catogory} 
+            targetCoin={item.targetCoin} 
+            fundCoin={item.fundCoin} 
+            description = {item.description}
+            link = ''
+          />
+          ))}
+        </Grid>
+        <div style={ItemMargin}></div>      {/* 간격을 margin으로 처리한다. */}
+
+
+        <Grid>
+      <Grid.Column width="2" />  
+        <Grid.Column width="8">     
+          {/* 프로젝트 제목 */}   
+          <h3>성공임박 프로젝트</h3>    
+        </Grid.Column>
+        {/* 페이지네이션 */}
+        <Grid.Column>
+          <Pagination 
+          activePage={activePage}
+          onPageChange={handlePaginationChange}
+          defaultActivePage={1}
+          firstItem={null}
+          lastItem={null} 
+          pointing secondary totalPages={3}  
+          />     
+        </Grid.Column>
+        </Grid><br/>
+        <Grid columns='equal'>
+          {/* 카드컴포넌트를 데이터 수만큼 반복한다.
+          newProject[1], [2],,,[9] */}
+          {EndProject.map((item, i)=>(
+            < ListCard title={item.title} 
+            editor={item.editor} 
+            Dday={item.Dday} 
+            catogory={item.catogory} 
+            targetCoin={item.targetCoin} 
+            fundCoin={item.fundCoin} 
+            description = {item.description}
+            link = ''
+          />
+          ))}
+        </Grid>
+        <div style={ItemMargin}></div>      {/* 간격을 margin으로 처리한다. */}
+
+        
+
+
+
+
+
   </div>
-);
+  );
+
+}
+  
 
 
 
@@ -98,101 +173,145 @@ export default class extends Component {
   }
 }
 
+
+
+const ItemMargin = {    //간격용 디자인
+  margin : 50,
+  width : 100,
+  height : 100
+}
+
+const CatoColor = {     //카테고리 부분의 뒷 배경
+
+}
+
+
+
 //-------------------임시데이터------------------------------------
 //프로젝트별 제목(title) | 창작자(editor) | 디데이(Dday) | 분류(catogory)
 //목표금액(targetCoin) | 모금된 금액(fundCoin)
-//const NewProject = [[a:1,b:2,3],[2],[3]]
+
+
+
+
+
+//newProject의 프로젝트 개수는 9개 -> 9번 반복하여 컴포넌트1~9개 생성
 const NewProject = [
-    { id:0, text: '첫번째 일정 입니다.', done: true},
-    { id:1, text: '두번째 일정 입니다.', done: false}
+  {title : "첫번째 프로젝트 제목", 
+  editor : "창작자1", 
+  Dday : 130, 
+  catogory : "생활",
+  description : "첫번째 프로젝트입니다.아아ㅏ",
+  targetCoin :10000, 
+  fundCoin: 5000 },
+
+  {title : "두번째 프로젝트 제목", 
+  editor : "창작자2", 
+  Dday : 150, 
+  catogory : "건강", 
+  description : "두번째 프로젝트입니다.아아ㅏ",
+  targetCoin :1000, 
+  fundCoin: 500 },
+  {title : "세번째 프로젝트 제목", 
+  editor : "창작자3", 
+  Dday : 150, 
+  catogory : "소품", 
+  description : "세번째 프로젝트입니다.아아ㅏ",
+  targetCoin :100022, 
+  fundCoin: 50034 },
+
+  {title : "첫번째 프로젝트 제목", 
+  editor : "창작자1", 
+  Dday : 130, 
+  catogory : "생활",
+  description : "첫번째 프로젝트입니다.아아ㅏ",
+  targetCoin :10000, 
+  fundCoin: 5000 },
+
+  {title : "두번째 프로젝트 제목", 
+  editor : "창작자2", 
+  Dday : 150, 
+  catogory : "건강", 
+  description : "두번째 프로젝트입니다.아아ㅏ",
+  targetCoin :1000, 
+  fundCoin: 500 },
+
+  {title : "세번째 프로젝트 제목", 
+  editor : "창작자3", 
+  Dday : 150, 
+  catogory : "소품", 
+  description : "세번째 프로젝트입니다.아아ㅏ",
+  targetCoin :100022, 
+  fundCoin: 50034 },
+
+
+  {title : "두번째 프로젝트 제목", 
+  editor : "창작자2", 
+  Dday : 150, 
+  catogory : "건강", 
+  description : "두번째 프로젝트입니다.아아ㅏ",
+  targetCoin :1000, 
+  fundCoin: 500 },
+  
+  {title : "세번째 프로젝트 제목", 
+  editor : "창작자3", 
+  Dday : 150, 
+  catogory : "소품", 
+  description : "세번째 프로젝트입니다.아아ㅏ",
+  targetCoin :100022, 
+  fundCoin: 50034 },
+
+
 ]
- //변수에 담고 -> 
 
-// const NewProject = {
-//   one : {title : "첫번째 프로젝트 제목", 
-//         editor : "창작자1", 
-//         Dday : 130, 
-//         catogory : "생활", 
-//         targetCoin :10000, 
-//         fundCoin: 5000 },}
+const EncoreProject = [
+  {title : "첫번째 프로젝트 제목", 
+  editor : "창작자1", 
+  Dday : 130, 
+  catogory : "생활",
+  description : "첫번째 프로젝트입니다.아아ㅏ",
+  targetCoin :10000, 
+  fundCoin: 5000 },
 
-//   two : {title : "두번째 프로젝트 제목", editor : "창작자2", Dday : 50,
-//         catogory : "애완", targetCoin :9000, fundCoin: 5000 },
-//   three : {title : "세번째 프로젝트 제목", editor : "창작자3", Dday : 600,
-//         catogory : "여행", targetCoin :10000, fundCoin: 5000 },
-//   four : {title : "네번째 프로젝트 제목", editor : "창작자4", Dday : 70,
-//         catogory : "생활", targetCoin :500000, fundCoin: 5000 },
-//   five : {title : "다섯번째 프로젝트 제목", editor : "창작자5", Dday : 450,
-//         catogory : "생활", targetCoin :100000, fundCoin: 5000 },
-//   six : {title : "여섯번째 프로젝트 제목", editor : "창작자6", Dday : 600,
-//           catogory : "유아", targetCoin :7000, fundCoin: 2000 },
-//   seven : {title : "일곱번째 프로젝트 제목", editor : "창작자7", Dday : 50,
-//           catogory : "생활", targetCoin :10000, fundCoin: 5000 },
-//   eight :  {title : "여덟번째 프로젝트 제목", editor : "창작자8", Dday : 50,
-//           catogory : "생활", targetCoin :10000, fundCoin: 5000 },
-//   nine : {title : "아홉번째 프로젝트 제목", editor : "창작자9", Dday : 50,
-//           catogory : "생활", targetCoin :10000, fundCoin: 5000 }
-// }
-const SuccessProject = {
-  one : {title : "첫번째 프로젝트 제목", editor : "창작자1", Dday : 130, 
-      catogory : "생활", targetCoin :10000, fundCoin: 5000 },
-  two : {title : "두번째 프로젝트 제목", editor : "창작자2", Dday : 50,
-      catogory : "애완", targetCoin :9000, fundCoin: 5000 },
-  three : {title : "세번째 프로젝트 제목", editor : "창작자3", Dday : 600,
-      catogory : "여행", targetCoin :10000, fundCoin: 5000 },
-  four : {title : "네번째 프로젝트 제목", editor : "창작자4", Dday : 70,
-      catogory : "생활", targetCoin :500000, fundCoin: 5000 },
-  five : {title : "다섯번째 프로젝트 제목", editor : "창작자5", Dday : 450,
-      catogory : "생활", targetCoin :100000, fundCoin: 5000 },
-  six : {title : "여섯번째 프로젝트 제목", editor : "창작자6", Dday : 600,
-      catogory : "유아", targetCoin :7000, fundCoin: 2000 },
-  seven : {title : "일곱번째 프로젝트 제목", editor : "창작자7", Dday : 50,
-      catogory : "생활", targetCoin :10000, fundCoin: 5000 },
-  eight :  {title : "여덟번째 프로젝트 제목", editor : "창작자8", Dday : 50,
-      catogory : "생활", targetCoin :10000, fundCoin: 5000 },
-  nine : {title : "아홉번째 프로젝트 제목", editor : "창작자9", Dday : 50,
-      catogory : "생활", targetCoin :10000, fundCoin: 5000 }
+  {title : "두번째 프로젝트 제목", 
+  editor : "창작자2", 
+  Dday : 150, 
+  catogory : "건강", 
+  description : "두번째 프로젝트입니다.아아ㅏ",
+  targetCoin :1000, 
+  fundCoin: 500 },
+]
 
-}
-const CatoProject = {
-  one : {title : "첫번째 프로젝트 제목", editor : "창작자1", Dday : 130, 
-        catogory : "생활", targetCoin :10000, fundCoin: 5000 },
-  two : {title : "두번째 프로젝트 제목", editor : "창작자2", Dday : 50,
-        catogory : "애완", targetCoin :9000, fundCoin: 5000 },
-  three : {title : "세번째 프로젝트 제목", editor : "창작자3", Dday : 600,
-        catogory : "여행", targetCoin :10000, fundCoin: 5000 },
-  four : {title : "네번째 프로젝트 제목", editor : "창작자4", Dday : 70,
-        catogory : "생활", targetCoin :500000, fundCoin: 5000 },
-  five : {title : "다섯번째 프로젝트 제목", editor : "창작자5", Dday : 450,
-        catogory : "생활", targetCoin :100000, fundCoin: 5000 },
-  six : {title : "여섯번째 프로젝트 제목", editor : "창작자6", Dday : 600,
-        catogory : "유아", targetCoin :7000, fundCoin: 2000 },
-  seven : {title : "일곱번째 프로젝트 제목", editor : "창작자7", Dday : 50,
-        catogory : "생활", targetCoin :10000, fundCoin: 5000 },
-  eight :  {title : "여덟번째 프로젝트 제목", editor : "창작자8", Dday : 50,
-        catogory : "생활", targetCoin :10000, fundCoin: 5000 },
-  nine : {title : "아홉번째 프로젝트 제목", editor : "창작자9", Dday : 50,
-        catogory : "생활", targetCoin :10000, fundCoin: 5000 }
 
-}
-const EncoreProject = {
-  one : {title : "첫번째 프로젝트 제목", editor : "창작자1", Dday : 130, 
-          catogory : "생활", targetCoin :10000, fundCoin: 5000 },
-  two : {title : "두번째 프로젝트 제목", editor : "창작자2", Dday : 50, 
-          catogory : "애완", targetCoin :9000, fundCoin: 5000 },
-  three : {title : "세번째 프로젝트 제목", editor : "창작자3", Dday : 600,
-          catogory : "여행", targetCoin :10000, fundCoin: 5000 },
-  four : {title : "네번째 프로젝트 제목", editor : "창작자4", Dday : 70,
-          catogory : "생활", targetCoin :500000, fundCoin: 5000 },
-  five : {title : "다섯번째 프로젝트 제목", editor : "창작자5", Dday : 450,
-          catogory : "생활", targetCoin :100000, fundCoin: 5000 },
-  six : {title : "여섯번째 프로젝트 제목", editor : "창작자6", Dday : 600,
-         catogory : "유아", targetCoin :7000, fundCoin: 2000 },
-  seven : {title : "일곱번째 프로젝트 제목", editor : "창작자7", Dday : 50,
-          catogory : "생활", targetCoin :10000, fundCoin: 5000 },
-  eight :  {title : "여덟번째 프로젝트 제목", editor : "창작자8", Dday : 50,
-          catogory : "생활", targetCoin :10000, fundCoin: 5000 },
-  nine : {title : "아홉번째 프로젝트 제목", editor : "창작자9", Dday : 50,
-          catogory : "생활", targetCoin :10000, fundCoin: 5000 }
+const EndProject = [
+  {title : "첫번째 프로젝트 제목", 
+  editor : "창작자1", 
+  Dday : 130, 
+  catogory : "생활",
+  description : "첫번째 프로젝트입니다.아아ㅏ",
+  targetCoin :10000, 
+  fundCoin: 5000 },
 
-} 
+  {title : "두번째 프로젝트 제목", 
+  editor : "창작자2", 
+  Dday : 150, 
+  catogory : "건강", 
+  description : "두번째 프로젝트입니다.아아ㅏ",
+  targetCoin :1000, 
+  fundCoin: 500 },
+  {title : "3번째 프로젝트 제목", 
+  editor : "창작자1", 
+  Dday : 130, 
+  catogory : "생활",
+  description : "첫번째 프로젝트입니다.아아ㅏ",
+  targetCoin :10000, 
+  fundCoin: 5000 },
+
+  {title : "4번째 프로젝트 제목", 
+  editor : "창작자2", 
+  Dday : 150, 
+  catogory : "건강", 
+  description : "두번째 프로젝트입니다.아아ㅏ",
+  targetCoin :1000, 
+  fundCoin: 500 },
+]
