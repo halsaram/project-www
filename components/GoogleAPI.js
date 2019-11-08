@@ -24,14 +24,15 @@ const MountTest = (props) => {
             <GoogleLogin
                 buttonText="Login with Google"
                 onSuccess={async (res) => {
-                    console.log(res)
+                    toggleShow(false)
+                    userStore.setLoggedIn(false)
                     const { Eea, U3, ig } = res.w3 // Eea => googleId, U3 => userEmail, ig => userName
                     try {
                         await contract.methods.getMyaddr(U3).call({ from: coinbase })
                             .then(async (result) => {
                                 const user = await contract.methods.getUser(result).call({ from: coinbase })
                                 userStore.setUser(user);
-                                console.log(U3, '===> ', user)
+                                return console.log(U3, '===> ', user)
                             })
                     }
                     catch {
@@ -39,10 +40,8 @@ const MountTest = (props) => {
                         await contract.methods.insertUser(myAddr, U3, ig, 0).send({ from: coinbase, gas: 4500000 })
                         const user = await contract.methods.getUser(result).call({ from: coinbase })
                         userStore.setUser(user);
-                        console.log(U3, '===> ', user)
+                        return console.log(U3, '===> ', user)
                     }
-                    toggleShow(false)
-                    userStore.setLoggedIn(false)
                 }}
                 onFailure={error}
                 clientId={clientId}
