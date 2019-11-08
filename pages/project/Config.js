@@ -58,7 +58,6 @@ const InsertConfig = () => {
 	const [etc, setEtc] = useLocalstorage('etcChecked','')
 	const [delivery, setDelivery] = useLocalstorage('deliveryChecked','')	//배송여부 체크시 입력이 가능한 변수
 	const [limit, setLimit] = useLocalstorage('limitChecked','')	//제한수량 체크시 입력이 가능한 변수
-
 	const [sum, setSum] = useLocalstorage('금액', '') 	//금액 입력칸 데이터 
 	const [order, setorder] = useLocalstorage('정렬 순서', '')	//정렬 순서 입력칸 데이터
 	const [rewardName, setRewardname] = useLocalstorage('리워드명', '')	//리워드명 입력칸 데이터

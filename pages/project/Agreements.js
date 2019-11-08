@@ -23,6 +23,14 @@ const ProjectLink = (props) => (
 
     
 )
+
+const deletelocal = () => {
+
+    localStorage.removeItem('금액');
+
+
+}
+
 const textMargin = {
     margin : 13
 }
@@ -96,11 +104,11 @@ const Agreements = () => {
                         checked7 && true ?
                     <Link as='/프로젝트개요' href={{ pathname: '/project', query: { id: 'summary', title: '프로젝트개요' } }}>
 
-                        <Button onClick={(e)=>{console.log("개요로 넘어감",e)}} type='submit' fluid size="large">
+                        <Button onClick={deletelocal} type='submit' fluid size="large">
                             <a>프로젝트 진행하기</a>
                             </Button>
                     </Link>
-                    :<Button type='submit' fluid size="large" disabled>프로젝트 진행하기</Button>}
+                    :<Button  type='submit' fluid size="large" disabled>프로젝트 진행하기</Button>}
                     
                 </Grid.Row>
 
