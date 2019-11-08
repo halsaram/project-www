@@ -26,6 +26,7 @@ const ProjectLink = (props) => (
 
 const deletelocal = () => {
 
+    localStorage.removeItem('금액');
 
 
 }
@@ -107,7 +108,7 @@ const Agreements = () => {
                             <a>프로젝트 진행하기</a>
                             </Button>
                     </Link>
-                    :<Button type='submit' fluid size="large" disabled>프로젝트 진행하기</Button>}
+                    :<Button  type='submit' fluid size="large" disabled>프로젝트 진행하기</Button>}
                     
                 </Grid.Row>
 
