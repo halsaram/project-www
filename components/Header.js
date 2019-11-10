@@ -7,7 +7,7 @@ const HeaderBar =()=> {
   const [actives, setActives] = useState('');
   return(
     <div>
-      <Menu fluid widths={4} inverted compact>
+      <Menu fixed='top' fluid widths={4} inverted compact>
           <Link as='/' href={{ pathname: '/', query: { id: 'home', title: '홈' } }}>
             <Menu.Item name='홈' link onClick={()=>setActives('홈')} active={actives === '홈'} />
           </Link>
