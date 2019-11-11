@@ -146,6 +146,7 @@ class Layout extends React.Component {
 
          <Grid.Column>
             <Input icon='search' placeholder='Search...' />
+            
             <GoogleAPI />
           </Grid.Column>
         </Grid>
