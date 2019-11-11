@@ -20,7 +20,7 @@ const Account = () => (
 	<div>
 		{/* 프로젝트의 헤더 부분(제목작성+메뉴) */}
 		<ProjectHeader/>
-		<ProjectLink />
+		<ProjectLink menus="account"/>
 		<br/><br/>
 		
 		{/* 프로젝트 내용 작성 부분 */}

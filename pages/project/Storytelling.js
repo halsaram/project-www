@@ -18,7 +18,6 @@ import ProjectHeader from './projectHeader'
 
 
 
-
 class Storytelling extends Component {
 	
 	state = {   image: '',   video: '',  descriptionImage: '', summary: '', //사진|비디오|프로젝트설명사진|프로젝트 요약
@@ -57,9 +56,8 @@ class Storytelling extends Component {
 				<Form onSubmit={this.handleSubmit}>
 					{/* 프로젝트의 헤더 부분(제목작성+메뉴) */}
 					<ProjectHeader />
-					<ProjectLink />
+					<ProjectLink menus="storytelling" />
 					<br/><br/>
-
 					{/* 프로젝트의 소제목을 배치한 부분 */}
 					<Grid columns='equal'>
 						<Grid.Column />
@@ -119,7 +117,7 @@ class Storytelling extends Component {
 									</Grid.Row>
 									<p>프로젝트 요약<span style={fontSize}>
 										<br/>서포터가 제품의 장점이나 특징을 잘 이해하도록 간략하게 소개하세요</span></p>
-										<TextArea placeholder='100자 이내로 작성하시오' style={{ minHeight: 150 }} name="summary" id="summary" onChange={this.handleChange}/>
+										<TextArea placeholder='100자 이내로 작성하시오' style={{ minHeight: 150 }} name="summary" id="summary" onChange={this.handleChange} />
 			
 								</Grid>
 								  <br/><br/>

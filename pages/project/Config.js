@@ -253,7 +253,7 @@ const Config = () => (
 	<div>
 		{/* 프로젝트의 헤더 부분(제목작성+메뉴) */}
 		<ProjectHeader />
-		<ProjectLink />
+		<ProjectLink menus="config"/>
 		<br /><br />
 
 		{/* 프로젝트의 소제목을 배치한 부분 */}

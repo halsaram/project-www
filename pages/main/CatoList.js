@@ -49,8 +49,7 @@ const CatoList =(props)=> {
         </div>
        <Grid.Row columns={12} centered>
           <Grid.Column>
-            <Button style={styles1} color="black" inverted value="생활" onClick={handleChange}>
-            </Button>
+            <Button style={styles1} color="blue" inverted value="생활" onClick={handleChange} />
             <p style ={fontStyle}>생활</p>
           </Grid.Column>
            <Grid.Column>

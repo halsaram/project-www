@@ -15,59 +15,73 @@ import React, { Component, useState } from 'react'
 import { Menu, Segment, Grid, Button, Checkbox} from 'semantic-ui-react'
 
 
-// 페이지 메뉴링크바
-class ProjectLink extends Component {
-  state = { activeItem: 'home' }
-  handleItemClick = (e, { name }) => this.setState({ activeItem: name })
-        
-    render() { 
-      const { activeItem } = this.state 
-      return (
-        <div>
+const ProjectLink =(props)=> {
+  const [activeItem, setActiveItem] = useState('summary')
+  const handleItemClick = (e, {name}) => setActiveItem(name)
+ 
+
+  return(
+    <div>
           <Grid columns='equal'>
             <Grid.Row>
               <Menu tabular widths={5}>
-                <Menu.Item
-                name='Config'
-                active={activeItem === 'Config'}
-                onClick={this.handleItemClick}>
-                  <Checkbox label=" "/>
-                  <Link as='/프로젝트개요' href={{ pathname: '/project', query: { id: 'summary', title: '프로젝트개요' } }}>
-                    <a>프로젝트 개요</a>
-                  </Link>
-                </Menu.Item>
 
+              
+              {props.menus == "summary" ? 
+              <Menu.Item active >
+                <Link as='/프로젝트개요' href={{ pathname: '/project', query: { id: 'summary', title: '프로젝트개요' } }}>
+                  <a>프로젝트 개요</a>
+                </Link>
+              </Menu.Item>  :
+              <Menu.Item>
+                <Link as='/프로젝트개요' href={{ pathname: '/project', query: { id: 'summary', title: '프로젝트개요' } }}>
+                  <a>프로젝트 개요</a>
+                </Link>
+              </Menu.Item>
+            }
 
-              <Menu.Item
-              name='Summary'
-              active={activeItem === 'Summary'}
-              onClick={this.handleItemClick}>
-                <Checkbox label=" "/>
+              {props.menus == "config" ? 
+              <Menu.Item active >
+                <Link as='/프로젝트구성' href={{ pathname: '/project', query: { id: 'config', title: '프로젝트구성' } }}>
+                  <a>펀딩 및 선물 구성</a>
+                </Link>
+              </Menu.Item>  :
+              <Menu.Item>
                 <Link as='/프로젝트구성' href={{ pathname: '/project', query: { id: 'config', title: '프로젝트구성' } }}>
                   <a>펀딩 및 선물 구성</a>
                 </Link>
               </Menu.Item>
+            }
 
-              <Menu.Item
-              name='Storytelling'
-              active={activeItem === 'Storytelling'}
-              onClick={this.handleItemClick}>
-                <Checkbox label=" "/>
+
+            {props.menus == "storytelling" ? 
+              <Menu.Item active >
+                <Link as='/프로젝트스토리텔링' href={{ pathname: '/project', query: { id: 'storytelling', title: '프로젝트스토리텔링' } }}>
+                  <a>스토리텔링</a>
+                </Link>
+              </Menu.Item>  :
+              <Menu.Item>
                 <Link as='/프로젝트스토리텔링' href={{ pathname: '/project', query: { id: 'storytelling', title: '프로젝트스토리텔링' } }}>
                   <a>스토리텔링</a>
                 </Link>
               </Menu.Item>
+            }
 
-              <Menu.Item
-              name='계좌 설정'
-              active={activeItem === '계좌 설정'}
-              onClick={this.handleItemClick}>
-                <Checkbox label=" "/>
+            {props.menus == "account" ? 
+              <Menu.Item active >
+                <Link as='/프로젝트계좌' href={{ pathname: '/project', query: { id: 'account', title: '프로젝트계좌' } }}>
+                  <a>계좌 설정</a>
+                </Link>
+              </Menu.Item>  :
+              <Menu.Item>
                 <Link as='/프로젝트계좌' href={{ pathname: '/project', query: { id: 'account', title: '프로젝트계좌' } }}>
                   <a>계좌 설정</a>
                 </Link>
               </Menu.Item>
- 
+            }
+
+
+   
               <Menu.Menu position='right'>
                 <Button inverted color="blue"> 미리보기 </Button>             
               </Menu.Menu>
@@ -75,10 +89,74 @@ class ProjectLink extends Component {
           </Grid.Row>
         </Grid>
       </div>
-        
-      )
-    }
+
+  )
 }
+
+// 페이지 메뉴링크바
+// class ProjectLink extends Component {
+//   state = { activeItem: 'home' }
+//   handleItemClick = (e, { name }) => this.setState({ activeItem: name })
+        
+//     render() { 
+//       const { activeItem } = this.state 
+//       return (
+      //   <div>
+      //     <Grid columns='equal'>
+      //       <Grid.Row>
+      //         <Menu tabular widths={5}>
+      //           <Menu.Item
+      //           name='Config'
+      //           active={activeItem === 'Config'}
+      //           onClick={this.handleItemClick}>
+      //             <Checkbox label=" "/>
+      //             <Link as='/프로젝트개요' href={{ pathname: '/project', query: { id: 'summary', title: '프로젝트개요' } }}>
+      //               <a>프로젝트 개요</a>
+      //             </Link>
+      //           </Menu.Item>
+
+
+      //         <Menu.Item
+      //         name='Summary'
+      //         active={activeItem === 'Summary'}
+      //         onClick={this.handleItemClick}>
+      //           <Checkbox label=" "/>
+      //           <Link as='/프로젝트구성' href={{ pathname: '/project', query: { id: 'config', title: '프로젝트구성' } }}>
+      //             <a>펀딩 및 선물 구성</a>
+      //           </Link>
+      //         </Menu.Item>
+
+      //         <Menu.Item
+      //         name='Storytelling'
+      //         active={activeItem === 'Storytelling'}
+      //         onClick={this.handleItemClick}>
+      //           <Checkbox label=" "/>
+      //           <Link as='/프로젝트스토리텔링' href={{ pathname: '/project', query: { id: 'storytelling', title: '프로젝트스토리텔링' } }}>
+      //             <a>스토리텔링</a>
+      //           </Link>
+      //         </Menu.Item>
+
+      //         <Menu.Item
+      //         name='계좌 설정'
+      //         active={activeItem === '계좌 설정'}
+      //         onClick={this.handleItemClick}>
+      //           <Checkbox label=" "/>
+      //           <Link as='/프로젝트계좌' href={{ pathname: '/project', query: { id: 'account', title: '프로젝트계좌' } }}>
+      //             <a>계좌 설정</a>
+      //           </Link>
+      //         </Menu.Item>
+ 
+      //         <Menu.Menu position='right'>
+      //           <Button inverted color="blue"> 미리보기 </Button>             
+      //         </Menu.Menu>
+      //       </Menu>
+      //     </Grid.Row>
+      //   </Grid>
+      // </div>
+        
+//       )
+//     }
+// }
 
 
 export default ProjectLink
