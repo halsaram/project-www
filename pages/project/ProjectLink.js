@@ -12,7 +12,7 @@
 
 import Link from 'next/link';
 import React, { Component, useState } from 'react'
-import { Menu, Segment, Grid, Button, Checkbox} from 'semantic-ui-react'
+import { Menu, Segment, Grid, Button, Checkbox, Header, Image, Modal} from 'semantic-ui-react'
 
 
 const ProjectLink =(props)=> {
@@ -83,7 +83,21 @@ const ProjectLink =(props)=> {
 
    
               <Menu.Menu position='right'>
-                <Button inverted color="blue"> 미리보기 </Button>             
+              <Modal trigger={<Button color="blue" inverted>미리보기</Button>}>
+              {/* 미리보기 클릭시 생기는 팝업창 */}
+              <Modal.Header>프로젝트 모습</Modal.Header>
+              <Modal.Content image>
+                <Image wrapped size='tiny' src='https://react.semantic-ui.com/images/avatar/large/rachel.png' />
+                <Modal.Description>
+                  <Header>Default Profile Image</Header>
+                  <p>
+                    We've found the following gravatar image associated with your e-mail
+                    address.
+                  </p>
+                  <p>Is it okay to use this photo?</p>
+                </Modal.Description>
+              </Modal.Content>
+            </Modal>             
               </Menu.Menu>
             </Menu>
           </Grid.Row>

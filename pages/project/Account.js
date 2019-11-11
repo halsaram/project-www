@@ -15,7 +15,9 @@ import Link from 'next/link';
 import ProjectLink from './ProjectLink';
 import ProjectHeader from './projectHeader'
 import { Grid, Segment, Button } from 'semantic-ui-react'
-
+const buttonText={
+	color : "white"
+}
 const Account = () => (
 	<div>
 		{/* 프로젝트의 헤더 부분(제목작성+메뉴) */}
@@ -88,13 +90,15 @@ const Account = () => (
     		</Grid.Column>
     		<Grid.Column />
   		</Grid>
-		  <br/><br/><br/><br/>  
-		  {/* 정확한 수치전에 예비로 br태그 삽입 */}
-
-		{/*이전이동버튼*/}
-		  <Link as='/p' href='/project?id=storytelling&title=스토리텔링'>
-		  	<Button type='submit' size="large"><a>이전</a></Button>
+		 		{/* 이전페이지 이동 */}
+		<Link as='/p' href='/project?id=storytelling&title=스토리텔링'>
+			<Button color='blue' floated='left'><a style={buttonText}>이전</a></Button>
 		</Link>
+
+		{/*프로젝트 저장 버튼 */}
+			<Button color='blue' floated='right'><a style={buttonText}>제출</a></Button>
+		
+
 
 	</div>
 		

@@ -41,7 +41,9 @@ function useLocalstorage(key, initialValue) {
 
 }
 
-
+const buttonText = {
+	color : "white"
+}
 const Summary = () => {
 
 	// 카테고리항목변수
@@ -99,10 +101,18 @@ const Summary = () => {
 							<Grid>
 								<Grid.Column width={4}>
 									<Segment placeholder textAlign="center">
-										<Header icon>
-											<Icon name='camera retro' size="middle" />
-										</Header>
-										<Button primary>업로드</Button>
+									<Grid>
+										<Grid.Row>
+										<Grid.Column>
+											<Image src='https://react.semantic-ui.com/images/wireframe/image.png' size='small'/>
+										</Grid.Column>
+										</Grid.Row>
+										<Grid.Row>
+										<Grid.Column>
+											<Button color="blue">업로드</Button>
+										</Grid.Column>
+										</Grid.Row>									
+									</Grid>
 									</Segment>
 								</Grid.Column>
 
@@ -221,18 +231,11 @@ const Summary = () => {
 								</Grid.Column>
 							</Grid>
 						</Segment>
-						<Grid columns={1} centered>
-							<Grid.Row verticalAlign='top'>
-								<Grid.Column>
-									<Button color='blue' inverted type="submit">저장</Button>
-								</Grid.Column>
-							</Grid.Row>
-						</Grid>
 					</Grid.Column>
 					<Grid.Column />
 				</Grid>
 				<Link as='/p' href='/project?id=config&title=구성'>
-					<Button color='blue' floated='right'><a>다음</a></Button>
+					<Button color='blue' floated='right'><a style={buttonText}>다음</a></Button>
 				</Link>
 				<br /><br /><br /><br />
 			</Form>
