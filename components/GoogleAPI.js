@@ -19,9 +19,10 @@ const error = response => {
 
 
 const options = [
-    { key: 'user', text: '프로필 설정', icon: '프로필 설정' },
-    { key: 'settings', text: '내가 만든 프로젝트', icon: '내가 만든 프로젝트' },
-    { key: 'sign-out', text: '로그아웃', icon: '로그아웃 ' },
+    { key: 'user', text: '내 후원현황', icon: 'user' },
+    { key: 'user', text: '내가만든 프로젝트', icon: 'product hunt' },
+    { key: 'settings', text: '프로필 설정', icon: 'settings' },
+    { key: 'sign-out', text: '로그아웃', icon: 'sign out' },
 ]
 
 // import GoogleLogin, { GoogleLogout } from '../dist/google-login'
@@ -51,7 +52,7 @@ const MountTest = (props) => {
     const trigger = (
         <span>
             {console.log('user name =', username)}
-            <Icon disabled name='sign language' /> {username}
+            <Icon disabled name='big bars' /> {username}
         </span>
     )
 
@@ -88,7 +89,7 @@ const MountTest = (props) => {
         )
     } else {
         return (
-            userStore.user.userName === undefined ? "loding..." : <Dropdown
+            userStore.user.userName===undefined ? "loding..." : <Dropdown
                 trigger={trigger}
                 options={options}
                 pointing='top left'
