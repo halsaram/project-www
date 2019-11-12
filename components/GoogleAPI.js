@@ -88,14 +88,13 @@ const MountTest = (props) => {
     ]
 
     const onChange = (e, data) => {
-        console.log('data = ', data.value);
-        setselected(data.value)
+        console.log('data = ', data);
+        setselected(data)
     }
 
     const onSearchChange = (e, data) => {
         console.log('data11 =', data.searchQuery);
         setsearchQuery(data.searchQuery);
-
     }
 
    
