@@ -26,7 +26,24 @@ const ProjectLink = (props) => (
 
 const deletelocal = () => {
 
-    localStorage.removeItem('금액');
+    localStorage.removeItem('짧은제목');
+    localStorage.removeItem('리워드명');
+    localStorage.removeItem('금액');    
+
+    localStorage.removeItem('창작자소셜주소2');
+    localStorage.removeItem('창작자소셜주소1');
+    localStorage.removeItem('창작자명');
+    localStorage.removeItem('종료일');
+    localStorage.removeItem('카테고리');
+    localStorage.removeItem('목표금액');
+    localStorage.removeItem('프로젝트명');
+    localStorage.removeItem('기타');
+    localStorage.removeItem('제한수량');
+    localStorage.removeItem('배송료');
+    localStorage.removeItem('사이즈');
+    localStorage.removeItem('색상');
+    localStorage.removeItem('정렬 순서');
+    localStorage.removeItem('날짜');
 
 
 }
