@@ -5,9 +5,9 @@
  * 작성자		   : 이은미
  * 버전		      : 1.0.0
  * 생성일자		   : 2019-10-02
- * 최종수정일자 	: 2019-10-21
- * 최종수정자	   : 금정민
- * 최종수정내용	  : 데이터 코드 주석 추가 및 UI 적용
+ * 최종수정일자 	: 2019-11-12
+ * 최종수정자	   : 전새희
+ * 최종수정내용	  : ImageUpload 적용
 **************************************************************************************/
 
 import Link from 'next/link';
@@ -17,45 +17,110 @@ import ProjectLink from './ProjectLink'
 import ProjectHeader from './projectHeader' 
 
 
-const buttonText={
-	color : "white"
-}
-class Storytelling extends Component {
-	
-	state = {   image: '',   video: '',  descriptionImage: '', summary: '', //사진|비디오|프로젝트설명사진|프로젝트 요약
-				//상단변수제출변수
-				submittedImage: '',              submittedVideo: '',
-				submittedDescriptionImage: '',    submittedSummary: '' }
+class ImageUpload extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = { file: '', imagePreviewUrl: '' };
+	}
 
+	_handleSubmit(e) {
+		e.preventDefault();
+		// TODO: do something with -> this.state.file
+		console.log('handle uploading-', this.state.file);
+	}
 
-	//입력창에 들어간 정보를 실시간 확인			
-	handleChange = (e, { name, value }) => this.setState({ [name]: value })
+	_handleImageChange(e) {
+		e.preventDefault();
 
+		let reader = new FileReader();
+		let file = e.target.files[0];
 
-	//입력변수를 -> 제출 후 변수(submitted ~)에 저장
-	handleSubmit = () => {
-		const { image, video, descriptionImage, summary } = this.state
-		this.setState({ submittedImage: image, 
-			            submittedVideo: video, 
-						submittedDescriptionImage: descriptionImage, 
-						submittedSummary: summary })
+		reader.onloadend = () => {
+			this.setState({
+				file: file,
+				imagePreviewUrl: reader.result
+			});
+		}
+
+		reader.readAsDataURL(file)
 	}
 
 	render() {
-		const { image, video, descriptionImage, summary,
-			    submittedImage, submittedVideo, submittedDescriptionImage, submittedSummary } = this.state
-		
-		// 작은안내글씨스타일
-		const fontSize={
-			fontSize : 12,
-			color : "gray"
-			}
+		let { imagePreviewUrl } = this.state;
+		let $imagePreview = null;
+		if (imagePreviewUrl) {
+			$imagePreview = (<img src={imagePreviewUrl} width="500" />);
+		} else {
+			$imagePreview = (<div className="previewText"><Image src='https://react.semantic-ui.com/images/wireframe/image.png' size='small' /></div>);
+		}
 
-		
+		return (
+
+			<div className="previewComponent">
+				<form onSubmit={(e) => this._handleSubmit(e)}>
+					<input className="fileInput"
+						type="file"
+						accept="image/*"
+						onChange={(e) => this._handleImageChange(e)} />
+					{/* <button className="submitButton"
+						type="submit"
+						onClick={(e) => this._handleSubmit(e)}>Upload Image</button> */}
+				</form>
+				<div className="imgPreview">
+					{$imagePreview}
+				</div>
+			</div>
+		)
+	}
+}
+
+
+function useLocalstorage(key, initialValue) {
+	const [storedValue, setStoredValue] = useState(() => {
+		try {
+			const item = window.localStorage.getItem(key);
+			return item ? JSON.parse(item) : initialValue;
+		} catch (error) {
+			return initialValue;
+		}
+	})
+	const setValue = value => {
+		try {
+			const valueToStore = value instanceof Function ? value(storedValue) : value;
+			setStoredValue(valueToStore);
+			window.localStorage.setItem(key, JSON.stringify(valueToStore));
+			console.log(key, '==>', valueToStore);
+		} catch (error) {
+			console.log(error);
+		}
+	};
+	return [storedValue, setValue];
+
+}
+
+
+const buttonText={
+	color : "white"
+}
+
+const Storytelling = () => {
+
+	const [summary, setSummary] = useLocalstorage('프로젝트 요약', '')
+
+
+	//입력창에 들어간 정보를 실시간 확인			
+	const handleChange = (e, { value }) => setCategory(value)
+
+	// 작은안내글씨스타일
+	const fontSize={
+		fontSize : 12,
+		color : "gray"
+		}
+
 
 		return (
 			<div>
-				<Form onSubmit={this.handleSubmit}>
+				<Form>
 					{/* 프로젝트의 헤더 부분(제목작성+메뉴) */}
 					<ProjectHeader />
 					<ProjectLink menus="storytelling" />
@@ -72,54 +137,26 @@ class Storytelling extends Component {
 					<Grid columns='equal'>
 						<Grid.Column />
 						<Grid.Column width={10}>
-						{/* 이미지를 등록하는 요소 */}
 							<Segment>
-								<p>소개영상<p style={fontSize}>
-								프로젝트 최상단에 올라갈 영상 또는 사진을 올려주세요</p></p>
-								<Grid>
-									<Grid.Column width={4}>
-										<Image
-										alt='An example alt'
-										size='small'
-										src = 'https://react.semantic-ui.com/images/wireframe/image.png'	
-										/>
-									</Grid.Column>
-									
-									<Grid.Column width={12}>
-										<Grid.Column floated='left' width={14}>
-											<Grid divided='vertically'>
-												<Grid.Row columns={2}>
-													<Grid.Column width={4}>
-														<Checkbox label='사진'/>
-													</Grid.Column>
-													<Grid.Column width={11}>
-														<Input type="file" name="image" value={image}></Input>
-													</Grid.Column>
-
-													<Grid.Column width={4}>
-														<Checkbox label='동영상'/>
-													</Grid.Column>
-													<Grid.Column width={11}>
-														<Input type="file" name="video" value={video} ></Input>
-													</Grid.Column>
-												</Grid.Row>
-											</Grid>
-										</Grid.Column>	
-									</Grid.Column>
-								</Grid>
-								<Divider />
-
 								<Grid divided='vertically'>
 									<Grid.Row columns={2}>
 										<Grid.Column width={7}>
 											<p>프로젝트 설명 사진<span style={fontSize}>
 												<br/>프로젝트를 설명할 사진보드를 올려주세요</span></p></Grid.Column>
 										<Grid.Column width={8}>
-											<Input type="file" name="descriptionImage" value={descriptionImage}></Input></Grid.Column>
+											{/* <Input type="file" name="descriptionImage" value={descriptionImage}></Input> */}
+											<ImageUpload />
+										</Grid.Column>
 									</Grid.Row>
 									<p>프로젝트 요약<span style={fontSize}>
 										<br/>서포터가 제품의 장점이나 특징을 잘 이해하도록 간략하게 소개하세요</span></p>
-										<TextArea placeholder='100자 이내로 작성하시오' style={{ minHeight: 150 }} name="summary" id="summary" onChange={this.handleChange} />
+										<TextArea placeholder='100자 이내로 작성하세요'
+											style={{ minHeight: 150 }}
+											name="summary"
+											id="summary"
+											value={summary}
+											maxlength="100"
+											onChange={e => setSummary(e.target.value)} />
 			
 								</Grid>
 								  <br/><br/>
@@ -140,7 +177,7 @@ class Storytelling extends Component {
 			</div >
         );
 	}
-}
+
 
 export default Storytelling;
 
