@@ -17,7 +17,6 @@ import Login from './login'
 import Find from './find'
 import Google from './google'
 
-
 const Contents = (props) => (
    <div>
     {props.id == 'login' && <Login />}

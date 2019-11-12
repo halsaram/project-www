@@ -47,7 +47,9 @@ function useLocalstorage(key, initialValue) {
 	return [storedValue, setValue];
 
 }
-
+const buttonText = {
+	color : "white"
+}
 
 const InsertConfig = () => {
 
@@ -230,10 +232,6 @@ const InsertConfig = () => {
 								name='date'
 								onChange={e => setDate(e.target.value)} fluid />
 						</Grid.Column>
-						<Grid.Column floated='center' width={14}>
-							{/* 저장버튼 */}
-							<Button inverted color='blue' >저장</Button>
-						</Grid.Column>
 					</Grid>
 				</Segment>
 			</Grid.Column>
@@ -253,7 +251,7 @@ const Config = () => (
 	<div>
 		{/* 프로젝트의 헤더 부분(제목작성+메뉴) */}
 		<ProjectHeader />
-		<ProjectLink />
+		<ProjectLink menus="config"/>
 		<br /><br />
 
 		{/* 프로젝트의 소제목을 배치한 부분 */}
@@ -267,17 +265,15 @@ const Config = () => (
 
 		{/* 프로젝트 내용부분 */}
 		<InsertConfig />
-		<Grid columns={1} centered>
-			<Grid.Row verticalAlign='top'>
-				<Grid.Column>
-					<Button color='blue'>리워드 추가하기</Button>
-				</Grid.Column>
-			</Grid.Row>
-		</Grid>
+		
+		{/* 이전페이지 이동 */}
+		<Link as='/p' href='/project?id=summary&title=프로젝트개요'>
+			<Button color='blue' floated='left'><a style={buttonText}>이전</a></Button>
+		</Link>
 
 		{/* 다음 페이지 이동 */}
 		<Link as='/p' href='/project?id=storytelling&title=스토리텔링'>
-			<Button color='blue' inverted floated='right'><a>다음</a></Button>
+			<Button color='blue' floated='right'><a style={buttonText}>다음</a></Button>
 		</Link>
 
 		{/* 정확한 수치전에 예비로 br태그 삽입 */}

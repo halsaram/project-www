@@ -54,25 +54,13 @@ const textMargin = {
 const bigMargin={
     marginTop: 33
 }
-
+const textcolor = {
+    color : "white"
+}
 
 const Agreements = () => {
-    // 체크 여부를 정하는 변수
-    // const [checked1, setChecked1] = useState(false);
-    // const [checked2, setChecked2] = useState(false);
-    // const [checked3, setChecked3] = useState(false);
-    // const [checked4, setChecked4] = useState(false);
-    // const [checked5, setChecked5] = useState(false);
-    // const [checked6, setChecked6] = useState(false);
     const [checked7, setChecked7] = useState(false);
-
-    // console.log("checked1==>", checked1);
-    // console.log("checked2==>", checked2);
-    // console.log("checked3==>", checked3);
-    // console.log("checked4==>", checked4);
-    // console.log("checked5==>", checked5);
-    // console.log("checked6==>", checked6);
-    console.log("checked7==>", checked7);
+   console.log("checked7==>", checked7);
 
     return(
 <div>
@@ -104,13 +92,6 @@ const Agreements = () => {
                         <List.Item style={textMargin} icon='close' content='해당 프로젝트 종료 후 서포터들의 신고 누적시 정산에 패널티를 부여합니다.' />
                         
                     </List>
-                        {/* <Checkbox  onChange={() => {setChecked1(!checked1);}} label='펀딩 진행 중에는 제공할 리워드를 다른 온라인, 오프라인에서 펀딩하거나 판매하지 않습니다.'/><br /><br />
-                        <Checkbox  onChange={() => {setChecked2(!checked2);}} label='제공할 리워드는 현금, 지분 등의 수익이 아닌 제품 또는 서비스입니다.' /><br /><br />
-                        <Checkbox  onChange={() => {setChecked3(!checked3);}} label='진행할 프로젝트가 지적 재산권을 침해하지 않습니다.' /><br /><br />
-                        <Checkbox  onChange={() => {setChecked4(!checked4);}} label='서포터에게 프로젝트 진행 과정을 안내하고, 배송 약속을 지킬 수 있습니다.' /><br /><br />
-                        <Checkbox  onChange={() => {setChecked5(!checked5);}} label='서포터와의 신뢰를 위한 펀딩 진행, 제품 제작, 배송 등 모든 과정에서 겪는 어려움들을 서포터에게 진솔하게 전달하고 문제를 해결합니다.' /><br /><br />
-                        <Checkbox  onChange={() => {setChecked6(!checked6);}} label='해당 프로젝트 종료 후 서포터들의 신고 누적시 정산에 패널티를 부여합니다.' /><br /><br /><br />  */}
-
                         <Checkbox  style={bigMargin} onChange={() => {setChecked7(!checked7);}} label='위 사항들을 대해 모두 동의합니다.' /><br /> 
                     </Grid.Column>
 
@@ -121,11 +102,11 @@ const Agreements = () => {
                         checked7 && true ?
                     <Link as='/프로젝트개요' href={{ pathname: '/project', query: { id: 'summary', title: '프로젝트개요' } }}>
 
-                        <Button onClick={deletelocal} type='submit' fluid size="large">
-                            <a>프로젝트 진행하기</a>
+                        <Button onClick={deletelocal} type='submit' color="blue" fluid size="large">
+                            <a style={textcolor}>프로젝트 진행하기</a>
                             </Button>
                     </Link>
-                    :<Button  type='submit' fluid size="large" disabled>프로젝트 진행하기</Button>}
+                    :<Button type='submit' fluid size="large" disabled>프로젝트 진행하기</Button>}
                     
                 </Grid.Row>
 
