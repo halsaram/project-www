@@ -29,6 +29,10 @@ const Margin = {
     height : 10,
 }
 
+const Islog =()=> {
+    console.log('dasd');
+}
+
 
 const Start = () => (
     <React.Fragment>
@@ -45,7 +49,7 @@ const Start = () => (
                     <Grid.Column width={6} textAlign ="right" verticalAlign="bottom" style={fontStyle}>
                         <h2 style={fontStyle}>크라우드 펀딩으로 <br/> 당신의 아이디어를 실현하세요</h2>
                         <p>서포터에게 제품과 서비스를 제공하세요</p>
-                        <Button color="blue" fluid>
+                        <Button color="blue"  onClick={Islog} content='Click' fluid>
                         <Link as='/프로젝트정책' href={{ pathname: '/project', query: { id: 'agreements', title: '프로젝트정책' } }}>
                             <a style={fontStyle}>지금시작하기</a>
                         </Link>
@@ -96,9 +100,9 @@ const Start = () => (
                             <List.Item as='li'>고객 만족도 일정 수준 도달시 최종 정산</List.Item> 
                             
                         </List>
-                        <Button color="blue" fluid>
+                        <Button color="blue" fluid >
                         <Link as='/프로젝트정책' href={{ pathname: '/project', query: { id: 'agreements', title: '프로젝트정책' } }}>
-                            <a style={fontStyle}>프로젝트 시작하기</a>
+                            <a style={fontStyle} >프로젝트 시작하기</a>
                         </Link>
                         </Button>
                     </Grid.Column>
