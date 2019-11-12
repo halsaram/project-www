@@ -60,7 +60,7 @@ const Summary = () => {
 	}
 
 	const [projectTitle, setProjectTitle] = useLocalstorage('프로젝트명', '')
-	const [keyword, setKeyword] = useLocalstorage('짥은제목', '')
+	const [keyword, setKeyword] = useLocalstorage('짧은제목', '')
 	const [fundingGoal, setFundingGoal] = useLocalstorage('목표금액', '')
 	const [category, setCategory] = useLocalstorage('카테고리', '')
 	const [deadline, setDeadline] = useLocalstorage('종료일', '')
