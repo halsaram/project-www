@@ -72,7 +72,7 @@ const error = response => {
 const MountTest = (props) => {
     const { userStore, web3, contract, coinbase } = props
     const [showButton, toggleShow] = useState(userStore.loggedIn)
-    const [username, setusername] = useState("")
+    const [username, setUsername] = useState("")
 
     const [searchQuery,setsearchQuery] = useState("");
     const [selected,setselected] = useState("");
@@ -112,14 +112,15 @@ const MountTest = (props) => {
                 onSuccess={async (res) => {
                     toggleShow(false)
                     userStore.setLoggedIn(false)
-                    const { Eea, U3, ig } = res.w3 // Eea => googleId, U3 => userEmail, ig => userName
+                    console.log(res);
+                    const { Eea='', U3='', ig='' } = res.w3 // Eea => googleId, U3 => userEmail, ig => userName
                     try {
                         await contract.methods.getMyaddr(U3).call({ from: coinbase })
                             .then(async (result) => {
                                 const user = await contract.methods.getUser(result).call({ from: coinbase })
                                 userStore.setUser(user);
                                 //계정정보 가져오기
-                                setusername(userStore.user.userName)
+                                setUsername(userStore.user.userName)
                                 return console.log(U3, '===> ', user)
                             })
                     }

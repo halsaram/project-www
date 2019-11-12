@@ -14,7 +14,7 @@ contract UserCrud {
   mapping(string => UserStruct) private addrStructs;
   address[] private userIndex;
 
-  event LogNewUser   (address indexed userAddress, uint index, string userEmail, string userName);
+  event LogNewUser   (address indexed userAddress, uint index, string userEmail, string userName, int userPoint);
   event LogUpdateUser(address indexed userAddress, uint index, string userEmail, string userName);
   event LogDeleteUser(address indexed userAddress, uint index);
   
@@ -40,7 +40,7 @@ contract UserCrud {
     address userAddress, 
     string userEmail, 
     string userName,
-    int    userPoint) 
+    int    userPoint)
     public
     returns(uint index)
   {
@@ -54,7 +54,8 @@ contract UserCrud {
         userAddress, 
         userStructs[userAddress].index, 
         userEmail, 
-        userName);
+        userName,
+        userPoint);
     return userIndex.length-1;
   }
 
