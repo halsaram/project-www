@@ -43,7 +43,13 @@ const deletelocal = () => {
     localStorage.removeItem('색상');
     localStorage.removeItem('정렬 순서');
     localStorage.removeItem('날짜');
-
+    localStorage.removeItem('메세지');
+    localStorage.removeItem('sizeChecked');
+    localStorage.removeItem('colorChecked');
+    localStorage.removeItem('messageChecked');
+    localStorage.removeItem('etcChecked');
+    localStorage.removeItem('deliveryChecked');
+    localStorage.removeItem('limitChecked');
 
 }
 
