@@ -1,14 +1,22 @@
 pragma solidity ^0.4.6;
 
-contract UserCrud {
+contract ProjectCrud {
 
-  struct UserStruct {
-    bytes32 userEmail;
-    uint userAge;
+  struct ProjectStruct {
+    address myaddr;
+    string project_title;
+    string project_name;
+    string project_short_name;
+    uint target_amount;
+    string project_category;
+    string end_date;
+    string creator_name;
+    string creator_intro;
+    string social_networks;
     uint index;
   }
   
-  mapping(address => UserStruct) private userStructs;
+  mapping(address => ProjectStruct) private projectStruct;
   address[] private userIndex;
 
   event LogNewUser   (address indexed userAddress, uint index, bytes32 userEmail, uint userAge);
