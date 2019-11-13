@@ -9,12 +9,14 @@
  * 최종수정자	   : 정휘선
  * 최종수정내용	  : UI 수정
 **************************************************************************************/
-
-import React from 'react'
+import React, { Component, useState } from 'react'
 import Link from 'next/link';
 import { Divider, Header, Icon, Grid, Button, Image, List, Segment } from 'semantic-ui-react'
 import { height } from 'window-size';
 import CatoList from '../main/CatoList'
+import { inject, observer} from 'mobx-react'
+
+
 
 const fontStyle={
     color : "white",
@@ -29,12 +31,18 @@ const Margin = {
     height : 10,
 }
 
-const Islog =()=> {
-    console.log('dasd');
-}
+@inject('userStore')
+@observer
+class Start extends React.Component{
+
+    alart(){
+         alert("로그인이 필요한 서비스 입니다");
+    }
+
+    render(){const {userStore} = this.props;
+        return(
 
 
-const Start = () => (
     <React.Fragment>
         
         <Grid columns='equal'>
@@ -49,11 +57,14 @@ const Start = () => (
                     <Grid.Column width={6} textAlign ="right" verticalAlign="bottom" style={fontStyle}>
                         <h2 style={fontStyle}>크라우드 펀딩으로 <br/> 당신의 아이디어를 실현하세요</h2>
                         <p>서포터에게 제품과 서비스를 제공하세요</p>
-                        <Button color="blue"  onClick={Islog} content='Click' fluid>
+                        {userStore.loggedIn ?   <Button color="blue" onClick={this.alart}  content='Click' fluid>
+                            <a style={fontStyle}>지금시작하기</a>
+                        </Button>: <Button color="blue"  content='Click' fluid>
                         <Link as='/프로젝트정책' href={{ pathname: '/project', query: { id: 'agreements', title: '프로젝트정책' } }}>
                             <a style={fontStyle}>지금시작하기</a>
                         </Link>
-                        </Button>
+                        </Button> }
+                      
                     </Grid.Column>
                 </Grid>
 
@@ -118,7 +129,14 @@ const Start = () => (
         
   
     </React.Fragment>
-);
+        )
+    }
+
+
+
+
+}
+
 
 export default Start;
 
