@@ -17,31 +17,37 @@ contract ProjectCrud {
   }
   
   mapping(address => ProjectStruct) private projectStruct;
-  address[] private userIndex;
+  address[] private projectIndex;
 
   event LogNewUser   (address indexed userAddress, uint index, bytes32 userEmail, uint userAge);
   event LogUpdateUser(address indexed userAddress, uint index, bytes32 userEmail, uint userAge);
   event LogDeleteUser(address indexed userAddress, uint index);
   
-  function isUser(address userAddress)
+  function isProject(address _myaddr)
     public 
     constant
-    returns(bool isIndeed) 
+    returns(bool _isIndeed) 
   {
-    if(userIndex.length == 0) return false;
-    return (userIndex[userStructs[userAddress].index] == userAddress);
+    if(projectIndex.length == 0) return false;
+    return (projectIndex[projectStruct[_myaddr].index] == _myaddr);
   }
 
-  function insertUser(
-    address userAddress, 
-    bytes32 userEmail, 
-    uint    userAge) 
+  function insertProject(
+    address _myaddr, 
+    string _project_title,
+    string _project_name,
+    string _project_short_name,
+    uint _target_amount,
+    string _project_category,
+    string _end_date,
+    string _creator_name,
+    string _creator_intro,
+    string _social_networks) 
     public
-    returns(uint index)
+    returns(uint _index)
   {
-    if(isUser(userAddress)) throw; 
-    userStructs[userAddress].userEmail = userEmail;
-    userStructs[userAddress].userAge   = userAge;
+    if(isUser(_myaddr)) throw; 
+    projectStruct[_myaddr].project_title = _project_title;
     userStructs[userAddress].index     = userIndex.push(userAddress)-1;
     LogNewUser(
         userAddress, 
