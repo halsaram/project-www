@@ -22,97 +22,67 @@ import {
   Menu,
   Segment,
 } from 'semantic-ui-react'
+
 const Footer = () => (
-    <div>
-      <Segment inverted vertical style={{padding: '0em 0em' }}>
-      <Container textAlign='center' verticalAlig>
-        <Grid divided inverted stackable verticalAlign="middle">
-          <Grid.Column width={5}>
-            <Header inverted as='h4'/>
-            <List link inverted>
-            <List.Item as='a'>
-              <Link as='/공지사항' href={{ pathname: '/main', query: { id: 'notices', title: '공지사항' } }}>
-                  <a>공지사항</a>
-              </Link>
-            </List.Item>
-            </List>
-          </Grid.Column>
-          <Grid.Column width={6}>
-            <Header inverted as='h4'/>
-            <List link inverted>
-            <List.Item as='a'>
-                <Link as='/창작자 가이드' href={{ pathname: '/main', query: { id: 'termsOfUse', title: '창작자 가이드' } }}>
-                    <a>창작자 가이드</a>
-                </Link>
-              </List.Item>
-            </List>
-          </Grid.Column>
-          <Grid.Column width={5}>
-            <Header inverted as='h4'/>
-            <List link inverted>
-              <List.Item as='a'>
-                <Link as='/개인정보 처리방침' href={{ pathname: '/main', query: { id: 'privacy', title: '개인정보 처리방침' } }}>
-                  <a>개인정보 처리방침</a>
-              </Link>
-
-              </List.Item>
-            </List>
-          </Grid.Column>
-        </Grid>
-
-        <Divider inverted section />
-        <Image centered size='mini' src='/logo.png' />
-        <List horizontal inverted divided link size='small'>
-          <List.Item as='a' href='#'>
-            Site Map
-          </List.Item>
-          <List.Item as='a' href='#'>
-            Contact Us
-          </List.Item>
-          <List.Item as='a' href='#'>
-            Terms and Conditions
-          </List.Item>
-          <List.Item as='a' href='#'>
-            Privacy Policy
-          </List.Item>
-        </List>
-      </Container>
-    </Segment>
-
-
-
-
-    {/* <Menu inverted>
-        <Menu.Item>
+  <Segment inverted vertical style={{padding: '0em 0em' }}>
+    <Container verticalAlig>
+      <Grid divided inverted verticalAlign="middle">
+        <Grid.Column width={2}>
+          <Header inverted as='h4'/>
+          <List link inverted>
+          <List.Item as='a'>
             <Link as='/공지사항' href={{ pathname: '/main', query: { id: 'notices', title: '공지사항' } }}>
                 <a>공지사항</a>
             </Link>
-        </Menu.Item>
-        <Menu.Item>
-            <Link as='/창작자 가이드' href={{ pathname: '/main', query: { id: 'termsOfUse', title: '창작자 가이드' } }}>
-                <a>창작자 가이드</a>
-            </Link>
-        </Menu.Item>
-        <Menu.Item>
-            <Link as='/개인정보 처리방침' href={{ pathname: '/main', query: { id: 'privacy', title: '개인정보 처리방침' } }}>
+          </List.Item>
+          </List>
+        </Grid.Column>
+        <Grid.Column width={2}>
+          <Header inverted as='h4'/>
+          <List link inverted>
+          <List.Item as='a'>
+              <Link as='/창작자 가이드' href={{ pathname: '/main', query: { id: 'termsOfUse', title: '창작자 가이드' } }}>
+                  <a>창작자 가이드</a>
+              </Link>
+            </List.Item>
+          </List>
+        </Grid.Column>
+        <Grid.Column width={2}>
+          <Header inverted as='h4'/>
+          <List link inverted>
+            <List.Item as='a'>
+              <Link as='/개인정보 처리방침' href={{ pathname: '/main', query: { id: 'privacy', title: '개인정보 처리방침' } }}>
                 <a>개인정보 처리방침</a>
             </Link>
-        </Menu.Item>
-      </Menu>
 
-      <Grid>
-    <Grid.Column width={2}>
-      <Image src='https://react.semantic-ui.com/images/wireframe/image.png' />
-    </Grid.Column>
-    <Grid.Column width={4}>
-      <Image src='https://react.semantic-ui.com/images/wireframe/paragraph.png' />
-    </Grid.Column>
-    <Grid.Column width={10}>
-      
-    </Grid.Column>
-  </Grid> */}
-    </div>
+            </List.Item>
+          </List>
+        </Grid.Column>
+      </Grid>
 
+      <Image size='small' src='../static/logo.png' />
+      <p>
+        대전광역시 oo구 oooooooo xx-x (ㅁㅁㅁㅁ)<br />
+        Tel: 043) xxx-xxxxx / Fax: 043) XXX-XXXX ㈜HALSARAM (대표자 : XXX)<br />
+        사업자등록번호 : xxx-xx-xxxxx<br /><br />
+        © HALSARAM. All rights reserved<br />
+      </p>
+      <List horizontal inverted divided link size='small'>
+        <List.Item as='a' href='#'>
+          Site Map
+        </List.Item>
+        <List.Item as='a' href='#'>
+          Contact Us
+        </List.Item>
+        <List.Item as='a' href='#'>
+          Terms and Conditions
+        </List.Item>
+        <List.Item as='a' href='#'>
+          Privacy Policy
+        </List.Item>
+      </List>
+    </Container>
+  </Segment>
 );
 
 export default Footer;
