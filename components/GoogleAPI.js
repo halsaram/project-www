@@ -7,6 +7,7 @@ import {
     Container,
     Divider,
     Dropdown,
+    Button,
     Grid,
     Layout,
     Image,
@@ -77,19 +78,23 @@ const MountTest = (props) => {
     const [searchQuery,setsearchQuery] = useState("");
     const [selected,setselected] = useState("");
 
-    useEffect(()=>{
-
-    },[])
     const options = [
-        { key: 'user', text: '내 후원현황', icon: 'user' },
-        { key: 'product', text: '내가만든 프로젝트', icon: 'product hunt' },
-        { key: 'settings', text: '프로필 설정', icon: 'settings' },
-        { key: 'sign-out', text: '로그아웃', icon: 'sign out' },
+        { key: 'user', value: '내 후원현황', text: '내 후원현황', icon: 'user' },
+        { key: 'product', value: '내가만든 프로젝트', text: '내가만든 프로젝트', icon: 'product hunt' },
+        { key: 'settings', value: '프로필 설정', text: '프로필 설정', icon: 'settings' },
+        { key: 'sign-out', value: '로그아웃', text: '로그아웃', icon: 'sign out' },
     ]
 
-    const onChange = (e, data) => {
-        console.log('data = ', data);
-        setselected(data)
+    const onChange = (e, { value }) => {
+        console.log('data = ', value);
+        if (value == '로그아웃') {
+            console.log('로그아웃 됨');
+        } else if (value == '내 후원현황') {
+            console.log('내 후원현황 페이지 이동');
+        } else if (value == '내가만든 프로젝트') {
+            console.log('내가만든 프로젝트');
+        }
+        setselected(value)
     }
 
     const onSearchChange = (e, data) => {
@@ -100,8 +105,7 @@ const MountTest = (props) => {
    
     const trigger = (
         <span>
-            {console.log('user name =', username)}
-            <Icon disabled name='big bars' /> {userStore.user.userName} 님 환영합니다
+            <Icon name='big user' /> {userStore.user.userName} <Icon name='dropdown' />
         </span>
     )
 
@@ -139,15 +143,35 @@ const MountTest = (props) => {
         )
     } else {
         return (
-            userStore.user.userName===undefined ? "loding..." : <Dropdown
+            userStore.user.userName===undefined ? "loding..." : 
+            <Dropdown
                 trigger={trigger}
                 options={options}
+                value={selected}
                 pointing='top left'
                 icon={null}
                 onChange={onChange}
-                key ={options.key}
                 onSearchChange={onSearchChange}
-            />
+            >
+                <Dropdown.Menu>
+                    <Dropdown.Item><Icon name='user' />내 후원현황</Dropdown.Item>
+                    <Dropdown.Item><Icon name='user' />내가만든 프로젝트</Dropdown.Item>
+                    <Dropdown.Item><Icon name='settings' />프로필 설정</Dropdown.Item>
+                    <Dropdown.Item>
+                        <GoogleLogout
+                            buttonText='로그아웃'
+                            onLogoutSuccess={res => {
+                                userStore.setUser([]);
+                                toggleShow(true)
+                                userStore.setLoggedIn(true)
+                                console.log('logout')
+                            }}
+                            onFailure={error}
+                            clientId={clientId}
+                        />
+                    </Dropdown.Item>
+                </Dropdown.Menu>
+            </Dropdown>
             
                 //   <GoogleLogout
                 //         buttonText={userStore.user.userName}
@@ -159,10 +183,7 @@ const MountTest = (props) => {
                 //         }}
                 //         onFailure={error}
                 //         clientId={clientId}
-                //     /> 
-
-          
-                    
+                //     />
 
         )
     }

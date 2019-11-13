@@ -166,15 +166,14 @@ class Layout extends React.Component {
           </Grid.Column>
        
           
-          <Grid.Column width={9} textAlign="center">
+          <Grid.Column width={7} textAlign="center">
             <Link as='/' href={{ pathname: '/', query: { id: 'home', title: '홈' } }}>
                 <a><p >Halsaram</p></a>
             </Link>
           </Grid.Column>
 
-         <Grid.Column>
-            <Input icon='search' placeholder='Search...' />
-            
+          <Grid.Column textAlign='right'>
+            <Input icon='search' placeholder='Search...' />
             <GoogleAPI />
           </Grid.Column>
         </Grid>
