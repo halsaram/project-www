@@ -11,23 +11,13 @@
 **************************************************************************************/
 import React from 'react'
 import Link from 'next/link';
-import {
-  Container,
-  Divider,
-  Dropdown,
-  Grid,
-  Header,
-  Image,
-  List,
-  Menu,
-  Segment,
-} from 'semantic-ui-react'
+import { Container, Grid, Header, Image, List, Button, Segment, Rail } from 'semantic-ui-react'
 
 const Footer = () => (
   <Segment inverted vertical style={{padding: '0em 0em' }}>
-    <Container verticalAlig>
-      <Grid divided inverted verticalAlign="middle">
-        <Grid.Column width={2}>
+    <Container textAlign='center'>
+      <Grid inverted >
+        <Grid.Column width={3}>
           <Header inverted as='h4'/>
           <List link inverted>
           <List.Item as='a'>
@@ -37,7 +27,7 @@ const Footer = () => (
           </List.Item>
           </List>
         </Grid.Column>
-        <Grid.Column width={2}>
+        <Grid.Column width={3}>
           <Header inverted as='h4'/>
           <List link inverted>
           <List.Item as='a'>
@@ -47,7 +37,7 @@ const Footer = () => (
             </List.Item>
           </List>
         </Grid.Column>
-        <Grid.Column width={2}>
+        <Grid.Column width={3}>
           <Header inverted as='h4'/>
           <List link inverted>
             <List.Item as='a'>
@@ -59,29 +49,35 @@ const Footer = () => (
           </List>
         </Grid.Column>
       </Grid>
-
-      <Image size='small' src='../static/logo.png' />
-      <p>
+      <Header disabled as='h5' floated='left' textAlign='left'>
+        <br />
+        <Image size='small' src='../static/logo.png' /><br />
         대전광역시 oo구 oooooooo xx-x (ㅁㅁㅁㅁ)<br />
         Tel: 043) xxx-xxxxx / Fax: 043) XXX-XXXX ㈜HALSARAM (대표자 : XXX)<br />
         사업자등록번호 : xxx-xx-xxxxx<br /><br />
-        © HALSARAM. All rights reserved<br />
-      </p>
-      <List horizontal inverted divided link size='small'>
-        <List.Item as='a' href='#'>
-          Site Map
-        </List.Item>
-        <List.Item as='a' href='#'>
-          Contact Us
-        </List.Item>
-        <List.Item as='a' href='#'>
-          Terms and Conditions
-        </List.Item>
-        <List.Item as='a' href='#'>
-          Privacy Policy
-        </List.Item>
-      </List>
+        © HALSARAM. All rights reserved<br /><br />
+      </Header>
+      <Rail internal position='right'>
+        <Button circular floated='right' color='facebook' icon='facebook' />
+          <Button circular floated='right' color='twitter' icon='twitter' />
+          <Button circular floated='right' color='linkedin' icon='linkedin' />
+          <Button circular floated='right' color='google plus' icon='google plus' />
+      </Rail>
     </Container>
+    {/* <List horizontal inverted divided link size='small'>
+      <List.Item as='a' href='#'>
+        Site Map
+        </List.Item>
+      <List.Item as='a' href='#'>
+        Contact Us
+        </List.Item>
+      <List.Item as='a' href='#'>
+        Terms and Conditions
+        </List.Item>
+      <List.Item as='a' href='#'>
+        Privacy Policy
+        </List.Item>
+    </List> */}
   </Segment>
 );
 

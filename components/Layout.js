@@ -106,7 +106,7 @@ VerticalSidebar.propTypes = {
   visible: PropTypes.bool,
 }
 
-class Layout extends React.Component {
+class Layout extends Component {
   state = {
     animation: 'overlay',
     direction: 'left',
@@ -144,7 +144,7 @@ class Layout extends React.Component {
     const { children, header, title = '홈' } = this.props
     const { animation, dimmed, direction, visible, search, submittedSearch } = this.state
     const vertical = direction === 'bottom' || direction === 'top'
-    
+
     return (
       <React.Fragment>
         <Head>
@@ -154,6 +154,7 @@ class Layout extends React.Component {
           />
           <title>{title} ::Halsaram</title>
         </Head>
+        
         <Grid columns='equal'verticalAlign="middle">
           <Grid.Column>
             <Button onClick={this.handleAnimationChange('overlay')}>|||</Button>
@@ -165,7 +166,6 @@ class Layout extends React.Component {
             </Link>
           </Grid.Column>
        
-          
           <Grid.Column width={7} textAlign="center">
             <Link as='/' href={{ pathname: '/', query: { id: 'home', title: '홈' } }}>
                 <a><p >Halsaram</p></a>
@@ -176,12 +176,7 @@ class Layout extends React.Component {
             <Input icon='search' placeholder='Search...' />
             <GoogleAPI />
           </Grid.Column>
-        </Grid>
-
-
-
-      
-
+        </Grid> 
 
         <Sidebar.Pushable as={Segment}>
           {vertical ? (

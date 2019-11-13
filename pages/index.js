@@ -39,8 +39,6 @@ const Contents = () => {
       <div style={ItemMargin} />   
       <Pagnation title="성공임박 프로젝트" project="EndProject"/>
       <div style={ItemMargin} />   
-
-
     </div>
 
   );

@@ -12,11 +12,7 @@ class Page extends React.Component {
 
     render() {
         return (
-            <div>
-                <Layout
-                    {...this.props}
-                />
-            </div>
+            <Layout {...this.props} />
         )
     }
 }

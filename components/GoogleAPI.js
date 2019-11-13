@@ -2,7 +2,7 @@ import { Link } from 'next/link';
 import React, { Component, useState } from 'react'
 import { GoogleLogout, GoogleLogin } from 'react-google-login'
 import { inject, observer, useObserver } from 'mobx-react'
-import { Dropdown, Button, Icon } from 'semantic-ui-react'
+import { Dropdown, Button, Icon, Image } from 'semantic-ui-react'
 
 
 
@@ -21,11 +21,12 @@ const error = response => {
 const MountTest = (props) => {
     const { userStore, web3, contract, coinbase } = props
     const _user = useObserver(() => (userStore.user))
+    const _profileImage = useObserver(() => (userStore.profileImage))
     const _loggedIn = useObserver(() => (userStore.loggedIn))
    
     const trigger = (
         <span>
-            <Icon name='big user' /> {_user.userName} <Icon name='dropdown' />
+            <Image avatar src={_profileImage} /> {_user.userName} <Icon name='dropdown' />
         </span>
     )
 
@@ -35,8 +36,9 @@ const MountTest = (props) => {
                 buttonText="Login with Google"
                 onSuccess={async (res) => {
                     console.log(res);
-                    const { Eea='', U3='', ig='' } = res.w3 // Eea => googleId, U3 => userEmail, ig => userName
+                    const { Eea='', U3='', ig='', Paa='' } = res.w3 // Eea => googleId, U3 => userEmail, ig => userName
                     userStore.setLoggedIn(false)
+                    userStore.setProfileImage(Paa)
                     await contract.methods.getMyaddr(U3).call({ from: coinbase })
                         .then(async (res) => {
                             userStore.setUser(await contract.methods.getUser(res).call({ from: coinbase }))
@@ -47,7 +49,7 @@ const MountTest = (props) => {
                             await contract.methods.insertUser(myAddr, U3, ig, 0).send({ from: coinbase, gas: 4500000 })
                         })
                         .finally(() => {
-                            console.log(U3, '===> ', _user)
+                            console.log(U3, '===> ', userStore.user)
                         })
                 }}
                 onFailure={error}

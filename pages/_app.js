@@ -33,8 +33,10 @@ class CustomApp extends App {
                             <Image src='../static/logo.png' size='medium' />
                         </Dimmer>
                     </Segment>
-                    // <Provider {...this.mobxStore}accounts='' contract='' web3='' coinbase=''>
-                    //     <Component {...pageProps} />
+                    // <Provider {...this.mobxStore} accounts={accounts} contract={contract} web3={web3} coinbase={coinbase}>
+                    //     <Container>
+                    //         <Component {...pageProps} />
+                    //     </Container>
                     // </Provider>
                 )}
                 render={({ web3, accounts, contract, coinbase }) => (
