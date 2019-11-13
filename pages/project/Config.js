@@ -61,7 +61,6 @@ const InsertConfig = () => {
 	const [delivery, setDelivery] = useLocalstorage('deliveryChecked','')	//배송여부 체크시 입력이 가능한 변수
 	const [limit, setLimit] = useLocalstorage('limitChecked','')	//제한수량 체크시 입력이 가능한 변수
 	const [sum, setSum] = useLocalstorage('금액', '') 	//금액 입력칸 데이터 
-	const [order, setorder] = useLocalstorage('정렬 순서', '')	//정렬 순서 입력칸 데이터
 	const [rewardName, setRewardname] = useLocalstorage('리워드명', '')	//리워드명 입력칸 데이터
 	const [insize, setInsize] = useLocalstorage('사이즈', '')	//사이즈 입력칸 데이터
 	const [incolor, setIncolor] = useLocalstorage('색상', '')	//색상 입력칸 데이터
@@ -95,14 +94,7 @@ const InsertConfig = () => {
 
 
 
-							{/* 정렬순서 입력폼 */}
-							<Form.Field inline>
-								<label>정렬 순서 </label>
-								<Input value={order}
-									name="order"
-									type="number"
-									onChange={e => setorder(e.target.value)} />
-							</Form.Field>
+						
 						</Grid.Column>
 
 						<Grid.Column floated='left' width={14}>

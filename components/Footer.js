@@ -27,7 +27,7 @@ const Footer = () => (
       <Segment inverted vertical style={{padding: '0em 0em' }}>
       <Container textAlign='center' verticalAlig>
         <Grid divided inverted stackable verticalAlign="middle">
-          <Grid.Column width={3}>
+          <Grid.Column width={5}>
             <Header inverted as='h4'/>
             <List link inverted>
             <List.Item as='a'>
@@ -37,7 +37,7 @@ const Footer = () => (
             </List.Item>
             </List>
           </Grid.Column>
-          <Grid.Column width={3}>
+          <Grid.Column width={6}>
             <Header inverted as='h4'/>
             <List link inverted>
             <List.Item as='a'>
@@ -47,7 +47,7 @@ const Footer = () => (
               </List.Item>
             </List>
           </Grid.Column>
-          <Grid.Column width={3}>
+          <Grid.Column width={5}>
             <Header inverted as='h4'/>
             <List link inverted>
               <List.Item as='a'>
@@ -57,12 +57,6 @@ const Footer = () => (
 
               </List.Item>
             </List>
-          </Grid.Column>
-          <Grid.Column width={7}>
-            
-            <p>
-              Extra space for a call to action inside the footer that could help re-engage users.
-            </p>
           </Grid.Column>
         </Grid>
 

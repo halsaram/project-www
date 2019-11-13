@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
-import { Header, Icon, Image, Input, Menu, Segment, Sidebar, Button, Container, Grid } from 'semantic-ui-react'
+import { Header, Icon, Image, Input, Menu, Segment, Sidebar, Button, Container, Grid, Divider } from 'semantic-ui-react'
 import PropTypes from 'prop-types'
 
 import Footer from './Footer'
@@ -54,20 +54,49 @@ const VerticalSidebar = ({ animation, direction, visible }) => (
     inverted
     vertical
     visible={visible}
-    width='thin'
-  >
-    <Menu.Item as='a'>
-      <Icon name='home' />
-      카테고리
-    </Menu.Item>
-    <Menu.Item as='a'>
-      <Icon name='gamepad' />
-      공지사항
-    </Menu.Item>
-    <Menu.Item as='a'>
-      <Icon name='camera' />
-      내정보
-    </Menu.Item>
+    width='wide'>
+      <React.Fragment>
+    <Divider horizontal>
+      <Header as='h4'>
+        <Icon name='tag' />
+        Description
+      </Header>
+    </Divider>
+    </React.Fragment>
+    <Grid columns='equal'>
+    <Grid.Row/>
+    <Grid.Row>
+      <Grid.Column width={10}>
+      <Button inverted color='red' circular fluid>#있으면 좋은 생활용품들</Button>
+      </Grid.Column>
+      <Grid.Column>
+      <Button inverted color='orange' circular fluid>#가전제품</Button>
+      </Grid.Column>
+    </Grid.Row>
+    <Grid.Row>
+      <Grid.Column>
+        <Button inverted color='green' circular fluid>#여행가기 전 잠깐! 이 물품 챙겼어요?</Button>
+      </Grid.Column>
+    </Grid.Row>
+    <Grid.Row>
+      <Grid.Column>
+        <Button inverted color='olive' circular fluid>#멋진 패션</Button>
+      </Grid.Column>
+      <Grid.Column width={10}>
+        <Button inverted color='blue' circular fluid>#레저를 즐기기 위한 </Button>
+      </Grid.Column>
+
+    </Grid.Row>
+    <Grid.Row>
+      <Grid.Column>
+      <Button inverted color='violet' circular fluid>#우리 애완동물 용품</Button>
+      </Grid.Column>
+      <Grid.Column>
+      <Button  inverted color='pink' circular fluid>#유아에게 순한 제품</Button>
+      </Grid.Column>
+    </Grid.Row>
+  </Grid>
+
   </Sidebar>
 )
 

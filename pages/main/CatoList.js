@@ -70,7 +70,7 @@ const CatoList =(props)=> {
            </Grid.Column>
            <Grid.Column>
            <Button style={styles6} color="blue" inverted value="애완" onClick={handleChange}/>
-           <p style ={fontStyle}>여행</p>
+           <p style ={fontStyle}>애완</p>
            </Grid.Column>
            <Grid.Column>
            <Button style={styles7} color="blue" inverted value="유아" onClick={handleChange} />
