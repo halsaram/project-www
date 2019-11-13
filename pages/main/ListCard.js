@@ -8,7 +8,7 @@ const ListCard =(props) => {
   return(
     
         <Grid.Column >
-          <Link as='/d' href='/FundingGuide'>
+      <Link as='/프로젝트상세정보' href={{ pathname: '/detail', query: { id: 'story', title: '프로젝트상세정보' } }}>
             <Card>
               <Image src='../../static/test/testlist.png' wrapped ui={false} />
               <Card.Content textAlign="left">
