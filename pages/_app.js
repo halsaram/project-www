@@ -1,6 +1,7 @@
 import React from 'react';
 import App, { Container } from 'next/app';
 import { Provider } from 'mobx-react'
+import { Dimmer, Loader, Image, Segment } from 'semantic-ui-react'
 
 import initializeStore from '../lib/mobx/stores';
 import Web3Container from '../lib/web3/Web3Container'
@@ -27,7 +28,11 @@ class CustomApp extends App {
         return (
             <Web3Container
                 renderLoading={() => (
-                    <div>Loading, please wait ...</div>
+                    <Segment>
+                        <Dimmer active inverted>
+                            <Image src='../static/logo.png' size='medium' />
+                        </Dimmer>
+                    </Segment>
                     // <Provider {...this.mobxStore}accounts='' contract='' web3='' coinbase=''>
                     //     <Component {...pageProps} />
                     // </Provider>
