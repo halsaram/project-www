@@ -152,7 +152,7 @@ class ImageUpload extends Component {
 		for (var x = 0; x < this.state.selectedFile.length; x++) {
 			data.append('file', this.state.selectedFile[x])
 		}
-		axios.post("http://a50cc827.ngrok.io/upload", data, {
+		axios.post("https://83a3f921.ngrok.io/upload", data, {
 			onUploadProgress: ProgressEvent => {
 				this.setState({
 					loaded: (ProgressEvent.loaded / ProgressEvent.total * 100),
