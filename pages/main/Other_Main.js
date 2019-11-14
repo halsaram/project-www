@@ -1,6 +1,5 @@
 import Main_Banner from './main/Main_Banner'
-import HeaderBar from '../components/Header'
-import CatoList from '../pages/main/CatoList';
+import HeaderBar from '../../components/Header'
 
 
 const Catogory_Main=()=>{
