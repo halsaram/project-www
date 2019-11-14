@@ -10,25 +10,163 @@
  * 최종수정내용	  :  ImageUpload
 **************************************************************************************/
 
-import React, { Component } from 'react'
+import React, { useState, Component } from 'react'
 import Link from 'next/link';
 import { Grid, Dropdown, Segment, Button, Form, Input, Select, Header, Icon, Image, Label } from 'semantic-ui-react'
 import ProjectLink from './ProjectLink'
 import ProjectHeader from './projectHeader'
-import { useState, useEffect } from 'react';
+import axios from 'axios';
+import { Progress } from 'reactstrap';
+import { ToastContainer, toast } from 'react-toastify';
 
 
-class ImageUpload extends React.Component {
+
+
+// class ImageUpload extends React.Component {
+// 	constructor(props) {
+// 		super(props);
+// 		this.state = { file: '', imagePreviewUrl: '' };
+// 	}
+
+// 	_handleSubmit(e) {
+// 		e.preventDefault();
+// 		// TODO: do something with -> this.state.file
+// 		console.log('handle uploading-', this.state.file);
+// 	}
+
+// 	_handleImageChange(e) {
+// 		e.preventDefault();
+
+// 		let reader = new FileReader();
+// 		let file = e.target.files[0];
+
+// 		reader.onloadend = () => {
+// 			this.setState({
+// 				file: file,
+// 				imagePreviewUrl: reader.result
+// 			});
+// 		}
+
+// 		reader.readAsDataURL(file)
+// 	}
+
+// 	render() {
+// 		let { imagePreviewUrl } = this.state;
+// 		let $imagePreview = null;
+// 		if (imagePreviewUrl) {
+// 			$imagePreview = (<img src={imagePreviewUrl} width="180"/>);
+// 		} else {
+// 			$imagePreview = (<div className="previewText"><Image src='https://react.semantic-ui.com/images/wireframe/image.png' size='small' /></div>);
+// 		}
+
+// 		return (
+
+// 			<div className="previewComponent">
+// 				<form onSubmit={(e) => this._handleSubmit(e)}>
+// 					<input className="fileInput"
+// 						type="file"
+// 						accept="image/*"
+// 						onChange={(e) => this._handleImageChange(e)} />
+// 					{/* <button className="submitButton"
+// 						type="submit"
+// 						onClick={(e) => this._handleSubmit(e)}>Upload Image</button> */}
+// 				</form>
+// 				<div className="imgPreview">
+// 					{$imagePreview}
+// 				</div>
+// 			</div>
+// 		)
+// 	}
+// }
+
+
+class ImageUpload extends Component {
 	constructor(props) {
 		super(props);
-		this.state = { file: '', imagePreviewUrl: '' };
+		this.state = {
+			selectedFile: null,
+			loaded: 0
+		}
+
+	}
+	checkMimeType = (event) => {
+		//getting file object
+		let files = event.target.files
+		//define message container
+		let err = []
+		// list allow mime type
+		const types = ['image/png', 'image/jpeg', 'image/gif']
+		// loop access array
+		for (var x = 0; x < files.length; x++) {
+			// compare file type find doesn't matach
+			if (types.every(type => files[x].type !== type)) {
+				// create error message and assign to container   
+				err[x] = files[x].type + ' is not a supported format\n';
+			}
+		};
+		for (var z = 0; z < err.length; z++) {// if message not same old that mean has error 
+			// discard selected file
+			toast.error(err[z])
+			event.target.value = null
+		}
+		return true;
+	}
+	maxSelectFile = (event) => {
+		let files = event.target.files
+		if (files.length > 3) {
+			const msg = 'Only 3 images can be uploaded at a time'
+			event.target.value = null
+			toast.warn(msg)
+			return false;
+		}
+		return true;
+	}
+	checkFileSize = (event) => {
+		let files = event.target.files
+		let size = 2000000
+		let err = [];
+		for (var x = 0; x < files.length; x++) {
+			if (files[x].size > size) {
+				err[x] = files[x].type + 'is too large, please pick a smaller file\n';
+			}
+		};
+		for (var z = 0; z < err.length; z++) {// if message not same old that mean has error 
+			// discard selected file
+			toast.error(err[z])
+			event.target.value = null
+		}
+		return true;
+	}
+	onChangeHandler = event => {
+		var files = event.target.files
+		if (this.maxSelectFile(event) && this.checkMimeType(event) && this.checkFileSize(event)) {
+			// if return true allow to setState
+			this.setState({
+				selectedFile: files,
+				loaded: 0
+			})
+		}
+	}
+	onClickHandler = () => {
+		const data = new FormData()
+		for (var x = 0; x < this.state.selectedFile.length; x++) {
+			data.append('file', this.state.selectedFile[x])
+		}
+		axios.post("https://a50cc827.ngrok.io/upload", data, {
+			onUploadProgress: ProgressEvent => {
+				this.setState({
+					loaded: (ProgressEvent.loaded / ProgressEvent.total * 100),
+				})
+			},
+		})
+			.then(res => { // then print response status
+				toast.success('upload success')
+			})
+			.catch(err => { // then print response status
+				toast.error('upload fail')
+			})
 	}
 
-	_handleSubmit(e) {
-		e.preventDefault();
-		// TODO: do something with -> this.state.file
-		console.log('handle uploading-', this.state.file);
-	}
 
 	_handleImageChange(e) {
 		e.preventDefault();
@@ -39,7 +177,7 @@ class ImageUpload extends React.Component {
 		reader.onloadend = () => {
 			this.setState({
 				file: file,
-				imagePreviewUrl: reader.result
+				selectedFile: reader.result
 			});
 		}
 
@@ -47,33 +185,41 @@ class ImageUpload extends React.Component {
 	}
 
 	render() {
-		let { imagePreviewUrl } = this.state;
+		let { selectedFile } = this.state;
 		let $imagePreview = null;
-		if (imagePreviewUrl) {
-			$imagePreview = (<img src={imagePreviewUrl} width="180"/>);
+		if (selectedFile) {
+			$imagePreview = (<img src={selectedFile} width="180" />);
 		} else {
 			$imagePreview = (<div className="previewText"><Image src='https://react.semantic-ui.com/images/wireframe/image.png' size='small' /></div>);
 		}
-
 		return (
-			
-			<div className="previewComponent">
-				<form onSubmit={(e) => this._handleSubmit(e)}>
-					<input className="fileInput"
-						type="file"
-						accept="image/*"
-						onChange={(e) => this._handleImageChange(e)} />
-					{/* <button className="submitButton"
-						type="submit"
-						onClick={(e) => this._handleSubmit(e)}>Upload Image</button> */}
-				</form>
-				<div className="imgPreview">
-					{$imagePreview}
+			<div class="container">
+				<div class="row">
+					<div class="offset-md-3 col-md-6">
+						<div class="form-group files">
+							<input type="file" class="form-control" multiple onChange={this.onChangeHandler} />
+						</div>
+
+					</div>
+					<div className="imgPreview">
+						{$imagePreview}
+					</div>
+
+					<div class="form-group">
+						<ToastContainer />
+						<Progress max="100" color="success" value={this.state.loaded} >{Math.round(this.state.loaded, 2)}%</Progress>
+
+					</div>
+
+					<button type="button" class="btn btn-success btn-block" onClick={this.onClickHandler}>Upload</button>
+
+
 				</div>
 			</div>
-		)
+		);
 	}
 }
+
 
 
 function useLocalstorage(key, initialValue) {
@@ -162,7 +308,7 @@ const Summary = () => {
 								<Grid.Column width={4}>
 									<Segment placeholder textAlign="center">
 										<Grid>
-										{/* <Grid.Row>
+											{/* <Grid.Row>
 										<Grid.Column>
 											<Image src='https://react.semantic-ui.com/images/wireframe/image.png' size='small'/>
 										</Grid.Column>
@@ -172,7 +318,7 @@ const Summary = () => {
 											<Button color="blue">업로드</Button>
 										</Grid.Column>
 										</Grid.Row> */}
-										<ImageUpload />
+											<ImageUpload />
 										</Grid>
 									</Segment>
 								</Grid.Column>
