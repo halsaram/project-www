@@ -158,7 +158,7 @@ class Layout extends Component {
         <Grid columns='equal'verticalAlign="middle">
           <Grid.Column>
             <Button onClick={this.handleAnimationChange('overlay')}>|||</Button>
-            <Link href='https://a5249e79.ngrok.io'><a>CBX-Halsaram</a></Link>
+            <Link href='https://eba27715.ngrok.io'><a>CBX-Halsaram</a></Link>
             <Link as='/프로젝트시작' href={{ pathname: '/project', query: { id: 'start', title: '프로젝트올리기' } }}>
               <Button inverted basic color="blue">
                 <a><p >프로젝트올리기</p></a>
