@@ -172,7 +172,9 @@ class Layout extends Component {
             </Link>
           </Grid.Column>
           <Grid.Column width={4} textAlign="Right floated left aligned column">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <Input icon='search' placeholder='Search...' />
+            &nbsp;&nbsp;
             <GoogleAPI />
           </Grid.Column>
         </Grid> 

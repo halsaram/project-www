@@ -78,7 +78,7 @@ const MyProfile = () => {
                 <Grid columns='equal'>
                     <Grid.Column />
                     <Grid.Column width={10}>
-                        <h5><p>프로필 설정</p></h5>
+                        <h1><p>프로필 설정</p></h1>
                     </Grid.Column>
                     <Grid.Column />
                 </Grid>
@@ -93,66 +93,82 @@ const MyProfile = () => {
                             <Grid>
                                 {/* 프로젝트 정보폼 */}
                                 <Grid.Column width={12}>
-                                    <p>프로젝트명<span style={fontSize}>
-                                        프로젝트 성격과 리워드를 짐작할 수 있게 간결하고 직관적으로 작성해주세요
+                                    <p>이름<span style={fontSize}>
+                                        &nbsp; 구글 아이디로 로그인 시 구글 닉네임으로 최초 지정됩니다.
 											</span></p>
                                     <Form.Field inline>
-                                        <Input placeholder='예) 더 가벼워진 미래식사, 밀스 라이트'
+                                        <Input placeholder='입력해주세요'
                                             value={projectTitle}
                                             name="projectTitle"
                                             onChange={e => setProjectTitle(e.target.value)} maxlength="40" fluid />
                                     </Form.Field>
 
                                     <br />
-                                    <p>짧은제목<span style={fontSize}>
-                                        검색, 알림 등에 사용되는 짧은 제목을 작성해주세요
+                                    <p>지역<span style={fontSize}>
+                                       &nbsp; 실제 배송 받으실 주소
 											</span></p>
                                     <Form.Field inline>
-                                        <Input placeholder='예) 병뚜껑스피커, 욜로북'
+                                        <Input placeholder='입력해주세요'
                                             value={keyword}
                                             name="keyword"
                                             onChange={e => setKeyword(e.target.value)} maxlength="8" fluid />
                                     </Form.Field>
 
                                     <br />
-                                    <p>목표금액<span style={fontSize}>
-                                        마감일 자정 기준 목표 금액 미달시 펀딩은 취소됩니다.(리워드 평균 목표 금액 : 100만원)
+                                    <p>소개<span style={fontSize}>
+                                        &nbsp; 300자 이내의 자기소개를 입력해주세요.
 											</span></p>
                                     <Form.Field inline>
-                                        <Input placeholder='0'
-                                            value={fundingGoal}
-                                            type="number"
-                                            name="fundingGoal"
-                                            onChange={e => setFundingGoal(e.target.value)} maxlength="8" fluid />
+                                        <Input placeholder='입력해주세요'
+                                            value={keyword}
+                                            name="keyword"
+                                            onChange={e => setKeyword(e.target.value)} maxlength="8" fluid />
                                     </Form.Field>
 
                                     <br />
-                                    <p>카테고리<span style={fontSize}>
-                                        오픈 후, 노출될 카테고리를 선택해 주세요.
+                                    <p>웹사이트<span style={fontSize}>
+                                        &nbsp; 웹사이트가 있다면 주소를 입력해주세요.
 											</span></p>
                                     <Form.Field inline>
-                                        <Dropdown clearable value={category} options={options} onChange={handleChange} selection fluid />
+                                        <Input placeholder='입력해주세요'
+                                            value={keyword}
+                                            name="keyword"
+                                            onChange={e => setKeyword(e.target.value)} maxlength="8" fluid />
                                     </Form.Field>
 
                                     <br />
-                                    <p>종료일<span style={fontSize}>
-                                        프로젝트 진행 기간은 평균 30일입니다.
+                                    <p>전화번호<span style={fontSize}>
+                                        &nbsp; 전화번호를 입력해주세요. ex)000-0000-0000
 											</span></p>
                                     <Form.Field inline>
-                                        <Input
-                                            type="date"
-                                            value={deadline}
-                                            name="deadline"
-                                            onChange={e => setDeadline(e.target.value)} fluid />
+                                        <Input placeholder='입력해주세요'
+                                            value={keyword}
+                                            name="keyword"
+                                            onChange={e => setKeyword(e.target.value)} maxlength="8" fluid />
                                     </Form.Field>
+                                    
                                 </Grid.Column>
                             </Grid>
+
+                            
                         </Segment>
+                        
                     </Grid.Column>
                     <Grid.Column />
                 </Grid>
             </Form>
-            <br></br><br></br>
+            <div>
+            <Grid columns='equal'>
+                <Grid.Column />
+                <Grid.Column textAlign="center" width={16}>
+                        <Link as='/프로필 설정' href={{ pathname: '/mypage', query: { id: 'myprofile', title: '프로필 설정' } }}>
+                    <button class="ui blue button">수정하기</button>
+                    </Link>
+
+                </Grid.Column>
+                <Grid.Column />
+            </Grid>
+        </div>
         </div>
     );
 }

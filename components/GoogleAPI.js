@@ -21,10 +21,10 @@ const error = response => {
 const onClick = (e,value)=>{
     switch (value.children[1]){
         case "내 후원현황":
-            Router.push('/mypage/Mysupport')
+            Router.push('/mypage?id=Mysupport')
             break;
         case "내가만든 프로젝트":
-            Router.push('/mypage/Myproject')
+            Router.push('/mypage?id=Myproject')
             break;
         case "프로필 설정":
             Router.push('/mypage?id=myprofile')
@@ -76,9 +76,9 @@ const MountTest = (props) => {
             _user.userName === undefined ? <Button loading>Loading</Button> : 
             <Dropdown trigger={trigger} pointing='top left' icon={null}>
                 <Dropdown.Menu>
-                        <Dropdown.Item onClick={onClick}><Icon name='user' />내 후원현황</Dropdown.Item>
-                        <Dropdown.Item onClick={onClick}><Icon name='user' />내가만든 프로젝트</Dropdown.Item>
-                        <Dropdown.Item onClick={onClick}><Icon name='settings' />프로필 설정</Dropdown.Item>
+                        <Dropdown.Item onClick={onClick}><Icon name='big won' />내 후원현황</Dropdown.Item>
+                        <Dropdown.Item onClick={onClick}><Icon name='big product hunt' />내가만든 프로젝트</Dropdown.Item>
+                        <Dropdown.Item onClick={onClick}><Icon name='big user' />프로필 설정</Dropdown.Item>
                     {/* <Dropdown.Item onClick={onClick}><Icon name='user' /><a as='/내후원현황' href='/project?id=start&title=공지사항'>내 후원현황</a></Dropdown.Item>
                         <Dropdown.Item onClick={onClick}><Icon name='user' /><a as='/내후원현황' href='/myapge/Myproject'>내가만든 프로젝트</a></Dropdown.Item>
                         <Dropdown.Item onClick={onClick}> <Icon name='settings' /><a as='/내후원현황' href='/mypage/MyProfile'>프로필 설정</a></Dropdown.Item> */}
