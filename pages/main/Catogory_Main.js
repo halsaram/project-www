@@ -1,5 +1,5 @@
 import Main_Banner from './main/Main_Banner'
-import HeaderBar from '../components/Header'
+import HeaderBar from '../../components/Header'
 import CatoList from './CatoList'
 
 
