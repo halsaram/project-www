@@ -21,7 +21,7 @@ const error = response => {
 const onClick = (e,value)=>{
     switch (value.children[1]){
         case "내 후원현황":
-            Router.push('/project?id=start&title=공지사항')
+            Router.push('/mypage/Mysupport')
             break;
         case "내가만든 프로젝트":
             Router.push('/mypage/Myproject')
