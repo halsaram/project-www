@@ -21,7 +21,6 @@ import { ToastContainer, toast } from 'react-toastify';
 
 
 
-
 // class ImageUpload extends React.Component {
 // 	constructor(props) {
 // 		super(props);
@@ -78,6 +77,7 @@ import { ToastContainer, toast } from 'react-toastify';
 // 		)
 // 	}
 // }
+
 
 
 class ImageUpload extends Component {
@@ -152,7 +152,7 @@ class ImageUpload extends Component {
 		for (var x = 0; x < this.state.selectedFile.length; x++) {
 			data.append('file', this.state.selectedFile[x])
 		}
-		axios.post("https://a50cc827.ngrok.io/upload", data, {
+		axios.post("http://a50cc827.ngrok.io/upload", data, {
 			onUploadProgress: ProgressEvent => {
 				this.setState({
 					loaded: (ProgressEvent.loaded / ProgressEvent.total * 100),
@@ -167,31 +167,15 @@ class ImageUpload extends Component {
 			})
 	}
 
-
-	_handleImageChange(e) {
-		e.preventDefault();
-
-		let reader = new FileReader();
-		let file = e.target.files[0];
-
-		reader.onloadend = () => {
-			this.setState({
-				file: file,
-				selectedFile: reader.result
-			});
-		}
-
-		reader.readAsDataURL(file)
-	}
-
 	render() {
-		let { selectedFile } = this.state;
+		let { imagePreviewUrl } = this.state;
 		let $imagePreview = null;
-		if (selectedFile) {
-			$imagePreview = (<img src={selectedFile} width="180" />);
+		if (imagePreviewUrl) {
+			$imagePreview = (<img src={imagePreviewUrl} width="180"/>);
 		} else {
 			$imagePreview = (<div className="previewText"><Image src='https://react.semantic-ui.com/images/wireframe/image.png' size='small' /></div>);
 		}
+
 		return (
 			<div class="container">
 				<div class="row">
@@ -199,21 +183,18 @@ class ImageUpload extends Component {
 						<div class="form-group files">
 							<input type="file" class="form-control" multiple onChange={this.onChangeHandler} />
 						</div>
+						<div className="imgPreview">
+ 							{$imagePreview}
+		 				</div>
+						<div class="form-group">
+							<ToastContainer />
+							<Progress max="100" color="success" value={this.state.loaded} >{Math.round(this.state.loaded, 2)}%</Progress>
+
+						</div>
+
+						<button type="button" class="btn btn-success btn-block" onClick={this.onClickHandler}>Upload</button>
 
 					</div>
-					<div className="imgPreview">
-						{$imagePreview}
-					</div>
-
-					<div class="form-group">
-						<ToastContainer />
-						<Progress max="100" color="success" value={this.state.loaded} >{Math.round(this.state.loaded, 2)}%</Progress>
-
-					</div>
-
-					<button type="button" class="btn btn-success btn-block" onClick={this.onClickHandler}>Upload</button>
-
-
 				</div>
 			</div>
 		);
