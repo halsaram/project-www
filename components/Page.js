@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { inject, observer } from 'mobx-react'
 import Layout from './Layout'
 
 @inject( 'web3', 'accounts', 'contract', 'coinbase')
 @observer
-class Page extends React.Component {
+class Page extends Component {
     
     componentDidMount() {
         console.log(this.props);

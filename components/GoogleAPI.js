@@ -27,10 +27,9 @@ const onClick = (e,value)=>{
             Router.push('/mypage/Myproject')
             break;
         case "프로필 설정":
-            Router.push('/mypage/MyProfile')
+            Router.push('/mypage?id=myprofile')
             break;
     }
-  
 }
 
 const MountTest = (props) => {
@@ -79,7 +78,7 @@ const MountTest = (props) => {
                 <Dropdown.Menu>
                         <Dropdown.Item onClick={onClick}><Icon name='user' />내 후원현황</Dropdown.Item>
                         <Dropdown.Item onClick={onClick}><Icon name='user' />내가만든 프로젝트</Dropdown.Item>
-                        <Dropdown.Item onClick={onClick}> <Icon name='settings' />프로필 설정</Dropdown.Item>
+                        <Dropdown.Item onClick={onClick}><Icon name='settings' />프로필 설정</Dropdown.Item>
                     {/* <Dropdown.Item onClick={onClick}><Icon name='user' /><a as='/내후원현황' href='/project?id=start&title=공지사항'>내 후원현황</a></Dropdown.Item>
                         <Dropdown.Item onClick={onClick}><Icon name='user' /><a as='/내후원현황' href='/myapge/Myproject'>내가만든 프로젝트</a></Dropdown.Item>
                         <Dropdown.Item onClick={onClick}> <Icon name='settings' /><a as='/내후원현황' href='/mypage/MyProfile'>프로필 설정</a></Dropdown.Item> */}
