@@ -18,16 +18,20 @@ const error = response => {
     console.error(response) // eslint-disable-line
 }
 
+// Main Dropdwon 
+
 const onClick = (e,value)=>{
+    console.log(value);
+    
     switch (value.children[1]){
         case "내 후원현황":
-            Router.push('/project?id=start&title=공지사항')
+            Router.push('/mypage/MySupport')
             break;
         case "내가만든 프로젝트":
-            Router.push('/mypage/Myproject')
+            Router.push('/mypage/MyProject')
             break;
         case "프로필 설정":
-            Router.push('/mypage/MyProfile')
+            Router.push('/mypage?id=myprofile')
             break;
     }
 }
@@ -78,10 +82,7 @@ const MountTest = (props) => {
                 <Dropdown.Menu>
                         <Dropdown.Item onClick={onClick}><Icon name='user' />내 후원현황</Dropdown.Item>
                         <Dropdown.Item onClick={onClick}><Icon name='user' />내가만든 프로젝트</Dropdown.Item>
-                        <Dropdown.Item onClick={onClick}> <Icon name='settings' />프로필 설정</Dropdown.Item>
-                    {/* <Dropdown.Item onClick={onClick}><Icon name='user' /><a as='/내후원현황' href='/project?id=start&title=공지사항'>내 후원현황</a></Dropdown.Item>
-                        <Dropdown.Item onClick={onClick}><Icon name='user' /><a as='/내후원현황' href='/myapge/Myproject'>내가만든 프로젝트</a></Dropdown.Item>
-                        <Dropdown.Item onClick={onClick}> <Icon name='settings' /><a as='/내후원현황' href='/mypage/MyProfile'>프로필 설정</a></Dropdown.Item> */}
+                        <Dropdown.Item onClick={onClick}><Icon name='settings' />프로필 설정</Dropdown.Item>
                     <Dropdown.Item>
                         <GoogleLogout
                             buttonText='로그아웃'
