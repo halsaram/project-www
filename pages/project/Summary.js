@@ -85,7 +85,8 @@ class ImageUpload extends Component {
 		super(props);
 		this.state = {
 			selectedFile: null,
-			loaded: 0
+			loaded: 0,
+			imagePreviewUrl: ''
 		}
 
 	}
@@ -138,15 +139,23 @@ class ImageUpload extends Component {
 		return true;
 	}
 	onChangeHandler = event => {
+		event.preventDefault();
+		let reader = new FileReader();
 		var files = event.target.files
+		var file = event.target.files[0]
 		if (this.maxSelectFile(event) && this.checkMimeType(event) && this.checkFileSize(event)) {
 			// if return true allow to setState
-			this.setState({
-				selectedFile: files,
-				loaded: 0
-			})
+			reader.onloadend = () => {
+				this.setState({
+					selectedFile: files,
+					loaded: 0,
+					imagePreviewUrl: reader.result
+				})
+			}
+			reader.readAsDataURL(file)
 		}
 	}
+
 	onClickHandler = () => {
 		const data = new FormData()
 		for (var x = 0; x < this.state.selectedFile.length; x++) {
@@ -160,12 +169,16 @@ class ImageUpload extends Component {
 			},
 		})
 			.then(res => { // then print response status
-				toast.success('upload success')
+				// toast.success('upload success')
+				console.log('upload success');
 			})
 			.catch(err => { // then print response status
-				toast.error('upload fail')
+				// toast.error('upload fail')
+				console.log('upload fail');
 			})
 	}
+
+	
 
 	render() {
 		let { imagePreviewUrl } = this.state;
@@ -173,7 +186,7 @@ class ImageUpload extends Component {
 		if (imagePreviewUrl) {
 			$imagePreview = (<img src={imagePreviewUrl} width="180"/>);
 		} else {
-			$imagePreview = (<div className="previewText"><Image src='https://react.semantic-ui.com/images/wireframe/image.png' size='small' /></div>);
+			$imagePreview = (<Image src='https://react.semantic-ui.com/images/wireframe/image.png' size='small' />);
 		}
 
 		return (
