@@ -1,4 +1,4 @@
-import Main_Banner from './main/Main_Banner'
+import Main_Banner from './Main_Banner'
 import HeaderBar from '../../components/Header'
 
 
@@ -7,8 +7,6 @@ const Catogory_Main=()=>{
         <div>
             <HeaderBar/>
             <Main_Banner />
-            
-            
         </div>
 
     );
