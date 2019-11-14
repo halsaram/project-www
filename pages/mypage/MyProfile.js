@@ -78,7 +78,7 @@ const MyProfile = () => {
                 <Grid columns='equal'>
                     <Grid.Column />
                     <Grid.Column width={10}>
-                        <p>프로필 설정</p>
+                        <h5><p>프로필 설정</p></h5>
                     </Grid.Column>
                     <Grid.Column />
                 </Grid>
@@ -152,6 +152,7 @@ const MyProfile = () => {
                     <Grid.Column />
                 </Grid>
             </Form>
+            <br></br><br></br>
         </div>
     );
 }

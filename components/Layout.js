@@ -166,13 +166,12 @@ class Layout extends Component {
             </Link>
           </Grid.Column>
        
-          <Grid.Column width={7} textAlign="center">
+          <Grid.Column width={8} textAlign="center">
             <Link as='/' href={{ pathname: '/', query: { id: 'home', title: '홈' } }}>
                 <a><p >Halsaram</p></a>
             </Link>
           </Grid.Column>
-
-          <Grid.Column textAlign='right'>
+          <Grid.Column width={4} textAlign="Right floated left aligned column">
             <Input icon='search' placeholder='Search...' />
             <GoogleAPI />
           </Grid.Column>
