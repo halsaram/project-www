@@ -291,12 +291,23 @@ const MyProfile = () => {
                     </Grid.Column>
                     <Grid.Column />
                 </Grid>
-                <Link as='/' href='/mypage?id=Myprofile=프로필 설정'>
-                    <Button color='blue' floated='right'><a style={buttonText}>수정하기</a></Button>
-                </Link>
-                <br /><br /><br /><br />
-            </Form>
+           
 
+                <Grid columns='equal'>
+                    <Grid.Column />
+                    <Grid.Column textAlign="center" width={16}>
+
+                        <br></br>
+                        <Link as='/' href='/mypage?id=Myprofile=프로필 설정'></Link>
+                        <button class="ui blue button">수정하기</button>
+                        <br></br>
+                <br /><br /><br /><br /><br /><br />
+
+                    </Grid.Column>
+                    <Grid.Column />
+                </Grid>
+
+            </Form>
         </div>
     );
 }
