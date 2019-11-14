@@ -30,7 +30,6 @@ const onClick = (e,value)=>{
             Router.push('/mypage/MyProfile')
             break;
     }
-  
 }
 
 const MountTest = (props) => {
