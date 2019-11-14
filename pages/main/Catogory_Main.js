@@ -1,4 +1,4 @@
-import Main_Banner from './main/Main_Banner'
+import Main_Banner from './Main_Banner'
 import HeaderBar from '../../components/Header'
 import CatoList from './CatoList'
 
@@ -8,6 +8,7 @@ const Catogory_Main=()=>{
 
     return(
         <div>
+            
             <HeaderBar />
             <Main_Banner />
             <CatoList dataType="AllData"/>
