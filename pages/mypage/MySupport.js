@@ -10,9 +10,64 @@
  * 최종수정내용	  : Base
 **************************************************************************************/
 
-const Base = () => (
-    <div>
-    </div>
-);
+import React, { Component } from 'react'
+import Link from 'next/link';
+import { useState, useEffect } from 'react';
+import {
+    Button,
+    Divider,
+    Dropdown,
+    Grid,
+    Header,
+    Icon,
+    Image,
+    Label,
+    Menu,
+    Message,
+    Segment,
+    Table,
+} from 'semantic-ui-react'
 
-export default Base;
+const Mysupport = () => (
+    <Grid container style={{ padding: '5em 0em' }}>
+        <Grid.Row>
+            <Grid.Column>
+                <Header as='h1' dividing>
+                    나의 후원 현황
+        </Header>
+            </Grid.Column>
+        </Grid.Row>
+
+        <Grid.Row>
+            <Grid.Column>
+                <Header as='h1'></Header>
+                <Button as='a' tabIndex='0'>
+                    모두보기
+        </Button>
+                <Button as='a' primary tabIndex='0'>
+                    펀딩 진행중
+        </Button>
+                <Button as='a' basic tabIndex='0'>
+                    결제 완료
+        </Button>
+            </Grid.Column>
+        </Grid.Row>
+
+
+
+        <Grid.Row>
+            <Grid.Column>
+                <Header as='h1'></Header>
+                <Divider />
+
+                <Segment>
+                    <p>
+                        <Icon name='big credit card outline' />총 0건의 결제 완료된 후원이 있습니다.
+          </p>
+                </Segment>
+            </Grid.Column>
+        </Grid.Row>
+    </Grid>
+)
+
+export default Mysupport 

@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import { Grid, Card, Progress, Icon, Image } from 'semantic-ui-react'
 import Link from 'next/link';
 
+
 // 하나의 카드(ListCard) ->  
 const ListCard =(props) => {
   
@@ -32,10 +33,10 @@ const ListCard =(props) => {
                 </Card.Description>
               </Card.Content>
             </Card>
-           </Link> 
+           </Link>
           </Grid.Column>
     
-
+    
   );
 }
 export default ListCard; 

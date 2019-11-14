@@ -20,11 +20,11 @@ const error = response => {
 
 const onClick = (e,value)=>{
     switch (value.children[1]){
-        case "내 후원현황":
-            Router.push('/mypage?id=Mysupport')
-            break;
         case "내가만든 프로젝트":
-            Router.push('/mypage?id=Myproject')
+            Router.push('/mypage?id=myproject')
+            break;
+        case "내 후원현황":
+            Router.push('/mypage?id=mysupport')
             break;
         case "프로필 설정":
             Router.push('/mypage?id=myprofile')
