@@ -39,7 +39,7 @@ const Myproject = () => (
                     만든 프로젝트 0개
         </Header>
 
-                <Image size='small' src='/images/wireframe/image.png' />
+                <Image size='small' src='file:///home/getme/%EB%B0%94%ED%83%95%ED%99%94%EB%A9%B4/111.png' />
             </Grid.Column>
         </Grid.Row>
 
