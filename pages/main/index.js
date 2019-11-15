@@ -9,9 +9,9 @@ import Layout from '../../components/Layout'
 
 const Contents = (props) => (
    <div>
-    {props.id == 'Privacy' && <Privacy />}
-    {props.id == 'Notices' && <Notices />}
-    {props.id == 'TermsOfUse' && <TermsOfUse />}
+    {props.id == 'privacy' && <Privacy />}
+    {props.id == 'notices' && <Notices />}
+    {props.id == 'termsofuse' && <TermsOfUse />}
     
   </div>
 )
