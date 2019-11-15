@@ -31,8 +31,8 @@ const Footer = () => (
           <Header inverted as='h4'/>
           <List link inverted>
           <List.Item as='a'>
-              <Link as='/창작자 가이드' href={{ pathname: '/main', query: { id: 'termsofuse', title: '창작자 가이드' } }}>
-                  <a>창작자 가이드</a>
+              <Link as='/이용약관' href={{ pathname: '/main', query: { id: 'termsofuse', title: '이용약관' } }}>
+                  <a>이용약관</a>
               </Link>
             </List.Item>
           </List>
