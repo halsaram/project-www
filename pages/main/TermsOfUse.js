@@ -14,6 +14,9 @@ import React from 'react'
 
 const TermsOfUse = () => (
 <div className="Policy-sc-1gd59w7-0 fWdFEE" data-reactid="50">
+	<br></br>
+		<br></br>
+			<br></br>
 						<header data-reactid="51">
 						<h1 data-reactid="52">Halsaram 웹사이트 이용약관</h1>
 						<time datetime="2017-12-26T00:00" data-reactid="53">최종 갱신일 : 2017. 12. 26</time></header>
