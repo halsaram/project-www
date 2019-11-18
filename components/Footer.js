@@ -48,6 +48,16 @@ const Footer = () => (
             </List.Item>
           </List>
         </Grid.Column>
+        <Grid.Column width={3}>
+          <Header inverted as='h4'/>
+          <List link inverted>
+          <List.Item as='a'>
+              <Link as='/DAPP' href={{ pathname: '/dapp', query: { id: 'dapp', title: 'DAPP' } }}>
+                  <a>Dapp</a>
+              </Link>
+            </List.Item>
+          </List>
+        </Grid.Column>
       </Grid>
       <Header disabled as='h5' floated='left' textAlign='left'>
         <br />
