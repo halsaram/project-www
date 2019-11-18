@@ -40,6 +40,16 @@ const Notices = () => (
                 <h4><p> 보도자료 </p></h4>
                 <h2><p>캐릭터 격전지로 떠오른 '텀블벅'..웹툰 플랫폼 흥행작부터 크리에이터까지</p></h2>
                 <p>2019.11.15</p>
+              
+                <Container style={{ marginTop: '3em' }}></Container>
+                <h4><p> 공지 </p></h4>
+                <h2><p> 개인정보 처리 방침 안내</p></h2>
+                <p>2019.11.10</p>
+              
+                <Container style={{ marginTop: '3em' }}></Container>
+                <h4><p> 보도자료 </p></h4>
+                <h2><p> 할사람, 간장게장 프로젝트로 전통 식품 부흥 이끈다</p></h2>
+                <p>2019.11.10</p>
 
                 <br></br>
                 <br></br>
