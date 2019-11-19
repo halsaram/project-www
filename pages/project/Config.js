@@ -315,18 +315,6 @@ const InsertConfig = () => {
 								onChange={e => setDate(e.target.value)} fluid />
 						</Grid.Column>
 					</Grid>			
-				<Grid.Column width={4}>
-				<Checkbox label='아이템' checked={size}
-					onChange={(e) => { console.log(size);
-					  setSize(!size); }} />
-			</Grid.Column>
-			<Grid.Column width={11}>
-				{size && true ?
-					<Input value={insize}
-						name="size"
-						onChange={e => setInsize(e.target.value)} fluid />
-					: <Input name="size" fluid disabled />}
-			</Grid.Column>
 				</Segment>
 			</Grid.Column>
 			<Grid.Column />
