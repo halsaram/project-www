@@ -52,14 +52,18 @@ const MyProfile = () => {
         color: "gray"
     }
 
-    const [myname, setMyname] = useLocalstorage('이름', '')
-    const [address, setAddress] = useLocalstorage('지역', '')
-    const [describe, setDescribe] = useLocalstorage('소개', '')
-    const [mysite, setMysite] = useLocalstorage('웹사이트', '')
-    const [mynumber, setMynumber] = useLocalstorage('전화번호', '')
+    const [myname, setMyname] = useState('')
+    const [address, setAddress] = useState('')
+    const [describe, setDescribe] = useState('')
+    const [mysite, setMysite] = useState('')
+    const [mynumber, setMynumber] = useState('')
 
 
     const handleChange = (e, { value }) => setCategory(value)
+
+    const submit = () =>{
+        localStorage.setItem('이름',myname)
+    }
 
     return (
 
@@ -153,7 +157,7 @@ const MyProfile = () => {
                 <Grid.Column />
                 <Grid.Column textAlign="center" width={16}>
                         <Link as='/프로필 설정' href={{ pathname: '/mypage', query: { id: 'myprofile', title: '프로필 설정' } }}>
-                    <button class="ui blue button">수정하기</button>
+                    <button class="ui blue button" onClick={submit}>수정하기</button>
                     </Link>
 
                 </Grid.Column>

@@ -50,7 +50,9 @@ const deletelocal = () => {
     localStorage.removeItem('etcChecked');
     localStorage.removeItem('deliveryChecked');
     localStorage.removeItem('limitChecked');
-
+    localStorage.removeItem('imagePreviewUrl');
+    localStorage.removeItem('loaded');
+    localStorage.removeItem('selectedFile');
 }
 
 const textMargin = {
