@@ -19,8 +19,9 @@ dist
 
 # dependencies
 node_modules
+test/node_modules
+truffle/v4/node_modules
+truffle/v5/node_modules
 package-lock.json
 yarn.lock
 !/yarn.lock
-test/node_modules
-truffle.js
