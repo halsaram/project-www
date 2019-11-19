@@ -324,76 +324,83 @@ const InsertConfig = () => {
 
  }
 
-const Config = () => (
+const Config = () => {
+	const insertConfigs = []
+	const [configCount, setConfigCount] = useLocalstorage('선물갯수',1)
+	for (let i = 0; i < configCount; i++) {
+		insertConfigs.push((<InsertConfig key={i}/>))
+	}
+	
+	const addConfig = () => {
+		setConfigCount(configCount + 1)
+	}
 
-	<div>
+	return (
+		<div>
 
-		{/* 프로젝트의 헤더 부분(제목작성+메뉴) */}
+			{/* 프로젝트의 헤더 부분(제목작성+메뉴) */}
 
-		<ProjectHeader />
+			<ProjectHeader />
 
-		<ProjectLink menus="config"/>
+			<ProjectLink menus="config" />
 
-		<br /><br />
-
-
-
-		{/* 프로젝트의 소제목을 배치한 부분 */}
-
-		<Grid columns='equal'>
-
-			<Grid.Column />
-
-			<Grid.Column width={10}>
-
-				<p>리워드 등록하기</p>
-
-			</Grid.Column>
-
-			<Grid.Column />
-
-		</Grid>
+			<br /><br />
 
 
 
-		{/* 프로젝트 내용부분 */}
+			{/* 프로젝트의 소제목을 배치한 부분 */}
 
-		<InsertConfig />
-		{/* <CreateItem />
+			<Grid columns='equal'>
+
+				<Grid.Column />
+
+				<Grid.Column width={10}>
+
+					<p>리워드 등록하기</p>
+
+				</Grid.Column>
+
+				<Grid.Column />
+
+			</Grid>
+
+
+
+			{/* 프로젝트 내용부분 */}
+
+			{insertConfigs}
+			{/* <CreateItem />
 		 */}
 
-		{/* 이전페이지 이동 */}
+			{/* 이전페이지 이동 */}
 
-		<Link as='/p' href='/project?id=summary&title=프로젝트개요'>
+			<Link as='/p' href='/project?id=summary&title=프로젝트개요'>
 
-			<Button color='blue' floated='left'><a style={buttonText}>이전</a></Button>
+				<Button color='blue' floated='left'><a style={buttonText}>이전</a></Button>
 
-		</Link>
-
-
-
-		{/* 다음 페이지 이동 */}
-
-		<Link as='/p' href='/project?id=storytelling&title=스토리텔링'>
-
-			<Button color='blue' floated='right'><a style={buttonText}>다음</a></Button>
-
-		</Link>
+			</Link>
 
 
 
-		{/* 정확한 수치전에 예비로 br태그 삽입 */}
+			{/* 다음 페이지 이동 */}
 
-		<br /><br /><br /><br />
+			<Link as='/p' href='/project?id=storytelling&title=스토리텔링'>
+
+				<Button color='blue' floated='right'><a style={buttonText}>다음</a></Button>
+
+			</Link>
 
 
 
-	</div>
+			{/* 정확한 수치전에 예비로 br태그 삽입 */}
 
+			<br /><br /><br /><br />
 
+		 	<Button onClick={addConfig}>Add</Button>
 
-);
-
+		</div>
+	)
+}
 
 
 export default Config;
