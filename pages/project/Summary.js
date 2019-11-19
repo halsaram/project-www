@@ -51,8 +51,20 @@ const Summary = () => {
 
 	// 카테고리항목변수
 	const options = [
-		{ key: '건강', value: '건강', text: '건강' },
-		{ key: '생활', value: '생활', text: '생활' }
+		{ key: '게임', value: '게임', text: '게임' },
+		{ key: '공연', value: '공연', text: '공연' },
+		{ key: '디자인', value: '디자인', text: '디자인' },
+		{ key: '만화', value: '만화', text: '만화' },
+		{ key: '미술', value: '미술', text: '미술' },
+		{ key: '공예', value: '공예', text: '공예' },
+		{ key: '사진', value: '사진', text: '사진' },
+		{ key: '영화, 비디오', value: '영화, 비디오', text: '영화, 비디오' },
+		{ key: '푸드', value: '푸드', text: '푸드' },
+		{ key: '음악', value: '음악', text: '음악' },
+		{ key: '출판', value: '출판', text: '출판' },
+		{ key: '테크놀로지', value: '테크놀로지', text: '테크놀로지' },
+		{ key: '패션', value: '패션', text: '패션' },
+		{ key: '캠페인', value: '캠페인', text: '캠페인 '}
 	]
 
 
@@ -106,17 +118,18 @@ const Summary = () => {
 								<Grid.Column width={4}>
 									<Segment placeholder textAlign="center">
 										<Grid>
+											<p>프로젝트 대표 이미지<span style={fontSize}>
+												대표 이미지는 프로젝트의 가장 중요한 시각적 요소입니다. 프로젝트 대표 이미지를 등록해주세요.
+											</span></p>
 											<ImageUpload />
 										</Grid>
 									</Segment>
 								</Grid.Column>
 
-
-
 								{/* 프로젝트 정보폼 */}
 								<Grid.Column width={12}>
-									<p>프로젝트명<span style={fontSize}>
-										프로젝트 성격과 리워드를 짐작할 수 있게 간결하고 직관적으로 작성해주세요
+									<p>프로젝트 제목<span style={fontSize}>
+										프로젝트 성격과 리워드를 짐작할 수 있게 간결하고 직관적으로 작성해주세요.
 											</span></p>
 									<Form.Field inline>
 										<Input placeholder='예) 더 가벼워진 미래식사, 밀스 라이트'
@@ -126,8 +139,8 @@ const Summary = () => {
 									</Form.Field>
 
 									<br />
-									<p>짧은제목<span style={fontSize}>
-										검색, 알림 등에 사용되는 짧은 제목을 작성해주세요
+									<p>검색용 태그<span style={fontSize}>
+										검색, 알림 등에 사용되는 짧은 제목을 작성해주세요.
 											</span></p>
 									<Form.Field inline>
 										<Input placeholder='예) 병뚜껑스피커, 욜로북'
@@ -137,8 +150,18 @@ const Summary = () => {
 									</Form.Field>
 
 									<br />
-									<p>목표금액<span style={fontSize}>
-										마감일 자정 기준 목표 금액 미달시 펀딩은 취소됩니다.(리워드 평균 목표 금액 : 100만원)
+									
+									<p>프로젝트 카테고리<span style={fontSize}>
+										프로젝트의 성격에 맞는 카테고리를 선택해 주세요.
+											</span></p>
+									<Form.Field inline>
+										<Dropdown clearable value={category} options={options} onChange={handleChange} selection fluid />
+									</Form.Field>
+
+									<br />
+
+									<p>목표 금액<span style={fontSize}>
+										이번 프로젝트를 통해 모으고자 하는 펀딩 목표 금액이 얼마인가요? 마감일 자정까지 목표 금액을 100% 이상 달성하셔야만 모인 후원금이 결제 됩니다. (5,000원 이상인 금액을 입력해주세요.)
 											</span></p>
 									<Form.Field inline>
 										<Input placeholder='0'
@@ -149,15 +172,8 @@ const Summary = () => {
 									</Form.Field>
 
 									<br />
-									<p>카테고리<span style={fontSize}>
-										오픈 후, 노출될 카테고리를 선택해 주세요.
-											</span></p>
-									<Form.Field inline>
-										<Dropdown clearable value={category} options={options} onChange={handleChange} selection fluid />
-									</Form.Field>
 
-									<br />
-									<p>종료일<span style={fontSize}>
+									<p>프로젝트 종료일<span style={fontSize}>
 										프로젝트 진행 기간은 평균 30일입니다.
 											</span></p>
 									<Form.Field inline>
@@ -201,13 +217,13 @@ const Summary = () => {
 								{/* 창작자 정보폼 */}
 								<Grid.Column width={12}>
 									<p>창작자 소개<span style={fontSize}>
-										프로젝트를 창작하는 창작자 본인에 대한 소개를 입력하세요.
+										프로젝트를 창작하는 창작자님의 이력과 간단한 소개를 써 주세요.
 											</span></p>
 									<Form.Field inline>
-										<Input placeholder='간단히 40자 이내로 소개하시오'
+										<Input placeholder='창작자 소개를 입력해주세요'
 											value={creator}
 											name="creator"
-											onChange={e => setCreator(e.target.value)} maxlength="40" fluid />
+											onChange={e => setCreator(e.target.value)} maxlength="600" fluid />
 									</Form.Field>
 
 									<br /><br />
@@ -215,12 +231,12 @@ const Summary = () => {
 										서포터가 확인할 수있는 창작자님의 페이스북, 인스타그램 등을 입력하세요.
 											</span></p>
 									<Form.Field inline>
-										<Input placeholder='http://'
+										<Input label='http://'
 											value={websites1}
 											name="websites1"
 											onChange={e => setWebsites1(e.target.value)} maxlength="8" fluid />
 										<br />
-										<Input placeholder='http://'
+										<Input label='http://'
 											value={websites2}
 											name="websites2"
 											onChange={e => setWebsites2(e.target.value)} maxlength="8" fluid />
