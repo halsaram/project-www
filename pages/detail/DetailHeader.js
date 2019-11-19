@@ -14,39 +14,62 @@ import React from 'react'
 
 import Link from 'next/link';
 import DetailLink from './DetailLink';
-import { Grid, Segment, GridColumn, Input } from 'semantic-ui-react'
+import { Grid, Segment, Image, Button } from 'semantic-ui-react'
 
+const margin={
+    width: 100,
+    height : 2,
+    margin : 20
+}
+const smallFont={
+    color : "gray",
+    fontSize : "1rem"
+}
+const largeFont={
+    color : "black",
+    fontSize : "2rem",
+    marginLeft : 20
+}
 
 //2. 프로젝트 제목 적기 
 const detailHeader = () => (
     <div>
-        
- {/* //1.프로젝트 해당 카테고리 이동되게 하기
-// ex) 클릭하면 ->보드게임 이라면 보드게임만 쫘악 나옴 */}
-
+        <div style={margin}></div>
+        {/* 상세보기 이름 */}
         <Grid columns='equal'>
-            <Grid.Column />
-            <Grid.Column textAlign="center" width={16}>
-    
-        {/* <Input transparent placeholder='상세페이지 프로젝트 제목' size="huge" /> */}
-                {/* //2. ↑프로젝트 제목 적기  */}
-                {/* Input 길이를 늘리는 법 찾기 */}
-                {/* 글자를중앙정렬 */}
+            <Grid.Column/>
+                <Grid.Column width={8} textAlign="center">
+                    <h2>프로젝트 이름</h2>
+                    <p>제작자</p>
+                </Grid.Column>
+            <Grid.Column/>
 
-     {/* 3.클릭하면->프로젝트 만든사람이 만든 프로젝트만 쫘악 나옴 */}
-     <br></br>
-        <button class="ui orange button">1.카테고리명</button>
-                <br></br>
-                <br></br>
-                <p><h1>2.상세페이지 프로젝트 제목'</h1></p>
-                <br></br>
-                <br></br>
-        <button class="ui orange button">3.만든이</button>
+            <Grid.Row centered columns={3}>
+                <Grid.Column>
+                    <Image src='https://react.semantic-ui.com/images/wireframe/image.png' size='large' />
+                </Grid.Column>
+                <Grid.Column textAlign="left">
+                    <p style={ smallFont}>모인금액 / 달성률 <br/> <br/>  
+                    <span style={largeFont}>금액  <span style={smallFont}>00%</span></span> </p>
 
-            </Grid.Column>
-            <Grid.Column />
-        </Grid>
+                    <div style={margin}></div>
 
+                    <p style={ smallFont}>남은 시간<br/> <br/>  
+                    <span style={largeFont}>00일 남음  <span style={smallFont}>2017.01.01 마감</span></span> </p>
+
+                    <div style={margin}></div>
+                    <Button color="blue"> 프로젝트 밀어주기</Button> 
+                    <Button color='red' icon='heart'/>
+
+                </Grid.Column>
+        </Grid.Row>
+        <div style={margin}></div>
+ 
+    </Grid>
+
+
+
+ 
     </div>
 )
 

@@ -9,10 +9,17 @@
  * 최종수정자	   : 전새희
  * 최종수정내용	  : Base
 **************************************************************************************/
+import { Grid, Dropdown, Segment, Button, Form, Input, Select, Header, Icon, Image, Label } from 'semantic-ui-react'
 
 const Base = () => (
-    <div>
-    </div>
+    <Segment>
+        <h3>10000가격</h3>
+        <p>이 펀딩 제품에 대한 설명</p>
+        <h3>상품명</h3>
+        <p>예상 전달일 <span>2017.01.02</span></p>
+        <Button color="blue" fluid>프로젝트 밀어주기</Button>
+</Segment>
+
 );
 
 export default Base;

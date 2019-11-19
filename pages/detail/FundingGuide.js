@@ -18,15 +18,20 @@ import DetailHeader from './DetailHeader'
 import { useState, useEffect } from 'react';
 
 const FundingGuide = () => (
-	<>
 
 		<div>
 			<DetailHeader />
 			<DetailLink />
-			<br /><br />
+
+			<Grid columns='equal'>
+            	<Grid.Row centered columns={2}>
+            		<Grid.Column textAlign="left" width={10}>
+						<Segment></Segment>
+					</Grid.Column>
+            	</Grid.Row>
+        	</Grid>
 		</div>
-		
-	</>
+
 );
 
 export default FundingGuide;

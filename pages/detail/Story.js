@@ -16,12 +16,25 @@ import { Grid, Dropdown, Segment, Button, Form, Input, Select, Header, Icon, Ima
 import DetailLink from './DetailLink'
 import DetailHeader from './DetailHeader'
 import { useState, useEffect } from 'react';
+import DetailCato from './DetailCato'
 
 const Story = () => (
     <div>
         <DetailHeader />
         <DetailLink />
-        <br /><br />
+        <Grid columns='equal'>
+            <Grid.Row centered columns={3}>
+            <Grid.Column width="8" >
+                <Segment>
+                    스토리 이미지들
+
+                </Segment>
+            </Grid.Column>
+            <Grid.Column textAlign="left" width="4">
+                <DetailCato />
+            </Grid.Column>
+            </Grid.Row>
+        </Grid>
 
         </div>
     );
