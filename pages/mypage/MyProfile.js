@@ -5,9 +5,9 @@
  * 작성자		   : 이은미
  * 버전		      : 1.0.0
  * 생성일자		   : 2019-11-11
- * 최종수정일자 	: 2019-11-11
- * 최종수정자	   : 이은미
- * 최종수정내용	  : 
+ * 최종수정일자 	: 2019-11-19
+ * 최종수정자	   : 전새희
+ * 최종수정내용	  : useLocalstorage
 **************************************************************************************/
 
 import React, { Component } from 'react'
@@ -45,12 +45,6 @@ const buttonText = {
 
 const MyProfile = () => {
 
-    // 카테고리항목변수
-    const options = [
-        { key: '건강', value: '건강', text: '건강' },
-        { key: '생활', value: '생활', text: '생활' }
-    ]
-
 
     // 작은 안내문 글자
     const fontSize = {
@@ -58,14 +52,11 @@ const MyProfile = () => {
         color: "gray"
     }
 
-    const [projectTitle, setProjectTitle] = useLocalstorage('프로젝트명', '')
-    const [keyword, setKeyword] = useLocalstorage('짧은제목', '')
-    const [fundingGoal, setFundingGoal] = useLocalstorage('목표금액', '')
-    const [category, setCategory] = useLocalstorage('카테고리', '')
-    const [deadline, setDeadline] = useLocalstorage('종료일', '')
-    const [creator, setCreator] = useLocalstorage('창작자명', '')
-    const [websites1, setWebsites1] = useLocalstorage('창작자소셜주소1', '')
-    const [websites2, setWebsites2] = useLocalstorage('창작자소셜주소2', '')
+    const [myname, setMyname] = useLocalstorage('이름', '')
+    const [address, setAddress] = useLocalstorage('지역', '')
+    const [describe, setDescribe] = useLocalstorage('소개', '')
+    const [mysite, setMysite] = useLocalstorage('웹사이트', '')
+    const [mynumber, setMynumber] = useLocalstorage('전화번호', '')
 
 
     const handleChange = (e, { value }) => setCategory(value)
@@ -97,10 +88,10 @@ const MyProfile = () => {
                                         &nbsp; 구글 아이디로 로그인 시 구글 닉네임으로 최초 지정됩니다.
 											</span></p>
                                     <Form.Field inline>
-                                        <Input placeholder='입력해주세요'
-                                            value={projectTitle}
-                                            name="projectTitle"
-                                            onChange={e => setProjectTitle(e.target.value)} maxlength="40" fluid />
+                                        <Input placeholder='사용하실 이름을 입력해주세요'
+                                            value={myname}
+                                            name="myname"
+                                            onChange={e => setMyname(e.target.value)} fluid />
                                     </Form.Field>
 
                                     <br />
@@ -109,9 +100,9 @@ const MyProfile = () => {
 											</span></p>
                                     <Form.Field inline>
                                         <Input placeholder='입력해주세요'
-                                            value={keyword}
-                                            name="keyword"
-                                            onChange={e => setKeyword(e.target.value)} maxlength="8" fluid />
+                                            value={address}
+                                            name="address"
+                                            onChange={e => setAddress(e.target.value)} fluid />
                                     </Form.Field>
 
                                     <br />
@@ -120,31 +111,31 @@ const MyProfile = () => {
 											</span></p>
                                     <Form.Field inline>
                                         <Input placeholder='입력해주세요'
-                                            value={keyword}
-                                            name="keyword"
-                                            onChange={e => setKeyword(e.target.value)} maxlength="8" fluid />
+                                            value={describe}
+                                            name="describe"
+                                            onChange={e => setDescribe(e.target.value)} maxlength="600" fluid />
                                     </Form.Field>
 
                                     <br />
                                     <p>웹사이트<span style={fontSize}>
-                                        &nbsp; 웹사이트가 있다면 주소를 입력해주세요.
+                                        &nbsp; SNS 계정을 연동하시면 더욱 신뢰할 수 있는 프로필 카드를 만들 수 있습니다.
 											</span></p>
                                     <Form.Field inline>
-                                        <Input placeholder='입력해주세요'
-                                            value={keyword}
-                                            name="keyword"
-                                            onChange={e => setKeyword(e.target.value)} maxlength="8" fluid />
+                                        <Input placeholder='웹사이트가 있다면 주소를 입력해주세요'
+                                            value={mysite}
+                                            name="mysite"
+                                            onChange={e => setMysite(e.target.value)} fluid />
                                     </Form.Field>
 
                                     <br />
                                     <p>전화번호<span style={fontSize}>
-                                        &nbsp; 전화번호를 입력해주세요. ex)000-0000-0000
+                                        &nbsp; 전화번호를 입력해 주세요. 밀어주기 및 후원 선물 배송 시 연락을 위해 사용됩니다.
 											</span></p>
                                     <Form.Field inline>
-                                        <Input placeholder='입력해주세요'
-                                            value={keyword}
-                                            name="keyword"
-                                            onChange={e => setKeyword(e.target.value)} maxlength="8" fluid />
+                                        <Input placeholder='전화번호를 입력해주세요. ex)000-0000-0000'
+                                            value={mynumber}
+                                            name="mynumber"
+                                            onChange={e => setMynumber(e.target.value)} fluid />
                                     </Form.Field>
                                     
                                 </Grid.Column>
