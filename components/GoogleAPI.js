@@ -61,6 +61,10 @@ const MountTest = (props) => {
                         .catch(async (err) => {
                             const myAddr = await web3.eth.personal.newAccount(Eea)
                             await contract.methods.insertUser(myAddr, U3, ig, 0).send({ from: coinbase, gas: 4500000 })
+                            await contract.methods.getMyaddr(U3).call({ from: coinbase })
+                                .then(async (res) => {
+                                    userStore.setUser(await contract.methods.getUser(res).call({ from: coinbase }))
+                                })
                         })
                         .finally(() => {
                             console.log(U3, '===> ', userStore.user)
