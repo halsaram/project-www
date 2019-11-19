@@ -11,8 +11,6 @@
 **************************************************************************************/
 import React, {Component, useState, useReducer} from 'react'
 import { inject, observer } from 'mobx-react';
-import { inherits } from 'util'
-import { height } from 'window-size'
 import Page from '../components/Page'
 import Main_Banner from './main/Main_Banner'
 import HeaderBar from '../components/Header'

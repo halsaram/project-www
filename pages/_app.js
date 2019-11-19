@@ -39,8 +39,8 @@ class CustomApp extends App {
                     //     </Container>
                     // </Provider>
                 )}
-                render={({ web3, accounts, contract, coinbase }) => (
-                    <Provider {...this.mobxStore} accounts={accounts} contract={contract} web3={web3} coinbase={coinbase}>
+                render={({ web3, crowd_web3, accounts, contract, campaign, coinbase, crowdfundProject }) => (
+                    <Provider {...this.mobxStore} accounts={accounts} contract={contract} web3={web3} crowd_web3={crowd_web3} campaign={campaign} coinbase={coinbase} crowdfundProject={crowdfundProject}>
                         <Container>
                             <Component {...pageProps} />
                         </Container>
