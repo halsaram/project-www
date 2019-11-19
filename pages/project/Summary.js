@@ -10,9 +10,9 @@
  * 최종수정내용	  :  ImageUpload
 **************************************************************************************/
 
-import React, { useState, Component } from 'react'
+import React, { useState } from 'react'
 import Link from 'next/link';
-import { Grid, Dropdown, Segment, Button, Form, Input, Select, Header, Icon, Image, Label } from 'semantic-ui-react'
+import { Grid, Dropdown, Segment, Button, Form, Input, Image, Label } from 'semantic-ui-react'
 import ProjectLink from './ProjectLink'
 import ProjectHeader from './projectHeader'
 import ImageUpload from '../../lib/upload/ImageUpload'
