@@ -168,11 +168,7 @@ const MyProfile = () => {
                 <Grid.Column />
                 <Grid.Column textAlign="center" width={16}>
                         <Link as='/프로필 설정' href={{ pathname: '/mypage', query: { id: 'myprofile', title: '프로필 설정' } }}>
-<<<<<<< HEAD
-                    <button class="ui blue button" onClick={submit}>수정하기</button>
-=======
                     <button onClick={saveData} class="ui blue button">수정하기</button>
->>>>>>> 40f7948c9f21b205d05a3ab21c0af7e61235e1e6
                     </Link>
 
                 </Grid.Column>
