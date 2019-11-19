@@ -58,8 +58,19 @@ const MyProfile = () => {
     const [mysite, setMysite] = useLocalstorage('웹사이트', '')
     const [mynumber, setMynumber] = useLocalstorage('전화번호', '')
 
+    const [localMyname, setLocalMyname] = useState(myname)
+    const [localaddress, setLocalAddress] = useState(address)
+    const [localdescribe, setLocalDescribe] = useState(describe)
+    const [localmysite, setLocalMysite] = useState(mysite)
+    const [localmynumber, setLocalMynumber] = useState(mynumber)
 
-    const handleChange = (e, { value }) => setCategory(value)
+    const saveData = () => {
+        setMyname(localMyname)
+        setAddress(localaddress)
+        setDescribe(localdescribe)
+        setMysite(localmysite)
+        setMynumber(localmynumber)
+    }
 
     return (
 
@@ -89,9 +100,9 @@ const MyProfile = () => {
 											</span></p>
                                     <Form.Field inline>
                                         <Input placeholder='사용하실 이름을 입력해주세요'
-                                            value={myname}
+                                            value={localMyname}
                                             name="myname"
-                                            onChange={e => setMyname(e.target.value)} fluid />
+                                            onChange={e => setLocalMyname(e.target.value)} fluid />
                                     </Form.Field>
 
                                     <br />
@@ -100,9 +111,9 @@ const MyProfile = () => {
 											</span></p>
                                     <Form.Field inline>
                                         <Input placeholder='입력해주세요'
-                                            value={address}
+                                            value={localaddress}
                                             name="address"
-                                            onChange={e => setAddress(e.target.value)} fluid />
+                                            onChange={e => setLocalAddress(e.target.value)} fluid />
                                     </Form.Field>
 
                                     <br />
@@ -111,9 +122,9 @@ const MyProfile = () => {
 											</span></p>
                                     <Form.Field inline>
                                         <Input placeholder='입력해주세요'
-                                            value={describe}
+                                            value={localdescribe}
                                             name="describe"
-                                            onChange={e => setDescribe(e.target.value)} maxlength="600" fluid />
+                                            onChange={e => setLocalDescribe(e.target.value)} maxlength="600" fluid />
                                     </Form.Field>
 
                                     <br />
@@ -122,9 +133,9 @@ const MyProfile = () => {
 											</span></p>
                                     <Form.Field inline>
                                         <Input placeholder='웹사이트가 있다면 주소를 입력해주세요'
-                                            value={mysite}
+                                            value={localmysite}
                                             name="mysite"
-                                            onChange={e => setMysite(e.target.value)} fluid />
+                                            onChange={e => setLocalMysite(e.target.value)} fluid />
                                     </Form.Field>
 
                                     <br />
@@ -133,9 +144,9 @@ const MyProfile = () => {
 											</span></p>
                                     <Form.Field inline>
                                         <Input placeholder='전화번호를 입력해주세요. ex)000-0000-0000'
-                                            value={mynumber}
+                                            value={localmynumber}
                                             name="mynumber"
-                                            onChange={e => setMynumber(e.target.value)} fluid />
+                                            onChange={e => setLocalMynumber(e.target.value)} fluid />
                                     </Form.Field>
                                     
                                 </Grid.Column>
@@ -153,7 +164,7 @@ const MyProfile = () => {
                 <Grid.Column />
                 <Grid.Column textAlign="center" width={16}>
                         <Link as='/프로필 설정' href={{ pathname: '/mypage', query: { id: 'myprofile', title: '프로필 설정' } }}>
-                    <button class="ui blue button">수정하기</button>
+                    <button onClick={saveData} class="ui blue button">수정하기</button>
                     </Link>
 
                 </Grid.Column>
