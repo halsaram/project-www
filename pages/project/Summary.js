@@ -15,7 +15,7 @@ import Link from 'next/link';
 import { Grid, Dropdown, Segment, Button, Form, Input, Image, Label } from 'semantic-ui-react'
 import ProjectLink from './ProjectLink'
 import ProjectHeader from './projectHeader'
-import ImageUpload from '../../lib/upload/ImageUpload'
+import ImageUpload from '../../lib/upload/ImageUploadSummary'
 
 
 

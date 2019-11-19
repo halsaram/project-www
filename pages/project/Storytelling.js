@@ -15,7 +15,7 @@ import React, { useState } from 'react'
 import { Grid, Segment, Button, Form, TextArea } from 'semantic-ui-react'
 import ProjectLink from './ProjectLink'
 import ProjectHeader from './projectHeader'
-import ImageUpload from '../../lib/upload/ImageUpload'
+import ImageUpload from '../../lib/upload/ImageUploadStorytelling'
 
 
 
