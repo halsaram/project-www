@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { inject, observer } from 'mobx-react'
-import { Grid, Segment, Button, Image } from 'semantic-ui-react'
+import { Grid, Segment, Button, Image, Input } from 'semantic-ui-react'
 
 import Page from '../components/Page'
 import Web3Container from '../lib/web3/Web3Container'
@@ -55,27 +55,61 @@ class Contents extends React.Component {
         const projectInst = new crowd_web3.eth.Contract(crowdfundProject['abi'], projectAddress);
         await projectInst.methods.getDetails().call().then(projectData => {
           const projectInfo = projectData;
+          projectInfo.contract = projectInst;
           this.state.projectData.push(projectInfo);
         })
       })
     });
   }
 
+  fundProject = async (index) => {
+    const { coinbase } = this.props
+    console.log(index);
+    
+    // if (!this.state.projectData[index].fundAmount) {
+    //   console.log('fall');
+    //   return;
+    // }
+    const projectContract = this.state.projectData[index].contract;
+    // this.state.projectData[index].isLoading = true;
+    await projectContract.methods.contribute(this.state.myaddr2, 1000).send({
+      from: coinbase,
+      gas: 4500000,
+    }).then(async (res) => {
+      console.log(res);
+      
+      const newTotal = await parseInt(res.events.FundingReceived.returnValues.currentTotal, 10);
+      const projectGoal = await parseInt(this.state.projectData[index].goalAmount, 10);
+      this.state.projectData[index].currentAmount = newTotal;
+      // this.state.projectData[index].isLoading = false;
+      // Set project state to success
+      if (newTotal >= projectGoal) {
+        this.state.projectData[index].currentState = 2;
+      }
+    });
+  }
+
   render() {
     const { coinbase } = this.props
-    console.log(this.props);
+    let index = 0
 
-
+    console.log(this.state.projectData);
     const projectIn = this.state.projectData.map(projects => {
       const { currentAmount, currentState, deadline, goalAmount, projectDesc, projectStarter, projectTitle } = projects
-      return < ListCard title={projectTitle}
-        editor=''
-        Dday={new Date(deadline * 1000).getDate() - new Date().getDate()}
-        catogory=''
-        targetCoin={goalAmount}
-        fundCoin={currentAmount}
-        description={projectDesc}
-        link='' />
+      return (
+        <>
+          <Button value={index++} onClick={(e) => {this.fundProject(e.target.value)}}>1000원펀드</Button>
+          < ListCard title={projectTitle}
+          editor=''
+          Dday={new Date(deadline * 1000).getDate() - new Date().getDate()}
+          catogory=''
+          targetCoin={goalAmount}
+          fundCoin={currentAmount}
+          description={projectDesc}
+              link='' />
+          
+        </>
+      ) 
     })
 
 
@@ -83,16 +117,16 @@ class Contents extends React.Component {
     return (
       <Segment>
         <h1>Crowd Dapp</h1>
-        <button onClick={this.isNewAccount}>Is new Account</button>
-        <button onClick={this.insertProject}>Insert Project</button>
-        <button onClick={this.getProjects}>Get Projects</button>
+        <Button onClick={this.isNewAccount}>Is new Account</Button>
+        <Button onClick={this.insertProject}>Insert Project</Button>
+        <Button onClick={this.getProjects}>Get Projects</Button>
         <div>Coinbase: {coinbase}</div>
         <div>A Addres: {myaddr1}</div>
         <div>B Addres: {myaddr2}</div>
-        <input type='text' onChange={(e) => { this.setState({ title: e.target.value }) }} /> 제목 : {title} <br />
-        <input type='text' onChange={(e) => { this.setState({ description: e.target.value }) }} /> 상세내용 : {description} <br />
-        <input type='text' onChange={(e) => { this.setState({ durationInDays: e.target.value }) }} /> 기한 : {durationInDays} 일 <br />
-        <input type='text' onChange={(e) => { this.setState({ amountToRaise: e.target.value }) }} /> 목표금액 : {amountToRaise} 원 <br />
+        <Input type='text' onChange={(e) => { this.setState({ title: e.target.value }) }} /> 제목 : {title} <br />
+        <Input type='text' onChange={(e) => { this.setState({ description: e.target.value }) }} /> 상세내용 : {description} <br />
+        <Input type='text' onChange={(e) => { this.setState({ durationInDays: e.target.value }) }} /> 기한 : {durationInDays} 일 <br />
+        <Input type='text' onChange={(e) => { this.setState({ amountToRaise: e.target.value }) }} /> 목표금액 : {amountToRaise} 원 <br />
         <Grid centered>
           <Grid.Row centered columns={4}>
             {projectIn}

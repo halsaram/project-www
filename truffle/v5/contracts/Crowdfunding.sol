@@ -111,7 +111,7 @@ contract Project {
 
     /** @dev Function to fund a certain project.
       */
-    function contribute(address _addr, uint _value) external inState(State.Fundraising) payable {
+    function     (address _addr, uint _value) external inState(State.Fundraising) payable {
         require(_addr != creator);
         contributions[_addr] = contributions[_addr].add(_value);
         currentBalance = currentBalance.add(_value);
@@ -122,10 +122,14 @@ contract Project {
     /** @dev Function to change the project state depending on conditions.
       */
     function checkIfFundingCompleteOrExpired() public {
-        if (currentBalance >= amountGoal) {
-            state = State.Successful;
-            payOut();
-        } else if (now > raiseBy)  {
+        // if (currentBalance >= amountGoal) {
+        //     state = State.Successful;
+        //     payOut();
+        // } else 
+        if (now > raiseBy)  {
+            if (currentBalance >= amountGoal) {
+                 state = State.Successful;
+            }
             state = State.Expired;
         }
         completeAt = now;
