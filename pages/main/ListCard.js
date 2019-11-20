@@ -19,15 +19,21 @@ const ListCard =(props) => {
                 <Card.Description>
                 <Progress percent={Math.floor((props.fundCoin/props.targetCoin)*100, 2)} size="tiny" color='blue' />
                 </Card.Description>
+            <Grid.Column floated='left'>
+              {props.fundCoin.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}원 / {props.targetCoin.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}원
+                  </Grid.Column>
+            <Grid.Column floated='right'>
+                {Math.floor((props.fundCoin / props.targetCoin) * 100, 2)}%
+                  </Grid.Column>
               </Card.Content>
               <Card.Content extra>
                 <Card.Description>
                    <Grid>
-                    <Grid.Column floated='left' width={7}>
+                    <Grid.Column floated='left' width={6}>
                     {props.Dday}일 남음
                     </Grid.Column>
-                    <Grid.Column floated='right' width={9}>
-                    {props.targetCoin}원 / {Math.floor((props.fundCoin/props.targetCoin)*100, 2)}%
+                    <Grid.Column floated='right' width={10}>
+                  
                     </Grid.Column>
                   </Grid>
                 </Card.Description>

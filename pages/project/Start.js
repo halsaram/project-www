@@ -9,10 +9,9 @@
  * 최종수정자	   : 정휘선
  * 최종수정내용	  : UI 수정
 **************************************************************************************/
-import React, { Component, useState } from 'react'
+import React, { Component } from 'react'
 import Link from 'next/link';
-import { Divider, Header, Icon, Grid, Button, Image, List, Segment } from 'semantic-ui-react'
-import { height } from 'window-size';
+import { Grid, Button, Image, List, Segment } from 'semantic-ui-react'
 import CatoList from '../main/CatoList'
 import { inject, observer} from 'mobx-react'
 
@@ -33,7 +32,7 @@ const Margin = {
 
 @inject('userStore')
 @observer
-class Start extends React.Component{
+class Start extends Component{
 
     alart(){
          alert("로그인이 필요한 서비스 입니다");
