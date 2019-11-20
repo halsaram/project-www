@@ -67,7 +67,6 @@ const Summary = () => {
 		{ key: '캠페인', value: '캠페인', text: '캠페인 '}
 	]
 
-
 	// 작은 안내문 글자
 	const fontSize = {
 		fontSize: 12,
@@ -83,10 +82,19 @@ const Summary = () => {
 	const [websites1, setWebsites1] = useLocalstorage('창작자소셜주소1', '')
 	const [websites2, setWebsites2] = useLocalstorage('창작자소셜주소2', '')
 
-
+	const storage = {
+		projectTitle: projectTitle,
+		keyword: keyword,
+		fundingGoal: fundingGoal,
+		category: category,
+		deadline: deadline,
+		creator: creator,
+		websites1: websites1,
+		websites2: websites2
+	}
+	localStorage.setItem("summary", JSON.stringify(storage));
+	
 	const handleChange = (e, { value }) => setCategory(value)
-
-
 
 	return (
 
