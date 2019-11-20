@@ -111,7 +111,7 @@ contract Project {
 
     /** @dev Function to fund a certain project.
       */
-    function     (address _addr, uint _value) external inState(State.Fundraising) payable {
+    function contribute(address _addr, uint _value) external inState(State.Fundraising) payable {
         require(_addr != creator);
         contributions[_addr] = contributions[_addr].add(_value);
         currentBalance = currentBalance.add(_value);

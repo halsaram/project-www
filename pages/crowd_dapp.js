@@ -17,7 +17,7 @@ class Contents extends React.Component {
     projectData: []
   };
 
-  componentDidMount() {
+  componentDidMount() {    
     this.getProjects();
   }
 
@@ -50,13 +50,16 @@ class Contents extends React.Component {
   getProjects = async () => {
     const { campaign, crowdfundProject, crowd_web3 } = this.props
     await campaign.methods.returnAllProjects().call().then(async projects => {
-      this.state.projectData = []
+      const projectData = []
       projects.forEach(async (projectAddress) => {
         const projectInst = new crowd_web3.eth.Contract(crowdfundProject['abi'], projectAddress);
-        await projectInst.methods.getDetails().call().then(projectData => {
-          const projectInfo = projectData;
+        await projectInst.methods.getDetails().call().then(projectInfo => {
           projectInfo.contract = projectInst;
-          this.state.projectData.push(projectInfo);
+          projectData.push(projectInfo);
+        }).then(result => {
+          this.setState({
+            projectData
+          })
         })
       })
     });
@@ -66,10 +69,6 @@ class Contents extends React.Component {
     const { coinbase } = this.props
     console.log(index);
     
-    // if (!this.state.projectData[index].fundAmount) {
-    //   console.log('fall');
-    //   return;
-    // }
     const projectContract = this.state.projectData[index].contract;
     // this.state.projectData[index].isLoading = true;
     await projectContract.methods.contribute(this.state.myaddr2, 1000).send({
@@ -77,7 +76,6 @@ class Contents extends React.Component {
       gas: 4500000,
     }).then(async (res) => {
       console.log(res);
-      
       const newTotal = await parseInt(res.events.FundingReceived.returnValues.currentTotal, 10);
       const projectGoal = await parseInt(this.state.projectData[index].goalAmount, 10);
       this.state.projectData[index].currentAmount = newTotal;
@@ -86,7 +84,12 @@ class Contents extends React.Component {
       if (newTotal >= projectGoal) {
         this.state.projectData[index].currentState = 2;
       }
-    });
+    }).catch(error => {
+      console.log(error);
+    }).finally(fin => {
+      console.log(fin);
+      this.getProjects();
+    })
   }
 
   render() {
@@ -102,7 +105,7 @@ class Contents extends React.Component {
           < ListCard title={projectTitle}
           editor=''
           Dday={new Date(deadline * 1000).getDate() - new Date().getDate()}
-          catogory=''
+            catogory={projectStarter}
           targetCoin={goalAmount}
           fundCoin={currentAmount}
           description={projectDesc}
