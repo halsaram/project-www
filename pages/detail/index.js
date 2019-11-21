@@ -16,24 +16,31 @@ import DetailHeader from './DetailHeader'
 import Story from './Story'
 import Community from './Community'
 import FundingGuide from './FundingGuide'
-import DetailCato from './DetailCato'
+import DetailLink from './DetailLink'
 
 
-const Contents = (props) => (
-    <div>
-        {props.id == 'story' && <Story />}
-        {props.id == 'community' && <Community />}
-        {props.id == 'fundingguide' && <FundingGuide />}
-        {props.id == 'detailcato' && <DetailCato />}
-    </div>
-)
+const Contents = (props) => {
+    console.log(props.props)
+    const project = JSON.parse(props.props)
+    return(
+        <div>
+            <DetailHeader {...project} />
+            <DetailLink {...props}/>
+            {props.id == 'story' && <Story {...props} />}
+            {props.id == 'community' && <Community />}
+            {props.id == 'fundingguide' && <FundingGuide />}
+        </div>
+    )
+}
 
 export default class extends Component {
-    static getInitialProps({ query: { id, title } }) {
-        return { id, title }
+    static getInitialProps({ query: { id, title, props } }) {
+        return { id, title, props }
     }
-
+    
+    
     render() {
+        console.log(this.props);
         return (
             <Page title={this.props.title} >
                 <Contents {...this.props} />

@@ -158,6 +158,22 @@ const InsertConfig = () => {
 	const [date, setDate] = useLocalstorage('날짜', '')	//날짜 입력칸 데이터
 
 
+	const storage = {
+		size: size,
+		multiple: multiple,
+		delivery: delivery,
+		limit: limit,
+		sum: sum,
+		rewardName: rewardName,
+		inmessage: inmessage,
+		limitnum: limitnum,
+		date: date
+	};
+
+	localStorage.setItem("config", JSON.stringify(storage));
+
+	
+
 	return (
 		<Grid columns='equal'>
 			<Grid.Column />
@@ -358,7 +374,7 @@ const Config = () => {
 			
 			{/* 이전페이지 이동 */}
 
-			<Link as='/p' href='/project?id=summary&title=프로젝트개요'>
+			<Link as='/프로젝트개요' href={{ pathname: '/project', query: { id: 'summary', title: '프로젝트개요' } }}>
 
 				<Button color='blue' floated='left'><a style={buttonText}>이전</a></Button>
 
@@ -368,7 +384,7 @@ const Config = () => {
 
 			{/* 다음 페이지 이동 */}
 
-			<Link as='/p' href='/project?id=storytelling&title=스토리텔링'>
+			<Link as='/프로젝트스토리텔링' href={{ pathname: '/project', query: { id: 'storytelling', title: '프로젝트스토리텔링' } }}>
 
 				<Button color='blue' floated='right'><a style={buttonText}>다음</a></Button>
 

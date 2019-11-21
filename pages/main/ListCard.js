@@ -5,11 +5,11 @@ import Link from 'next/link';
 
 // 하나의 카드(ListCard) ->  
 const ListCard =(props) => {
+  console.log('ListCard==>', props);
   
   return(
-    
         <Grid.Column>
-      <Link as='/프로젝트상세정보' href={{ pathname: '/detail', query: { id: 'story', title: '프로젝트상세정보' } }}>
+      <Link as='/프로젝트상세정보' href={{ pathname: '/detail', query: { id: 'story', title: '프로젝트상세정보', props: JSON.stringify(props) } }}>
             <Card>
               <Image src='../../static/test/testlist.png' wrapped ui={false} />
               <Card.Content textAlign="left">

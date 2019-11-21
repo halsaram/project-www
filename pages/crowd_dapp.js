@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 import { inject, observer } from 'mobx-react'
-import { Grid, Segment, Button, Image, Input } from 'semantic-ui-react'
+import { Grid, Segment, Button, Image, Input, Rail } from 'semantic-ui-react'
 
 import Page from '../components/Page'
 import Web3Container from '../lib/web3/Web3Container'
 import ListCard from './main/ListCard';
 
-class Contents extends React.Component {
+class Contents extends Component {
   state = {
     myaddr1: undefined,
     myaddr2: undefined,
@@ -65,13 +65,13 @@ class Contents extends React.Component {
     });
   }
 
-  fundProject = async (index) => {
+  fundProject = async (index, val) => {
     const { coinbase } = this.props
     console.log(index);
     
     const projectContract = this.state.projectData[index].contract;
     // this.state.projectData[index].isLoading = true;
-    await projectContract.methods.contribute(this.state.myaddr2, 1000).send({
+    await projectContract.methods.contribute(this.state.myaddr2, val).send({
       from: coinbase,
       gas: 4500000,
     }).then(async (res) => {
@@ -101,7 +101,13 @@ class Contents extends React.Component {
       const { currentAmount, currentState, deadline, goalAmount, projectDesc, projectStarter, projectTitle } = projects
       return (
         <>
-          <Button value={index++} onClick={(e) => {this.fundProject(e.target.value)}}>1000원펀드</Button>
+          <Button.Group vertical>
+            <Button value={index} onClick={(e) => { this.fundProject(e.target.value, 1000) }}>1000원펀드</Button>
+            <Button value={index} onClick={(e) => { this.fundProject(e.target.value, 2000) }}>2000원펀드</Button>
+            <Button value={index} onClick={(e) => { this.fundProject(e.target.value, 3000) }}>3000원펀드</Button>
+            <Button value={index++} onClick={(e) => { this.fundProject(e.target.value, 4000) }}>4000원펀드</Button>
+          </Button.Group>
+          
           < ListCard title={projectTitle}
           editor=''
           Dday={new Date(deadline * 1000).getDate() - new Date().getDate()}
@@ -110,7 +116,6 @@ class Contents extends React.Component {
           fundCoin={currentAmount}
           description={projectDesc}
               link='' />
-          
         </>
       ) 
     })
@@ -126,12 +131,12 @@ class Contents extends React.Component {
         <div>Coinbase: {coinbase}</div>
         <div>A Addres: {myaddr1}</div>
         <div>B Addres: {myaddr2}</div>
-        <Input type='text' onChange={(e) => { this.setState({ title: e.target.value }) }} /> 제목 : {title} <br />
+        {/* <Input type='text' onChange={(e) => { this.setState({ title: e.target.value }) }} /> 제목 : {title} <br />
         <Input type='text' onChange={(e) => { this.setState({ description: e.target.value }) }} /> 상세내용 : {description} <br />
         <Input type='text' onChange={(e) => { this.setState({ durationInDays: e.target.value }) }} /> 기한 : {durationInDays} 일 <br />
-        <Input type='text' onChange={(e) => { this.setState({ amountToRaise: e.target.value }) }} /> 목표금액 : {amountToRaise} 원 <br />
-        <Grid centered>
-          <Grid.Row centered columns={4}>
+        <Input type='text' onChange={(e) => { this.setState({ amountToRaise: e.target.value }) }} /> 목표금액 : {amountToRaise} 원 <br /> */}
+        <Grid  >
+          <Grid.Row centered columns={5}>
             {projectIn}
           </Grid.Row>
         </Grid>

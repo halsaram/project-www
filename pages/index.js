@@ -11,6 +11,7 @@
 **************************************************************************************/
 import React, {Component, useState, useReducer} from 'react'
 import { inject, observer } from 'mobx-react';
+
 import Page from '../components/Page'
 import Main_Banner from './main/Main_Banner'
 import HeaderBar from '../components/Header'
@@ -19,32 +20,30 @@ import Pagnation from '../pages/main/Pagnation'
 
 
 //여기자체에서 값을 받아서
-const Contents = () => {
-  
+const Contents = (props) => {
   return(
     <div>
       <HeaderBar/>
       <Main_Banner />
-{/*  pagnation에서 불러오는 컴포넌트 부분*/}
-      <Pagnation title="새로운 프로젝트" project="NewProject"/>
+    {/*  pagnation에서 불러오는 컴포넌트 부분*/}
+      <Pagnation props={props} title="새로운 프로젝트" project="NewProject"/>
       <div style={ItemMargin} />   
 
      {/* ------카테고리 프로젝트--------------------------------------------------------------- */}
       <CatoList dataType="threeData"/>
       <div style={ItemMargin} />   
  
-      <Pagnation title="성공임박 프로젝트" project="EncoreProject"/>
+      <Pagnation props={props} title="성공임박 프로젝트" project="EncoreProject"/>
       <div style={ItemMargin} />   
-      <Pagnation title="성공임박 프로젝트" project="EndProject"/>
+      <Pagnation props={props} title="성공임박 프로젝트" project="EndProject"/>
       <div style={ItemMargin} />   
     </div>
-
-  );
-
-}
+  )
+};
 
 {/* ------------------------------------------------------------------------------ */}
-@inject('postStore') @observer
+@inject('userStore', 'web3', 'accounts', 'contract', 'campaign', 'coinbase', 'crowdfundProject', 'crowd_web3')
+@observer
 export default class extends Component {
   static async getInitialProps({ mobxStore, query }) {
     await mobxStore.postStore.fetch(query.id);

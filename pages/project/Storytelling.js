@@ -51,6 +51,10 @@ const Storytelling = () => {
 
 	const [summary, setSummary] = useLocalstorage('프로젝트 요약', '')
 
+	const storage = {
+		summary: summary,
+	}
+	localStorage.setItem("storytelling", JSON.stringify(storage));
 
 	//입력창에 들어간 정보를 실시간 확인			
 	const handleChange = (e, { value }) => setCategory(value)
@@ -133,12 +137,12 @@ const Storytelling = () => {
 						</Grid>
 				</Form>
 						{/* 이전페이지 이동 */}
-					<Link as='/p' href='/project?id=config&title=프로젝트구성'>
+				<Link as='/프로젝트구성' href={{ pathname: '/project', query: { id: 'config', title: '프로젝트구성' } }}>
 						<Button color='blue' floated='left'><a style={buttonText}>이전</a></Button>
 					</Link>
 
 					{/* 다음 페이지 이동 */}
-					<Link as='/p' href='/project?id=account&title=프로젝트계좌'>
+				<Link as='/프로젝트계좌' href={{ pathname: '/project', query: { id: 'account', title: '프로젝트계좌' } }}>
 						<Button color='blue' floated='right'><a style={buttonText}>다음</a></Button>
 					</Link>												
 			</div >

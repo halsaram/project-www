@@ -32,30 +32,31 @@ const largeFont={
 }
 
 //2. 프로젝트 제목 적기 
-const detailHeader = () => (
+const detailHeader = (props) => (
     <div>
+        {console.log('detailHeader==>',props)}
         <div style={margin}></div>
         {/* 상세보기 이름 */}
         <Grid columns='equal'>
             <Grid.Column/>
                 <Grid.Column width={8} textAlign="center">
-                    <h2>프로젝트 이름</h2>
-                    <p>제작자</p>
+                    <h2>{props.title}</h2>
+                    <p>{props.editor}</p>
                 </Grid.Column>
             <Grid.Column/>
 
             <Grid.Row centered columns={3}>
                 <Grid.Column>
-                    <Image src='https://react.semantic-ui.com/images/wireframe/image.png' size='large' />
+                    <Image src='../../static/test/testlist.png' size='large' />
                 </Grid.Column>
                 <Grid.Column textAlign="left">
                     <p style={ smallFont}>모인금액 / 달성률 <br/> <br/>  
-                    <span style={largeFont}>금액  <span style={smallFont}>00%</span></span> </p>
+                        <span style={largeFont}>{props.fundCoin.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}원 / {props.targetCoin.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}원 {Math.floor((props.fundCoin / props.targetCoin) * 100, 2)}%</span></p>
 
                     <div style={margin}></div>
 
                     <p style={ smallFont}>남은 시간<br/> <br/>  
-                    <span style={largeFont}>00일 남음  <span style={smallFont}>2017.01.01 마감</span></span> </p>
+                        <span style={largeFont}>{props.Dday}일 남음  <span style={smallFont}>{new Date(props.deadline * 1000).getFullYear()}/{new Date(props.deadline * 100).getMonth()}/{new Date(props.deadline * 1000).getDate()} 마감</span></span> </p>
 
                     <div style={margin}></div>
                     <Button color="blue"> 프로젝트 밀어주기</Button> 

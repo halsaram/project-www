@@ -78,7 +78,7 @@ const Summary = () => {
 	const [fundingGoal, setFundingGoal] = useLocalstorage('목표금액', '')
 	const [category, setCategory] = useLocalstorage('카테고리', '')
 	const [deadline, setDeadline] = useLocalstorage('종료일', '')
-	const [creator, setCreator] = useLocalstorage('창작자명', '')
+	const [creator, setCreator] = useLocalstorage('창작자소개', '')
 	const [websites1, setWebsites1] = useLocalstorage('창작자소셜주소1', '')
 	const [websites2, setWebsites2] = useLocalstorage('창작자소셜주소2', '')
 
@@ -181,12 +181,12 @@ const Summary = () => {
 
 									<br />
 
-									<p>프로젝트 종료일<span style={fontSize}>
+									<p>프로젝트 목표일자<span style={fontSize}>
 										프로젝트 진행 기간은 평균 30일입니다.
 											</span></p>
 									<Form.Field inline>
 										<Input
-											type="date"
+											type="text"
 											value={deadline}
 											name="deadline"
 											onChange={e => setDeadline(e.target.value)} fluid />
@@ -255,7 +255,7 @@ const Summary = () => {
 					</Grid.Column>
 					<Grid.Column />
 				</Grid>
-				<Link as='/p' href='/project?id=config&title=구성'>
+				<Link as='/프로젝트구성' href={{ pathname: '/project', query: { id: 'config', title: '프로젝트구성' } }}>
 					<Button color='blue' floated='right'><a style={buttonText}>다음</a></Button>
 				</Link>
 				<br /><br /><br /><br />

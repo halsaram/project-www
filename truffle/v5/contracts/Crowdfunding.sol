@@ -14,33 +14,37 @@ contract Crowdfunding {
     event ProjectStarted(
         address contractAddress,
         address projectStarter,
-        string projectTitle,
-        string projectDesc,
+        string summary,
+        string gift,
+        string story,
         uint256 deadline,
         uint256 goalAmount
     );
 
     /** @dev Function to start a new project.
-      * @param title Title of the project to be created
-      * @param description Brief description about the project
+      * @param summary Title of the project to be created
+      * @param gift Brief description about the project
+      * @param story Brief description about the project
       * @param durationInDays Project deadline in days
       * @param amountToRaise Project goal in wei
       */
     function startProject(
-        string calldata title,
-        string calldata description,
+        string calldata summary,
+        string calldata gift,
+        string calldata story,
         uint durationInDays,
         uint amountToRaise,
         address payable _addr
     ) external {
         uint raiseUntil = now.add(durationInDays.mul(1 days));
-        Project newProject = new Project(_addr, title, description, raiseUntil, amountToRaise);
+        Project newProject = new Project(_addr, summary, gift, story, raiseUntil, amountToRaise);
         projects.push(newProject);
         emit ProjectStarted(
             address(newProject),
             _addr,
-            title,
-            description,
+            summary,
+            gift,
+            story,
             raiseUntil,
             amountToRaise
         );
@@ -71,8 +75,9 @@ contract Project {
     uint public completeAt;
     uint256 public currentBalance;
     uint public raiseBy;
-    string public title;
-    string public description;
+    string public summary;
+    string public gift;
+    string public story;
     State public state = State.Fundraising; // initialize on create
     mapping (address => uint) public contributions;
 
@@ -96,14 +101,16 @@ contract Project {
     constructor
     (
         address payable projectStarter,
-        string memory projectTitle,
-        string memory projectDesc,
+        string memory projectSummary,
+        string memory projectGift,
+        string memory projectStory,
         uint fundRaisingDeadline,
         uint goalAmount
     ) public {
         creator = projectStarter;
-        title = projectTitle;
-        description = projectDesc;
+        summary = projectSummary;
+        gift = projectGift;
+        story = projectStory;
         amountGoal = goalAmount;
         raiseBy = fundRaisingDeadline;
         currentBalance = 0;
@@ -176,16 +183,18 @@ contract Project {
     function getDetails() public view returns 
     (
         address payable projectStarter,
-        string memory projectTitle,
-        string memory projectDesc,
+        string memory projectSummary,
+        string memory projectGift,
+        string memory projectStory,
         uint256 deadline,
         State currentState,
         uint256 currentAmount,
         uint256 goalAmount
     ) {
         projectStarter = creator;
-        projectTitle = title;
-        projectDesc = description;
+        projectSummary = summary;
+        projectGift = gift;
+        projectStory = story;
         deadline = raiseBy;
         currentState = state;
         currentAmount = currentBalance;
