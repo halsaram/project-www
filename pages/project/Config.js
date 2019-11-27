@@ -62,7 +62,15 @@ const InsertConfig = () => {
 		fontSize: 12,
 		color: "gray"
 	}
-
+	const [size, setSize] = useLocalstorage('sizeChecked1', '') // 옵션이 필요없는 아이템 선택
+	const [multiple, setMultiple] = useLocalstorage('colorChecked1', '') // 객관식 옵션 선택
+	const [delivery, setDelivery] = useLocalstorage('deliveryChecked1', '')	//배송여부 체크시 입력이 가능한 변수
+	const [limit, setLimit] = useLocalstorage('limitChecked1', '')	//제한수량 체크시 입력이 가능한 변수
+	const [sum, setSum] = useLocalstorage('금액1', '') 	//최소 후원금액 입력칸 데이터 
+	const [rewardName, setRewardname] = useLocalstorage('리워드명1', '')	//리워드명 입력칸 데이터
+	const [inmessage, setInmessage] = useLocalstorage('메세지1', '')	//주관식 옵션 입력칸 데이터
+	const [limitnum, setLimitnum] = useLocalstorage('제한수량1', '')	//수량 제한 입력칸 데이터
+	const [date, setDate] = useLocalstorage('날짜1', '')	//날짜 입력칸 데이터
 	// 옵션 체크 여부를 정하는 변수
 	// {1}
 	const [size1, setSize1] = useLocalstorage('sizeChecked1','') // 옵션이 필요없는 아이템 선택
@@ -97,15 +105,15 @@ const [size3, setSize3] = useLocalstorage('sizeChecked3','') // 옵션이 필요
 
 
 	const storage = {
-		size: size,
-		multiple: multiple,
-		delivery: delivery,
-		limit: limit,
-		sum: sum,
-		rewardName: rewardName,
-		inmessage: inmessage,
-		limitnum: limitnum,
-		date: date
+		size: size1,
+		multiple: multiple1,
+		delivery: delivery1,
+		limit: limit1,
+		sum: sum1,
+		rewardName: rewardName1,
+		inmessage: inmessage1,
+		limitnum: limitnum1,
+		date: date1
 	};
 
 	localStorage.setItem("config", JSON.stringify(storage));

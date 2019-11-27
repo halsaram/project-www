@@ -42,14 +42,23 @@ module.exports = {
     // tab if you use this network and you must also set the `host`, `port` and `network_id`
     // options below to some value.
     //
+    // development: {
+    //   host: "114.108.177.193",
+    //   port: 25000,
+    //   gas: 4500000,
+    //   gasPrice: 0,
+    //   from: "0xed9d02e382b34818e88b88a309c7fe71e65f419d",
+    //   network_id: "*", // Match any network id
+    // },
     development: {
-      host: "114.108.177.193",
-      port: 25000,
+      host: "",
+      port: 22000,
       gas: 4500000,
       gasPrice: 0,
       from: "0xed9d02e382b34818e88b88a309c7fe71e65f419d",
       network_id: "*", // Match any network id
     },
+    
 
     // Another network with more advanced options...
     // advanced: {
